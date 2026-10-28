@@ -1,0 +1,193 @@
+<DatabaseFile path="">
+  <Data path="GeneralScene.DefaultLODs" type="GeneralSceneDefaultLODs">
+    <property id="LODLists">
+
+      <!-- Default Animated -->
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="animated" />
+        <property id="SceneType" value="Main" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="40.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="40.0" /><property id="EndDistance" value="80.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="80.0" /><property id="EndDistance" value="160.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
+        </property>
+      </element>
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="animated" />
+        <property id="SceneType" value="ShadowPSSM" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="40.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="40.0" /><property id="EndDistance" value="80.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="80.0" /><property id="EndDistance" value="160.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
+        </property>
+      </element>
+      
+      <!-- Default Static -->
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="static" />
+        <property id="SceneType" value="Main" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="40.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="40.0" /><property id="EndDistance" value="80.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="80.0" /><property id="EndDistance" value="160.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
+          <!-- LOD 4 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="320.0" /><property id="EndDistance" value="640.0" /></element>
+        </property>
+      </element>      
+      <!-- Cube -->
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="static" />
+        <property id="SceneType" value="Cube" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 4 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="80.0" /></element>
+        </property>
+      </element>
+
+      <!-- Checkpoints -->
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="checkpoint" />
+        <property id="SceneType" value="Main" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="40.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="40.0" /><property id="EndDistance" value="80.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="80.0" /><property id="EndDistance" value="160.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
+          <!-- LOD 4 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="320.0" /><property id="EndDistance" value="640.0" /></element>
+        </property>
+      </element>
+      <!-- Cube -->
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="checkpoint" />
+        <property id="SceneType" value="Cube" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 4 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="80.0" /></element>
+        </property>
+      </element>
+      <!-- Global Cube -->
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="checkpoint" />
+        <property id="SceneType" value="GlobalCube" />
+      </element>
+
+      <!-- Animal -->
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="animal" />
+        <property id="SceneType" value="Main" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="40.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="40.0" /><property id="EndDistance" value="80.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="80.0" /><property id="EndDistance" value="160.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
+          <!-- LOD 4 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="320.0" /><property id="EndDistance" value="800.0" /></element>	  
+        </property>
+      </element>
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="animal" />
+        <property id="SceneType" value="ShadowPSSM" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="40.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="40.0" /><property id="EndDistance" value="80.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="80.0" /><property id="EndDistance" value="160.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
+        </property>
+      </element>
+
+      <!-- Vehicle -->
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="vehicle" />
+        <property id="SceneType" value="Main" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="40.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="40.0" /><property id="EndDistance" value="80.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="80.0" /><property id="EndDistance" value="160.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
+          <!-- LOD 4 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="320.0" /><property id="EndDistance" value="1000.0" /></element>	  
+        </property>
+      </element>
+      
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="vehicle" />
+        <property id="SceneType" value="Cube" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <!-- LOD 4 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="80.0" /></element>
+        </property>
+      </element>
+      
+      <element type="GeneralSceneDefaultLODList">
+        <property id="Name" value="vehicle" />
+        <property id="SceneType" value="ShadowPSSM" />
+        <property id="LODData">
+          <!-- LOD 0 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="40.0" /></element>
+          <!-- LOD 1 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="40.0" /><property id="EndDistance" value="80.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="80.0" /><property id="EndDistance" value="160.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
+        </property>
+      </element>
+    </property>
+  </Data>  
+</DatabaseFile>

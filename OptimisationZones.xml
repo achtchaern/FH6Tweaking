@@ -1,0 +1,6 @@
+<DatabaseFile path="">
+  <Data path="OptimisationZoneManager.Params" type="OptimisationZoneManagerParams">
+    <property id="CustomOptimisationZones">
+    </property>
+  </Data>
+</DatabaseFile>

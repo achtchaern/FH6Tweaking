@@ -1,0 +1,515 @@
+<DatabaseFile path="">
+  <Data path="TextureDebug.Params" type="TextureDebugOverlayParams">
+    <property id="Views">
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="env.weather.camera"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="wateroncameralens"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="env.weather.rain"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="raindrop"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="env.weather.car"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="dynamicraindrop"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="env.shadows.csm"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="csm"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="D3DPointer"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="env.shadows.pssm"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="pssm"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="D3DPointer"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="frame.renderbuffer"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="true"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="renderbuffer."/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Any"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="car.mirror"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="true"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="mirror"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="Contains"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="car.windshield"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="true"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="windshieldreflection"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="env.megatexture"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="true"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="megatexture"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Any"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="car.misc"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="digitalgaugetexture"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="Equals"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="car.proxylod"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="ProxyLODRenderer"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="Contains"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="D3DPointer"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="env.dynamiccubemap"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="true"/>
+          <property id="Stretch" type="bool" value="true"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="DynamicCubemapTexture"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="D3DPointer"/>
+      </element>
+      <element type="TextureGroupViewParams">
+          <property id="GroupPath" type="string" value="env.dynamiccubemap"/>
+          <property id="DisplaySettings" type="TextureDisplaySettings">
+              <property id="IsMirrored" type="bool" value="false"/>
+              <property id="UseGamma" type="bool" value="true"/>
+              <property id="Stretch" type="bool" value="true"/>
+              <property id="MipLevel" type="float" value="0"/>
+              <property id="Scale" type="float" value="1"/>
+              <property id="ColorScale" type="vec3" value="1,1,1"/>
+              <property id="ColorOffset" type="vec3" value="0,0,0"/>
+          </property>
+          <property id="CompareStrings">
+              <element type="string" value=":CubeTexture"/>
+          </property>
+          <property id="CompareMode" type="StringComparison" value="EndsWith"/>
+          <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="posteffects.dof"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="true"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="DepthOfField."/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="D3DPointer"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="env.shadows.closecontact"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="CloseContactShadowMap"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="frame.zpre"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="0.0156863,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0.313726,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="EarlyDepth_"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Any"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="env.shadows.shadowmask"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="shadowmask."/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+      </element>
+      <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="screenspace.lighting"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+          <property id="IsMirrored" type="bool" value="false"/>
+          <property id="UseGamma" type="bool" value="false"/>
+          <property id="Stretch" type="bool" value="false"/>
+          <property id="MipLevel" type="float" value="0"/>
+          <property id="Scale" type="float" value="1"/>
+          <property id="ColorScale" type="vec3" value="1,1,1"/>
+          <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        </property>
+        <property id="CompareStrings">
+          <element type="string" value="screenspacelighting."/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="D3DPointer"/>
+      </element>
+    <element type="TextureGroupViewParams">
+      <property id="GroupPath" type="string" value="car.cubemap"/>
+      <property id="DisplaySettings" type="TextureDisplaySettings">
+        <property id="IsMirrored" type="bool" value="false"/>
+        <property id="UseGamma" type="bool" value="true"/>
+        <property id="Stretch" type="bool" value="false"/>
+        <property id="MipLevel" type="float" value="0"/>
+        <property id="Scale" type="float" value="1"/>
+        <property id="ColorScale" type="vec3" value="128,128,128"/>
+        <property id="InvertColorScale" type="bool" value="true"/>
+        <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierOffset" type="vec3" value="1,1,0"/>
+        <property id="MagnifierZoom" type="float" value="0"/>
+      </property>
+      <property id="CompareStrings">
+        <element type="string" value="FocusCarSpecular"/>
+        <element type="string" value="FocusCarDiffuse"/>
+      </property>
+      <property id="CompareMode" type="StringComparison" value="Equals"/>
+      <property id="TextureOrigin" type="TextureOrigin" value="D3DPointer"/>
+    </element>
+    <element type="TextureGroupViewParams">
+      <property id="GroupPath" type="string" value="frame.earlydepth"/>
+      <property id="DisplaySettings" type="TextureDisplaySettings">
+        <property id="IsMirrored" type="bool" value="false"/>
+        <property id="UseGamma" type="bool" value="false"/>
+        <property id="Stretch" type="bool" value="false"/>
+        <property id="MipLevel" type="float" value="0"/>
+        <property id="Scale" type="float" value="1"/>
+        <property id="ColorScale" type="vec3" value="0.0490089,0.0490094,0.0490094"/>
+        <property id="InvertColorScale" type="bool" value="false"/>
+        <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierZoom" type="float" value="0"/>
+      </property>
+      <property id="CompareStrings">
+        <element type="string" value="earlydepth_lineardepthtexture"/>
+      </property>
+      <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+      <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+    </element>
+    <element type="TextureGroupViewParams">
+      <property id="GroupPath" type="string" value="frame.earlydepth"/>
+      <property id="DisplaySettings" type="TextureDisplaySettings">
+        <property id="IsMirrored" type="bool" value="false"/>
+        <property id="UseGamma" type="bool" value="false"/>
+        <property id="Stretch" type="bool" value="false"/>
+        <property id="MipLevel" type="float" value="0"/>
+        <property id="Scale" type="float" value="1"/>
+        <property id="ColorScale" type="vec3" value="1,1,1"/>
+        <property id="InvertColorScale" type="bool" value="false"/>
+        <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierZoom" type="float" value="0"/>
+      </property>
+      <property id="CompareStrings">
+        <element type="string" value="earlydepth_"/>
+      </property>
+      <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+      <property id="TextureOrigin" type="TextureOrigin" value="Any"/>
+    </element>
+    <element type="TextureGroupViewParams">
+      <property id="GroupPath" type="string" value="screenspace.ssr"/>
+      <property id="DisplaySettings" type="TextureDisplaySettings">
+        <property id="IsMirrored" type="bool" value="false"/>
+        <property id="UseGamma" type="bool" value="false"/>
+        <property id="Stretch" type="bool" value="false"/>
+        <property id="MipLevel" type="float" value="0"/>
+        <property id="Scale" type="float" value="1"/>
+        <property id="ColorScale" type="vec3" value="1,1,1"/>
+        <property id="InvertColorScale" type="bool" value="false"/>
+        <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierZoom" type="float" value="0"/>
+      </property>
+      <property id="CompareStrings">
+        <element type="string" value="SSR"/>
+      </property>
+      <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+      <property id="TextureOrigin" type="TextureOrigin" value="D3DPointer"/>
+    </element>
+    <element type="TextureGroupViewParams">
+      <property id="GroupPath" type="string" value="env.gbuffer"/>
+      <property id="DisplaySettings" type="TextureDisplaySettings">
+        <property id="IsMirrored" type="bool" value="false"/>
+        <property id="UseGamma" type="bool" value="false"/>
+        <property id="Stretch" type="bool" value="false"/>
+        <property id="MipLevel" type="float" value="0"/>
+        <property id="Scale" type="float" value="1"/>
+        <property id="ColorScale" type="vec3" value="1,1,1"/>
+        <property id="InvertColorScale" type="bool" value="false"/>
+        <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierZoom" type="float" value="0"/>
+      </property>
+      <property id="CompareStrings">
+        <element type="string" value="GBuffer"/>
+      </property>
+      <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+      <property id="TextureOrigin" type="TextureOrigin" value="D3DPointer"/>
+    </element>
+    <element type="TextureGroupViewParams">
+      <property id="GroupPath" type="string" value="env.relighter"/>
+      <property id="DisplaySettings" type="TextureDisplaySettings">
+        <property id="IsMirrored" type="bool" value="false"/>
+        <property id="UseGamma" type="bool" value="false"/>
+        <property id="Stretch" type="bool" value="false"/>
+        <property id="MipLevel" type="float" value="0"/>
+        <property id="Scale" type="float" value="1"/>
+        <property id="ColorScale" type="vec3" value="1,1,1"/>
+        <property id="InvertColorScale" type="bool" value="false"/>
+        <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierZoom" type="float" value="0"/>
+      </property>
+      <property id="CompareStrings">
+        <element type="string" value="Relighter"/>
+      </property>
+      <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+      <property id="TextureOrigin" type="TextureOrigin" value="D3DPointer"/>
+    </element>
+    <element type="TextureGroupViewParams">
+      <property id="GroupPath" type="string" value="env.realtimespecularprobe"/>
+      <property id="DisplaySettings" type="TextureDisplaySettings">
+        <property id="IsMirrored" type="bool" value="false"/>
+        <property id="UseGamma" type="bool" value="false"/>
+        <property id="Stretch" type="bool" value="false"/>
+        <property id="MipLevel" type="float" value="0"/>
+        <property id="Scale" type="float" value="1"/>
+        <property id="ColorScale" type="vec3" value="1,1,1"/>
+        <property id="InvertColorScale" type="bool" value="false"/>
+        <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierZoom" type="float" value="0"/>
+      </property>
+      <property id="CompareStrings">
+        <element type="string" value="RealtimeSpecularProbe"/>
+      </property>
+      <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+      <property id="TextureOrigin" type="TextureOrigin" value="Any"/>
+    </element>    
+    <element type="TextureGroupViewParams">
+      <property id="GroupPath" type="string" value="car.livery"/>
+      <property id="DisplaySettings" type="TextureDisplaySettings">
+        <property id="IsMirrored" type="bool" value="false"/>
+        <property id="UseGamma" type="bool" value="false"/>
+        <property id="Stretch" type="bool" value="false"/>
+        <property id="MipLevel" type="float" value="0"/>
+        <property id="Scale" type="float" value="1"/>
+        <property id="ColorScale" type="vec3" value="1,1,1"/>
+        <property id="InvertColorScale" type="bool" value="false"/>
+        <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierZoom" type="float" value="0"/>
+      </property>
+      <property id="CompareStrings">
+        <element type="string" value="livrendertexture"/>
+      </property>
+      <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+      <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+    </element>
+    <element type="TextureGroupViewParams">
+      <property id="GroupPath" type="string" value="env.decals"/>
+      <property id="DisplaySettings" type="TextureDisplaySettings">
+        <property id="IsMirrored" type="bool" value="false"/>
+        <property id="UseGamma" type="bool" value="false"/>
+        <property id="Stretch" type="bool" value="false"/>
+        <property id="MipLevel" type="float" value="0"/>
+        <property id="Scale" type="float" value="1"/>
+        <property id="ColorScale" type="vec3" value="1,1,1"/>
+        <property id="InvertColorScale" type="bool" value="false"/>
+        <property id="ColorOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierOffset" type="vec3" value="0,0,0"/>
+        <property id="MagnifierZoom" type="float" value="0"/>
+      </property>
+      <property id="CompareStrings">
+        <element type="string" value="decalbuffer::"/>
+      </property>
+      <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+      <property id="TextureOrigin" type="TextureOrigin" value="Create"/>
+    </element>
+    
+    <element type="TextureGroupViewParams">
+        <property id="GroupPath" type="string" value="screenspace.partitions"/>
+        <property id="DisplaySettings" type="TextureDisplaySettings">
+            <property id="IsMirrored" type="bool" value="false"/>
+            <property id="UseGamma" type="bool" value="false"/>
+            <property id="Stretch" type="bool" value="false"/>
+            <property id="MipLevel" type="float" value="0"/>
+            <property id="Scale" type="float" value="1"/>
+            <property id="ColorScale" type="vec3" value="1,1,1"/>
+            <property id="InvertColorScale" type="bool" value="false"/>
+            <property id="ColorOffset" type="vec3" value="0,0,0"/>
+            <property id="MagnifierOffset" type="vec3" value="0,0,0"/>
+            <property id="MagnifierZoom" type="float" value="0"/>
+        </property>
+        <property id="CompareStrings">
+            <element type="string" value="PartitionManager::"/>
+        </property>
+        <property id="CompareMode" type="StringComparison" value="StartsWith"/>
+        <property id="TextureOrigin" type="TextureOrigin" value="Any"/>
+    </element>
+
+  </property>
+  </Data>
+</DatabaseFile>

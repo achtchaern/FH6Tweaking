@@ -1,0 +1,67 @@
+<Database>
+  <SchemaInstance Schema="RenderData_Global" Name="" />
+  <SchemaInstance Schema="RenderData_Presentation" Name="" />
+  <SchemaInstance Schema="RenderData_Custom" Name="" />
+  <File Filename="CarRendering.xml" Path="" />
+  <File Filename="CarSharedResources.xml" Path="" />
+  <File Filename="Crowd.xml" Path="" />
+  <File Filename="Cubemap.xml" Path="" />
+  <File Filename="Characters.xml" Path="" />
+  <File Filename="DeformableTerrain.xml" Path="" />
+  <File Filename="DepthOfField.xml" Path="" />
+  <File Filename="DistantTrees.xml" Path="" />
+  <File Filename="GI.xml" Path="" />
+  <File Filename="GlobalRenderPaths.xml" Path="" />
+  <File Filename="LensEffects.xml" Path="" />
+  <File Filename="Lights.xml" Path="" />
+  <File Filename="Shadows.xml" Path="" />
+  <File Filename="Megatexture.xml" Path="" />
+  <File Filename="Presentation.xml" Path="" />
+  <File Filename="FilmGrain.xml" Path="" />
+  <File Filename="Frame.xml" Path="" />
+  <File Filename="PostEffects.xml" Path="" />
+  <File Filename="MotionBlur.xml" Path="" />
+  <File Filename="ShaderSwitches.xml" Path="" />
+  <File Filename="ShaderOverrides.xml" Path="" />
+  <File Filename="Instancing.xml" Path="" />
+  <File Filename="ImageProcessor.xml" Path="" />
+  <File Filename="AssetTypes.xml" Path="" />
+  <File Filename="Particles.xml" Path="" />
+  <File Filename="GameParticlesParameters.xml" Path="" />
+  <File Filename="VolumetricFog.xml" Path="" />
+  <File Filename="GeneralScene.xml" Path=""/>
+  <File Filename="CloseContactShadows.xml" Path=""/>
+  <File Filename="TextureDebug.xml" Path=""/>
+  <File Filename="Sky.xml" Path=""/>
+  <File Filename="SmoothLOD.xml" Path=""/>
+  <File Filename="SSS.xml" Path=""/>
+  <File Filename="RenderingAPI.xml" Path="" />
+  <File Filename="ShadowMask.xml" Path="" />
+  <File Filename="DXR_HOLLAND.xml" Path="" />
+  <File Filename="DXR_T10.xml" Path="" />
+  <File Filename="ScreenSpaceIndirectLight.xml" Path="" /> 
+  <File Filename="IndirectLight.xml" Path="" />
+  <File Filename="EarlyDepthProcessor.xml" Path="" />
+  <File Filename="Mirror.xml" Path="" />
+  <File Filename="Cockpit.xml" Path="" />
+  <File Filename="Ocean.xml" Path="" />
+  <File Filename="GroundReflection.xml" Path="" />
+  <File Filename="PuddleDetector.xml" Path="" />
+  <File Filename="Settings.xml" Path="" />
+  <File Filename="ForwardPlus.xml" Path="" />
+  <File Filename="MaterialSystemUtil.xml" Path="" />
+  <File Filename="OptimisationZones.xml" Path="" />
+  <File Filename="GameDrivenEffects.xml" Path="" />
+  <File Filename="RealtimeSpecularProbe.xml" Path="" />
+  <File Filename="Partitioning.xml" Path="" />
+  <File Filename="DebugLighting.xml" Path="" />
+  <File Filename="HairScattering.xml" Path="" />
+  <File Filename="MaterialIDProperties.xml" Path="" />
+  <File Filename="OcclusionCulling.xml" Path="" />
+  <File Filename="RenderInit.xml" Path=""/>
+  <File Filename="DecalManager.xml" Path="" />
+  <File Filename="SSR_FullScreen.xml" Path="" />
+  <File Filename="FPlusPlus.xml" Path="" />
+  <File Filename="HighContrastMode.xml" Path="" />
+  <File Filename="Livery.xml" Path="" />
+</Database>

@@ -1,0 +1,121 @@
+<DatabaseFile path="">
+  <Data path="DebugLighting.Params" type="DebugLightingParams">
+    <property id="InputLightnessValidationThresholds" type="ValidationThresholds">
+      <property id="VeryLow" value="0.04"/>
+      <property id="Low" value="0.08"/>
+      <property id="High" value="0.8"/>
+      <property id="VeryHigh" value="9999999"/>
+    </property>
+    <property id="InputSaturationValidationThresholds" type="ValidationThresholds">
+      <property id="VeryLow" value="-1"/>
+      <property id="Low" value="-1"/>
+      <property id="High" value="0.9"/>
+      <property id="VeryHigh" value="0.9"/>
+    </property>
+    <property id="InputRoughnessValidationThresholds" type="ValidationThresholds">
+      <property id="VeryLow" value="0.01"/>
+      <property id="Low" value="0.02"/>
+      <property id="High" value="9999999"/>
+      <property id="VeryHigh" value="9999999"/>
+    </property>
+    <property id="LODAlpha" value="0.8"/>
+    <property id="LODColours">
+      <element>
+        <property id="Red" value="1"/>
+        <property id="Green" value="0"/>
+        <property id="Blue" value="0"/>
+      </element>
+      <element>
+        <property id="Red" value="1"/>
+        <property id="Green" value="0"/>
+        <property id="Blue" value="1"/>
+      </element>
+      <element>
+        <property id="Red" value="0.8"/>
+        <property id="Green" value="0"/>
+        <property id="Blue" value="0.5"/>
+      </element>
+      <element>
+        <property id="Red" value="0.6"/>
+        <property id="Green" value="0.2"/>
+        <property id="Blue" value="1"/>
+      </element>
+      <element>
+        <property id="Red" value="0.3"/>
+        <property id="Green" value="0"/>
+        <property id="Blue" value="1"/>
+      </element>
+      <element>
+        <property id="Red" value="0"/>
+        <property id="Green" value="0"/>
+        <property id="Blue" value="0.3"/>
+      </element>
+    </property>
+    <property id="StaticProceduralLODAlpha" value="0.8"/>
+    <property id="StaticProceduralLODColours">
+      <element>
+        <property id="Red" value="0"/>
+		<property id="Green" value="0"/>		
+        <property id="Blue" value="1"/>
+      </element>
+      <element>
+        <property id="Red" value="0"/>
+		<property id="Green" value="0.6"/>
+        <property id="Blue" value="1.0"/>
+      </element>
+      <element>
+        <property id="Red" value="0"/>
+		<property id="Green" value="1"/>		
+        <property id="Blue" value="1"/>
+      </element>
+      <element>
+        <property id="Red" value="0"/>
+		<property id="Green" value="1"/>		
+        <property id="Blue" value="0.6"/>
+      </element>
+      <element>
+        <property id="Red" value="0"/>
+		<property id="Green" value="1"/>		
+        <property id="Blue" value="0.2"/>
+      </element>
+      <element>
+        <property id="Red" value="0"/>
+		<property id="Green" value="0.3"/>		
+        <property id="Blue" value="0"/>
+      </element>
+    </property>
+    <property id="DynamicProceduralLODAlpha" value="0.8"/>
+    <property id="DynamicProceduralLODColours">
+      <element>
+        <property id="Red" value="1"/>
+        <property id="Green" value="1"/>
+        <property id="Blue" value="0"/>
+      </element>
+      <element>
+        <property id="Red" value="0.8"/>
+        <property id="Green" value="1"/>
+        <property id="Blue" value="0"/>
+      </element>
+      <element>
+        <property id="Red" value="1"/>
+        <property id="Green" value="0.8"/>
+        <property id="Blue" value="0"/>
+      </element>
+      <element>
+        <property id="Red" value="0.9"/>
+        <property id="Green" value="0.4"/>
+        <property id="Blue" value="0"/>
+      </element>
+      <element>
+        <property id="Red" value="0.7"/>
+        <property id="Green" value="0.3"/>
+        <property id="Blue" value="0"/>
+      </element>
+      <element>
+        <property id="Red" value="0"/>
+        <property id="Green" value="0.3"/>
+        <property id="Blue" value="0.2"/>
+      </element>
+    </property>
+  </Data>
+</DatabaseFile>

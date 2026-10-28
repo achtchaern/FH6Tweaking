@@ -1,0 +1,18 @@
+<DatabaseFile path="">
+  <Data path="GlobalRenderPaths" type="RenderPaths">
+    <property id="Paths">
+      <element type="RenderPath">
+        <property id="Key" value="RainDropTexture"/>
+        <property id="Path" value="game:\Media\Cars\_library\Textures\raindrops\swatches\car_windshield_raindrops_nrml_14da69c8-ac5f-42ea-a0ec-389bcabd8f74.swatchbin"/>
+      </element>
+      <element type="RenderPath">
+        <property id="Key" value="SnowDropTexture"/>
+        <property id="Path" value="game:\Media\Cars\_library\Textures\raindrops\swatches\car_windshield_snowflakes_nrml_34953f95-9856-415d-bead-34fd570a78e4.swatchbin"/>
+      </element>
+      <element type="RenderPath">
+        <property id="Key" value="WaterOnLensTexture"/>
+        <property id="Path" value="game:\Media\Cars\_library\Textures\raindrops\swatches\WaterOnLens_NoiseNormalTexture_MASK_8562236b-274a-4984-977d-6eca2edb7483.swatchbin"/>
+      </element>
+    </property>
+  </Data>
+</DatabaseFile>

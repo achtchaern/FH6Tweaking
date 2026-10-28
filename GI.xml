@@ -1,0 +1,101 @@
+<DatabaseFile path="">
+    <Data path="GI.Params" type="GIParams">
+        <property id="TrackHalfLambert" value="0.2"/>
+        <property id="CarCubeMapScale" value="1"/>
+        <property id="CarFresnelScale" value="1"/>
+        <property id="CarSpecAOSelector" value="0"/>
+        <property id="CarSpecAOSelector_GIDisabled" value="0"/>
+        <property id="FoliageGIScale" value="1"/>
+        <property id="FoliageIndirectScale" value="0.5"/>
+        <property id="FoliageDirectTransmissiveScale" value="1.0"/>
+        <property id="FoliageIndirectTransmissiveScale" value="1.0"/>
+        <property id="CarSpecAOInnerAngle" value="45"/>
+        <property id="CarSpecAOOutterAngle" value="100"/>
+        <property id="CarSpecAOIntensity" value="0.9"/>
+        <property id="CarSpecAOInnerAngle_GIDisabled" value="45"/>
+        <property id="CarSpecAOOutterAngle_GIDisabled" value="100"/>
+        <property id="CarSpecAOIntensity_GIDisabled" value="1.0"/>
+        <property id="CarSpecSpecAOStepValuesMin_GIDisabled" value="0.0"/>
+        <property id="CarSpecSpecAOStepValuesMax_GIDisabled" value="1.0"/>
+        <property id="BillboardsShadowSubtract" value="12"/>
+        <property id="BillboardsIndirectBoostEnable" value="0.65"/>
+        <property id="BillboardsAnimateNormalFactor" value="1.0"/>
+        <property id="SkidAlphaScale" value="0.8"/>
+        <property id="SkidIndirectScale" value="0"/>
+        <property id="SkidLumScale" value="1.7"/>
+        <property id="SkidLumPow" value="2"/>
+        <property id="EnableBRDF" value="1"/>
+        <property id="RadianceAOInfluence" value="0"/>
+        <property id="RadianceShadowInfluence" value="0"/>
+        <property id="SpecularAOInfluence" value="0.6"/>
+        <property id="ShadowRadianceInjection" value="1"/>
+        <property id="AODirectLightRadianceScale" value="0"/>
+        <property id="SkyContributionScale" value="1"/>
+        <property id="StartDiffuseDarkeningLuminance" value="0.22"/>
+        <property id="DiffuseDarkeningLuminanceScale" value="0.1"/>
+        <property id="GIApplySSAOMinimum" value="0"/>
+        <property id="RadianceUpdateFrequency" value="1"/>
+        <property id="MaxTextureUpdatesPerFrame" value="80"/>
+        <property id="NumRadiancePasses" value="2"/>
+        <property id="ScaleInputRadiance" value="true"/>
+        <property id="MinAOCascade" value="0"/>
+        <property id="MinRadianceCascade" value="0"/>
+        <property id="UseNewEnvironmentBRDF" value="true"/>
+        <property id="UseNewAO" value="false"/>
+        <property id="IsNightShadowEmulationOverriden" value="false"/>
+        <property id="NightShadowEmulationOverride" value="0"/>
+        <property id="NightShadowEmulationPowerCurve" value="0.65"/>
+        <property id="ForwardPlusAOScale" value="1"/>
+        <property id="LightmapAOInfluence" value="1"/>
+        <property id="UseCarConvolvedCubeForGlobalAmbient" value="false"/>
+        <property id="UseGlobalConvolvedCubeForGlobalAmbient" value="false"/>
+        <property id="UseCarConvolvedCubeForFocusCar" value="false"/>
+        <property id="UseCarConvolvedCubeForFocusCarCockpit" value="true"/>
+        <property id="UseGlobalConvolvedCubeForFocusCar" value="false"/>
+        <property id="SnowReflection" value="0.12"/>
+        <property id="FoamReflection" value="0.2"/>
+        <property id="CarCapsuleLightScale" value="0.5"/>
+        <property id="MinimumVirtualRadius" value="0"/>
+        <property id="TerrainGrassParams">
+            <property id="TerrainGrassBlendNearDistance" value="0"/>
+            <property id="TerrainGrassBlendFarDistance" value="85"/>
+            <property id="TerrainGrassBlendAmount" value="1"/>
+            <property id="TerrainGrassTransmissiveMask" value="0.2"/>
+            <property id="TerrainGrassTransmissiveScale" value="10"/>
+        </property>
+        <property id="GCTransmParams">
+            <property id="TransmColorR" value="0.8"/>
+            <property id="TransmColorG" value="1"/>
+            <property id="TransmColorB" value="0.3"/>
+            <property id="FrontLobeScale" value="0.5"/>
+            <property id="FrontLobeFresnel" value="1.5"/>
+            <property id="FrontLobeFrontness" value="3.0"/>
+            <property id="BackLobeScale" value="0.0"/>
+            <property id="BackLobeFresnel" value="2"/>
+            <property id="BackLobeFrontness" value="1.2"/>
+            <property id="SkyScale" value="0.0"/>
+            <property id="SkyFuzziness" value="0.2"/>
+            <property id="SkyGIAOAmplifier" value="0.4"/>
+            <property id="TerrainNormalStartFade" value="70"/>
+            <property id="TerrainNormalEndFade" value="150"/>
+        </property>
+    </Data>
+    
+    <!-- Scenario overrides -->
+    <!-- We're setting UseCarConvolvedCubeForFocusCar to false by default, so also removing these (previously redundant) settings for now
+    <Settings path="GI.Params" tags="Scenario.Whitespace OR Scenario.Mainstage OR Scenario.PhotoMode">
+        <property id="UseCarConvolvedCubeForFocusCar" value="true"/>
+    </Settings>
+    
+    <Settings path="GI.Params" tags="Cinematic.EnableFocusCarConvolvedCubemap">
+        <property id="UseCarConvolvedCubeForFocusCar" value="true"/>
+    </Settings>
+    -->
+    
+    <Settings path="GI.Params" tags="Config.ReflectionQuality.VeryLow OR (Config.ReflectionQuality.Low AND Config.SteamDeck)">
+        <property id="UseCarConvolvedCubeForFocusCar" value="false"/>
+        <property id="UseCarConvolvedCubeForFocusCarCockpit" value="false"/>
+        <property id="UseCarConvolvedCubeForGlobalAmbient" value="false"/>
+    </Settings>
+
+</DatabaseFile>

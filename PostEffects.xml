@@ -1,0 +1,42 @@
+<DatabaseFile path="">
+    <Data path="PostEffect.Params" type="PostEffectParams">
+        <property id="QualitySettings" type="PostEffectQualitySettings">
+            <property id="FXAAEnabled" value="false"/>
+            <property id="DisplayWaterOnLens" value="true"/>
+            <property id="IncludeTransparenciesInDOF" value="true"/>
+            <property id="CustomPostEffects" type="CustomPostEffectQualitySettings">
+                <property id="Enabled" value="false"/>
+                <property id="ResolutionScale" value="0.5"/>
+            </property>
+            <property id="Tonemap" type="TonemapQualitySettings">
+                <property id="Enabled" value="true"/>
+                <property id="ExposureShiftScale" value="1.0"/>
+                <property id="MSAADownsampleTonemapMode" value="0"/>
+            </property>
+        </property>
+    </Data>
+
+    <!-- Post Effects Config Settings -->
+    <!-- (Maintaining tag typo just incase content is already setup using it) -->
+    <Settings path="PostEffect.Params" tags="Cinematic.OldDOFTranspacencyBehaviour OR Cinematic.OldDOFTransparencyBehaviour">
+        <property id="QualitySettings.IncludeTransparenciesInDOF" value="false"/>
+    </Settings>
+
+    <Settings path="PostEffect.Params" tags="Config.FXAA.On">
+        <property id="QualitySettings.FXAAEnabled" value="true"/>
+    </Settings>
+
+    <Settings path="PostEffect.Params" tags="Config.LensEffects.Off">
+        <property id="QualitySettings.DisplayWaterOnLens" value="false"/>
+    </Settings>
+
+    <!-- Post Effects Render Mode Settings -->
+
+    <Settings path="PostEffect.Params" tags="Scenario.Barnfind">
+        <property id="QualitySettings.DisplayWaterOnLens" value="false"/>
+    </Settings>
+    
+    <Settings path="PostEffect.Params" tags="Scenario.Homespace OR Scenario.CharacterFocused">
+        <property id="QualitySettings.Tonemap.MSAADownsampleTonemapMode" value="1"/> <!-- increases perceived opacity of alpha-to-coverage e.g. character hair -->
+    </Settings>
+</DatabaseFile>

@@ -1,0 +1,707 @@
+<File path="">
+  <Data path="Shadows.Params" type="ShadowManagerParameters">
+    <property id="EnableShadows" value="true" />
+    <property id="ForceInCutscene" value="false"/>
+    <property id="NewDepthBias" value="1000"/>
+    <property id="NewSlopeScaleDepthBias" value="2"/>
+    <property id="EnableMeshParticlesInShadow" value="false"/>
+    <property id="EnableGameplayNightShadows" value="false" />
+    <property id="CSM" type="ShadowManagerCSMParameters">
+      <property id="NumLevels" value="5"/>
+      <!-- Make sure there's at least the maximum number of levels here (currently 8) and use NumLevels to control the actual amounts. Do not recreate Levels elsewhere in the xml, it breaks the ordering -->
+      <property id="Levels">
+        <element>
+          <property id="Radius" value="35" />
+          <property id="BlendDistance" value="0.05" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_16Tap" />
+          <property id="PCFRotation" value="0" />
+          <property id="UseFixedDepthRange" value="false" />
+          <property id="AllowOcclusionCullingCasting" value="true" />
+          <property id="MaxDepthRange" value="10000" />
+          <property id="AlphaTestMin" value="0.25" />
+          <property id="MinTexels" value="7" />
+          <property id="JitterSteps" value="4" />
+        </element>
+        <element>
+          <property id="Radius" value="80" />
+          <property id="BlendDistance" value="0.03" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_16Tap" /> 
+          <property id="PCFRotation" value="0" />
+          <property id="UseFixedDepthRange" value="false" />
+          <property id="AllowOcclusionCullingCasting" value="true" />
+          <property id="MaxDepthRange" value="10000" />
+          <property id="AlphaTestMin" value="0.25" />
+          <property id="MinTexels" value="7" />
+          <property id="JitterSteps" value="4" />
+        </element>
+        <element>
+          <property id="Radius" value="200" />
+          <property id="BlendDistance" value="0.01" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_16Tap" /> 
+          <property id="PCFRotation" value="0" />
+          <property id="UseFixedDepthRange" value="false" />
+          <property id="AllowOcclusionCullingCasting" value="true" />
+          <property id="MaxDepthRange" value="10000" />
+          <property id="AlphaTestMin" value="0.25" />
+          <property id="MinTexels" value="7" />
+          <property id="JitterSteps" value="0" />
+        </element>
+        <element>
+          <property id="Radius" value="1000" />
+          <property id="BlendDistance" value="0.05" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_16Tap" /> 
+          <property id="PCFRotation" value="0" />
+          <property id="UseFixedDepthRange" value="false" />
+          <property id="AllowOcclusionCullingCasting" value="true" />
+          <property id="MaxDepthRange" value="10000" />
+          <property id="AlphaTestMin" value="0.05" />
+          <property id="MinTexels" value="7" />
+          <property id="JitterSteps" value="0" />
+        </element>
+        <element>
+          <property id="Radius" value="15000" />
+          <property id="BlendDistance" value="0.05" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_4Tap" /> 
+          <property id="PCFRotation" value="0" />
+          <property id="UseFixedDepthRange" value="false" />
+          <property id="AllowOcclusionCullingCasting" value="false" />
+          <property id="MaxDepthRange" value="10000" />
+          <property id="AlphaTestMin" value="0.05" />
+          <property id="MinTexels" value="7" />
+          <property id="JitterSteps" value="0" />
+          <property id="UpdateFrequency" value="16" />
+        </element>
+        <!-- Dummy levels -->
+        <element>
+          <property id="Radius" value="15000" />
+          <property id="BlendDistance" value="0.05" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_4Tap" /> 
+          <property id="PCFRotation" value="0" />
+          <property id="UseFixedDepthRange" value="false" />
+          <property id="AllowOcclusionCullingCasting" value="false" />
+          <property id="MaxDepthRange" value="10000" />
+          <property id="AlphaTestMin" value="0.05" />
+          <property id="MinTexels" value="7" />
+          <property id="JitterSteps" value="0" />
+          <property id="UpdateFrequency" value="16" />
+        </element>
+        <element>
+          <property id="Radius" value="15000" />
+          <property id="BlendDistance" value="0.05" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_4Tap" /> 
+          <property id="PCFRotation" value="0" />
+          <property id="UseFixedDepthRange" value="false" />
+          <property id="AllowOcclusionCullingCasting" value="false" />
+          <property id="MaxDepthRange" value="10000" />
+          <property id="AlphaTestMin" value="0.05" />
+          <property id="MinTexels" value="7" />
+          <property id="JitterSteps" value="0" />
+          <property id="UpdateFrequency" value="16" />
+        </element>
+        <element>
+          <property id="Radius" value="15000" />
+          <property id="BlendDistance" value="0.05" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_4Tap" /> 
+          <property id="PCFRotation" value="0" />
+          <property id="UseFixedDepthRange" value="false" />
+          <property id="AllowOcclusionCullingCasting" value="false" />
+          <property id="MaxDepthRange" value="10000" />
+          <property id="AlphaTestMin" value="0.05" />
+          <property id="MinTexels" value="7" />
+          <property id="JitterSteps" value="0" />
+          <property id="UpdateFrequency" value="16" />
+        </element>
+          
+      </property>
+      <property id="LockCascadeLayout" value="false"/>
+      <property id="EnableCSMShadows" value="true"/>
+      <property id="TexelSnappingMode" value="On"/>
+      <property id="SmoothUpdate" value="true" />
+      <property id="CSMAsync" value="true"/>
+      <property id="SplitAsync" value="true"/>
+      <property id="CSMMetresOfVisMargin" value="6"/>
+      <property id="CSMReprojectMaxDistanceThreshold" value="10"/>
+      <property id="CSMReprojectMaxRotationThreshold" value="10"/>
+      <property id="VisibilityCheckAllCSMLevels" value="false"/>
+      <property id="NumCSMsToRenderPerFrame" value="1"/>
+      <property id="NumCSMsToRenderPerFrameInCockpit" value="1"/>
+      <property id="DistanceToTriggerRender" value="5"/>
+      <property id="AngleToTriggerRender" value="0.01"/>
+      <property id="ShadowLengthToTriggerRender" value="0.2"/>
+      <property id="FrameDelayBeforeRender" value="1800"/>
+      <property id="DisablePositionChangeReRender" value="false"/>
+      <property id="EnableWind" value="true"/>
+      <property id="CockpitSpecificUpdateRateEnabled" value="true"/>
+      <property id="FreezeDelay" value="0"/>
+    </property>
+    <property id="PSSM" type="ShadowManagerPSSMParameters">
+      <property id="NumLevels" value="3"/>
+      <!-- Make sure there's at least the maximum number of levels here (currently 3) and use NumLevels to control the actual amounts. Do not recreate Levels elsewhere in the xml, it breaks the ordering -->
+      <property id="Levels">
+        <element>    
+          <property id="BlendDistance" value="0.07" />
+          <property id="ZFar" value="5" />
+          <property id="ZFarCockpit" value="1.6" />
+          <property id="ZFarCinematic" value="3" />
+          <property id="MaxDepthRange" value="200" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_16Tap" />
+          <property id="UseFixedDepthRange" value="true"/>
+        </element>    
+        <element>    
+          <property id="BlendDistance" value="0.05" />
+          <property id="ZFar" value="15" />
+          <property id="ZFarCockpit" value="15" />
+          <property id="ZFarCinematic" value="10" />
+          <property id="MaxDepthRange" value="400" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_16Tap" />
+          <property id="UseFixedDepthRange" value="true"/>
+        </element>    
+        <element>    
+          <property id="BlendDistance" value="0.05" />
+          <property id="ZFar" value="40" />
+          <property id="ZFarCockpit" value="35" />
+          <property id="ZFarCinematic" value="25" />
+          <property id="MaxDepthRange" value="600" />
+          <property id="Resolution" value="RESOLUTION_1536" />
+          <property id="Mode" value="PCF_16Tap" />
+          <property id="UseFixedDepthRange" value="true"/>
+        </element>
+      </property>
+      <property id="EnablePSSMShadows" value="true"/>
+      <property id="TexelSnappingMode" value="On"/>
+      <property id="SmoothUpdate" value="false" />
+      <property id="PSSMAsync" value="true"/>
+      <property id="PSSMMetresOfVisMargin" value="0"/>
+      <property id="PSSMFollowOffset" value="0.4"/>
+      <property id="PSSMCockpitOffset" value="-0.4"/>
+      <property id="PSSMCockpitDepthScale" value="0.1"/>
+      <property id="ReduceFocusCarLODInUpperLevels_CockpitCam" value="true"/>
+      <property id="CentreTarget" value="Default"/>
+      <property id="PSSMShadowDistanceScalar" value="1"/>
+      <property id="PSSMCachedCosAngleDiffScale" value="5"/>
+      <property id="PSSMTightenBounds" value="false" /> <!-- Experimental bounds tighening by computing orthographic bounds in light view space -->
+      <property id="FreezeDelay" value="0"/>
+      <property id="RenderCrowdInCockpit" value="false"/>
+      <property id="MaxLevelToRenderCarsInCockpit" value="1"/>
+    </property>
+    <property id="Distant" type="ShadowManagerDistantParameters">
+      <property id="Power" value="2.9999998"/>
+      <property id="Scale" value="0.8"/>
+      <property id="StartFadeIn" value="140"/>
+      <property id="EndFadeIn" value="230"/>
+    </property>
+  </Data> 
+  
+  <Data path="ForwardPlusShadows.Params" type="ForwardPlusShadowParams">
+    <property id="CanBeEnabled" value="true"/>
+    <property id="Enabled" value="false"/>
+    <property id="AsyncRenderEnabled" value="true"/>
+    <property id="AllowShadowCaching" value="false"/>
+    <property id="AllowCacheRoundRobinUpdate" value="false"/>
+    <property id="FrustumFOVScale" value="1"/>
+    <property id="FrustumDistanceScale" value="1"/>
+    <property id="GenerateMips" value="false"/>
+    
+    <!-- Max number of shadow casting F+ lights. Upper limit is 128 -->
+    <property id="MaxShadowedLights" value="4"/>
+    <!-- How many lights to update each frame based on screen coverage -->
+    <property id="MaxDynamicLightUpdates" value="4"/>
+    <!-- How many lights to update each frame based on time since last render-->
+    <property id="MaxStaticLightUpdates" value="0"/>
+    
+    <!-- Light selection priority based on distance to the camera. Normalised into a score using MaxShadowedLightDistance -->
+    <property id="DistanceSelectionWeight" value="1.0"/>
+    <property id="MaxShadowedLightDistance" value="200.0"/>
+    <!-- The priority range over which we'll fade out old shadowed lights and fade in new ones -->
+    <property id="LightSelectionFadeRange" value="0.125"/>
+    <!-- Light Selection priority based on light screen coverage -->
+    <property id="ScreenCoverageSelectionWeight" value="0.0"/>
+    <!-- Small constant priority bonus applied to selected lights to avoid small movements causing lots of rapid change in selected lights -->
+    <property id="SelectedLightPriorityBonus" value="0.0005"/>
+    <!-- Weight used to control fading of PCSS ShadowMask lights. Weight is a distance based on difference in priority between currently selected and next highest priority light -->
+    <property id="ShadowMaskPriorityFadeWeight" value="0.25"/>
+    <!-- For presets marked as high priority shadow casters we add an additional priority bonus -->
+    <property id="HighPriorityShadowCasterPriorityBonus" value="1.0"/>
+
+    <!-- PCF filtering settings -->
+    <property id="PCFParams" type="ForwardPlusShadowPCFParams">
+        <!-- Depth bias used for PCF shadow samples -->
+        <property id="Bias" value="0.00001"/>
+    </property>
+  </Data>
+
+  <!--  SETTINGS  -->
+
+
+  <Settings path="Shadows.Params" tags="Config.ShadowQuality.Off"> 
+    <!-- Disable shadows entirely for ShadowQuality.Off -->
+    <property id="EnableShadows" value="false" />
+    <property id="CSM.EnableCSMShadows" value="false" />
+    <property id="PSSM.EnablePSSMShadows" value="false" />
+  </Settings>
+  
+  <Settings path="ForwardPlusShadows.Params" tags="Config.ShadowQuality.Off"> 
+    <property id="Enabled" value="false" />
+  </Settings>
+  
+  
+  <Settings path="ForwardPlusShadows.Params" tags="(Platform.PC AND -Config.NightShadows.Off) OR Config.Scarlett30Hz">
+    <!-- Enable forward plus shadows for PC config setting -->
+    <property id="Enabled" value="true" />
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Config.ShadowQuality.Low">
+    <property id="CSM.Levels.0.Resolution" value="1024" />
+    <property id="CSM.Levels.1.Resolution" value="768" />
+    <property id="CSM.Levels.2.Resolution" value="768" />
+    <property id="CSM.Levels.3.Resolution" value="512" />
+    <property id="PSSM.Levels.0.Resolution" value="768" />
+    <property id="PSSM.Levels.1.Resolution" value="512" />
+    <property id="PSSM.Levels.2.Resolution" value="512" />
+  </Settings>
+  <Settings path="Shadows.Params" tags="Config.ShadowQuality.Low AND Config.SteamDeck">
+    <property id="CSM.NumCSMsToRenderPerFrame" value="0.5" />
+  </Settings>  
+  <Settings path="Shadows.Params" tags="Config.ShadowQuality.High">
+    <property id="CSM.Levels.0.Resolution" value="1536" />
+    <property id="CSM.Levels.1.Resolution" value="1024" />
+    <property id="CSM.Levels.2.Resolution" value="1024" />
+    <property id="CSM.Levels.3.Resolution" value="768" />
+    <property id="PSSM.Levels.0.Resolution" value="1024" />
+    <property id="PSSM.Levels.1.Resolution" value="768" />
+    <property id="PSSM.Levels.2.Resolution" value="768" />
+  </Settings> 
+  <Settings path="Shadows.Params" tags="Config.ShadowQuality.Ultra">
+    <property id="CSM.Levels.0.Resolution" value="2048" />
+    <property id="CSM.Levels.1.Resolution" value="1536" />
+    <property id="CSM.Levels.2.Resolution" value="1536" />
+    <property id="CSM.Levels.3.Resolution" value="1024" />
+    <property id="PSSM.Levels.0.Resolution" value="1536" />
+    <property id="PSSM.Levels.1.Resolution" value="1024" />
+    <property id="PSSM.Levels.2.Resolution" value="1024" />
+    <property id="EnableMeshParticlesInShadow" value="true"/>
+  </Settings>
+  <Settings path="Shadows.Params" tags="Config.Scarlett60Hz AND Platform.Anaconda">
+    <property id="CSM.Levels.0.Resolution" value="2048" />
+    <property id="CSM.Levels.1.Resolution" value="1536" />
+    <property id="CSM.Levels.2.Resolution" value="1536" />
+    <property id="CSM.Levels.3.Resolution" value="1024" />
+    <property id="PSSM.Levels.0.Resolution" value="2048" />
+    <property id="PSSM.Levels.1.Resolution" value="1536" />
+    <property id="PSSM.Levels.2.Resolution" value="1536" />
+  </Settings>
+  <Settings path="Shadows.Params" tags="Platform.Lockhart">
+    <property id="CSM.Levels.0.Resolution" value="1536" />
+    <property id="CSM.Levels.1.Resolution" value="1536" />
+    <property id="CSM.Levels.2.Resolution" value="1536" />
+    <property id="CSM.Levels.3.Resolution" value="2048" />
+    <property id="PSSM.Levels.0.Resolution" value="2048" />
+    <property id="PSSM.Levels.1.Resolution" value="1536" />
+    <property id="PSSM.Levels.2.Resolution" value="1536" />
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Config.Lockhart30Hz">
+    <property id="CSM.Levels.0.UseFoliageAlphaTestOverride" value="false" />
+    <property id="CSM.Levels.0.FoliageAlphaTestMin" value="0.6" />
+    
+    <property id="CSM.Levels.1.UseFoliageAlphaTestOverride" value="false" />
+    <property id="CSM.Levels.1.FoliageAlphaTestMin" value="0.6" />
+    
+    <property id="CSM.Levels.2.UseFoliageAlphaTestOverride" value="false" />
+    <property id="CSM.Levels.2.FoliageAlphaTestMin" value="0.43" />
+    
+    <property id="CSM.Levels.0.GenerateMips" value="true" />
+    <property id="CSM.Levels.1.GenerateMips" value="true" />
+    <property id="CSM.Levels.2.GenerateMips" value="true" />
+    <property id="CSM.Levels.3.GenerateMips" value="true" />
+    <property id="CSM.Levels.4.GenerateMips" value="true" />
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Config.Scarlett30Hz OR Config.ShadowQuality.Extreme">
+      <!-- On Scarlett30 and PC extreme we disable the cockpit specific shadow update rate to make the dynamic shadows appear smoother in the cockpit -->
+      <property id="CSM.CockpitSpecificUpdateRateEnabled" value="false"/>
+      
+      <property id="PSSM.MatchCarMainSceneLOD" value="true"/>
+  </Settings>
+
+  <Settings path="Shadows.Params" tags="(Config.Scarlett30Hz AND Platform.Anaconda) OR Config.ShadowQuality.Extreme">
+      <property id="EnableMeshParticlesInShadow" value="true"/>
+      <property id="CSM.NumLevels" value="8" />
+      
+      <property id="CSM.Levels.0.Radius" value="15" />
+      <property id="CSM.Levels.0.BlendDistance" value="0.05" />
+      <property id="CSM.Levels.0.Resolution" value="RESOLUTION_2048" />
+      <property id="CSM.Levels.0.Mode" value="PCF_16Tap" />
+      <property id="CSM.Levels.0.PCFRotation" value="0" />
+      <property id="CSM.Levels.0.UseFixedDepthRange" value="false" />
+      <property id="CSM.Levels.0.AllowOcclusionCullingCasting" value="true" />
+      <property id="CSM.Levels.0.MaxDepthRange" value="10000" />
+      <property id="CSM.Levels.0.AlphaTestMin" value="0.25" />
+      <property id="CSM.Levels.0.MinTexels" value="7" />
+      <property id="CSM.Levels.0.UpdateFrequency" value="2" />
+      <property id="CSM.Levels.0.UseFoliageAlphaTestOverride" value="false" />
+      <property id="CSM.Levels.0.FoliageAlphaTestMin" value="0.6" />
+      <property id="CSM.Levels.0.GenerateMips" value="false" />
+      <property id="CSM.Levels.0.JitterSteps" value="4" />
+
+      <property id="CSM.Levels.1.Radius" value="30" />
+      <property id="CSM.Levels.1.BlendDistance" value="0.05" />
+      <property id="CSM.Levels.1.Resolution" value="RESOLUTION_2048" />
+      <property id="CSM.Levels.1.Mode" value="PCF_16Tap" /> 
+      <property id="CSM.Levels.1.PCFRotation" value="0" />
+      <property id="CSM.Levels.1.UseFixedDepthRange" value="false" />
+      <property id="CSM.Levels.1.AllowOcclusionCullingCasting" value="true" />
+      <property id="CSM.Levels.1.MaxDepthRange" value="10000" />
+      <property id="CSM.Levels.1.AlphaTestMin" value="0.25" />
+      <property id="CSM.Levels.1.MinTexels" value="7" />
+      <property id="CSM.Levels.1.UpdateFrequency" value="2" />
+      <property id="CSM.Levels.1.UseFoliageAlphaTestOverride" value="false" />
+      <property id="CSM.Levels.1.FoliageAlphaTestMin" value="0.6" />
+      <property id="CSM.Levels.1.GenerateMips" value="false" />
+      <property id="CSM.Levels.1.JitterSteps" value="4" />
+
+      <property id="CSM.Levels.2.Radius" value="80" />
+      <property id="CSM.Levels.2.BlendDistance" value="0.03" />
+      <property id="CSM.Levels.2.Resolution" value="RESOLUTION_2048" />
+      <property id="CSM.Levels.2.Mode" value="PCF_16Tap" /> 
+      <property id="CSM.Levels.2.PCFRotation" value="0" />
+      <property id="CSM.Levels.2.UseFixedDepthRange" value="false" />
+      <property id="CSM.Levels.2.AllowOcclusionCullingCasting" value="true" />
+      <property id="CSM.Levels.2.MaxDepthRange" value="10000" />
+      <property id="CSM.Levels.2.AlphaTestMin" value="0.25" />
+      <property id="CSM.Levels.2.MinTexels" value="7" />
+      <property id="CSM.Levels.2.UpdateFrequency" value="4" />
+      <property id="CSM.Levels.2.UseFoliageAlphaTestOverride" value="false" />
+      <property id="CSM.Levels.2.FoliageAlphaTestMin" value="0.6" />
+      <property id="CSM.Levels.2.GenerateMips" value="false" />
+      <property id="CSM.Levels.2.JitterSteps" value="4" />
+          
+      <property id="CSM.Levels.3.Radius" value="160" />
+      <property id="CSM.Levels.3.BlendDistance" value="0.03" />
+      <property id="CSM.Levels.3.Resolution" value="RESOLUTION_1536" />
+      <property id="CSM.Levels.3.Mode" value="PCF_16Tap" /> 
+      <property id="CSM.Levels.3.PCFRotation" value="0" />
+      <property id="CSM.Levels.3.UseFixedDepthRange" value="false" />
+      <property id="CSM.Levels.3.AllowOcclusionCullingCasting" value="true" />
+      <property id="CSM.Levels.3.MaxDepthRange" value="10000" />
+      <property id="CSM.Levels.3.AlphaTestMin" value="0.05" />
+      <property id="CSM.Levels.3.MinTexels" value="25" />
+      <property id="CSM.Levels.3.UpdateFrequency" value="4" />
+      <property id="CSM.Levels.3.UseFoliageAlphaTestOverride" value="false" />
+      <property id="CSM.Levels.3.FoliageAlphaTestMin" value="0.43" />
+      <property id="CSM.Levels.3.GenerateMips" value="false" />
+      <property id="CSM.Levels.3.JitterSteps" value="0" />
+      
+      <property id="CSM.Levels.4.Radius" value="400" />
+      <property id="CSM.Levels.4.BlendDistance" value="0.01" />
+      <property id="CSM.Levels.4.Resolution" value="RESOLUTION_1536" />
+      <property id="CSM.Levels.4.Mode" value="PCF_16Tap" /> 
+      <property id="CSM.Levels.4.PCFRotation" value="0" />
+      <property id="CSM.Levels.4.UseFixedDepthRange" value="false" />
+      <property id="CSM.Levels.4.AllowOcclusionCullingCasting" value="true" />
+      <property id="CSM.Levels.4.MaxDepthRange" value="10000" />
+      <property id="CSM.Levels.4.AlphaTestMin" value="0.05" />
+      <property id="CSM.Levels.4.MinTexels" value="32" />
+      <property id="CSM.Levels.4.UpdateFrequency" value="8" />
+      <property id="CSM.Levels.4.GenerateMips" value="false" />
+      <property id="CSM.Levels.4.JitterSteps" value="0" />
+
+      <property id="CSM.Levels.5.Radius" value="1000" />
+      <property id="CSM.Levels.5.BlendDistance" value="0.05" />
+      <property id="CSM.Levels.5.Resolution" value="RESOLUTION_1536" />
+      <property id="CSM.Levels.5.Mode" value="PCF_16Tap" /> 
+      <property id="CSM.Levels.5.PCFRotation" value="0" />
+      <property id="CSM.Levels.5.UseFixedDepthRange" value="false" />
+      <property id="CSM.Levels.5.AllowOcclusionCullingCasting" value="true" />
+      <property id="CSM.Levels.5.MaxDepthRange" value="10000" />
+      <property id="CSM.Levels.5.AlphaTestMin" value="0.05" />
+      <property id="CSM.Levels.5.MinTexels" value="20" />
+      <property id="CSM.Levels.5.UpdateFrequency" value="8" />
+      <property id="CSM.Levels.5.GenerateMips" value="false" />
+      <property id="CSM.Levels.5.JitterSteps" value="0" />
+
+      <property id="CSM.Levels.6.Radius" value="5000" />
+      <property id="CSM.Levels.6.BlendDistance" value="0.05" />
+      <property id="CSM.Levels.6.Resolution" value="RESOLUTION_1536" />
+      <property id="CSM.Levels.6.Mode" value="PCF_16Tap" /> 
+      <property id="CSM.Levels.6.PCFRotation" value="0" />
+      <property id="CSM.Levels.6.UseFixedDepthRange" value="false" />
+      <property id="CSM.Levels.6.AllowOcclusionCullingCasting" value="false" />
+      <property id="CSM.Levels.6.MaxDepthRange" value="10000" />
+      <property id="CSM.Levels.6.AlphaTestMin" value="0.05" />
+      <property id="CSM.Levels.6.MinTexels" value="7" />
+      <property id="CSM.Levels.6.UpdateFrequency" value="16" />
+      <property id="CSM.Levels.6.GenerateMips" value="false" />
+      <property id="CSM.Levels.6.JitterSteps" value="0" />
+
+      <property id="CSM.Levels.7.Radius" value="15000" />
+      <property id="CSM.Levels.7.BlendDistance" value="0.05" />
+      <property id="CSM.Levels.7.Resolution" value="RESOLUTION_1536" />
+      <property id="CSM.Levels.7.Mode" value="PCF_4Tap" /> 
+      <property id="CSM.Levels.7.PCFRotation" value="0" />
+      <property id="CSM.Levels.7.UseFixedDepthRange" value="false" />
+      <property id="CSM.Levels.7.AllowOcclusionCullingCasting" value="false" />
+      <property id="CSM.Levels.7.MaxDepthRange" value="10000" />
+      <property id="CSM.Levels.7.AlphaTestMin" value="0.05" />
+      <property id="CSM.Levels.7.MinTexels" value="7" />
+      <property id="CSM.Levels.7.UpdateFrequency" value="16" />
+      <property id="CSM.Levels.7.GenerateMips" value="false" />
+      <property id="CSM.Levels.7.JitterSteps" value="0" />
+      
+      <property id="CSM.NumCSMsToRenderPerFrame" value="2" />
+      <property id="CSM.HighQualityWaterShadows" value="true" />
+      <property id="PSSM.Levels.0.Resolution" value="4096" />
+      <property id="PSSM.Levels.0.ZFar" value="4.0" />
+      <property id="PSSM.Levels.1.Resolution" value="2048" />
+      <property id="PSSM.Levels.2.Resolution" value="2048" />
+      <property id="PSSM.Levels.2.ZFar" value="80.0" />
+
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Config.Scarlett30Hz AND Platform.Anaconda">
+    <!-- On Scarlett we can generate mips for our shadow maps to improve PCSS performance.
+         For F+ it's about 0.24ms for all 4 lights, however, if need be we can apply it only to headlights cutting that time in half-->
+    <property id="CSM.Levels.0.GenerateMips" value="true" />
+    <property id="CSM.Levels.1.GenerateMips" value="true" />
+    <property id="CSM.Levels.2.GenerateMips" value="true" />
+    <property id="CSM.Levels.3.GenerateMips" value="true" />
+    <property id="CSM.Levels.4.GenerateMips" value="true" />
+    <property id="CSM.Levels.5.GenerateMips" value="true" />
+    <property id="CSM.Levels.6.GenerateMips" value="true" />
+    <property id="CSM.Levels.7.GenerateMips" value="true" />
+  </Settings>
+
+  <Settings path="Shadows.Params" tags="Config.Anaconda30Hz OR Config.ShadowQuality.Extreme">
+    <property id="CSM.Levels.0.MinTexels" value="7" />
+    <property id="CSM.Levels.1.MinTexels" value="7" />
+    <property id="CSM.Levels.2.MinTexels" value="7" />
+    <property id="CSM.Levels.3.MinTexels" value="7" />
+    <property id="CSM.Levels.4.MinTexels" value="7" />
+    <property id="CSM.Levels.5.MinTexels" value="7" />
+    <property id="CSM.Levels.6.MinTexels" value="7" />
+    <property id="CSM.Levels.7.MinTexels" value="7" />
+  </Settings>
+
+  <Settings path="Shadows.Params" tags="Largeshot.Accumulating">
+    <property id="CSM.Levels.0.JitterSteps" value="32" />
+    <property id="CSM.Levels.1.JitterSteps" value="16" />
+    <property id="CSM.Levels.2.JitterSteps" value="16" />
+    <property id="CSM.Levels.3.JitterSteps" value="8" />
+    <property id="CSM.Levels.4.JitterSteps" value="8" />
+    <property id="CSM.Levels.5.JitterSteps" value="4" />
+    <property id="CSM.Levels.6.JitterSteps" value="4" />
+    <property id="CSM.Levels.7.JitterSteps" value="4" />
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Platform.Lockhart OR Config.Scarlett60Hz">
+        <property id="PSSM.Levels.2.ZFar" value="60.0" />
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Config.ShadowQuality.Extreme">
+      <!--  -->
+      <property id="CSM.NumCSMsToRenderPerFrame" value="1" />
+      <property id="PSSM.RenderCrowdInCockpit" value="true" />
+      <property id="PSSM.MaxLevelToRenderCarsInCockpit" value="10000" />
+  </Settings>
+
+  <!-- Scenario overrides -->
+  <Settings path="Shadows.Params" tags="Scenario.Barnfind">
+    <property id="PSSM.PSSMShadowDistanceScalar" value="2.5" />
+    <property id="CSM.Levels.0.Radius" value="20" />
+    <property id="CSM.Levels.1.Radius" value="20" />
+    <property id="CSM.Levels.2.Radius" value="100" />
+    <property id="CSM.Levels.3.Radius" value="300" />
+    <property id="PSSM.Levels.0.MaxDepthRange" value="20" />
+    <property id="PSSM.Levels.1.MaxDepthRange" value="20" />
+    <property id="PSSM.Levels.2.MaxDepthRange" value="20" />
+    <property id="PSSM.Levels.0.ZFarCinematic" value="5" />
+    <property id="PSSM.Levels.1.ZFarCinematic" value="10" />
+    <property id="PSSM.Levels.2.ZFarCinematic" value="15" />
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Scenario.PlayerHouse">
+    <property id="CSM.Levels.0.Radius" value="8" />
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Scenario.PlayerHouse AND -((Config.Scarlett30Hz AND Platform.Anaconda) OR Config.ShadowQuality.Extreme)">
+    <property id="CSM.Levels.1.Radius" value="30" />
+    <property id="CSM.Levels.2.Radius" value="100" />
+    <property id="CSM.Levels.3.Radius" value="400" />
+  </Settings>
+  
+  <!-- TODO  Need to consider the Scenario overrides from above -->
+  <Settings path="Shadows.Params" tags="-Test.DisableNightShadows AND -HighContrastMode.Enabled AND (Config.Scarlett30Hz OR Config.NightShadows.Extreme) AND (Time.Night AND -Time.ForwardPlusForced)">
+    <property id="EnableGameplayNightShadows" value="true" />
+    <property id="PSSM.EnablePSSMShadows" value="false" />
+    <property id="CSM.NumCSMsToRenderPerFrame" value="1"/>
+    <property id="CSM.NumCSMsToRenderPerFrameInCockpit" value="1"/>
+    <property id="CSM.NumLevels" value="4"/>
+
+    <property id="CSM.Levels.0.Radius" value="20" />
+    <property id="CSM.Levels.0.BlendDistance" value="0.05" />
+    <property id="CSM.Levels.0.Resolution" value="RESOLUTION_1024" />
+    <property id="CSM.Levels.0.Mode" value="PCF_4Tap" />
+    <property id="CSM.Levels.0.PCFRotation" value="0" />
+    <property id="CSM.Levels.0.UseFixedDepthRange" value="false" />
+    <property id="CSM.Levels.0.AllowOcclusionCullingCasting" value="true" />
+    <property id="CSM.Levels.0.MaxDepthRange" value="10000" />
+    <property id="CSM.Levels.0.AlphaTestMin" value="0.25" />
+    <property id="CSM.Levels.0.MinTexels" value="7" />
+    <property id="CSM.Levels.0.UpdateFrequency" value="3" />
+    <property id="CSM.Levels.0.UseFoliageAlphaTestOverride" value="false" />
+    <property id="CSM.Levels.0.FoliageAlphaTestMin" value="0.6" />
+    <property id="CSM.Levels.0.GenerateMips" value="false" />
+
+    <property id="CSM.Levels.1.Radius" value="40" />
+    <property id="CSM.Levels.1.BlendDistance" value="0.05" />
+    <property id="CSM.Levels.1.Resolution" value="RESOLUTION_512" />
+    <property id="CSM.Levels.1.Mode" value="PCF_4Tap" />
+    <property id="CSM.Levels.1.PCFRotation" value="0" />
+    <property id="CSM.Levels.1.UseFixedDepthRange" value="false" />
+    <property id="CSM.Levels.1.AllowOcclusionCullingCasting" value="true" />
+    <property id="CSM.Levels.1.MaxDepthRange" value="10000" />
+    <property id="CSM.Levels.1.AlphaTestMin" value="0.25" />
+    <property id="CSM.Levels.1.MinTexels" value="7" />
+    <property id="CSM.Levels.1.UpdateFrequency" value="3" />
+    <property id="CSM.Levels.1.UseFoliageAlphaTestOverride" value="false" />
+    <property id="CSM.Levels.1.FoliageAlphaTestMin" value="0.6" />
+    <property id="CSM.Levels.1.GenerateMips" value="false" />
+
+    <property id="CSM.Levels.2.Radius" value="100" />
+    <property id="CSM.Levels.2.BlendDistance" value="0.05" />
+    <property id="CSM.Levels.2.Resolution" value="RESOLUTION_512" />
+    <property id="CSM.Levels.2.Mode" value="PCF_4Tap" /> 
+    <property id="CSM.Levels.2.PCFRotation" value="0" />
+    <property id="CSM.Levels.2.UseFixedDepthRange" value="false" />
+    <property id="CSM.Levels.2.AllowOcclusionCullingCasting" value="true" />
+    <property id="CSM.Levels.2.MaxDepthRange" value="10000" />
+    <property id="CSM.Levels.2.AlphaTestMin" value="0.25" />
+    <property id="CSM.Levels.2.MinTexels" value="14" />
+    <property id="CSM.Levels.2.UpdateFrequency" value="3" />
+    <property id="CSM.Levels.2.UseFoliageAlphaTestOverride" value="false" />
+    <property id="CSM.Levels.2.FoliageAlphaTestMin" value="0.6" />
+    <property id="CSM.Levels.2.GenerateMips" value="false" />
+
+    <property id="CSM.Levels.3.Radius" value="400" />
+    <property id="CSM.Levels.3.BlendDistance" value="0.01" />
+    <property id="CSM.Levels.3.Resolution" value="RESOLUTION_512" />
+    <property id="CSM.Levels.3.Mode" value="PCF_4Tap" /> 
+    <property id="CSM.Levels.3.PCFRotation" value="0" />
+    <property id="CSM.Levels.3.UseFixedDepthRange" value="false" />
+    <property id="CSM.Levels.3.AllowOcclusionCullingCasting" value="true" />
+    <property id="CSM.Levels.3.MaxDepthRange" value="10000" />
+    <property id="CSM.Levels.3.AlphaTestMin" value="0.05" />
+    <property id="CSM.Levels.3.MinTexels" value="24" />
+    <property id="CSM.Levels.3.UpdateFrequency" value="8" />
+    <property id="CSM.Levels.3.GenerateMips" value="false" />
+  </Settings>
+
+  <Settings path="Shadows.Params" tags="(Config.Anaconda30Hz OR Config.NightShadows.Extreme) AND Time.Night">
+    <!-- enable car moon shadows for night -->
+    <property id="PSSM.EnablePSSMShadows" value="true" />
+  </Settings>
+
+  <Settings path="Shadows.Params" tags="Scenario.Whitespace">
+    <!-- Disable csms for Whitespace -->
+    <property id="CSM.EnableCSMShadows" value="false" />
+  </Settings>
+     
+  <Settings path="Shadows.Params" tags="Scenario.PlayerHouse">
+      <property id="PSSM.CentreTarget" value="Car" />
+      <!-- We pause the cube in player home so we can reduce radius for a more accurate shadow result -->
+      <property id="CSM.CubemapFoliageSampleRadius" value="0.1" />
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Scenario.CharacterFocused OR Cinematic.PSSMCharacterFocused">
+      <property id="PSSM.CentreTarget" value="Character" />
+      <property id="PSSM.AABBTargetRadiusMultiplier" value="5.0" />
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="(Scenario.Homespace AND -Scenario.PlayerHouse) OR Scenario.AutoVistaPhotoMode">
+       <!-- Homespace specific settings -->
+      <property id="CSM.EnableCSMShadows" value="false" />
+      <property id="CSM.DisablePositionChangeReRender" value="true"/>
+      <property id="PSSM.EnablePSSMShadows" value="false" />
+  </Settings>
+  
+  <Settings path="ForwardPlusShadows.Params" tags="Scenario.Homespace AND -Scenario.CharacterCustomizer">
+      <property id="Enabled" value="false" />
+  </Settings>
+      
+    <!-- Save memory when thumbnail simulation is active: thumbnail rendering doesn't require shadows -->
+  <Settings path="Shadows.Params" tags="Presentation.MinimalMemorySettings">
+    <property id="EnableShadows" value="false" />
+    <property id="CSM.EnableCSMShadows" value="false" />
+    <property id="PSSM.EnablePSSMShadows" value="false" />
+  </Settings>
+  
+  <Settings path="ForwardPlusShadows.Params" tags="Presentation.MinimalMemorySettings">
+      <property id="Enabled" value="false" />
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Scenario.DisableShadows">
+    <property id="EnableShadows" value="false" />
+    <property id="PSSM.EnablePSSMShadows" value="false" />
+    <property id="CSM.EnableCSMShadows" value="false" />
+    <property id="CSM.NumCSMsToRenderPerFrame" value="0" />
+  </Settings>
+
+  <Settings path="Shadows.Params" tags="Scenario.LockShadowCascades">
+    <property id="CSM.LockCascadeLayout" value="true" />
+  </Settings>
+
+  <Settings path="Shadows.Params" tags="HighContrastMode.Enabled">
+    <property id="EnableCloudShadow" value="false" />
+  </Settings>
+
+  <Settings path="Shadows.Params" tags="Cinematic.PauseCSMShadowUpdate" >
+    <property id="CSM.FreezeDelay" value="20"/>
+  </Settings>
+    
+  <Settings path="Shadows.Params" tags="Cinematic.PausePSSMShadowUpdate" >
+    <property id="PSSM.FreezeDelay" value="5"/>
+  </Settings>
+
+  <Settings path="Shadows.Params" tags="Cinematic.DisableTexelSnapping" >
+    <property id="PSSM.TexelSnappingMode" value="Off"/>
+  </Settings>
+  
+  <Settings path="Shadows.Params" tags="Cinematic.PSSMDynamicDepthRange" >
+    <property id="PSSM.Levels.0.UseFixedDepthRange" value="false" />
+    <property id="PSSM.Levels.1.UseFixedDepthRange" value="false" />
+    <property id="PSSM.Levels.2.UseFixedDepthRange" value="false" />
+  </Settings>
+  
+  <Settings path="ForwardPlusShadows.Params" tags="Shadows.DisableShadows">
+      <property id="Enabled" value="false" />
+  </Settings>
+
+  <Data path="TopDownShadowMap.Parameters" type="TopDownShadowMapParameters">
+    <property id="Enabled" value="true" />
+    <property id="AsyncRenderEnabled" value="true" />
+    <property id="TextureResolution" value="512" />
+    <property id="AreaCoveredSize" value="50" />
+    <property id="HeightOffset" value="600" />  
+  </Data> 
+
+  <Settings path="TopDownShadowMap.Parameters" tags="Config.ParticlesSettings.VeryLow OR Config.ParticlesSettings.Low">
+      <property id="Enabled" value="false" />
+  </Settings>
+  
+  <!-- Temporary test for top down world heightmap for partitioning tunnels -->
+  <Settings path="TopDownShadowMap.Parameters" tags="Test.TopDownShadowAsTunnelHeight">
+      <property id="TextureResolution" value="4096" />
+      <property id="AreaCoveredSize" value="4096" />
+  </Settings>
+
+</File>

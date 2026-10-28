@@ -1,0 +1,57 @@
+<DatabaseFile path="">
+    <Data path="SamplerSettings" type="SamplerSettings">
+        <property id="MipLODBias" value="0"/>
+        <property id="GlobalSamplerAnisoLevel" value="Default"/>
+        <property id="MaterialSamplerAnisoBias" value="0"/>
+        <property id="UseTAAOverrides" value="true"/> <!-- when TAA is active let it override MipLODBias -->
+    </Data>
+
+    <Data path="PixelDepthSettings" type="PixelDepthSettings">
+        <property id="TerrainSettings">
+            <property id="ZBiasGlancingAngleScale" value="5.6"/>
+            <property id="ZBiasNearPlaneDistance" value="1"/>
+            <property id="UsePixelDepthPrePass" value="true"/>
+            <property id="PixelDepthOutputEnabled" value="false"/>
+            <property id="WriteToPixelDepthID" value="true"/>
+          
+        </property>
+        <property id="RCSMSettings">
+            <property id="ZBiasGlancingAngleScale" value="3.5"/>
+            <property id="ZBiasNearPlaneDistance" value="1"/>
+            <property id="UsePixelDepthPrePass" value="false"/>
+            <property id="PixelDepthOutputEnabled" value="false"/>
+            <property id="WriteToPixelDepthID" value="true"/>
+        </property>
+    </Data>
+
+    <!-- PC settings -->
+    <!-- Aniso settings merged with ShaderQuality -->
+    <Settings path="SamplerSettings" tags="Config.ShaderQuality.Low">
+        <property id="MaterialSamplerAnisoBias" value="-1"/>
+        <property id="GlobalSamplerAnisoLevel" value="3" tags="Scenario.HighQualitySamplers"/>
+    </Settings>
+    <Settings path="SamplerSettings" tags="Config.ShaderQuality.Medium">
+        <property id="MaterialSamplerAnisoBias" value="0"/>
+        <property id="GlobalSamplerAnisoLevel" value="3" tags="Scenario.HighQualitySamplers"/>
+    </Settings>
+    <Settings path="SamplerSettings" tags="Config.ShaderQuality.High OR Config.ShaderQuality.Ultra OR Config.ShaderQuality.Extreme">
+        <property id="MaterialSamplerAnisoBias" value="2"/>
+        <property id="GlobalSamplerAnisoLevel" value="4" tags="Scenario.HighQualitySamplers"/>
+    </Settings>
+
+  <Settings path="SamplerSettings" tags="Platform.Console">
+    <property id="MaterialSamplerAnisoBias" value="2"/>
+    <property id="GlobalSamplerAnisoLevel" value="4" tags="Scenario.HighQualitySamplers"/>
+  </Settings>
+  
+    <!-- Console settings -->
+    <Settings path="PixelDepthSettings" tags="Config.ShaderQuality.Ultra OR Config.ShaderQuality.Extreme OR Config.Scarlett30Hz">
+      <property id="TerrainSettings.PixelDepthOutputEnabled" value="true"/>
+    </Settings>
+    
+    <!-- PhotoMode settings -->
+    <Settings path="SamplerSettings" tags="Scenario.PhotoMode">
+        <property id="UseTAAOverrides" value="False"/>
+        <property id="MipLODBias" value="-2"/>
+    </Settings>
+</DatabaseFile>

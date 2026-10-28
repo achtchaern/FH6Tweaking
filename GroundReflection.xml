@@ -1,0 +1,32 @@
+<DatabaseFile path="">
+  <Data path="GroundReflection.Ground" type="GroundReflectionRendererParams">
+    <property id="Enabled" value="false" />
+    <property id="Resolution" value="8" />
+    <property id="EnableBlur" value="true" />
+    <property id="RenderSky" value="true" />
+  </Data>
+  <Data path="GroundReflection.Water" type="GroundReflectionRendererParams">
+    <property id="Enabled" value="false" />
+    <property id="Resolution" value="4" />
+    <property id="EnableBlur" value="true" />
+    <property id="RenderSky" value="true" />
+  </Data>
+  <Data path="GroundReflection.WaterClipper" type="WaterClipColourResolverParams">
+    <property id="Resolution" value="4" />
+  </Data>
+
+  <Settings path="GroundReflection.Ground" tags="Scenario.PlanarReflections">
+    <property id="Enabled" value="true"/>
+    <property id="Resolution" value="2" />
+  </Settings>
+
+  <Settings path="GroundReflection.Ground" tags="Scenario.PlayerHouse OR Scenario.PlayerHousePhotoMode">
+    <property id="RenderSky" value="false" />
+  </Settings>
+
+  <!-- reduce the water reflection SSR resolution to compensate for the increased resolution -->
+  <Settings path="GroundReflection.WaterClipper" tags="Platform.Anaconda OR Platform.Lockhart">
+    <property id="Resolution" value="8" />
+  </Settings>
+
+</DatabaseFile>

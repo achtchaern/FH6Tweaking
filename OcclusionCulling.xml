@@ -1,0 +1,64 @@
+<DatabaseFile path="">
+    <Data path="OcclusionCulling.Params" type="OcclusionCullingParams">
+      <property id="Enabled" value="true" />
+      <property id="MainView" type="OcclusionCullingViewParams">
+        <property id="Enabled" value="true" />
+        <property id="DesiredWidth" value="480" />
+        <property id="DesiredHeight" value="270" />
+        <property id="TestThreshold" value="-1.0" />
+        <property id="MaxTrisToRasterizeThreshold" value="40000" />
+        <property id="MaxItemsToRasterize" value="200" />
+        <property id="MaxItemDistance" value="300.0" />
+        <property id="GlobalLookupBias" value="-0.45" />
+        <property id="ApplyBiasInViewSpace" value="true" />
+        <property id="ForceOffscreenUnoccluded" value="false" />
+      </property>
+      <property id="CSMView" type="OcclusionCullingViewParams">
+        <property id="Enabled" value="true" />
+        <property id="DesiredWidth" value="360" />
+        <property id="DesiredHeight" value="360" />
+        <property id="TestThreshold" value="-1.0" />
+        <property id="MaxTrisToRasterizeThreshold" value="40000" />
+        <property id="MaxItemsToRasterize" value="200" />
+        <property id="MaxItemDistance" value="300.0" />
+        <property id="GlobalLookupBias" value="-0.45" />
+        <property id="ApplyBiasInViewSpace" value="true" />
+        <!-- needed to stop some self occlusion issues seen in some buildings -->
+        <property id="BuildingModuleBoundsMinSideLength" value="6.850" />
+        <property id="ForceOffscreenUnoccluded" value="true" />
+      </property>
+      <property id="FocusCubeMapView" type="OcclusionCullingViewParams">
+        <property id="Enabled" value="false" />
+        <property id="DesiredWidth" value="256" />
+        <property id="DesiredHeight" value="256" />
+        <property id="TestThreshold" value="-1.0" />
+        <property id="MaxTrisToRasterizeThreshold" value="40000" />
+        <property id="MaxItemsToRasterize" value="200" />
+        <property id="MaxItemDistance" value="100.0" />
+        <property id="GlobalLookupBias" value="-0.45" />
+        <property id="ApplyBiasInViewSpace" value="true" />
+        <property id="ForceOffscreenUnoccluded" value="false" />
+      </property>
+      <property id="GlobalCubeMapView" type="OcclusionCullingViewParams">
+        <property id="Enabled" value="false" />
+        <property id="DesiredWidth" value="256" />
+        <property id="DesiredHeight" value="256" />
+        <property id="TestThreshold" value="-1.0" />
+        <property id="MaxTrisToRasterizeThreshold" value="40000" />
+        <property id="MaxItemsToRasterize" value="200" />
+        <property id="MaxItemDistance" value="100.0" />
+        <property id="GlobalLookupBias" value="-0.45" />
+        <property id="ApplyBiasInViewSpace" value="true" />
+        <property id="ForceOffscreenUnoccluded" value="false" />
+      </property>
+      <property id="UseLargestCSMSubfrustumOnly" value="true" />
+      <property id="AllowPSSMtoSampleCSMView" value="false" />
+      <property id="TestBoundsMinSideLength" value="0.1" />
+    </Data>
+
+    <!-- hack for MOC failing for specific cutscene camera cut -->
+    <Settings path="OcclusionCulling.Params" tags="Cinematic.NearOcclusionOnly">
+      <property id="MainView.MaxItemDistance" value="40"/>
+    </Settings>
+  
+</DatabaseFile>

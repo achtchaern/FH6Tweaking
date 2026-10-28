@@ -1,0 +1,8 @@
+<DatabaseFile path="">
+
+  <Data path="Particles.GameParams" type="ParticlesGameParams">
+    <property id="WaterImpact" value="Surface_Puddle_Impact" />
+    <property id="KickupsStopDelay" value="0.0" />
+  </Data>
+
+</DatabaseFile>  

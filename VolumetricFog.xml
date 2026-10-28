@@ -1,0 +1,143 @@
+<DatabaseFile path="">
+  <!-- Good quality default fog settings -->
+  <Data path="VolumetricFogParams.Params" type="VolumetricFogParams">
+    <property id="Dimensions" type="VolumetricFogDimensionsParams">
+      <property id="NumCellsX" value="160"/>
+      <property id="NumCellsY" value="96"/>
+      <property id="NumCellsZ" value="64"/>
+      <property id="DistanceScale" value="1"/>
+      <property id="ExponentialDepthScale" value="0.5"/>
+    </property>
+    <property id="Lookup" type="VolumetricFogLookupParams">
+      <property id="ClosePreviousBlend" value="0.85"/>
+      <property id="FarPreviousBlend" value="0.99"/>
+      <property id="Jitter" value="1"/>
+      <property id="Bayer" value="1"/>
+      <property id="BlurWeight" value="0.5"/>
+      <property id="MotionCorrectionStartFade" value="10"/>
+      <property id="MotionCorrectionEndFade" value="100"/>
+      <property id="ApplyMotionCorrection" value="true"/>
+      <property id="MinPSSM" value="0"/>
+      <property id="MaxPSSM" value="2"/>
+      <property id="MinCSM" value="0"/>
+      <property id="MaxCSM" value="5"/>
+      <property id="UpdateRate" value="1"/>
+      <property id="MotionCorrectionMinLuminance" value="-1.0"/>
+      <property id="MotionCorrectionMaxLuminance" value="-1.0"/>
+      <property id="InternalIntensityBoost" value="20.0"/>
+      <property id="OverrideTopDownTextureHeight" value="false"/>
+      <property id="OverrideTopDownTextureHeightMin" value="0.0"/>
+      <property id="OverrideTopDownTextureHeightMax" value="100.0"/>
+    </property>
+    <property id="Shaping" type="VolumetricFogShapingParams">
+      <property id="ShapingNoisePerlinToWorleyRatio" value="0.5"/>
+      <property id="NoiseMinMip" value="0"/>
+      <property id="NoiseMaxMip" value="20"/>
+      <property id="NoiseMinMipDistance" value="5"/>
+      <property id="NoiseMaxMipDistance" value="150"/>
+    </property> 
+    <property id="WorldLighting" type="VolumetricFogWorldLightingParams">
+      <property id="UseFoggedSunToLightFog" value="true"/>
+      <property id="UseFoggedCubeToLightFog" value="true"/>
+      <property id="UseFoggedSunForApproxLight" value="false"/>
+      <property id="SoftShadowScale" value="0"/>
+      <property id="SoftShadowMin" value="0.01"/>
+      <property id="SoftShadowMax" value="0.01"/>
+      <property id="Scale" value="1"/>
+      <property id="Smoothing" value="0.25"/>
+    </property>
+    <property id="Misc" type="VolumetricFogMiscParams">
+      <property id="ApplyAttenuationCorrection" value="true"/>
+      <property id="AttenuationStartDistance" value="0"/>
+      <property id="AttenuationEndDistance" value="50"/>
+      <property id="AttenuationStart" value="0.01"/>
+      <property id="AttenuationEnd" value="1"/>
+      <property id="MotionCorrectionScale" value="10"/>
+      <property id="GlobalFogAlphaScale" value="0"/>
+    </property>
+    <property id="Enabled" value="true"/>
+  </Data>
+
+  <!-- Good quality default fog volume settings -->
+  <Data path="VolumetricFogLocalVolumeParams.Params" type="VolumetricFogLocalVolumeParams">
+     <property id="TopDownTextureResolution" value="512"/>
+     <property id="MaxVolumes" value="1000"/>
+     <property id="MaxMaterials" value="1000"/>
+     <property id="MaxVisibleVolumes" value="1000"/>
+     <property id="ClusterWidthPow2" value="4"/>
+     <property id="ClusterHeightPow2" value="4"/>
+     <property id="ClusterDepthPow2" value="6"/>
+     <property id="MaxVolumesPerClusterPow2" value="4"/>
+  </Data>
+    
+   <!-- Screen space scattering defaults -->
+  <Data path="FogScreenSpaceScatterParams.Params" type="FogScreenSpaceScatterParams">
+    <property id="Active" value="false"/>
+    <property id="RenderLocation" value="BeforeAllParticles"/>
+    <property id="OverrideSkyCurves" value="false"/>
+    <property id="HalfRes" value="true"/>
+    <property id="TileDownsample" value="true"/>
+    <property id="TileUpsample" value="true"/>
+    <property id="TileComposite" value="true"/>
+    <property id="DefaultFOVDegrees" value="45"/>
+    <property id="ScatterScreenSize" value="0.029"/>
+    <property id="ScatterSigma" value="0.2"/>
+    <property id="BleedCorrection" value="5"/>
+    <property id="TonemapIntensity" value="10"/>
+    <property id="MinFogToScatter" value="0.2"/>
+    <property id="MaxFogToScatter" value="0.6"/>
+  </Data>
+  
+  <!-- PC off  -->
+  <Settings path="VolumetricFogParams.Params" tags="Config.VolumetricFogQuality.Off">
+    <property id="Enabled" value="false"/>
+  </Settings>
+
+   <!-- PC Low - bare minimum settings to get the fog effect and shadow volume (for particles) -->
+  <Settings path="VolumetricFogParams.Params" tags="Config.VolumetricFogQuality.Low" >  
+      <property id="Dimensions.NumCellsX" value="16"/>
+      <property id="Dimensions.NumCellsY" value="12"/>
+      <property id="Dimensions.NumCellsZ" value="12"/>
+      <property id="Lookup.MaxPSSM" value="-1"/>
+      <property id="Lookup.ClosePreviousBlend" value="0.99"/> <!-- need increased temporal reprojection to avoid flickering -->
+      <property id="Lookup.ApplyMotionCorrection" value="false"/> <!-- disable dynamic reduction of temporal reprojection -->
+  </Settings>
+  <Settings path="VolumetricFogLocalVolumeParams.Params" tags="Config.VolumetricFogQuality.Low" >
+      <property id="TopDownTextureResolution" value="64"/>
+  </Settings>
+  
+  <!-- PC Medium -->
+  <Settings path="VolumetricFogParams.Params" tags="Config.VolumetricFogQuality.Medium" >
+      <property id="Dimensions.NumCellsX" value="96"/>
+      <property id="Dimensions.NumCellsY" value="58"/>
+      <property id="Dimensions.NumCellsZ" value="44"/>
+      <property id="Lookup.MaxPSSM" value="-1"/>
+  </Settings>
+  <Settings path="VolumetricFogLocalVolumeParams.Params" tags="Config.VolumetricFogQuality.Medium" >
+      <property id="TopDownTextureResolution" value="128"/>
+  </Settings>
+  
+  <!-- PC High -->
+  <Settings path="VolumetricFogParams.Params" tags="Config.VolumetricFogQuality.High OR Config.Scarlett60Hz" >
+      <property id="Dimensions.NumCellsX" value="96"/>
+      <property id="Dimensions.NumCellsY" value="64"/>
+      <property id="Dimensions.NumCellsZ" value="48"/>
+      <property id="Lookup.MaxPSSM" value="-1"/>
+  </Settings>
+  <Settings path="VolumetricFogLocalVolumeParams.Params" tags="Config.VolumetricFogQuality.High OR Config.Scarlett60Hz" >
+      <property id="TopDownTextureResolution" value="256"/>
+  </Settings>
+  
+  <!-- PC ultra uses default settings -->
+  
+  <!-- Enable screen space scattering for 30Hz and PC Extreme  -->
+  <Settings path="FogScreenSpaceScatterParams.Params" tags="Config.VolumetricFogQuality.Extreme OR Config.Scarlett30Hz">
+    <property id="Active" value="true"/>
+  </Settings>
+  
+  <!-- Do a full update at 30Hz -->
+  <Settings path="VolumetricFogParams.Params" tags="Config.Scarlett30Hz" >
+      <property id="Lookup.UpdateRate" value="1"/>
+  </Settings>
+
+</DatabaseFile>

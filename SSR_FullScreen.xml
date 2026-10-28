@@ -1,0 +1,265 @@
+<DatabaseFile path="">
+  <Data path="SSR_FullScreen.Params" type="SSR_FullScreenParams">
+    <property id="Enabled" value="true"/>
+    <property id="Available" value="true"/>
+    <property id="MaxIterations" value="128"/>
+    <property id="TemporalReproject" value="0"/>
+    <property id="Checkerboard" value="true"/>
+    <property id="VRSIfPossible" value="true"/>
+    <property id="FullResColourBuffer" value="true"/>
+    <property id="UseForceHalfResMask" value="false"/>
+    <property id="UseSmoothReflectionNormals" value="true"/>
+    <property id="BicubicPlanarLookup" value="false"/>
+    <property id="PassBehindIfDXRActive" value="false"/>
+    <property id="Quality" value="Rough_ContactHardened"/>
+    <property id="HitThresholdDepthFactor" value="0.01"/>
+    <property id="BehindSurfaceDepthFactor" value="0.1"/>
+    <property id="HitThresholdZStep" value="0.3"/>
+    <property id="UseIncreasingZStep" value="false"/>
+    <property id="StartZStepPixels" value="1"/>
+    <property id="ZStepMultiplier" value="2"/>
+    <property id="BehindSurfaceThreshold" value="0.5"/>
+    <property id="HitThresholdConfidencePower" value="3"/>
+    <property id="UseHoodCamFallback" value="true"/>
+    <property id="StartFilterMip" value="2"/>
+    <property id="FilteredMipGaussSigma" value="10"/>
+    <property id="CarMaxRayLength" value="10"/>
+    <property id="CarRayFadePercent" value="0.9"/>
+    <property id="CompositeTransparentDepth" value="true"/>
+    <property id="UndoCompositeTransparentDepth" value="true"/>
+    <property id="UseCarDayNightScale" value="false"/>
+    <property id="BackfaceCheckDistance" value="0.03"/>
+    <property id="CarHoodReflectionOnly" value="false"/>
+    <property id="SimpleRoughness" type="SimpleRoughness">
+      <property id="RoughnessToBlurRadiusScale" value="0.75"/>
+      <property id="RoughnessToBlurRadiusPower" value="1.5"/>
+      <property id="MipLogScale" value="1"/>
+    </property>
+    <property id="ContactHardeningRoughness" type="ContactHardeningRoughness">
+      <property id="KernelWidth" value="1"/>
+      <property id="P" value="0.1"/>
+      <property id="AnisoFactor" value="1.0"/>
+    </property>     
+    <property id="Behaviours">
+      <!-- Invalid -->
+      <element type="Behaviour">
+        <property id="Bias" value="0"/>
+      </element>
+      <!-- Car -->
+      <element type="Behaviour">
+        <property id="Bias" value="0"/>
+      </element>
+      <!-- Terrain -->
+      <element type="Behaviour">
+        <property id="Bias" value="0.01"/>
+      </element>
+      <!-- Vegetation -->
+      <element type="Behaviour">
+        <property id="Bias" value="0"/>
+      </element>
+      <!-- Water -->
+      <element type="Behaviour">
+        <property id="Bias" value="0"/>
+      </element>
+      <!-- Default -->
+      <element type="Behaviour">
+        <property id="Bias" value="0"/>
+        <property id="StartFade" value="400"/>
+        <property id="EndFade" value="500"/>
+      </element>
+  </property>
+  </Data>
+        
+  <!-- Behaviour settings -->
+  <!-- Behaviours.1 = car -->
+  <!-- Behaviours.2 = terrain -->
+  <!-- Behaviours.3 = vegetation -->
+  <!-- Behaviours.4 = water -->
+  <!-- Behaviours.5 = default -->
+
+  <!-- Removing car max ray length clamp in scenarios where the car is stationary  -->
+  <Settings path="SSR_FullScreen.Params" tags="Scenario.Homespace OR Scenario.PlayerHouse OR Scenario.Mainstage OR Scenario.PhotoMode OR Scenario.AutoVistaPhotoMode OR Scenario.PlayerHousePhotoMode">
+    <property id="CarMaxRayLength" value="-1"/>
+  </Settings>
+  
+  <!-- PC: SSR is only actually off if RT reflections also off -->
+  <Settings path="SSR_FullScreen.Params" tags="Config.SSRQuality.Off AND Config.RTReflectionQuality.Off">
+    <property id="Enabled" value="false"/>
+  </Settings>
+  
+  <!-- PC quality bands -->
+  <!-- low quality -->
+  <Settings path="SSR_FullScreen.Params" tags="Config.SSRQuality.Low OR (Config.SSRQuality.Off AND (Scenario.Homespace OR Scenario.AutoVistaPhotoMode))">
+    <property id="Quality" value="Mirror"/>
+    
+    <!-- Using the force half res mask -->
+    <property id="UseForceHalfResMask" value="true"/>
+    
+    <!-- Car -->
+    <property id="CarHoodReflectionOnly" value="true"/>
+    <property id="Behaviours.1.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.1.GlossRange" value="0"/>
+    <property id="Behaviours.1.Enabled" value="true"/>
+
+    <!-- Terrain -->
+    <property id="Behaviours.2.Enabled" value="false"/>
+    
+    <!-- Water -->
+    <property id="Behaviours.4.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.4.GlossRange" value="0.2"/>
+    <property id="Behaviours.4.Enabled" value="true"/>
+    
+    <!-- Default -->
+    <property id="Behaviours.5.Enabled" value="false"/>
+  </Settings>
+  
+  <!-- medium quality or Scarlett60Hz mode -->  
+  <Settings path="SSR_FullScreen.Params" tags="Config.SSRQuality.Medium OR Config.Scarlett60Hz">
+    <property id="Quality" value="Mirror"/>
+    
+    <!-- Using the force half res mask -->
+    <property id="UseForceHalfResMask" value="true"/>
+    
+    <!-- Car -->
+    <property id="CarHoodReflectionOnly" value="true"/>
+    <property id="Behaviours.1.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.1.GlossRange" value="0"/>
+    <property id="Behaviours.1.Enabled" value="true"/>
+
+    <!-- Terrain -->
+    <property id="Behaviours.2.GlossTolerance" value="0.9"/>
+    <property id="Behaviours.2.GlossRange" value="0"/>
+    <property id="Behaviours.2.Enabled" value="true"/>
+    
+    <!-- Water -->
+    <property id="Behaviours.4.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.4.GlossRange" value="0.2"/>
+    <property id="Behaviours.4.Enabled" value="true"/>
+    
+    <!-- Default -->
+    <property id="Behaviours.5.Enabled" value="false"/>
+  </Settings>
+ 
+  
+  <!-- high quality or Lockhart30Hz mode-->
+  <Settings path="SSR_FullScreen.Params" tags="Config.SSRQuality.High OR Config.Lockhart30Hz">
+    <property id="Quality" value="Mirror"/>
+    
+    <!-- Car -->
+    <property id="UseCarDayNightScale" value="true"/>
+    <property id="Behaviours.1.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.1.GlossRange" value="0"/>
+    <property id="Behaviours.1.Enabled" value="true"/>
+
+    <!-- Terrain -->
+    <property id="Behaviours.2.GlossTolerance" value="0.9"/>
+    <property id="Behaviours.2.GlossRange" value="0"/>
+    <property id="Behaviours.2.Enabled" value="true"/>
+    
+    <!-- Water -->
+    <property id="Behaviours.4.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.4.GlossRange" value="0.2"/>
+    <property id="Behaviours.4.Enabled" value="true"/>
+    
+    <!-- Default - Skyscraper windows -->
+    <property id="Behaviours.5.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.5.GlossRange" value="0"/>
+    <property id="Behaviours.5.Enabled" value="true"/>
+  </Settings>
+
+  
+  <!-- ultra quality and settings when raytraced reflections are on -->
+  <Settings path="SSR_FullScreen.Params" tags="Config.SSRQuality.Ultra OR Config.Anaconda30Hz">
+    <property id="Quality" value="Rough_ContactHardened"/>
+    
+    <!-- Car -->
+    <property id="Behaviours.1.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.1.GlossRange" value="0"/>
+    <property id="Behaviours.1.Enabled" value="true"/>
+
+    <!-- Terrain -->
+    <property id="Behaviours.2.GlossTolerance" value="0.55"/>
+    <property id="Behaviours.2.GlossRange" value="0"/>
+    <property id="Behaviours.2.Enabled" value="true"/>
+    
+    <!-- Water -->
+    <property id="Behaviours.4.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.4.GlossRange" value="0.2"/>
+    <property id="Behaviours.4.Enabled" value="true"/>
+    
+    <!-- Default -->
+    <property id="Behaviours.5.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.5.GlossRange" value="0"/>
+    <property id="Behaviours.5.Enabled" value="true"/>
+  </Settings>
+  
+  <!-- ultra quality and settings when raytraced reflections are on -->
+  <Settings path="SSR_FullScreen.Params" tags="Config.SSRQuality.Extreme OR (Platform.PC AND -Config.RTReflectionQuality.Off)">
+    <property id="Quality" value="Rough_ContactHardened_Filtered"/>
+    
+    <!-- Car -->
+    <property id="Behaviours.1.GlossTolerance" value="0.55"/>
+    <property id="Behaviours.1.GlossRange" value="0"/>
+    <property id="Behaviours.1.Enabled" value="true"/>
+
+    <!-- Terrain -->
+    <property id="Behaviours.2.GlossTolerance" value="0.55"/>
+    <property id="Behaviours.2.GlossRange" value="0"/>
+    <property id="Behaviours.2.Enabled" value="true"/>
+    
+    <!-- Water -->
+    <property id="Behaviours.4.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.4.GlossRange" value="0.2"/>
+    <property id="Behaviours.4.Enabled" value="true"/>
+    
+    <!-- Default -->
+    <property id="Behaviours.5.GlossTolerance" value="0.95"/>
+    <property id="Behaviours.5.GlossRange" value="0"/>
+    <property id="Behaviours.5.Enabled" value="true"/>
+  </Settings>
+
+  <!-- Render Mode Settings -->
+
+  <Settings path="SSR_FullScreen.Params" tags="HighContrastMode.Enabled AND HighContrastMode.DisablePost" >
+    <property id="Enabled" value="false"/>
+  </Settings>
+  
+  <Settings path="SSR_FullScreen.Params" tags="Largeshot.ActiveAccumulating">
+    <property id="Checkerboard" value="false"/>
+  </Settings>
+
+  <Settings path="SSR_FullScreen.Params" tags="Scenario.PlanarReflections">
+    <!-- Car -->
+    <property id="Behaviours.1.GlossTolerance" value="0.8"/>
+
+    <!-- Default -->
+    <property id="Behaviours.5.GlossTolerance" value="0.47"/>
+    <property id="Behaviours.5.GlossRange" value="0"/>
+    <property id="Behaviours.5.Enabled" value="true"/>
+
+    <property id="Quality" value="Rough_ContactHardened_Filtered"/>
+    <property id="BicubicPlanarLookup" value="true"/>
+  </Settings>
+
+  <Settings path="SSR_FullScreen.Params" tags="Scenario.PlanarReflections AND (Config.Scarlett60Hz OR Config.SSRQuality.Medium OR Config.SSRQuality.Low OR Config.SSRQuality.Off)">
+    <!-- Default -->
+    <property id="Behaviours.5.PlanarOnly" value="true"/>
+  </Settings>
+
+  <Settings path="SSR_FullScreen.Params" tags="Scenario.Barnfind">
+    <!-- Default -->
+    <property id="Behaviours.5.GlossTolerance" value="0.3"/>
+    <property id="Behaviours.5.GlossRange" value="0"/>
+    <property id="Behaviours.5.Enabled" value="true"/>
+
+    <property id="Quality" value="Rough_ContactHardened_Filtered"/>
+    <property id="VRSIfPossible" value="false"/>
+  </Settings>
+
+  <!-- Make sure we turn off transparent depth composite on 60Hz as the water depth prepass is incompatible with it. This is fine as 60Hz does not have SSR on cars anyway -->
+  <Settings path="SSR_FullScreen.Params" tags="Config.Scarlett60Hz" >
+    <property id="CompositeTransparentDepth" value="false"/>
+    <property id="UndoCompositeTransparentDepth" value="false"/>
+  </Settings>
+
+</DatabaseFile>

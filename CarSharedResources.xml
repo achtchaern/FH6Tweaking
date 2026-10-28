@@ -1,0 +1,51 @@
+<!-- auto generated using get_car_shader_shared_resources.py and minSize=256 -->
+<DatabaseFile path="">
+  <Data path="CarSharedResources.Data" type="CarSharedResourcesData">
+    <property id="Textures">
+      <!-- default resources -->
+      <!-- Texture2DShaderParameter defaults expected to be overridden by materials -->
+      <element value="game:\media\_library\textures\carpacktypes\swatches\ch1_normao_diffopac_lite_562303fa-94b9-44d0-aa78-7cdd8845774c.swatchbin" />
+      <element value="game:\media\_library\textures\swatches\debug_4x4_diff_4e34db00-47b0-4149-848c-aeff1b4021e9.swatchbin" />
+      <element value="game:\media\_library\textures\swatches\defaultch1_nrml_34b98759-5371-46f7-8d59-db900a7ef1ad.swatchbin" />
+      <element value="game:\media\_library\textures\swatches\defaultch1_opac_c19ceeb7-6b14-4d13-824c-65615c5b3e42.swatchbin" />
+      <element value="game:\media\_library\textures\swatches\defaultshader_glos_3f5b86bd-eed7-4cbb-90f1-4d83df5e78ef.swatchbin" />
+      <element value="game:\media\_library\textures\swatches\defaultshader_nrml_2e0ab43d-6ac2-4cf5-84f7-4d6588b7b219.swatchbin" />
+      <element value="game:\media\_library\textures\swatches\defaultshaderb_nrml_ca108a9f-8d3c-4ce1-bea5-16ee53bf0018.swatchbin" />
+      <element value="game:\media\_library\textures\swatches\mask_default_mask_019bf07f-ebc6-45a6-b32e-3f5b09fc89f1.swatchbin" />
+      <element value="game:\media\_library\textures\swatches\uvtexture_diff_d567a233-bc1e-44f8-8497-5438dc72c7c7.swatchbin" />
+      <element value="game:\media\_library\textures\test\swatches\gradient_hramp_d3ff257c-1019-4e44-8d24-dfb509e7b576.swatchbin" />
+      <element value="game:\media\_library\textures\test\swatches\modulate_modulateblocks_dfa9a365-7017-4a76-8e72-4c06cbac86a9.swatchbin" />
+      <element value="game:\media\_library\textures\test\swatches\noise_diff_0949e05f-48ec-419f-b471-6386b54d32bd.swatchbin" />
+      <element value="game:\media\_library\textures\test\swatches\noise_mask_81c94bdf-3c4d-4251-975a-563a61dbb0d8.swatchbin" />
+      <element value="game:\media\cars\_library\textures\_fmnext\carbonfiber\twin_twill_weave\swatches\twin_twill_weave_mask_kvd6k3y.swatchbin" />
+      <element value="game:\media\cars\_library\textures\_fmnext\carbonfiber\twin_twill_weave\swatches\twin_twill_weave_normal_5eewzs7.swatchbin" />
+      <element value="game:\media\cars\_library\textures\_fmnext\genericengines\swatches\sci_engine_001_diff_c29vk74.swatchbin" />
+      <element value="game:\media\cars\_library\textures\_fmnext\tires\swatches\tread_global_srfx_3d702a98-6bf4-442a-9fa3-7aa6f87d6f29.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\orangepeel_001_nrml_85df9d41-fd3f-45d2-b2b1-25bc1804a762.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\tire_a_ow_mask_f790288a-ba30-450f-be7a-5a6efe274b13.swatchbin" />
+      <element value="game:\media\cars\_library\textures\swatches\defaultch1_glos_49f9fdc2-e399-4f2a-8ed0-9f2828075429.swatchbin" />
+      <!-- unexposed Texture2DShaderParameters -->
+      <element value="game:\media\cars\_library\textures\_fmnext\globaltexture\swatches\anisoflakesglitter_nrml_baf7b775-9f6a-436b-bc54-47194311abad.swatchbin" />
+      <element value="game:\media\cars\_library\textures\_fmnext\globaltexture\swatches\anisoflakeslarge_nrml_815eb7d4-df0f-42eb-98b7-a7784770c87d.swatchbin" />
+      <element value="game:\media\cars\_library\textures\_fmnext\globaltexture\swatches\anisoflakessmall_nrml_da570073-9d79-45a6-8732-2ff649245950.swatchbin" />
+      <element value="game:\media\cars\_library\textures\_fmnext\globaltexture\swatches\dirtpattern_mask_ia3a26y.swatchbin" />
+      <element value="game:\media\cars\_library\textures\_fmnext\globaltexture\swatches\scrapepattern_mask_1iedqyy.swatchbin" />
+      <element value="game:\media\cars\_library\textures\_fmnext\tires\swatches\tread_global_mudnrm_8371bd16-a347-4ac2-a859-25f8d959cc45.swatchbin" />
+      <element value="game:\media\cars\_library\textures\_fmnext\tires\swatches\tread_global_snwnrm_eaa2f110-87f9-4b26-8acd-f9cb34799df6.swatchbin" />
+      <element value="game:\media\cars\_library\textures\damage\swatches\dmg_glassshatter_002_mask_e2985571-79ad-4ee5-901f-2b10a3d4de7d.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\dmg_crumple_nrml_669b7e6a-6f00-463c-8c54-4e40fc8f2127.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\dmg_dirt_mask_6861317b-58df-41b6-82d2-9aca8e940961.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\dmg_glassshatter_004_mask_5e12c259-6ca7-4cdc-b1da-02e670bd3cae.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\mudfx_maskdirectional_e83f5beb-a12e-47b8-b688-7ca003d4babe.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\mudfx_masknondirectional_158452c3-7f2d-48b7-a816-b90ab8b3da9d.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\mudfx_maskwetedge_5f26a28b-e888-4403-9fea-994a5d508c68.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\mudfx_normal_05ad3cc3-e4a1-4f0b-8cac-c4cb747a87e2.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\orangepeel_001_nrml_85df9d41-fd3f-45d2-b2b1-25bc1804a762.swatchbin" />
+      <element value="game:\media\cars\_library\textures\globaltextures\swatches\rotorglow_diff_a4ec0382-4384-4e67-b4eb-8d88d86fc686.swatchbin" />
+      <element value="game:\media\cars\_library\textures\snowdlc\swatches\snowfx_diff_5b88f09e-1701-4de8-a8d7-1f17ae596367.swatchbin" />
+      <element value="game:\media\cars\_library\textures\snowdlc\swatches\snowfx_mask2_978ae781-84da-42b2-8e2a-ac70712befa2.swatchbin" />
+      <element value="game:\media\cars\_library\textures\snowdlc\swatches\snowfx_mask_2e83510b-a226-401d-b1c3-d98aaa0d6299.swatchbin" />
+      <element value="game:\media\cars\_library\textures\snowdlc\swatches\snowfx_nrml_b0199c9f-6ed2-4837-a1a6-328d962dad0a.swatchbin" />
+    </property>
+  </Data>
+</DatabaseFile>

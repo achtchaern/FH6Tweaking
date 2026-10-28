@@ -1,0 +1,5 @@
+<DatabaseFile path="">
+  <Data path="DecalManagerParams.Params" type="DecalManagerParams">
+    <property id="Enabled" value="true" type="bool"/>
+  </Data>
+</DatabaseFile>

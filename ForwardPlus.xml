@@ -1,0 +1,54 @@
+<DatabaseFile path="">
+    <Data path="ForwardPlus.Lighting" type="LightingParams">
+      <property id="StreamedLightProjectionTexturesEnabled" type="bool" value="true"/>
+    </Data>
+    <Data path="ForwardPlus.Cull" type="CullParams">
+      <property id="CullComplexLightsInCubemap" type="bool" value="false"/>
+      <property id="SimplifyImportance" type="Importance" value="None"/>
+      <property id="CullImportance" type="Importance" value="None"/>
+      
+      <property id="CubemapProjectedLightIntensityScale" type="float" value="1.0"/>
+      <property id="CubemapProjectedLightRangeScale" type="float" value="0.4"/>
+      <property id="CubemapProjectedLightConeAngleScale" type="float" value="0.4"/>
+
+      <property id="DisabledProjectedLightIntensityScale" value="0.3"/>
+      <property id="DisabledProjectedLightRangeScale" value="1"/>
+      <property id="DisabledProjectedLightConeAngleScale" value="0.8"/>
+
+        <property id="MainScene_ClusterFarDistance" type="float" value="3000.0"/>
+    </Data>
+
+    <!-- Cost is measured GPU cost of rendering 8 identical lights hitting a single surface that covers the entire screen in the given zone. 
+    Times are in ms and measured from PIX GPU time. These costs are merely a guide.-->
+    <Data path="ForwardPlus.Costs" type="FPCosts">
+      <property id="DevPointLightOuterCost" type="float" value="1.39"/>
+      <property id="DevPointLightInnerCost" type="float" value="1.23"/>
+      <property id="DevSpotLightOuterCost" type="float" value="1.39"/>
+      <property id="DevSpotLightInnerCost" type="float" value="2.19"/>
+      <property id="DevSpotLightShadowCost" type="float" value="1.23"/>
+      <property id="DevSpotLightProjCost" type="float" value="1.52"/>
+      <property id="DevLowCostColour" type="vec3" value="0.0,0.0,0.1"/>
+      <property id="DevHighCostColour" type="vec3" value="1.0,1.0,1.0"/>
+      <property id="DevFinalScale" type="float" value="0.02"/>
+    </Data>
+    
+    <!-- Per config base settings -->
+    <Settings path="ForwardPlus.Cull" tags="Config.ShaderQuality.Low OR Config.ShaderQuality.Medium">
+      <!-- Any lights of medium or below importance are simplified -->
+      <property id="SimplifyImportance" value="Medium"/>
+      <!-- Any lights of VeryLow or below importance are culled -->
+      <property id="CullImportance" value="VeryLow" />
+    </Settings>
+    
+    <Settings path="ForwardPlus.Cull" tags="Config.Lockhart60Hz OR Config.ShaderQuality.High OR Config.ShaderQuality.Ultra">
+      <!-- Any lights of medium or below importance are simplified -->
+      <property id="SimplifyImportance" value="Low"/>
+      <!-- Any lights of VeryLow or below importance are culled -->
+      <property id="CullImportance" value="VeryLow" />
+    </Settings>
+    
+    <Settings path="ForwardPlus.Lighting" tags="Config.ShaderQuality.Low OR Config.ShaderQuality.Medium">
+      <property id="StreamedLightProjectionTexturesEnabled" value="false" />
+    </Settings>
+
+</DatabaseFile>

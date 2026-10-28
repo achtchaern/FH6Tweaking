@@ -1,0 +1,48 @@
+<DatabaseFile path="">
+  <Data path="LiveryRendering.Params" type="LiveryRenderingParams">
+    <property id="PlayerCarLiveryResolution" value="2048"/>
+    <property id="OpponentCarLiveryResolution" value="1024"/>
+    <property id="PlayerCarLiveryIntermediateSSAA" value="2"/>
+    <property id="OpponentCarLiveryIntermediateSSAA" value="2"/>
+    <property id="PlayerCarLiveryIntermediateMSAA" value="1"/>
+    <property id="OpponentCarLiveryIntermediateMSAA" value="2"/>
+    <property id="LiveryHighResolutionDecals" value="true"/>
+    <property id="CompressAICarLiveries" value="false"/>
+    <property id="DisableAICarLiveryOnGlass" value="false"/>
+  </Data>
+  
+  <Settings path="LiveryRendering.Params" tags="Config.CarLOD.Low">
+    <property id="PlayerCarLiveryResolution" value="1024"/>
+    <property id="OpponentCarLiveryResolution" value="512"/>
+    <property id="PlayerCarLiveryIntermediateSSAA" value="1"/>
+    <property id="OpponentCarLiveryIntermediateSSAA" value="1"/>
+    <property id="PlayerCarLiveryIntermediateMSAA" value="1"/>
+    <property id="OpponentCarLiveryIntermediateMSAA" value="1"/>
+    <property id="LiveryHighResolutionDecals" value="false"/>
+  </Settings>
+
+  <Settings path="LiveryRendering.Params" tags="Config.CarLOD.Medium">
+    <property id="PlayerCarLiveryIntermediateSSAA" value="1"/>
+    <property id="OpponentCarLiveryIntermediateSSAA" value="1"/>
+    <property id="PlayerCarLiveryIntermediateMSAA" value="2"/>
+    <property id="OpponentCarLiveryIntermediateMSAA" value="2"/>
+    <property id="LiveryHighResolutionDecals" value="false"/>
+  </Settings>
+  
+  <Settings path="LiveryRendering.Params" tags="Config.CarLOD.High">
+    <property id="PlayerCarLiveryIntermediateSSAA" value="1"/>
+    <property id="OpponentCarLiveryIntermediateSSAA" value="2"/>
+    <property id="PlayerCarLiveryIntermediateMSAA" value="4"/>
+    <property id="OpponentCarLiveryIntermediateMSAA" value="2"/>
+    <property id="LiveryHighResolutionDecals" value="false"/>
+  </Settings>
+
+  <Settings path="LiveryRendering.Params" tags="Config.CarLOD.Ultra OR Config.Lockhart30Hz OR Config.Lockhart60Hz OR Config.Anaconda60Hz">
+
+  </Settings>
+
+  <Settings path="LiveryRendering.Params" tags="Config.CarLOD.Extreme OR Config.Anaconda30Hz">
+    <property id="PlayerCarLiveryResolution" value="4096"/>
+  </Settings>
+
+</DatabaseFile>

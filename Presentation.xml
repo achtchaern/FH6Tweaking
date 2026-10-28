@@ -1,0 +1,371 @@
+<DatabaseFile path="">
+    <Data path="Presentation.Params" type="PresentationParams">
+      <property id="MSAACategoryQualities">
+        <element>                 <!-- General -->
+            <property id="Quality" value="Full" />
+        </element>
+        <element>                 <!-- RoadAndTerrain -->
+            <property id="Quality" value="Full" />
+        </element>
+        <element>                 <!-- Foliage -->
+            <property id="Quality" value="Full" />
+        </element>
+        <element>                 <!-- Rocks -->
+            <property id="Quality" value="Full" />
+        </element>
+      </property>
+      <property id="SSRCanBeDisabled" type="bool" value="false"/>
+      <property id="AllowDelayedPresentationUpdate" type="bool" value="true"/>
+      <property id="KickOffVisibilityEarly" type="bool" value="true"/>
+      <property id="KickOffCarUpdateEarly" type="bool" value="true"/>
+      <property id="KickOffParticlesEarly" type="bool" value="true"/>
+      <property id="VisibilitySubWorkerBatchSize" value="4"/>
+      <property id="EnableTransparentZPrePass" type="bool" value="false"/>     
+      <property id="LegacyDepthResolveBehaviour" value="MaximiseSamplesOnlyWhenOutsideStorm"/>
+      <property id="SunSpecFadeOnlyIfShadowsOff" type="bool" value="true"/>
+      <property id="SunSpecFadeStartAltitude" type="float" value="-1000.0"/>
+      <property id="SunSpecFadeEndAltitude" type="float" value="-999.0"/>
+      <property id="WaterCubemapIsSkyOnly" type="bool" value="true"/>
+      <property id="InInterior" type="bool" value="false"/>
+      <property id="AllowDynamicResolution" type="bool" value="true"/>
+      <property id="AllowDynamicResolutionInCinematics" type="bool" value="true"/>
+      <property id="AllowUpscaling" type="bool" value="true"/>
+      <property id="UseRainDrops3rdPersonSettings" type="bool" value="false"/>
+      <property id="HighQualityTexturesAllowed" type="bool" value="false"/>
+      <property id="SimpleZPrepassMode" type="bool" value="false"/>
+      <property id="BentNormalOcclusion" value="1.0" />
+      <property id="UseOptimisedDayTrackShaders" value="false" />
+      <property id="RenderTrack" value="true" />
+      <property id="RenderTrackMainScene" value="true" />
+      <property id="RenderSky" value="true" />
+      <property id="RTUQualityTag" value="" />
+      <property id="AllowPermenantGSRRoutes" value="true" />
+      <property id="EnableProceduralZPrepassATC" value="false" />
+      <property id="EnableTrackTransparentRTBufferPass" value="true" />
+      <property id="ProceduralMin1AlphaTestMainScene" value="0.5" />
+      <property id="ProceduralMin2AlphaTestMainScene" value="0.5" />
+      <property id="RainEmissionScale_ExteriorDay" value="1.0" />
+      <property id="RainEmissionScale_ExteriorNight" value="1.0" />
+      <property id="RainEmissionScale_InteriorDay" value="1.0" />
+      <property id="RainEmissionScale_InteriorNight" value="1.0" />
+      <property id="WaterSplashEmissionScale_ExteriorDay" value="1.0" />
+      <property id="WaterSplashEmissionScale_ExteriorNight" value="1.0" />
+      <property id="WaterSplashEmissionScale_InteriorDay" value="1.0" />
+      <property id="WaterSplashEmissionScale_InteriorNight" value="1.0" />
+      <property id="WindIntensityScale_Trees" value="1.0" />
+      <property id="TrackGlossAANormal" value="0.0" />
+      <property id="TrackGlossAAFWDPlus" value="0.0" />
+      <property id="RoadGlossAANormal" value="0.0" />
+      <property id="RoadGlossAAFWDPlus" value="0.0" />
+      <property id="SimpleWetifyPBR_DiffuseScaleLowGloss" value="0.8" />
+      <property id="SimpleWetifyPBR_DiffuseScaleHighGloss" value="0.8" />
+      <property id="SimpleWetifyPBR_GlossScale" value="5.0" />
+      <property id="SkyRendersUnderground" value="true" />
+      <property id="SkyRenderUndergroundHorizon" value="-0.05" />
+      <property id="SkyRenderUndergroundJitter" value="0.2" />
+      <property id="DynamicEnvStreamingTexSettings" type="DynamicEnvStreamingTexSettings">
+        <property id="StreamingPoolSizeMB" value="1024" />
+        <property id="PVSTrackBudget" value="1024" />
+      </property>
+      <property id="ForceInCockpitSettings" value="false" />
+      <property id="DisableWaterOnLensEffects" value="false" />
+      <property id="DisableSkidMarks" value="false" />
+      <property id="TunnelHeightBias" value="0.0" />
+      <property id="TunnelHeightFadeRange" value="0.2" />
+      <property id="CurvatureNormalCorrecting" type="CurvatureNormalCorrecting">
+        <property id="Intensity" value="1" />
+        <property id="MinCurvature" value="0.25" />
+        <property id="MaxCurvature" value="1" />
+        <property id="Power" value="0.5" />
+      </property>
+      <property id="MegaTextureQualityLevel" value="0" />
+      <property id="MegaTextureMinimumMipLevel" value="0" />        
+      <property id="AntiFlicker" type="AntiFlickerParams">
+        <property id="BumperSlow" type="AntiFlickerParamSettings">
+          <property id="Speed" value="0"/>
+          <property id="Settings" type="AntiFlicker">
+            <property id="MinAlpha" value="1"/>
+            <property id="MinDistance" value="0"/>
+            <property id="MaxDistance" value="20"/>
+          </property>
+        </property>
+        <property id="BumperFast" type="AntiFlickerParamSettings">
+          <property id="Speed" value="20"/>
+          <property id="Settings" type="AntiFlicker">
+            <property id="MinAlpha" value="0.25"/>
+            <property id="MinDistance" value="0"/>
+            <property id="MaxDistance" value="20"/>
+          </property>
+        </property>
+      </property>       
+    </Data>
+    
+    <Data path="VisibilityCulling.Params" type="VisibilityCullingParams">
+      <property id="UseShadowOffscreenBehaviours" value="true"/>
+      <property id="UseOcclusionCullingForShadowOffscreen" value="true"/>
+      <property id="UseScreenAreaTestsForProcedurals" value ="true"/>
+      <property id="CSMTrackModelSubzonePVSUsage" value="OnlyWhenOutsideShadowVolume"/>
+      <property id="CSMProceduralSubzonePVSUsage" value="Always"/>
+      <property id="PortalParams" type="PortalParams">
+        <property id="Enabled" value="false" />
+        <property id="PortalNearBias" value="1.25" />
+        <property id="FastTest" value="false" />
+      </property>
+      <property id="ScreenAreaTests" type="ScreenAreaTests">
+        <property id="MainScene" value="200" />
+        <property id="Mirror" value="20" />
+        <property id="Cubemap" value="20" />
+        <property id="Shadow" value="100" />
+        <property id="ShadowOffscreen" value="7" />
+      </property>
+    </Data>
+
+    <!-- Main Scene -->
+    <Settings path="VisibilityCulling.Params" tags="Config.GeometryQuality.VeryLow">
+      <property id="ScreenAreaTests.MainScene" value="100" />
+    </Settings>
+    <Settings path="VisibilityCulling.Params" tags="Config.GeometryQuality.Low">
+      <property id="ScreenAreaTests.MainScene" value="140" />
+    </Settings>
+    <Settings path="VisibilityCulling.Params" tags="Config.GeometryQuality.Medium">
+      <property id="ScreenAreaTests.MainScene" value="180" />
+    </Settings>
+    <Settings path="VisibilityCulling.Params" tags="Config.Scarlett30Hz OR Config.GeometryQuality.Extreme">
+      <property id="ScreenAreaTests.MainScene" value="-1" />
+    </Settings>
+
+    <!-- Mirror -->
+    <Settings path="VisibilityCulling.Params" tags="Config.ReflectionQuality.VeryLow">
+      <property id="ScreenAreaTests.Mirror" value="5" />
+    </Settings>
+    <Settings path="VisibilityCulling.Params" tags="Config.ReflectionQuality.Low">
+      <property id="ScreenAreaTests.Mirror" value="10" />
+    </Settings>
+    <Settings path="VisibilityCulling.Params" tags="Config.ReflectionQuality.Medium">
+      <property id="ScreenAreaTests.Mirror" value="15" />
+    </Settings>
+
+    <!-- Cubemap -->
+    <Settings path="VisibilityCulling.Params" tags="Config.ReflectionQuality.VeryLow">
+      <property id="ScreenAreaTests.Cubemap" value="5" />
+    </Settings>
+    <Settings path="VisibilityCulling.Params" tags="Config.ReflectionQuality.Low">
+      <property id="ScreenAreaTests.Cubemap" value="10" />
+    </Settings>
+    <Settings path="VisibilityCulling.Params" tags="Config.ReflectionQuality.Medium">
+      <property id="ScreenAreaTests.Cubemap" value="15" />
+    </Settings>
+
+    <!-- Shadow -->
+    <Settings path="VisibilityCulling.Params" tags="Config.ShadowQuality.VeryLow">
+      <property id="ScreenAreaTests.Shadow" value="20" />
+    </Settings>
+    <Settings path="VisibilityCulling.Params" tags="Config.ShadowQuality.Low">
+      <property id="ScreenAreaTests.Shadow" value="40" />
+    </Settings>
+    <Settings path="VisibilityCulling.Params" tags="Config.ShadowQuality.Medium">
+      <property id="ScreenAreaTests.Shadow" value="60" />
+    </Settings>
+
+    
+    <Settings path="Presentation.Params" tags="Platform.Anaconda">
+      <property id="TrackGlossAANormal" value="0.0" />
+      <property id="TrackGlossAAFWDPlus" value="0.0" />
+    </Settings>
+
+    <Settings path="Presentation.Params" tags="Platform.Anaconda">
+	  <property id="HighQualityTexturesAllowed" value="true"/>
+      <property id="MegaTextureQualityLevel" value="1"/>
+	</Settings>
+    
+    <Settings path="Presentation.Params" tags="Config.Lockhart60Hz OR Config.Scarlett60Hz OR Config.GeometryQuality.Ultra">
+      <property id="WindIntensityScale_Trees" value="0.8" />
+    </Settings>
+    
+    <!-- Setup correct RenderModes -->
+    <Data path="RenderProceduralQuality.Settings" type="RenderProceduralQualitySettings">
+      <property id="DrawDistanceType" value="High"/>
+      <property id="CubemapExtraTerrainHeight" value="0.5"/>
+      <property id="DefaultDensityScale" value="1.0" />
+      <property id="DefaultLODDistanceScale" value ="1.0" />
+      <property id="TreesLODDistanceScale" value ="0.0" />
+      <property id="GrassLODDistanceScale" value ="0.0" />
+      <property id="BushLODDistanceScale" value ="0.0" />
+      <property id="CubeMinArea" value ="0.0" />
+      <property id="ShadowMinArea" value ="0.0" />
+      <property id="CrowdCull" value ="0.0" />
+      <property id="TreeLODReduction" value ="0" />
+    </Data>  
+
+    <Settings path="RenderProceduralQuality.Settings" tags="Config.GeometryQuality.VeryLow">
+      <property id="DrawDistanceType" value="Low" />
+      <property id="DefaultDensityScale" value="0.1" />
+      <property id="CrowdCull" value ="0.5" />
+      <property id="TreeLODReduction" value ="2" />
+    </Settings>
+
+    <Settings path="RenderProceduralQuality.Settings" tags="Config.GeometryQuality.Low">
+      <property id="DrawDistanceType" value="Low" />
+      <property id="DefaultDensityScale" value="0.3" />
+      <property id="CrowdCull" value ="0.5" />
+      <property id="TreeLODReduction" value ="2" />
+    </Settings>
+
+    <Settings path="RenderProceduralQuality.Settings" tags="Config.GeometryQuality.Medium">
+      <property id="DrawDistanceType" value="High" />
+      <property id="DefaultDensityScale" value="0.5" />
+      <property id="CrowdCull" value ="0.5" />
+      <property id="TreeLODReduction" value ="1" />
+    </Settings>
+
+    <Settings path="RenderProceduralQuality.Settings" tags="Config.GeometryQuality.High">
+      <property id="DrawDistanceType" value="High" />
+      <property id="DefaultDensityScale" value="0.7" />
+      <property id="CrowdCull" value ="0.25" />
+    </Settings>
+
+    <Settings path="RenderProceduralQuality.Settings" tags="Config.Lockhart60Hz">
+      <property id="DrawDistanceType" value="High" />
+      <property id="DefaultDensityScale" value="0.7" />
+      <property id="CrowdCull" value ="0.5" />
+    </Settings>
+
+   <Settings path="RenderProceduralQuality.Settings" tags="Config.Anaconda60Hz">
+      <property id="DrawDistanceType" value="VeryHigh" />
+      <property id="DefaultDensityScale" value="0.8" />
+      <property id="CrowdCull" value ="0.25" />
+    </Settings>
+    
+   <Settings path="RenderProceduralQuality.Settings" tags="Config.Lockhart30Hz OR Config.GeometryQuality.Ultra">
+      <property id="DrawDistanceType" value="Ultra" />
+      <property id="CubemapExtraTerrainHeight" value="0"/>
+   </Settings>
+    
+   <Settings path="RenderProceduralQuality.Settings" tags="Config.Anaconda30Hz OR Config.GeometryQuality.Extreme">
+      <property id="DrawDistanceType" value="Extreme" />
+      <property id="CubemapExtraTerrainHeight" value="0"/>
+    </Settings>
+	
+    <Settings path="RenderProceduralQuality.Settings" tags="Config.Scarlett60Hz AND Track.Name_HENDRIX">
+      <property id="DrawDistanceType" value="VeryHigh" />
+    </Settings>
+    
+   <Settings path="RenderProceduralQuality.Settings" tags="Config.Scarlett30Hz AND Track.Name_HENDRIX">
+      <property id="DrawDistanceType" value="Ultra" />
+      <property id="CubemapExtraTerrainHeight" value="0"/>
+    </Settings>	
+
+    <Settings path="Presentation.Params" tags="Platform.Anaconda">
+      <property id="HighQualityTexturesAllowed" value="true"/>
+      <property id="MegaTextureQualityLevel" value="1"/>
+    </Settings>
+
+    <Settings path="Presentation.Params" tags="Scenario.Whitespace OR -Perf.RenderWorld">
+      <property id="RenderTrack" value="false" />
+      <property id="RenderSky" value="false" />
+    </Settings>
+    
+    <Settings path="Presentation.Params" tags="Scenario.Homespace OR Scenario.AutoVistaPhotoMode">
+      <property id="InInterior" value="true"/>
+      <property id="AllowPermenantGSRRoutes" value="false"/>
+    </Settings>
+    
+    <Settings path="Presentation.Params" tags="Scenario.Homespace OR Largeshot.Accumulating">
+      <property id="AllowDynamicResolution" value="false"/>
+    </Settings>
+    
+    <Settings path="Presentation.Params" tags="-Scenario.Homespace AND -Scenario.PhotoMode">
+      <property id="UseRainDrops3rdPersonSettings" value="true"/>
+    </Settings>
+
+    <Settings path="Presentation.Params" tags="Scenario.Barnfind">
+      <property id="BentNormalOcclusion" value="0.35" />
+      <property id="RenderTrack" value="false" />
+      <property id="RenderSky" value="true" />
+    </Settings>
+
+    <Settings path="Presentation.Params" tags="Scenario.Map">
+      <property id="RenderTrackMainScene" value="false" />
+    </Settings>
+
+    <Settings path="Presentation.Params" tags="Config.ShaderQuality.Low OR Config.ShaderQuality.Medium">
+      <property id="UseOptimisedDayTrackShaders" value="true"/>
+    </Settings>
+
+    <Settings path="Presentation.Params" tags="Config.EnvStreamingTex.Low">
+      <property id="DynamicEnvStreamingTexSettings.StreamingPoolSizeMB" value="512" />
+      <property id="DynamicEnvStreamingTexSettings.PVSTrackBudget" value="768" />
+      <property id="MegaTextureQualityLevel" value="0"/>
+      <property id="MegaTextureMinimumMipLevel" value="1"/>
+    </Settings>
+    
+     <Settings path="Presentation.Params" tags="Config.EnvStreamingTex.Medium">
+      <property id="DynamicEnvStreamingTexSettings.StreamingPoolSizeMB" value="768" />
+      <property id="DynamicEnvStreamingTexSettings.PVSTrackBudget" value="1024" />
+      <property id="MegaTextureQualityLevel" value="0"/>
+      <property id="MegaTextureMinimumMipLevel" value="0"/>
+    </Settings>
+
+     <Settings path="Presentation.Params" tags="Config.EnvStreamingTex.High">
+      <property id="DynamicEnvStreamingTexSettings.StreamingPoolSizeMB" value="1024" />
+      <property id="DynamicEnvStreamingTexSettings.PVSTrackBudget" value="1280" />
+      <property id="MegaTextureQualityLevel" value="0"/>
+      <property id="MegaTextureMinimumMipLevel" value="0"/>
+    </Settings>
+
+    <Settings path="Presentation.Params" tags="Config.EnvStreamingTex.Ultra">
+      <property id="DynamicEnvStreamingTexSettings.StreamingPoolSizeMB" value="1792" />
+      <property id="DynamicEnvStreamingTexSettings.PVSTrackBudget" value="2048" />
+      <property id="HighQualityTexturesAllowed" value="true"/>
+      <!-- .Ultra also drops megatexture mip 0 -->
+      <property id="MegaTextureQualityLevel" value="1"/>
+      <property id="MegaTextureMinimumMipLevel" value="1"/>
+    </Settings>
+
+    <Settings path="Presentation.Params" tags="Config.EnvStreamingTex.Extreme">
+      <property id="DynamicEnvStreamingTexSettings.StreamingPoolSizeMB" value="2560" />
+      <property id="DynamicEnvStreamingTexSettings.PVSTrackBudget" value="3072" />
+      <property id="HighQualityTexturesAllowed" value="true"/>
+      <!-- .Extreme has a higher megatexture update rate (see MegaTexture.xml) -->
+      <property id="MegaTextureQualityLevel" value="1"/>
+      <property id="MegaTextureMinimumMipLevel" value="0"/>
+    </Settings>
+    
+    <Settings path="Presentation.Params" tags="Platform.Anaconda OR Platform.Lockhart OR AppCmd.ScarlettOnScorpio">
+      <property id="RTUQualityTag" value="SCARLETT"/>
+    </Settings>
+	
+	<Settings path="Presentation.Params" tags="Cinematic.DisableResScaling">
+      <property id="AllowDynamicResolutionInCinematics" value="false"/>
+    </Settings>
+
+    <Settings path="Presentation.Params" tags="Cinematic.ForceCockpitSettings">
+      <property id="ForceInCockpitSettings" value="true"/>
+    </Settings>
+
+    <Settings path="Presentation.Params" tags="Platform.Lockhart">
+      <property id="ProceduralMin2AlphaTestMainScene" value="0.4" />
+    </Settings>
+
+  <Settings path="Presentation.Params" tags="HighContrastMode.Enabled AND HighContrastMode.DisablePost">
+    <property id="DisableWaterOnLensEffects" value="true" />
+    <property id="DisableSkidMarks" value="true" />
+  </Settings>
+
+  <Settings path="Presentation.Params" tags="Scenario.Mainstage">
+    <property id="DisableWaterOnLensEffects" value="true" />
+  </Settings>
+    
+    <Settings path="VisibilityCulling.Params" tags="AppCmd.SkipScreenAreaTests">
+      <property id="ScreenAreaTests.MainScene" value="-1" />
+      <property id="ScreenAreaTests.Mirror" value="-1" />
+      <property id="ScreenAreaTests.Cubemap" value="-1" />
+      <property id="ScreenAreaTests.Shadow" value="-1" />
+      <property id="ScreenAreaTests.ShadowOffscreen" value="-1" />
+    </Settings>
+
+  <Settings path="VisibilityCulling.Params" tags="Cinematic.DisableOffscreenShadowBehaviours">
+      <property id="UseShadowOffscreenBehaviours" value="false" />
+  </Settings>
+
+</DatabaseFile>

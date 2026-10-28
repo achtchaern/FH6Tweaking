@@ -1,0 +1,136 @@
+<DatabaseFile path="">
+  <Data path="Particles.SystemParams" type="ParticlesSystemParams">
+    <property id="DefaultBanks">
+        <!--element value="Global" /--> <!-- Enable for Horizon -->
+        <element value="Global" />
+    </property>
+    <property id="AllowHomeSpaceParticles" value="false"/>
+  </Data>
+  
+  <Data path="Particles.QualitySettings" type="ParticlesQualitySettings">
+    <property id="QualityLevel" value="Medium"/>
+    <property id="Enabled" value="true"/>
+    <property id="EmissionRate" value="1"/>
+    <property id="EnvCollisionBudget" value="1.0"/>
+    <property id="PerPixelLighting" value="true"/>    
+    <property id="GpuRenderBudget" value="2.25"/>    
+    <property id="OverbudgetReductionEnabled" value="true"/>    
+    <property id="OverbudgetMargin" value="0.15"/>
+    <property id="OverbudgetReductionSpeed" value="3.0"/>    
+    <property id="OverbudgetSizeReduction" value="0.25"/>
+    <property id="OverbudgetAlphaReduction" value="0.25"/>
+    <property id="OverbudgetEmissionReduction" value="0.25"/>
+    <property id="AmbientEffectsEnabledInRace" value="true"/>
+    <property id="DiscardMip0Allowed" value="false"/>
+    <property id="EnableRenderTarget" value="false"/>
+    <property id="MaxBillboards" value="40000"/>
+    <property id="MaxRibbonParticles" value="5000"/>
+    <property id="MaxModelParticles" value="3000"/>
+    <property id="MinimumVerticalResolutionForEdgeFixRecomposition" value="0"/>
+    <property id="LowResParticlesResolutionScale" value="4.0"/>
+    <property id="LowResParticlesResolutionScaleIsDisplayRelative" value="1.0"/>
+  </Data>
+  
+  <Data path="Particles.DebugParams" type="ParticlesDebugParams">
+    <property id="TestEffectBanks">
+        <!--element value="Experimental" /--> <!-- Enable for Horizon -->
+        <element value="Debug" />
+        <element value="Experimental" />
+        <element value="Pixel_Compare" />
+    </property>
+    <property id="PixelTestTargets">
+        <element type="ParticlesPixelTestTarget">
+            <property id="Bank" value="Pixel_Compare" />
+            <property id="Domain" value="Particles" />
+        </element>
+    </property>
+    <property id="CpuWorkerBudget" value="12"/>
+    <property id="CpuCollectBudget" value="3"/>
+    <property id="CpuRenderBudget" value="1.5"/>
+    <property id="CpuCollisionBudget" value="2"/>    
+    <property id="CpuSnapToGroundBudget" value="0.8"/>  
+    <property id="CpuSnapToEnvironmentdBudget" value="0.8"/>  
+  </Data>
+  
+  <Data path="Particles.ShadowsOpacityMapParameters" type="ParticlesShadowsOpacityMapParameters">
+    <property id="Enabled" value="true"/>
+    <property id="TextureResolution" value="512"/>
+    <property id="AreaCoveredSize" value="50"/>
+    <property id="MaxDepth" value="20000"/>
+    <property id="Margin" value="0.1"/>
+    <property id="ThicknessBiasEnv" value="4,1,1"/>
+    <property id="ThicknessBiasParticles" value="12,2,0"/>
+  </Data>  
+  
+  <Settings path="Particles.QualitySettings" tags="Config.ParticlesSettings.VeryLow"> 
+    <property id="QualityLevel" value="Low"/>
+    <property id="EmissionRate" value="0.5"/>
+    <property id="PerPixelLighting" value="false"/>
+    <property id="DiscardMip0Allowed" value="true"/>
+    <property id="AmbientEffectsEnabledInRace" value="false"/>
+  </Settings>  
+
+  <Settings path="Particles.QualitySettings" tags="Config.ParticlesSettings.Low"> 
+    <property id="QualityLevel" value="Medium"/>
+    <property id="EmissionRate" value="0.5"/>
+    <property id="PerPixelLighting" value="false"/>
+    <property id="DiscardMip0Allowed" value="true"/>
+    <property id="AmbientEffectsEnabledInRace" value="false"/>
+  </Settings>  
+  
+  <Settings path="Particles.QualitySettings" tags="Config.ParticlesSettings.Medium OR Config.Lockhart60Hz OR Config.Anaconda60Hz"> 
+    <property id="QualityLevel" value="Medium"/>
+    <property id="EmissionRate" value="0.75"/>
+    <property id="PerPixelLighting" value="false"/>
+    <property id="OverbudgetMargin" value="0.1"/>
+    <property id="OverbudgetReductionSpeed" value="1.5"/>
+    <property id="OverbudgetSizeReduction" value="0.15"/>
+    <property id="DiscardMip0Allowed" value="true"/>
+    <property id="AmbientEffectsEnabledInRace" value="false"/>
+  </Settings>  
+
+  <Settings path="Particles.QualitySettings" tags="Config.ParticlesSettings.High OR Config.Lockhart30Hz"> 
+    <property id="QualityLevel" value="High"/>
+    <property id="EmissionRate" value="1"/>
+    <property id="OverbudgetMargin" value="0.05"/>
+    <property id="OverbudgetReductionSpeed" value="1.0"/>    
+    <property id="OverbudgetSizeReduction" value="0.15"/>
+    <property id="OverbudgetAlphaReduction" value="0.15"/>
+    <property id="OverbudgetEmissionReduction" value="0.15"/>
+    <property id="DiscardMip0Allowed" value="true"/>
+    <property id="MaxBillboards" value="40000"/>
+    <property id="MaxRibbonParticles" value="5000"/>
+    <property id="MaxModelParticles" value="4000"/>
+  </Settings>
+
+  <Settings path="Particles.QualitySettings" tags="Config.ParticlesSettings.Ultra OR Config.Anaconda30Hz"> 
+    <property id="QualityLevel" value="Ultra"/>
+    <property id="EmissionRate" value="1"/>
+    <property id="OverbudgetMargin" value="0.05"/>
+    <property id="OverbudgetReductionSpeed" value="1.0"/>
+    <property id="OverbudgetSizeReduction" value="0.15"/>
+    <property id="OverbudgetAlphaReduction" value="0.15"/>
+    <property id="OverbudgetEmissionReduction" value="0.15"/>
+    <property id="MaxBillboards" value="40000"/>
+    <property id="MaxRibbonParticles" value="5000"/>
+    <property id="MaxModelParticles" value="5000"/>
+  </Settings>  
+  
+  <Settings path="Particles.QualitySettings" tags="Platform.PC">
+    <property id="MinimumVerticalResolutionForEdgeFixRecomposition" value="150"/>
+  </Settings> 
+  
+  <Settings path="Particles.SystemParams" tags="Scenario.AutoVistaPhotoMode OR Scenario.Homespace OR Scenario.PlayerHouse OR Scenario.PlayerHousePhotoMode">
+    <property id="AllowHomeSpaceParticles" value="true"/>
+  </Settings>
+  
+  <Settings path="Particles.ShadowsOpacityMapParameters" tags="Config.ParticlesSettings.VeryLow OR Config.ParticlesSettings.Low or Config.ParticlesSettings.Medium OR Config.Lockhart60Hz">
+     <property id="Enabled" value="false"/>
+  </Settings>   
+  
+  <Settings path="Particles.ShadowsOpacityMapParameters" tags="Config.ParticlesSettings.Ultra OR Config.Anaconda30Hz">
+     <property id="TextureResolution" value="1024"/>
+  </Settings>  
+  
+
+</DatabaseFile>

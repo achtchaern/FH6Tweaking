@@ -1,0 +1,229 @@
+<DatabaseFile path="">
+    <Data path="CarRendering.Params" type="CarRenderingParams">
+      <property id="LocalPlayerIgnoreDrawGroupBudgets" type="bool" value="false"/>
+      <property id="DriverMainCullLOD" type="int" value="4"/>
+      <property id="DriverMirrorCullLOD" type="int" value="5"/>
+      <property id="DriverZPPCullLOD" type="int" value="2"/>
+      <property id="DriverAILODBias_HQ" type="int" value="-1"/>
+      <property id="DriverAILODBias_LQ" type="int" value="-2"/>
+      <property id="DriverCullDistance" type="float" value="50.0"/>
+      <property id="DriverCullDistanceOpenCockpit" type="float" value="100.0"/>
+      <property id="GlossScaleEnabled" type="bool" value="true"/>
+      <property id="MinGradientForGradientSpecularScales" type="float" value="0.25"/>
+      <property id="GlossScaleAmount" type="float" value="0.75"/>
+      <property id="DirectSpecKillEnabled" type="bool" value="true"/>
+      <property id="DirectSpecKillAmount" type="float" value="0.05"/>
+      <property id="WheelSAOMaxStrength" type="float" value="1.0"/>
+      <property id="AllowShadowCastingForNonPlayerCarLights" type="bool" value="false"/>
+      <property id="CullWideLights" type="bool" value="false"/>
+      <property id="DisablePlayerCarHeadlightsInCubemap" type="bool" value="true"/>
+      <property id="DisableCarDamage" type="bool" value="false"/>
+      <property id="DisableWindshieldRain" type="bool" value="false"/>
+      <property id="DisableWindshieldReflection" type="bool" value="false"/>
+      <property id="ForcePristineCar" type="bool" value="false"/>
+      <property id="FullZPrePass" type="bool" value="true"/>
+      <property id="NormaliseHeadlightShadowFadeDistance" type="bool" value="false"/>
+      <property id="HeadlightShadowFadeEnabled" type="bool" value="false"/>
+      <property id="HeadlightShadowFadeStart" type="float" value="1.0"/>
+      <property id="HeadlightShadowFadeEnd" type="float" value="1.0"/>
+      <property id="ForceMainSceneLODInShadow" type="bool" value="false"/>
+      <property id="PlayerCarAndDriverMipsDropped" type="int" value="0"/>
+      <property id="AICarAndDriverMipsDropped" type="int" value="0"/>
+      <property id="HeadlightRefractionEnabled" type="bool" value="false"/>
+      <property id="WindshieldRefractionEnabled" type="bool" value="false"/>
+      <property id="DebugLoadPlayerAsAI" type="bool" value="false"/>
+      <property id="TransparentGBufferDrawDistance" type="float" value="-1"/>
+      <property id="PlayerCarLightLayerMask" type="int" value="255"/>
+      <!-- For festival and traffic cars we disable light mask layer 2 this stops lights shining through the overpass/bridges-->
+      <property id="FestivalCarLightLayerMask" type="int" value="253"/>
+      <property id="TrafficCarLightLayerMask" type="int" value="253"/>
+      
+      <property id="DustControls" type="CarDustControls">
+        <property id="DustMaskStepMin" value="0.0"/>
+        <property id="DustMaskStepMax" value="1.0"/>
+        <property id="MaxDustThicknessPercentageFront" value="0.5"/>
+        <property id="FloatLowerVertColour" value="0.14"/>
+        <property id="FloatHigherVertColour" value="0.35"/>
+        <property id="MaxDustThicknessPercentageBottom" value="0.7"/>
+        <property id="MaxDustKickupThickness" value="0.5"/>
+        <property id="KickupDustStepMax" value="0.65"/>
+      </property>
+      
+      <property id="ShadowReprojectionScaleParams" type="CarShadowReprojectionScaleParams">
+        <property id="Enabled" value="true"/>
+        <property id="FocusCarOnly" value="true"/>
+        <property id="StartFadeSpeed" value="3"/>
+        <property id="EndFadeSpeed" value="35"/>
+        <property id="MinScale" value="0.15"/>
+      </property>
+      <property id="DropShadowRenderParams" type="DropShadowRenderParams">
+          <property id="DropShadow360DegreeMode" value="false"/>
+          <property id="DropShadowIntensityScalarWithAOVolume" value="0.8"/>
+      </property>
+
+      <property id="LODControls" type="CarLODControls">
+        <property id="ProxyFadeDistance" value="20.0"/>
+        <property id="FocusCarHighQualitySwitchDistance" value="22.5"/>
+        <property id="DitheredGhostFromLOD" value="5"/>
+        <property id="ProxyLODRenderWheelsDistance" value="100.0"/>
+        <property id="PreferredSwitchDistances">
+          <element value="0.0"/>
+          <element value="22.5"/>
+          <element value="37.5"/>
+          <element value="75.0"/>
+          <element value="112.5"/>
+          <element value="125.0"/>
+          <element value="1000.0"/> <!-- ProxyLOD distance not currently in use -->
+        </property>
+        <property id="BusyCapacityThreshold" value="25"/>
+        <property id="StandardCapacityPerLOD">
+          <element value="0"/>
+          <element value="3"/>
+          <element value="3"/>
+          <element value="3"/>
+          <element value="1000"/> <!-- We want to stop at LOD4, as the quality gets questionable at LOD5 -->
+          <element value="1000"/>
+          <element value="1000"/>
+        </property>
+        <property id="BusyCapacityPerLOD">
+          <element value="0"/>
+          <element value="2"/>
+          <element value="3"/>
+          <element value="3"/>
+          <element value="6"/>
+          <element value="1000"/> <!-- Stop at LOD5 only in busy environments, as the quality does drop a LOT here -->
+          <element value="1000"/>
+        </property>
+      </property>
+    </Data>
+    
+    <!-- Apply any camera overrides -->
+    <Settings path="CarRendering.Params" tags="Camera.IsHood">
+      <property id="ShadowReprojectionScaleParams.Enabled" value="false"/>
+    </Settings>
+
+    <!-- Setup correct RenderModes -->
+    <Settings path="CarRendering.Params" tags="Scenario.Homespace">
+      <property id="LocalPlayerIgnoreDrawGroupBudgets" value="true"/>
+    </Settings>
+    
+    <!-- Enable headlight refraction -->
+    <Settings path="CarRendering.Params" tags="Scenario.Homespace OR Scenario.PlayerHouse OR Scenario.Mainstage OR Scenario.PhotoMode OR Scenario.AutoVistaPhotoMode OR Scenario.PlayerHousePhotoMode OR Cinematic.GlassRefraction">
+      <property id="HeadlightRefractionEnabled" value="true"/>
+    </Settings>
+
+    <Settings path="CarRendering.Params" tags="Platform.Lockhart OR Scenario.PlayerHouse OR Scenario.Homespace OR Scenario.Mainstage OR Scenario.InWorldCarSelect OR Cinematic.IncreasedCarGlossKill">
+      <property id="MinGradientForGradientSpecularScales" value="0.05"/>
+      <property id="GlossScaleAmount" value="2.0"/>
+    </Settings>
+
+    <!-- ProxyLOD controls -->
+    <Data path="ProxyLOD.Params" type="ProxyLODRendererParams">
+      <property id="Enabled" value="true"/>
+      <property id="RenderMeshBudget" value="5"/>
+      <property id="GBufferResolution" value="256"/>
+      <property id="MipCount" value="4"/>
+      <property id="GenerateTrafficCars" value="true"/>
+    </Data>
+    
+    <Settings path="ProxyLOD.Params" tags="Config.CarLOD.VeryLow">
+      <property id="Enabled" value="false"/>
+    </Settings>
+
+    <Settings path="CarRendering.Params" tags="Config.Scarlett60Hz OR Config.Lockhart60Hz">
+      <property id="TransparentGBufferDrawDistance" value="10"/>
+    </Settings>
+
+    <Settings path="ProxyLOD.Params" tags="Config.CarLOD.VeryLow">
+      <property id="GBufferResolution" value="128"/>
+      <property id="MipCount" value="3"/>
+    </Settings>
+  
+    <Settings path="ProxyLOD.Params" tags="Platform.Lockhart OR Config.CarLOD.Low OR Config.CarLOD.Medium">
+      <property id="GBufferResolution" value="128"/>
+      <property id="MipCount" value="3"/>
+      <property id="GenerateTrafficCars" value="false"/>
+    </Settings>
+    
+    <Settings path="CarRendering.Params" tags="Config.Scarlett30Hz OR Config.ShadowQuality.Extreme">
+      <property id="ForceMainSceneLODInShadow" value="true"/>
+    </Settings>
+    
+    <Settings path="CarRendering.Params" tags="Config.CarLOD.VeryLow OR Config.CarLOD.Low">
+      <property id="PlayerCarAndDriverMipsDropped" value="2"/>
+      <property id="AICarAndDriverMipsDropped" value="2"/>
+    </Settings>
+    
+    <Settings path="CarRendering.Params" tags="Config.CarLOD.Medium">
+      <property id="PlayerCarAndDriverMipsDropped" value="1"/>
+      <property id="AICarAndDriverMipsDropped" value="1"/>
+    </Settings>
+    
+    <Settings path="CarRendering.Params" tags="Platform.Lockhart OR Config.CarLOD.High">
+      <property id="PlayerCarAndDriverMipsDropped" value="0"/>
+      <property id="AICarAndDriverMipsDropped" value="1"/>
+    </Settings>
+    
+    <!-- lod controls (Ultra and Extreme use default settings) -->
+    <Settings path="CarRendering.Params.LODControls" tags="Config.CarLOD.VeryLow OR Config.CarLOD.Low">
+      <property id="ProxyFadeDistance" value="0.0"/>
+      <property id="PreferredSwitchDistances.1" value="10.0"/>
+      <property id="PreferredSwitchDistances.2" value="18.0"/>
+      <property id="PreferredSwitchDistances.3" value="35.0"/>
+      <property id="PreferredSwitchDistances.4" value="55.0"/>
+      <property id="PreferredSwitchDistances.5" value="75.0"/>
+
+      <property id="BusyCapacityThreshold" value="12"/>
+      <property id="StandardCapacityPerLOD.1" value="0"/>
+      <property id="StandardCapacityPerLOD.2" value="0"/>
+      <property id="StandardCapacityPerLOD.3" value="4"/>
+      <property id="StandardCapacityPerLOD.4" value="1000"/>
+      <property id="BusyCapacityPerLOD.1" value="0"/>
+      <property id="BusyCapacityPerLOD.2" value="0"/>
+      <property id="BusyCapacityPerLOD.3" value="4"/>
+      <property id="BusyCapacityPerLOD.4" value="8"/>
+      <property id="BusyCapacityPerLOD.5" value="1000"/>
+    </Settings>
+
+    <Settings path="CarRendering.Params.LODControls" tags="Config.CarLOD.Medium">
+      <property id="ProxyFadeDistance" value="15.0"/>
+      <property id="PreferredSwitchDistances.1" value="15.0"/>
+      <property id="PreferredSwitchDistances.2" value="25.0"/>
+      <property id="PreferredSwitchDistances.3" value="50.0"/>
+      <property id="PreferredSwitchDistances.4" value="75.0"/>
+      <property id="PreferredSwitchDistances.5" value="100.0"/>
+
+      <property id="BusyCapacityThreshold" value="25"/>
+      <property id="StandardCapacityPerLOD.1" value="2"/>
+      <property id="StandardCapacityPerLOD.2" value="2"/>
+      <property id="StandardCapacityPerLOD.3" value="2"/>
+      <property id="StandardCapacityPerLOD.4" value="1000"/>
+      <property id="BusyCapacityPerLOD.1" value="1"/>
+      <property id="BusyCapacityPerLOD.2" value="2"/>
+      <property id="BusyCapacityPerLOD.3" value="2"/>
+      <property id="BusyCapacityPerLOD.4" value="10"/>
+      <property id="BusyCapacityPerLOD.5" value="1000"/>
+    </Settings>
+
+    <Settings path="CarRendering.Params.LODControls" tags="Config.CarLOD.High">
+      <property id="ProxyFadeDistance" value="20.0"/>
+      <property id="PreferredSwitchDistances.1" value="20.0"/>
+      <property id="PreferredSwitchDistances.2" value="30.0"/>
+      <property id="PreferredSwitchDistances.3" value="60.0"/>
+      <property id="PreferredSwitchDistances.4" value="100.0"/>
+      <property id="PreferredSwitchDistances.5" value="120.0"/>
+    </Settings>
+
+    <Settings path="CarRendering.Params" tags="HighContrastMode.Enabled AND HighContrastMode.SimpleCars">
+      <property id="DisableCarDamage" value="true" />
+      <property id="DisableWindshieldRain" value="true" />
+      <property id="DisableWindshieldReflection" value="true" />
+      <property id="ForcePristineCar" value="true" />
+    </Settings>
+  
+    <!-- Test overrides-->
+    <Settings path="CarRendering.Params" tags="TestData.LoadPlayerAsAI">
+      <property id="DebugLoadPlayerAsAI" value="true"/>
+    </Settings>
+
+</DatabaseFile>

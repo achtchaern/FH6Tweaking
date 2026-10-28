@@ -1,0 +1,337 @@
+<DatabaseFile path="">
+  <Data path="DXR_T10.Params" type="Dynamic">
+    <property id="Base">
+      <property id="CarFocusDXRLODMin" value="-1"/>
+      <property id="CarFocusDXRLODMax" value="3"/>
+      <property id="CarNonFocusDXRLODMin" value="1"/>
+      <property id="CarNonFocusDXRLODMax" value="3"/>
+      <property id="ResolutionScale" value="DXR_SCALE_FULL"/>
+      <property id="TwoPassTransparentsEnabled" value="false"/>
+      <property id="CockpitTransparentEnabled" value="false"/>
+      <property id="AddAIDriversToTLAS" value="false"/>
+      <property id="TrackFrustumTest" value="false"/>
+      <property id="SimpleHitMipBias" value="3"/>
+    </property>
+    <!-- General shared by Test, Reflection, Shadows and SSRFallback -->
+    <property id="GeneralScene">
+      <property id="TrackReceiveEnabled" value="true"/>
+      <property id="AddPlayerCar" value="true"/>
+      <property id="AddNonPlayerCars" value="true"/>
+      <property id="MaxNumBLASToCreateEachFrame" value="50"/>
+      <property id="MaxUpdatableModelsProcessedPerFrame" value="20"/>
+      <property id="MaxUpdatableModelsDistance" value="20"/>
+      <property id="CarLODBias" value="2"/>
+      <property id="DefaultDrawBehaviourMaxDistance" value="250"/>
+      <property id="DefaultDrawBehaviourLODBias" value="0"/>
+      <property id="CustomDrawBehaviourMaxDistance" value="250"/>
+      <property id="CustomDrawBehaviourLODBias" value="0"/>
+      <property id="CarCullDistance" value="250"/>
+      <property id="SmashableCullDistance" value="100"/>
+      <property id="MaxRadiusToGenerateBLAS" value="10000"/>
+      <property id="MaxBoundingBoxLengthToGenerateBLAS" value="800"/>
+    </property>
+    <!-- OpaqueOnly shared by Test, AO, GI and DDGI -->
+    <property id="OpaqueOnlyScene">
+      <property id="TrackReceiveEnabled" value="true"/>
+      <property id="AddPlayerCar" value="true"/>
+      <property id="AddNonPlayerCars" value="true"/>
+      <property id="MaxNumBLASToCreateEachFrame" value="50"/>
+      <property id="MaxUpdatableModelsProcessedPerFrame" value="20"/>
+      <property id="MaxUpdatableModelsDistance" value="20"/>
+      <property id="CarLODBias" value="2"/>
+      <property id="DefaultDrawBehaviourMaxDistance" value="250"/>
+      <property id="DefaultDrawBehaviourLODBias" value="0"/>
+      <property id="CustomDrawBehaviourMaxDistance" value="250"/>
+      <property id="CustomDrawBehaviourLODBias" value="0"/>
+      <property id="CarCullDistance" value="250"/>
+      <property id="SmashableCullDistance" value="100"/>
+      <property id="MaxRadiusToGenerateBLAS" value="10000"/>
+      <property id="MaxBoundingBoxLengthToGenerateBLAS" value="800"/>
+    </property>
+    <property id="Shaders">
+      <property id="CacheOnBoot" value="false"/>
+      <property id="CacheTrack" value="None"/>
+      <property id="LazyLoadTrack" value="true"/>
+      <property id="CacheCar" value="None"/>
+      <property id="LazyLoadCar" value="true"/>
+      <property id="CacheGSR" value="None"/>
+      <property id="LazyLoadGSR" value="true"/>
+    </property>
+    <property id="Test">
+      <property id="Enabled" value="false"/>
+    </property>
+    <property id="Reflection">
+      <property id="Enabled" value="false"/>
+      <property id="Method" value="DXR_REFL_MIRROR"/>
+      <property id="RoughReflectionSubsample" value="FullRes"/>
+      <property id="MirrorReflectionResolutionScale" value="DXR_SCALE_FULL"/>
+      <property id="MirrorMaxCarRayDistance" value="10"/>
+      <property id="MirrorMaxTrackRayDistance" value="100"/>
+      <property id="UsePlanarReflectionIfAvailable" value="true"/>
+      <property id="GlossyMinValue" value="0.7"/>
+      <property id="RoughReflectionsFullRange" value="false"/>
+    </property>
+    <property id="Shadows">
+      <property id="Enabled" value="false"/>
+    </property>
+    <property id="AO">
+      <property id="Enabled" value="false"/>
+      <property id="QualityLevel" value="5"/>
+      <property id="TemporalGradients" value="true"/>
+    </property>
+    <property id="GI">
+      <property id="Enabled" value="false"/>
+      <property id="QualityLevel" value="5"/>
+      <property id="SimpleHit" value="true"/>
+      <property id="FallbackMethod" value="Surfel"/>
+      <property id="CarCubemapRenormalizationScale" value="0"/>
+    </property>
+    <property id="DDGI">
+      <property id="Enabled" value="false"/>
+    </property>
+    <property id="SSRFallback">
+      <property id="Enabled" value="false"/>
+      <property id="MaxRayStartDistance" value="300"/>
+      <property id="MaxRayLength" value="300"/>
+      <property id="StartRayOffset" value="0.05"/>
+      <property id="SkyCubeFallback" value="true"/>
+      <property id="Simple" value="false"/>
+      <property id="PlayerCarReceive" value="true"/>
+      <property id="NonPlayerCarsReceive" value="true"/>
+      <property id="TrackReceive" value="true"/>
+    </property>
+    <property id="Buffers">
+      <property id="VertexScratch">
+        <property id="Resizable" value="false"/>
+        <property id="Shrinkable" value="false"/>
+        <property id="MinimumSizeMb" value="128"/>
+        <property id="ResizePaddingMb" value="0"/>
+      </property>
+      <property id="RTASScratch">
+        <property id="Resizable" value="true"/>
+        <property id="Shrinkable" value="false"/>
+        <property id="MinimumSizeMb" value="30"/>
+        <property id="ResizePaddingMb" value="10"/>
+      </property>
+      <property id="TLAS">
+        <property id="Resizable" value="true"/>
+        <property id="Shrinkable" value="false"/>
+        <property id="MinimumSizeMb" value="30"/>
+        <property id="ResizePaddingMb" value="10"/>
+      </property>
+      <property id="InstanceDescs">
+        <property id="OneShot" value="false"/>
+        <property id="DynamicBufferSizeMb" value="40"/>
+      </property>
+      <property id="ShaderTable">
+        <property id="OneShot" value="false"/>
+        <property id="DynamicBufferSizeMb" value="10"/>
+      </property>
+    </property>
+  </Data>
+
+  <!-- CONSOLE: specific defaults -->
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND -Platform.PC">
+    <!-- Dynamic memory usage -->
+    <property id="Buffers.VertexScratch.Resizable" value="true"/>
+    <property id="Buffers.VertexScratch.MinimumSizeMb" value="0"/>
+    <property id="Buffers.VertexScratch.ResizePaddingMb" value="1"/>
+    <property id="Buffers.RTASScratch.Resizable" value="true"/>
+    <property id="Buffers.RTASScratch.MinimumSizeMb" value="0"/>
+    <property id="Buffers.RTASScratch.ResizePaddingMb" value="1"/>
+    <property id="Buffers.TLAS.Resizable" value="true"/>
+    <property id="Buffers.TLAS.MinimumSizeMb" value="0"/>
+    <property id="Buffers.TLAS.ResizePaddingMb" value="1"/>
+    <property id="Buffers.InstanceDescs.OneShot" value="true"/>
+    <property id="Buffers.ShaderTable.OneShot" value="true"/>
+
+    <!-- Cache car complex hit shaders only -->
+    <property id="Shaders.CacheOnBoot" value="true"/>
+    <property id="Shaders.CacheCar" value="ComplexHits"/>
+    <property id="Shaders.LazyLoadCar" value="false"/>
+    <property id="Shaders.LazyLoadTrack" value="false"/>
+    <property id="Shaders.LazyLoadGSR" value="false"/>
+      
+    <!-- Disable opaque only scene -->
+    <property id="OpaqueOnlyScene.TrackReceiveEnabled" value="false"/>
+    <property id="OpaqueOnlyScene.AddPlayerCar" value="false"/>
+    <property id="OpaqueOnlyScene.AddNonPlayerCars" value="false"/>
+    <property id="OpaqueOnlyScene.DefaultDrawBehaviourMaxDistance" value="0"/>
+    <property id="OpaqueOnlyScene.CustomDrawBehaviourMaxDistance" value="0"/>
+    <property id="OpaqueOnlyScene.SmashableCullDistance" value="0"/>
+      
+    <!-- Restrict general scene to player only car -->
+    <property id="GeneralScene.TrackReceiveEnabled" value="false"/>
+    <property id="GeneralScene.AddNonPlayerCars" value="false"/>
+    <property id="GeneralScene.DefaultDrawBehaviourMaxDistance" value="0"/>
+    <property id="GeneralScene.CustomDrawBehaviourMaxDistance" value="0"/>
+    <property id="GeneralScene.SmashableCullDistance" value="0"/>
+
+    <!-- Restrict SSR fallback to player car only, simple, and on by default -->
+    <property id="SSRFallback.NonPlayerCarsReceive" value="false"/>
+    <property id="SSRFallback.TrackReceive" value="false"/>
+    <property id="SSRFallback.Simple" value="true"/>
+    <property id="SSRFallback.SkyCubeFallback" value="false"/>
+
+    <!-- Restrict to lower LOD player car -->
+    <property id="Base.CarFocusDXRLODMin" value="3"/>
+    <property id="Base.CarFocusDXRLODMax" value="3"/>
+  </Settings>
+
+  <!-- CONSOLE: Reflections always enabled in 30Hz -->
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND Config.Scarlett30Hz">
+    <property id="SSRFallback.Enabled" value="true"/>
+  </Settings>
+    
+  <!-- CONSOLE: Non-simple console reflections in certain scenarios, less restricted player car LOD  -->
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND Config.Scarlett30Hz AND (Scenario.AutoVistaPhotoMode OR  Scenario.PlayerHousePhotoMode OR 
+                                        Scenario.Homespace OR Scenario.PlayerHouse OR Cinematic.EnableDXR OR Scenario.PhotoMode)" >
+    <property id="SSRFallback.Simple" value="false" />
+    <property id="Base.CarFocusDXRLODMin" value="-1"/>
+    <property id="Base.CarFocusDXRLODMax" value="3"/>
+  </Settings>
+
+  <!-- CONSOLE: Reflections on non-player cars in certain scenarios -->
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND Config.Scarlett30Hz AND (Cinematic.EnableDXR OR Scenario.PhotoMode)" >
+    <property id="SSRFallback.NonPlayerCarsReceive" value="true"/>
+    <property id="GeneralScene.AddNonPlayerCars" value="true"/>
+  </Settings>
+    
+  <!-- Disable surfel GI fallback in autoshow/player house -->
+  <Settings path="DXR_T10.Params" tags="Scenario.AutoVistaPhotoMode OR Scenario.PlayerHousePhotoMode OR Scenario.Homespace OR Scenario.PlayerHouse" >
+    <property id="GI.FallbackMethod" value="TrackCube"/>
+  </Settings>
+
+  <!-- PC LSO caching -->
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND Platform.PC"> 
+    <property id="Shaders.CacheTrack" value="AllHits"/>
+    <property id="Shaders.LazyLoadTrack" value="false"/>
+    <property id="Shaders.CacheCar" value="AllHits"/>
+    <property id="Shaders.LazyLoadCar" value="false"/>
+    <property id="Shaders.CacheGSR" value="AllHits"/>
+    <property id="Shaders.LazyLoadGSR" value="false"/>
+  </Settings>
+
+  <!-- PC RTGI settings -->
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND Config.RTGIQuality.Low">
+    <property id="Shaders.CacheOnBoot" value="true"/>
+    <property id="GI.Enabled" value="true" />
+    <property id="GI.QualityLevel" value="2" />
+    <property id="GI.StartFade" value="0" />
+    <property id="GI.EndFade" value="50" />
+    <property id="OpaqueOnlyScene.MaxNumBLASToCreateEachFrame" value="50"/>
+    <property id="OpaqueOnlyScene.MaxUpdatableModelsProcessedPerFrame" value="20"/>
+    <property id="OpaqueOnlyScene.MaxUpdatableModelsDistance" value="20"/>
+    <property id="OpaqueOnlyScene.CarLODBias" value="2"/>
+    <property id="OpaqueOnlyScene.DefaultDrawBehaviourMaxDistance" value="50"/>
+    <property id="OpaqueOnlyScene.DefaultDrawBehaviourLODBias" value="0"/>
+    <property id="OpaqueOnlyScene.CustomDrawBehaviourMaxDistance" value="50"/>
+    <property id="OpaqueOnlyScene.CustomDrawBehaviourLODBias" value="0"/>
+    <property id="OpaqueOnlyScene.CarCullDistance" value="10"/>
+    <property id="OpaqueOnlyScene.SmashableCullDistance" value="10"/>
+  </Settings>
+  
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND Config.RTGIQuality.Medium">
+    <property id="Shaders.CacheOnBoot" value="true"/>
+    <property id="GI.Enabled" value="true" />
+    <property id="GI.QualityLevel" value="4" />
+    <property id="GI.StartFade" value="100" />
+    <property id="GI.EndFade" value="200" />
+    <property id="OpaqueOnlyScene.MaxNumBLASToCreateEachFrame" value="50"/>
+    <property id="OpaqueOnlyScene.MaxUpdatableModelsProcessedPerFrame" value="20"/>
+    <property id="OpaqueOnlyScene.MaxUpdatableModelsDistance" value="20"/>
+    <property id="OpaqueOnlyScene.CarLODBias" value="2"/>      
+    <property id="OpaqueOnlyScene.DefaultDrawBehaviourMaxDistance" value="200"/>
+    <property id="OpaqueOnlyScene.DefaultDrawBehaviourLODBias" value="0"/>
+    <property id="OpaqueOnlyScene.CustomDrawBehaviourMaxDistance" value="200"/>
+    <property id="OpaqueOnlyScene.CustomDrawBehaviourLODBias" value="0"/>
+    <property id="OpaqueOnlyScene.CarCullDistance" value="50"/>
+    <property id="OpaqueOnlyScene.SmashableCullDistance" value="50"/>
+  </Settings>
+  
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND Config.RTGIQuality.High">
+    <property id="Shaders.CacheOnBoot" value="true"/>
+    <property id="GI.Enabled" value="true" />
+    <property id="GI.QualityLevel" value="5" />
+    <property id="GI.StartFade" value="100" />
+    <property id="GI.EndFade" value="200" />
+    <property id="GI.TemporalReduction.SkipFoliageIfDLSSEnabled" value="true" />
+    <property id="OpaqueOnlyScene.MaxNumBLASToCreateEachFrame" value="50"/>
+    <property id="OpaqueOnlyScene.MaxUpdatableModelsProcessedPerFrame" value="20"/>
+    <property id="OpaqueOnlyScene.MaxUpdatableModelsDistance" value="20"/>
+    <property id="OpaqueOnlyScene.CarLODBias" value="2"/>
+    <property id="OpaqueOnlyScene.DefaultDrawBehaviourMaxDistance" value="500"/>
+    <property id="OpaqueOnlyScene.DefaultDrawBehaviourLODBias" value="0"/>
+    <property id="OpaqueOnlyScene.CustomDrawBehaviourMaxDistance" value="500"/>
+    <property id="OpaqueOnlyScene.CustomDrawBehaviourLODBias" value="0"/>
+    <property id="OpaqueOnlyScene.CarCullDistance" value="250"/>
+    <property id="OpaqueOnlyScene.SmashableCullDistance" value="250"/>
+  </Settings>
+  
+  <!-- PC RT Reflection settings -->
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND Config.RTReflectionQuality.Low">
+    <property id="Shaders.CacheOnBoot" value="true"/>
+    <property id="SSRFallback.Enabled" value="true"/>
+    <property id="SSRFallback.MaxRayStartDistance" value="50"/>
+    <property id="SSRFallback.MaxRayLength" value="50" />
+    <property id="SSRFallback.StartRayOffset" value="0.05"/>
+    <property id="SSRFallback.SkyCubeFallback" value="false"/>
+    <property id="GeneralScene.MaxNumBLASToCreateEachFrame" value="50"/>
+    <property id="GeneralScene.MaxUpdatableModelsProcessedPerFrame" value="20"/>
+    <property id="GeneralScene.MaxUpdatableModelsDistance" value="20"/>
+    <property id="GeneralScene.CarLODBias" value="2"/>
+    <property id="GeneralScene.DefaultDrawBehaviourMaxDistance" value="50"/>
+    <property id="GeneralScene.DefaultDrawBehaviourLODBias" value="0"/>
+    <property id="GeneralScene.CustomDrawBehaviourMaxDistance" value="50"/>
+    <property id="GeneralScene.CustomDrawBehaviourLODBias" value="0"/>
+    <property id="GeneralScene.CarCullDistance" value="50"/>
+    <property id="GeneralScene.SmashableCullDistance" value="10"/>
+  </Settings>
+  
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND Config.RTReflectionQuality.Medium">
+    <property id="Shaders.CacheOnBoot" value="true"/>
+    <property id="SSRFallback.Enabled" value="true"/>
+    <property id="SSRFallback.MaxRayStartDistance" value="100000"/>
+    <property id="SSRFallback.MaxRayLength" value="100000" />
+    <property id="SSRFallback.StartRayOffset" value="0.05"/>
+    <property id="SSRFallback.SkyCubeFallback" value="false"/>
+    <property id="GeneralScene.MaxNumBLASToCreateEachFrame" value="50"/>
+    <property id="GeneralScene.MaxUpdatableModelsProcessedPerFrame" value="20"/>
+    <property id="GeneralScene.MaxUpdatableModelsDistance" value="20"/>
+    <property id="GeneralScene.CarLODBias" value="2"/>
+    <property id="GeneralScene.DefaultDrawBehaviourMaxDistance" value="200"/>
+    <property id="GeneralScene.DefaultDrawBehaviourLODBias" value="0"/>
+    <property id="GeneralScene.CustomDrawBehaviourMaxDistance" value="100000"/>
+    <property id="GeneralScene.CustomDrawBehaviourLODBias" value="0"/>
+    <property id="GeneralScene.CarCullDistance" value="100"/>
+    <property id="GeneralScene.SmashableCullDistance" value="50"/>
+    <property id="GeneralScene.MaxRadiusToGenerateBLAS" value="100000"/>
+    <property id="GeneralScene.MaxBoundingBoxLengthToGenerateBLAS" value="100000"/>
+  </Settings>
+  
+  <Settings path="DXR_T10.Params" tags="-AppCmd.TestRayTracing AND Config.RTReflectionQuality.High">
+    <property id="Shaders.CacheOnBoot" value="true"/>
+    <property id="SSRFallback.Enabled" value="true"/>
+    <property id="SSRFallback.MaxRayStartDistance" value="100000"/>
+    <property id="SSRFallback.MaxRayLength" value="100000" />
+    <property id="SSRFallback.StartRayOffset" value="0.05"/>
+    <property id="SSRFallback.SkyCubeFallback" value="true"/>
+    <property id="GeneralScene.MaxNumBLASToCreateEachFrame" value="50"/>
+    <property id="GeneralScene.MaxUpdatableModelsProcessedPerFrame" value="20"/>
+    <property id="GeneralScene.MaxUpdatableModelsDistance" value="20"/>
+    <property id="GeneralScene.CarLODBias" value="2"/>
+    <property id="GeneralScene.DefaultDrawBehaviourMaxDistance" value="500"/>
+    <property id="GeneralScene.DefaultDrawBehaviourLODBias" value="0"/>
+    <property id="GeneralScene.CustomDrawBehaviourMaxDistance" value="100000"/>
+    <property id="GeneralScene.CustomDrawBehaviourLODBias" value="0"/>
+    <property id="GeneralScene.CarCullDistance" value="250"/>
+    <property id="GeneralScene.SmashableCullDistance" value="250"/>
+    <property id="GeneralScene.MaxRadiusToGenerateBLAS" value="100000"/>
+    <property id="GeneralScene.MaxBoundingBoxLengthToGenerateBLAS" value="100000"/>
+  </Settings>
+    
+  <!--Settings path="DXR_T10.Params" tags="Config.IsAMD">
+    <property id="Buffers.RTASScratch.MinimumSizeMb" value="60"/>
+  </Settings-->
+
+</DatabaseFile>

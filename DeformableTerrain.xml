@@ -1,0 +1,248 @@
+<DatabaseFile path="">
+    <!-- Defaults used for PC Ultra -->
+    <Data path="DeformableTerrain.Params" type="DeformableTerrainParams">
+        <property id="Quality">
+            <property id="TessellationLOD0Dist" value="12"/>
+            <property id="TessellationLOD0EdgeLength" value="0.25"/>
+            <property id="TessellationLOD1Dist" value="20"/>
+            <property id="TessellationLOD1EdgeLength" value="1"/>
+            <property id="TessellationLOD2Dist" value="35"/>
+            <property id="TessellationLOD2EdgeLength" value="2"/>
+            <property id="VertexModifyMinDist" value="20"/>
+            <property id="VertexModifyMaxDist" value="35"/>
+            <property id="FixedEdgeLength" value="1"/>
+            <property id="UseFixedEdgeLengthWhenNecessary" value="false"/>
+        </property>
+        <property id="Active" value="true"/>
+        <property id="WorldSize" value="256.0"/>
+        <property id="TextureSize" value="2048"/>
+        <property id="UseSparseTextures" value="false"/>
+        <property id="FreeSparseMemoryIfEmpty" value="false"/>
+        <property id="UseSweepRegions" value="false"/>
+        <property id="RenderDisableOptimisation" value="false"/>
+        <property id="SparseMemoryUsage" value="0.1"/>
+        <property id="RenderSparseEdges" value="false"/>
+        <property id="MaxVisiblePreDeformations" value="100"/>
+        <property id="TessellationHintResolutionReduction" value="1"/>
+        <property id="MissingSurfacesGenerateDefaultDeformation" value="false"/>
+        <property id="MissingSurfacesGenerateDefaultPreDeformation" value="true"/>
+        <property id="Multithread" value="true"/>
+        <property id="DeformableRoadsActive" value="true"/>
+        <property id="TracksWithDeformableRoads">
+            <element>
+                <property id="TrackID" value="808" />
+            </element>
+            <element>
+                <property id="TrackID" value="801" />
+            </element>
+        </property>
+        <property id="TracksWithSmoothVertexDeformation">
+            <element>
+                <property id="TrackID" value="808" />
+            </element>
+            <element>
+                <property id="TrackID" value="801" />
+            </element>
+        </property>
+        <property id="Persistence" type="DeformableTerrainPersistenceParams">
+            <property id="Active" value="false"/>
+            <property id="KnotPoolSize" value="5000"/>
+            <property id="SubRegionPoolSize" value="200"/>
+            <property id="MaxDeformableSections" value="250"/>
+            <property id="MaxTilesPerSubRegion" value="50"/>
+            <property id="MaxKnotsPerSubRegion" value="1000"/>
+            <property id="MaxCurrentSubRegionsPerDeformable" value="10"/>
+            <property id="GridElementSize" value="256"/>
+            <property id="SubRegionResolution" value="8"/>
+            <property id="MaxDistBetweenKnots" value="10"/>
+            <property id="MaxAngleBetweenKnots" value="10"/>
+            <property id="BakeFrameDelay" value="30"/>
+            <property id="TotalMaxKnots" value="250000"/>
+        </property>
+    </Data>
+
+    <!-- Other platforms -->
+    <Settings path="DeformableTerrain.Params" tags="Config.DeformableSnowQuality.Off OR Config.DeformableSnowQuality.Medium">
+        <property id="Quality.TessellationLOD0Dist" value="0"/>
+        <property id="Quality.TessellationLOD0EdgeLength" value="1"/>
+        <property id="Quality.TessellationLOD1Dist" value="0"/>
+        <property id="Quality.TessellationLOD1EdgeLength" value="1"/>
+        <property id="Quality.TessellationLOD2Dist" value="0"/>
+        <property id="Quality.TessellationLOD2EdgeLength" value="1"/>
+        <property id="Quality.VertexModifyMinDist" value="0"/>
+        <property id="Quality.VertexModifyMaxDist" value="0"/>
+        <property id="Active" value="false" tags="Config.DeformableSnowQuality.Off"/>
+    </Settings>
+
+    <Settings path="DeformableTerrain.Params" tags="Config.DeformableSnowQuality.Ultra">
+        <property id="Quality.TessellationLOD0Dist" value="14"/>
+        <property id="Quality.TessellationLOD0EdgeLength" value="0.22"/>
+        <property id="Quality.TessellationLOD1Dist" value="25"/>
+        <property id="Quality.TessellationLOD1EdgeLength" value="1"/>
+        <property id="Quality.TessellationLOD2Dist" value="35"/>
+        <property id="Quality.TessellationLOD2EdgeLength" value="2"/>
+        <property id="Quality.VertexModifyMinDist" value="20"/>
+        <property id="Quality.VertexModifyMaxDist" value="35"/>
+    </Settings>
+
+    <Settings path="DeformableTerrain.Params" tags="Config.Anaconda30Hz OR Config.DeformableSnowQuality.Extreme">
+        <property id="Quality.TessellationLOD0Dist" value="16"/>
+        <property id="Quality.TessellationLOD0EdgeLength" value="0.2"/>
+        <property id="Quality.TessellationLOD1Dist" value="30"/>
+        <property id="Quality.TessellationLOD1EdgeLength" value="1"/>
+        <property id="Quality.TessellationLOD2Dist" value="40"/>
+        <property id="Quality.TessellationLOD2EdgeLength" value="2"/>
+        <property id="Quality.VertexModifyMinDist" value="30"/>
+        <property id="Quality.VertexModifyMaxDist" value="40"/>
+    </Settings>
+
+    <!-- Location data -->
+    <Data path="DeformableTerrain.Locations" type="AllLocationParameters">
+        <property id="Locations">
+            <element>
+                <property id="ID" value="Sand"/>
+                <property id="Params">
+                    <property id="MinRideHeight" value="0.3"/>
+                    <property id="RideHeightReduction" value="0"/>
+                    <property id="SnowDepth" value="0.3"/>
+                    <property id="MinNoiseIntensity" value="1"/>
+                    <property id="MaxNoiseIntensity" value="1"/>
+                    <property id="SpeedForMinNoise" value="2"/>
+                    <property id="SpeedForMaxNoise" value="15"/>
+                    <property id="MinNoiseRandomness" value="0.5"/>
+                    <property id="HardnessNoise" value="0"/>
+                    <property id="MaxPolyEdgeSize" value="8"/>
+                    <property id="DepthGaussianHardSigma" value="0.777"/>
+                    <property id="NoiseGaussianHardSigma" value="0.1"/>
+                    <property id="DepthGaussianSoftSigma" value="0.777"/>
+                    <property id="NoiseGaussianSoftSigma" value="0.8"/>
+                    <property id="NormalIntensity" value="0.5"/>
+                    <property id="NoiseGaussianHardKernelSize" value="4"/>
+                    <property id="DepthGaussianHardKernelSize" value="2"/>
+                    <property id="NoiseGaussianSoftKernelSize" value="4"/>
+                    <property id="DepthGaussianSoftKernelSize" value="2"/>
+                </property>
+            </element>
+            <element type="TypedLocationParams">
+                <property id="ID" value="Mud"/>
+                <property id="Params">
+                    <property id="MinRideHeight" value="0.3"/>
+                    <property id="RideHeightReduction" value="0"/>
+                    <property id="SnowDepth" value="0.3"/>
+                    <property id="MinNoiseIntensity" value="1"/>
+                    <property id="MaxNoiseIntensity" value="1"/>
+                    <property id="SpeedForMinNoise" value="2"/>
+                    <property id="SpeedForMaxNoise" value="15"/>
+                    <property id="MinNoiseRandomness" value="0"/>
+                    <property id="HardnessNoise" value="0"/>
+                    <property id="MaxPolyEdgeSize" value="8"/>
+                    <property id="DepthGaussianHardSigma" value="0.777"/>
+                    <property id="NoiseGaussianHardSigma" value="0.1"/>
+                    <property id="DepthGaussianSoftSigma" value="0.777"/>
+                    <property id="NoiseGaussianSoftSigma" value="0.8"/>
+                    <property id="NormalIntensity" value="0.5"/>
+                    <property id="NoiseGaussianHardKernelSize" value="4"/>
+                    <property id="DepthGaussianHardKernelSize" value="1"/>
+                    <property id="NoiseGaussianSoftKernelSize" value="1"/>
+                    <property id="DepthGaussianSoftKernelSize" value="1"/>
+                </property>
+            </element>
+            <element type="TypedLocationParams">
+                <property id="ID" value="Snow"/>
+                <property id="Params">
+                    <property id="MinRideHeight" value="0.3"/>
+                    <property id="RideHeightReduction" value="0"/>
+                    <property id="SnowDepth" value="0.3"/>
+                    <property id="MinNoiseIntensity" value="1"/>
+                    <property id="MaxNoiseIntensity" value="1"/>
+                    <property id="SpeedForMinNoise" value="2"/>
+                    <property id="SpeedForMaxNoise" value="15"/>
+                    <property id="MinNoiseRandomness" value="0.5"/>
+                    <property id="HardnessNoise" value="0"/>
+                    <property id="MaxPolyEdgeSize" value="8"/>
+                    <property id="DepthGaussianHardSigma" value="0.777"/>
+                    <property id="NoiseGaussianHardSigma" value="0.1"/>
+                    <property id="DepthGaussianSoftSigma" value="0.777"/>
+                    <property id="NoiseGaussianSoftSigma" value="0.8"/>
+                    <property id="NormalIntensity" value="0.5"/>
+                    <property id="NoiseGaussianHardKernelSize" value="4"/>
+                    <property id="DepthGaussianHardKernelSize" value="1"/>
+                    <property id="NoiseGaussianSoftKernelSize" value="4"/>
+                    <property id="DepthGaussianSoftKernelSize" value="2"/>
+                </property>
+            </element>
+        </property>
+    </Data>
+
+    <Settings path="DeformableTerrain.Params" tags="Config.Anaconda30Hz OR Config.DeformableSnowQuality.Extreme">
+        <property id="TextureSize" value="4096"/>
+    </Settings>
+    <Settings path="DeformableTerrain.Locations" tags="Config.Anaconda30Hz OR Config.DeformableSnowQuality.Extreme">
+        <property id="Locations.0.Params.DepthGaussianHardSigma" value="1.7"/>
+        <property id="Locations.0.Params.DepthGaussianSoftSigma" value="1.7"/>
+        <property id="Locations.0.Params.DepthGaussianHardKernelSize" value="2"/>
+        <property id="Locations.0.Params.DepthGaussianSoftKernelSize" value="2"/>
+        <property id="Locations.1.Params.DepthGaussianHardSigma" value="1.0"/>
+        <property id="Locations.1.Params.DepthGaussianSoftSigma" value="1.0"/>
+        <property id="Locations.2.Params.DepthGaussianHardSigma" value="1.0"/>
+        <property id="Locations.2.Params.DepthGaussianSoftSigma" value="1.0"/>
+    </Settings>
+
+    <!-- Falcon/ToolsTests specific settings -->
+    <Settings path="DeformableTerrain.Params" tags="Track.Name_BRIO" >
+        <property id="TextureSize" value="4096" tags="-Platform.PC" />
+        <property id="WorldSize" value="512.0" tags="-Platform.PC" />
+        <property id="UseSparseTextures" value="true" tags="-Platform.PC" />
+        <property id="FreeSparseMemoryIfEmpty" value="true" />
+        <property id="UseSweepRegions" value="true"/>
+        <property id="SparseMemoryUsage" value="0.27"/>
+        <property id="TessellationHintResolutionReduction" value="4"/>
+    </Settings>
+    <Settings path="DeformableTerrain.Params" tags="Track.Name_BRIO AND Config.DeformableSnowQuality.Off">
+        <property id="TextureSize" value="128" />
+        <property id="WorldSize" value="128.0" />
+    </Settings>    
+    <Settings path="DeformableTerrain.Params" tags="Track.Name_BRIO AND (Config.DeformableSnowQuality.Medium OR Config.DeformableSnowQuality.High)">
+        <property id="TextureSize" value="2048" />
+        <property id="WorldSize" value="192.0" />
+    </Settings>
+    <Settings path="DeformableTerrain.Params" tags="Track.Name_BRIO AND Config.DeformableSnowQuality.Ultra">
+        <property id="TextureSize" value="3072" />
+        <property id="WorldSize" value="288.0" />
+    </Settings>
+    <Settings path="DeformableTerrain.Params" tags="Track.Name_BRIO AND Config.DeformableSnowQuality.Extreme">
+        <property id="TextureSize" value="4096" />
+        <property id="WorldSize" value="384.0" />
+    </Settings>
+    <Settings path="DeformableTerrain.Params" tags="Track.Name_BRIO AND Config.Anaconda30Hz">
+        <property id="TextureSize" value="8192"/>
+    </Settings>
+    <Settings path="DeformableTerrain.Params" tags="Track.Name_BRIO AND Scenario.Race AND (Config.Anaconda30Hz OR Config.DeformableSnowQuality.Extreme)">
+        <property id="Persistence.Active" value="true"/>
+    </Settings>
+    <Settings path="DeformableTerrain.Locations" tags="Track.Name_BRIO">
+        <property id="Locations.0.Params.MinRideHeight" value="0"/>
+        <property id="Locations.1.Params.MinRideHeight" value="0"/>
+        <property id="Locations.2.Params.MinRideHeight" value="0"/>
+        <property id="Locations.0.Params.NormalIntensity" value="1.0"/>
+        <property id="Locations.1.Params.NormalIntensity" value="1.0"/>
+        <property id="Locations.2.Params.NormalIntensity" value="1.0"/>
+    </Settings>
+
+    <Settings path="DeformableTerrain.Params" tags="AppCmd.FastBVT" >
+        <property id="FreeSparseMemoryIfEmpty" value="false" />
+    </Settings>
+
+    <!-- Falcon photo mode -->
+    <Settings path="DeformableTerrain.Params" tags="Track.Name_BRIO AND Scenario.PhotoMode AND -Config.DeformableSnowQuality.Off AND -Config.DeformableSnowQuality.Medium">
+        <property id="Quality.TessellationLOD0Dist" value="16"/>
+        <property id="Quality.TessellationLOD0EdgeLength" value="0.1"/>
+        <property id="Quality.TessellationLOD1Dist" value="30"/>
+        <property id="Quality.TessellationLOD1EdgeLength" value="0.5"/>
+        <property id="Quality.TessellationLOD2Dist" value="40"/>
+        <property id="Quality.TessellationLOD2EdgeLength" value="1"/>
+        <property id="Quality.VertexModifyMinDist" value="30"/>
+        <property id="Quality.VertexModifyMaxDist" value="40"/>
+    </Settings>
+
+</DatabaseFile>

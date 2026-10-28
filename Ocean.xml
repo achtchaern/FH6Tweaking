@@ -1,0 +1,25 @@
+<File path="">
+    <Data path="Ocean.RenderParams" type="RenderParameters">
+        <property id="Paused" value="false"/>
+        <property id="WaterPrePassEnabled" value="false"/>
+        <property id="WaterPrePassOpaqueAlpha" value="1.0"/>
+		<property id="MirrorReflectionScale" value="0.0"/>
+        <property id="TracksWithMissingFFT">
+            <element>
+                <property id="TrackID" value="808" />
+                <property id="TrackName" value="falcon" />
+            </element>
+        </property>
+    </Data>
+
+    <Settings path="Ocean.RenderParams" tags="Largeshot.Accumulating">
+      <property id="Paused" value="true"/>
+    </Settings>
+
+
+    <Settings path="Ocean.RenderParams" tags="Config.Scarlett60Hz" >
+      <property id="WaterPrePassEnabled" value="true"/>
+      <property id="WaterPrePassOpaqueAlpha" value="0.2"/>
+    </Settings>
+
+</File>

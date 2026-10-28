@@ -1,0 +1,18 @@
+<DatabaseFile path="">
+    <Data path="PartitionManager.Params" type="PartitionManagerParams">
+        <!-- Partition boundary mesh settings (default settings)
+        <property id="IsActive" value="true" />
+        <property id="UsePreciseIndexClassification" value="true" />
+        -->
+        <!-- Default partition definitions -->
+        <property id="DefaultPartitions">
+            <!-- Default partition: Exterior -->
+            <element type="DefaultPartitionParams">
+                <property id="DiffuseTemplateID" value="CascadedExterior" />
+                <property id="FallbackType" value="Exterior" />
+            </element>
+        </property>
+    </Data>
+
+    <!-- Platform settings -->
+</DatabaseFile>

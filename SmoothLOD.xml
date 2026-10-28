@@ -1,0 +1,49 @@
+<DatabaseFile path="">
+  <Data path="SmoothLOD.Params" type="SmoothLODTransitionParams">
+    <property id="ProceduralCrossFadeOverlap" value="1.0" />
+    <property id="ProceduralFadeMethod" type="FadeMethod" >
+      <property id="Method" value="FadeInThenOut" />
+      <property id="ZBias" value="1" />
+      <property id="PixelSize" value="1" />
+    </property>
+    <property id="SharpnessParams" type="SharpnessParams" >
+      <property id="MaxSpeed" value="10" />
+      <property id="MinSpeed" value="0" />
+      <property id="MaxSharpnessIncreasePerFrame" value="0.01" />
+      <property id="MaxSharpnessDecreasePerFrame" value="-0.1" />
+      <property id="MaxFadeInRange" value="500" />
+      <property id="MaxFadeInFalloff" value="1" />
+      <property id="MaxFadeOutRange" value="500" />
+      <property id="MaxFadeOutFalloff" value="1" />
+      <property id="ProceduralParams" type="RenderSharpnessParams" >
+        <property id="FixedFadeSharpness" value="0.0" />
+        <property id="DriveSharpnessWithCameraSpeed" value="true" />
+        <property id="SharpnessAtMaxSpeed" value="0" />
+        <property id="SharpnessAtMinSpeed" value="0.8" />
+      </property>
+      <property id="TrackModelParams" type="RenderSharpnessParams" >
+        <property id="FixedFadeSharpness" value="0.0" />
+        <property id="DriveSharpnessWithCameraSpeed" value="true" />
+        <property id="SharpnessAtMaxSpeed" value="0" />
+        <property id="SharpnessAtMinSpeed" value="0.8" />
+      </property>
+    </property>
+  </Data>
+  
+  <Settings path="SmoothLOD.Params" tags="Config.Scarlett30Hz OR Config.Scarlett60Hz OR Config.ShaderQuality.Extreme OR Config.ShaderQuality.Ultra">
+      <property id="ProceduralFadeMethod.Method" value="CrossFade"/>
+      <property id="ProceduralCrossFadeOverlap" value="0.65" />
+  </Settings>
+  
+  <!-- Disable for profiling jobs -->
+  <Settings path="SmoothLOD.Params" tags="AppCmd.InProfilingTest">
+      <property id="SharpnessParams.ProceduralParams.SharpnessAtMinSpeed" value="0.0" />
+      <property id="SharpnessParams.TrackModelParams.SharpnessAtMinSpeed" value="0.0" />
+  </Settings>
+
+  <Settings path="SmoothLOD.Params" tags="Cinematic.DisableSmoothLODAdaptiveSharpness">
+    <property id="SharpnessParams.ProceduralParams.DriveSharpnessWithCameraSpeed" value="false" />
+    <property id="SharpnessParams.TrackModelParams.DriveSharpnessWithCameraSpeed" value="false" />
+  </Settings>
+
+</DatabaseFile>

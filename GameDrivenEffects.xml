@@ -1,0 +1,20 @@
+<DatabaseFile path="">
+
+    <Data path="CameraDirtEffect.Params" type="CameraDirtEffectParams">
+        <property id="DisableSelfClearing" value="false" />
+        <property id="IntensityScale" value="0.375" />
+        <property id="SelfClearingSpeed" value="0.125" />
+    </Data>
+
+    <Data path="CameraWaterEffect.Params" type="CameraWaterEffectParams">
+        <property id="Enabled" value="true" />
+        <property id="EffectType" value="cam_screen_rain" />
+        <property id="WetnessIntensityStart" value="0.2" />
+        <property id="WetnessIntensityAttributeName" value="PG_WetnessIntensity" />
+    </Data>    
+
+    <Settings path="CameraWaterEffect.Params" tags="(HighContrastMode.Enabled AND HighContrastMode.DisablePost) OR Scenario.Mainstage">
+        <property id="Enabled" value="false" />
+    </Settings>
+    
+</DatabaseFile>

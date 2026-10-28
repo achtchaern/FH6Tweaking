@@ -1,0 +1,197 @@
+<DatabaseFile path="">
+    <Data path="LensEffects.Params" type="LensEffectsParams">
+      <property id="FlaresEnabled" type="bool" value="false"/>
+      <property id="FlaresConfig" type="string" value="Default"/>
+      <property id="StreaksEnabled" type="bool" value="false"/>
+      <property id="StreaksConfig" type="string" value="Default"/>
+      <property id="BloomEnabled" type="bool" value="true"/>
+      <property id="ChromaticAberrationEnabled" type="bool" value="true"/>
+      <property id="LensDistortionEnabled" type="bool" value="false"/>
+    </Data>
+    <Data path="LensEffects.Data" type="LensEffectsData">
+      <property id="FlareConfigs">
+          <element type="FlareConfig">
+            <property id="Key" type="string" value="Default"/>
+            <property id="FlareSettings">
+                <element type="FlareSettings">
+                    <property id="DesiredFrameHeight" type="int" value="1080"/>
+                    <property id="IntensityScale" type="float" value="0.005"/>
+                    <property id="FlareParams">
+                      <element type="FlareParams">
+                        <property id="Orientation" type="float" value="0"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="FallOff0" type="float" value="0.4"/>
+                        <property id="FallOff1" type="float" value="0.2"/>
+                      </element>
+                      <element type="FlareParams">
+                        <property id="Orientation" type="float" value="90"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="FallOff0" type="float" value="0.4"/>
+                        <property id="FallOff1" type="float" value="0.2"/>
+                      </element>
+                      <element type="FlareParams">
+                        <property id="Orientation" type="float" value="25"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="FallOff0" type="float" value="0.4"/>
+                        <property id="FallOff1" type="float" value="0.2"/>
+                      </element>
+                      <element type="FlareParams">
+                        <property id="Orientation" type="float" value="120"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="FallOff0" type="float" value="0.4"/>
+                        <property id="FallOff1" type="float" value="0.2"/>
+                      </element>
+                    </property>
+                </element>            
+                <element type="FlareSettings">
+                    <property id="DesiredFrameHeight" type="int" value="2160"/>
+                    <property id="IntensityScale" type="float" value="0.02"/>
+                    <property id="FlareParams">
+                      <element type="FlareParams">
+                        <property id="Orientation" type="float" value="0"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="FallOff0" type="float" value="0.4"/>
+                        <property id="FallOff1" type="float" value="0.2"/>
+                      </element>
+                      <element type="FlareParams">
+                        <property id="Orientation" type="float" value="90"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="FallOff0" type="float" value="0.4"/>
+                        <property id="FallOff1" type="float" value="0.2"/>
+                      </element>
+                      <element type="FlareParams">
+                        <property id="Orientation" type="float" value="25"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="FallOff0" type="float" value="0.4"/>
+                        <property id="FallOff1" type="float" value="0.2"/>
+                      </element>
+                      <element type="FlareParams">
+                        <property id="Orientation" type="float" value="120"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="FallOff0" type="float" value="0.4"/>
+                        <property id="FallOff1" type="float" value="0.2"/>
+                      </element>
+                    </property>
+                </element>
+            </property>
+          </element>
+      </property>
+      <property id="HBlurConfigs">
+          <element type="HBlurConfig">
+            <property id="Key" type="string" value="Default"/>
+            <property id="HBlurSettings">
+                <element type="HBlurSettings">
+                    <property id="DesiredFrameHeight" type="int" value="2160"/>
+                    <property id="IntensityScale" type="float" value="0.005"/>
+                    <property id="HBlurParams">
+                      <element type="HBlurParams">
+                        <property id="Level" type="int" value="6"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="Hue" type="float" value="0.721"/>
+                        <property id="Saturation" type="float" value="0.467"/>
+                        <property id="TranslateX" type="float" value="10"/>
+                        <property id="TranslateY" type="float" value="0"/>
+                        <property id="ScaleX" type="float" value="-100"/>
+                        <property id="ScaleY" type="float" value="100"/>
+                      </element>
+                      <element type="HBlurParams">
+                        <property id="Level" type="int" value="5"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="Hue" type="float" value="0.583"/>
+                        <property id="Saturation" type="float" value="0.177"/>
+                        <property id="TranslateX" type="float" value="0"/>
+                        <property id="TranslateY" type="float" value="2"/>
+                        <property id="ScaleX" type="float" value="-50"/>
+                        <property id="ScaleY" type="float" value="100"/>
+                      </element>
+                      <element type="HBlurParams">
+                        <property id="Level" type="int" value="4"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="Hue" type="float" value="0.059"/>
+                        <property id="Saturation" type="float" value="0.7"/>
+                        <property id="TranslateX" type="float" value="0"/>
+                        <property id="TranslateY" type="float" value="4"/>
+                        <property id="ScaleX" type="float" value="-10"/>
+                        <property id="ScaleY" type="float" value="100"/>
+                      </element>
+                      <element type="HBlurParams">
+                        <property id="Level" type="int" value="3"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="Hue" type="float" value="0.114"/>
+                        <property id="Saturation" type="float" value="0.8"/>
+                        <property id="TranslateX" type="float" value="-5"/>
+                        <property id="TranslateY" type="float" value="0"/>
+                        <property id="ScaleX" type="float" value="-120"/>
+                        <property id="ScaleY" type="float" value="100"/>
+                      </element>
+                      <element type="HBlurParams">
+                        <property id="Level" type="int" value="2"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="Hue" type="float" value="0.014"/>
+                        <property id="Saturation" type="float" value="0.7"/>
+                        <property id="TranslateX" type="float" value="3"/>
+                        <property id="TranslateY" type="float" value="0"/>
+                        <property id="ScaleX" type="float" value="-30"/>
+                        <property id="ScaleY" type="float" value="100"/>
+                      </element>
+                      <element type="HBlurParams">
+                        <property id="Level" type="int" value="1"/>
+                        <property id="Intensity" type="float" value="1"/>
+                        <property id="Hue" type="float" value="0.047"/>
+                        <property id="Saturation" type="float" value="0.6"/>
+                        <property id="TranslateX" type="float" value="0"/>
+                        <property id="TranslateY" type="float" value="3"/>
+                        <property id="ScaleX" type="float" value="-90"/>
+                        <property id="ScaleY" type="float" value="100"/>
+                      </element>
+                    </property>
+                </element>     
+            </property>
+          </element>
+      </property>
+    </Data>
+    
+    <!-- Per config base settings -->
+    <Settings path="LensEffects.Params" tags="Config.LensEffects.Off">
+      <property id="FlaresEnabled" value="false" />
+      <property id="StreaksEnabled" value="false" />
+      <property id="BloomEnabled" value="true" />
+      <property id="FlaresConfig" value="Default" />
+      <property id="StreaksConfig" value="Default" />
+      <property id="ChromaticAberrationEnabled" value="false" />
+    </Settings>
+    <Settings path="LensEffects.Params" tags="Config.LensEffects.Low OR Config.LensEffects.Medium">
+      <property id="FlaresEnabled" value="false" />
+      <property id="StreaksEnabled" value="false" />
+      <property id="BloomEnabled" value="true" />
+      <property id="FlaresConfig" value="Default" />
+      <property id="StreaksConfig" value="Default" />
+    </Settings>
+    <Settings path="LensEffects.Params" tags="Config.LensEffects.High">
+      <property id="FlaresEnabled" value="false" />
+      <property id="StreaksEnabled" value="true" />
+      <property id="BloomEnabled" value="true" />
+      <property id="FlaresConfig" value="Default" />
+      <property id="StreaksConfig" value="Default" />
+    </Settings>
+    <Settings path="LensEffects.Params" tags="Config.Scarlett30Hz OR Config.Scarlett60Hz OR Config.LensEffects.Ultra OR Config.LensEffects.Extreme">
+      <property id="FlaresEnabled" value="true" />
+      <property id="StreaksEnabled" value="true" />
+      <property id="BloomEnabled" value="true" />
+      <property id="FlaresConfig" value="Default" />
+      <property id="StreaksConfig" value="Default" />
+    </Settings>    
+
+    <Settings path="LensEffects.Params" tags="Cinematic.AllowLensDistortion" >
+      <property id="LensDistortionEnabled" value="true"/>
+    </Settings>
+
+    <Settings path="LensEffects.Params" tags="HighContrastMode.Enabled AND HighContrastMode.DisablePost" >
+      <property id="FlaresEnabled" value="false" />
+      <property id="StreaksEnabled" value="false" />
+      <property id="BloomEnabled" value="false" />
+      <property id="FlaresConfig" value="Default" />
+      <property id="StreaksConfig" value="Default" />
+      <property id="ChromaticAberrationEnabled" value="false" />
+    </Settings>
+</DatabaseFile>

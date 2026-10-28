@@ -1,0 +1,57 @@
+<DatabaseFile path="">
+  <Data path="RealtimeSpecularProbeParams.Params" type="RealtimeSpecularProbeParams">
+    <property id="Active" value="true"/>
+    <property id="FaceAsyncRender" value="true"/>
+    <property id="MaxVirtualProbes" value="1000"/>
+    <property id="MaxProbeRegions" value="1000"/>
+    <property id="NumRealtimeProbes" value="5"/>
+    <property id="ProbeResPower2" value="9"/>
+    <property id="MaxUpdatingProbes" value="3"/>
+    <property id="MaxProbeFacesToRenderPerFrame" value="3"/>
+    <property id="MaxProbesToBlendPerFrame" value="3"/>
+    <property id="RelightBlendSpeed" value="1"/>
+    <property id="FallbackBlendSpeed" value="1"/>
+    <property id="Convolve" value="true"/>
+    <property id="ConvolveSaturation" value="1"/>
+    <property id="ConvolveResolutionPower2" value="6"/>
+    <property id="MipToUseForConvolve" value="2"/>
+    <property id="CoarseBucketing">
+      <property id="MaxVisibleRegions" value="1000"/>
+      <property id="ClusterWidthPow2" value="4"/>
+      <property id="ClusterHeightPow2" value="4"/>
+      <property id="ClusterDepthPow2" value="6"/>
+      <property id="MaxRegionsPerClusterPow2" value="4"/>
+    </property>
+
+    <property id="Fallbacks">
+      <element>
+        <!-- SkyOnly -->
+        <property id="VirtualProbeRange" value="10000"/>
+        <property id="OutsideVirtualProbeRangeRenderBehaviour" value="RenderSkyOnly"/>      <!--RenderBlack, RenderAtCamera or RenderSkyOnly -->
+        <property id="InfluenceRadius" value="10000"/>
+        <property id="InfluenceSolidPercent" value="1"/>
+        <property id="OutsideInfluenceType" value="Num"/>                                   <!-- Exterior, Interior, SkyOnly or Num (Num=black) -->
+        <property id="DefaultArtificialLightScale" value="0"/>
+      </element>
+      <element>
+        <!-- Exterior -->
+        <property id="VirtualProbeRange" value="10000"/>
+        <property id="OutsideVirtualProbeRangeRenderBehaviour" value="RenderAtCamera"/>     <!--RenderBlack, RenderAtCamera or RenderSkyOnly -->
+        <property id="InfluenceRadius" value="10000"/>
+        <property id="InfluenceSolidPercent" value="1"/>
+        <property id="OutsideInfluenceType" value="Num"/>                                   <!-- Exterior, Interior, SkyOnly or Num (Num=black) -->
+        <property id="DefaultArtificialLightScale" value="0"/>
+      </element>
+      <element>
+        <!-- Interior -->
+        <property id="VirtualProbeRange" value="10000"/>
+        <property id="OutsideVirtualProbeRangeRenderBehaviour" value="RenderBlack"/>        <!--RenderBlack, RenderAtCamera or RenderSkyOnly -->
+        <property id="InfluenceRadius" value="10000"/>
+        <property id="InfluenceSolidPercent" value="1"/>
+        <property id="OutsideInfluenceType" value="Num"/>                                   <!-- Exterior, Interior, SkyOnly or Num (Num=black) -->
+        <property id="DefaultArtificialLightScale" value="0"/>
+      </element>
+    </property>
+      
+  </Data>
+</DatabaseFile>

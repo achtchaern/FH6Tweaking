@@ -1,0 +1,237 @@
+<DatabaseFile path="">
+  <!-- By Default we have shadow mask enabled for Horizon -->
+  <Data path="ShadowMask.Params" type="ShadowMaskParams">
+      <property id="Mainpass" type="ShadowMaskMainpassParams">
+        <property id="Enabled" value="true"/>
+        <property id="TemporalRefinementEnabled" value="true"/>
+        <property id="AttenuationWriteEnabled" value="false"/>
+        <property id="WidthDivisor" value="1"/>
+        <property id="HeightDivisor" value="1"/>
+        <property id="CSMDistanceBasedDepthBias" type="ShadowMaskDepthBiasParams">
+            <property id="MinBias" value="0.0008"/>
+            <property id="MaxBias" value="0.15"/>
+            <property id="MinDistanceToCamera" value="0"/>
+            <property id="MaxDistanceToCamera" value="400"/>
+        </property>
+        <property id="PSSMDistanceBasedDepthBias" type="ShadowMaskDepthBiasParams">
+            <property id="MinBias" value="0.002"/>
+            <property id="MaxBias" value="0.09"/>
+            <property id="MinDistanceToCamera" value="0"/>
+            <property id="MaxDistanceToCamera" value="50"/>
+        </property>
+        <property id="FarDistanceDepthBias" type="ShadowMaskDepthBiasParams">
+            <property id="MinBias" value="0.0"/>
+            <property id="MaxBias" value="65.0"/>
+            <property id="MinDistanceToCamera" value="5000"/>
+            <property id="MaxDistanceToCamera" value="15000"/>
+        </property>
+        <property id="VRSParams" type="ShadowMaskVRSParams">
+            <property id="EnableIfPossible" value="true"/>
+            <property id="UseCustomShadingRateImage" value="true"/>
+            <property id="UpdateMethod" value="Base"/>
+            <property id="ShadingRateTolerance" value="0.075"/>
+        </property>
+      </property>
+      <property id="ForwardPlus" type="ShadowMaskForwardPlusParams">
+        <property id="Enabled" value="false"/>
+        <property id="TemporalRefinementEnabled" value="false"/>
+        <property id="AttenuationWriteEnabled" value="false"/>
+        <property id="ForwardPlusDistanceBasedDepthBias" type="ShadowMaskDepthBiasParams">
+            <property id="MinBias" value="0.000033"/>
+            <property id="MaxBias" value="0.00006"/>
+            <property id="MaxDistanceToCamera" value="80"/>
+        </property>
+        <property id="VRSParams" type="ShadowMaskVRSParams">
+            <property id="EnableIfPossible" value="true"/>
+            <property id="UseCustomShadingRateImage" value="false"/>
+            <property id="UpdateMethod" value="Base"/>
+            <property id="ShadingRateTolerance" value="0.075"/>
+        </property>
+      </property>
+      <property id="UseCompute" value="false"/>
+      <property id="DisableEarlyFppPass" value="true"/>
+      <property id="PCSSSupported" value="false" />
+      <property id="PCSSParams" type="ShadowMaskPCSSParams">
+        <property id="EnableCloudPenumbraInfluence" value="true"/>
+        <property id="ForwardPlusPenumbraMultiplier" value="0.001"/>
+        <property id="MainMaxPenumbraSize" value="16"/> <!-- texels -->
+        <property id="ForwardPlusMaxPenumbraSize" value="0.07"/> <!-- uv -->
+        <property id="MaxBlockerDistance" value="750.0"/>
+        <property id="UVSpaceMipDropInterval" value="0.005"/>
+        <property id="PreComputeBlockerDist" value="false"/>
+        <property id="BlockerSearchResolutionScale" value="1.0"/>
+        <property id="BaseBias" value="0.0"/>
+        <property id="WidePenumbraBias" value="0.45"/>
+        <property id="WidePenumbraBiasMaxWidth" value="0.5"/>
+        <property id="ForwardPlusBias" value="0.00001"/>
+        <property id="CSMFilterParams" type="ShadowMaskPCSSFilterParams">
+          <property id="BlockerKernelSize" value="0.035"/>
+          <property id="BlockerSampleCount" value="16"/>
+          <property id="ShadowFilterSampleCount" value="16"/>
+          <property id="EnableSampleRotation" value="false"/>
+          <property id="RotationStepCount" value="16"/>
+          <property id="VelocityThreshold" value="0.1"/>
+          <property id="MinFilterRadiusTexels" value="0.92"/>
+          <property id="SmoothRadiusTexels" value="0.0"/>
+        </property>
+        <property id="PSSMFilterParams" type="ShadowMaskPCSSFilterParams">
+          <property id="BlockerKernelSize" value="0.005"/>
+          <property id="BlockerSampleCount" value="16"/>
+          <property id="ShadowFilterSampleCount" value="16"/>
+          <property id="EnableSampleRotation" value="false"/>
+          <property id="RotationStepCount" value="16"/>
+          <property id="VelocityThreshold" value="0.1"/>
+          <property id="MinFilterRadiusTexels" value="1.5"/>
+          <property id="SmoothRadiusTexels" value="0.0"/>
+        </property>
+        <property id="FPlusFilterParams" type="ShadowMaskPCSSFilterParams">
+          <property id="BlockerKernelSize" value="0.015"/>
+          <property id="BlockerSampleCount" value="16"/>
+          <property id="ShadowFilterSampleCount" value="16"/>
+          <property id="EnableSampleRotation" value="false"/>
+          <property id="RotationStepCount" value="16"/>
+          <property id="VelocityThreshold" value="0.1"/>
+          <property id="MinFilterRadiusTexels" value="1"/>
+          <property id="SmoothRadiusTexels" value="0.0"/>
+        </property>
+      </property>
+      <property id="VogelDiskParams" type="ShadowMaskVogelDiskParams">
+        <property id="CSMFilterParams" type="ShadowMaskVogelDiskFilterParams">
+            <property id="SampleCount" value="Samples16" />
+            <property id="SoftenSize" value="0.01" />
+            <property id="Bias" value="0.0" />
+        </property>
+        <property id="PSSMFilterParams" type="ShadowMaskVogelDiskFilterParams">
+            <property id="SampleCount" value="Samples16" />
+            <property id="SoftenSize" value="0.01" />
+            <property id="Bias" value="0.0" />
+        </property>
+        <property id="ForwardPlusFilterParams" type="ShadowMaskVogelDiskFilterParams">
+            <property id="SampleCount" value="Samples16" />
+            <property id="SoftenSize" value="0.01" />
+            <property id="Bias" value="0.00001" />
+        </property>
+      </property>
+      <property id="FPlusPCFParams" type="ForwardPlusShadowPCFParams">
+        <property id="Bias" value="0.00001" />
+      </property>
+      <property id="CSMFilterMode" value="PCF"/>
+      <property id="PSSMFilterMode" value="PCF"/>
+      <property id="FPlusFilterMode" value="PCF"/>
+      <property id="TemporalRefinement" type="ShadowMaskTemporalRefinementParameters">
+        <property id="RequireEarlyDepthTextures" type="bool" value="true"/>
+        <property id="PreviousDepthResolutionScale" type="ResolutionScale" value="Full"/>
+        <property id="PreviousStencilResolutionScale" type="ResolutionScale" value="Full"/>
+        <property id="MaxReprojectionBlend" type="float" value="0.8"/>
+        <property id="MinReprojectionDistance" type="float" value="0.01"/>
+        <property id="MaxReprojectionDistance" type="float" value="0.1"/>
+        <property id="MinReprojectionZDifference" type="float" value="0.008"/>
+        <property id="MaxReprojectionZDifference" type="float" value="0.010"/>
+        <property id="AltMinReprojectionZDifference" type="float" value="10000000.0"/>
+        <property id="AltMaxReprojectionZDifference" type="float" value="10000000.0"/>
+        <property id="EdgeDetectDepthStart" type="float" value="200.0"/>
+        <property id="EdgeDetectDepthBias" type="float" value="50.0"/>
+      </property>
+  </Data>
+  
+  <Settings path="ShadowMask.Params" tags="-Config.NightShadows.Off OR Config.Scarlett30Hz">
+    <property id="ForwardPlus.Enabled" value="true" />
+  </Settings>
+
+  
+  <!-- Enabled on Anaconda and Lockhart -->
+  <Settings path="ShadowMask.Params" tags="Config.Scarlett30Hz OR Config.ShadowQuality.Extreme" >
+    <!-- Enable shadow mask and PCSS by default -->
+    <property id="Mainpass.Enabled" value="true" />
+    <property id="ForwardPlus.Enabled" value="true" />
+    <property id="PCSSSupported" value="true" />
+    <property id="CSMFilterMode" value="PCSS" />
+    <property id="PSSMFilterMode" value="PCSS" />
+    <property id="FPlusFilterMode" value="PCSS" />
+
+    <!-- Set default parameters -->
+    <property id="PCSSParams.PreComputeBlockerDist" value="true"/>
+    <property id="PCSSParams.BlockerSearchResolutionScale" value="0.5"/>
+        
+    <property id="PCSSParams.CSMFilterParams.BlockerSampleCount" value="8"/>
+    <property id="PCSSParams.CSMFilterParams.ShadowFilterSampleCount" value="8"/>
+    <property id="PCSSParams.CSMFilterParams.EnableSampleRotation" value="true"/>
+    <property id="PCSSParams.CSMFilterParams.RotationStepCount" value="60"/>
+    <property id="PCSSParams.CSMFilterParams.VelocityThreshold" value="0"/>
+    
+    <property id="PCSSParams.PSSMFilterParams.BlockerSampleCount" value="8"/>
+    <property id="PCSSParams.PSSMFilterParams.ShadowFilterSampleCount" value="8"/>
+    
+    <property id="PCSSParams.FPlusFilterParams.BlockerSampleCount" value="8"/>
+    <property id="PCSSParams.FPlusFilterParams.ShadowFilterSampleCount" value="8"/>
+
+    <!-- TAA specific settings -->    
+    <property id="PCSSParams.UseSampleRotationWithTAA" value="true"/>
+    <property id="PCSSParams.PSSMFilterParams.EnableSampleRotation" tags="Frame.TAA" value="true"/>
+    <property id="PCSSParams.PSSMFilterParams.RotationStepCount" tags="Frame.TAA" value="60"/>
+    <property id="PCSSParams.PSSMFilterParams.VelocityThreshold" tags="Frame.TAA" value="0"/>
+
+    <!-- Less agressive CSM depth bias -->
+    <property id="Mainpass.CSMDistanceBasedDepthBias.MaxBias" value="0.05"/>
+      
+  </Settings>
+  
+  <!-- On Lockhart 30 and PC extreme increase sample count to 12 -->
+  <Settings path="ShadowMask.Params" tags="Config.Lockhart30Hz OR Config.ShadowQuality.Extreme" >
+    <property id="PCSSParams.CSMFilterParams.ShadowFilterSampleCount" value="12"/>
+   </Settings>
+  
+  <!-- Adjust the settings for better quality when recording our cinematics -->
+  <Settings path="ShadowMask.Params" tags="Largeshot.Accumulating" >
+    <!-- Disable temporal refinement for BigShot renders-->
+    <property id="Mainpass.TemporalRefinementEnabled" value="false" />
+    <property id="PCSSParams.ForceEnableSampleRotation" value="true"/>
+
+    <!-- Disable half res blocker and increase sampling rate to get best quality -->
+    <property id="PCSSParams.PreComputeBlockerDist" value="false"/>
+        
+    <property id="PCSSParams.CSMFilterParams.ShadowFilterSampleCount" value="32"/>
+    <property id="PCSSParams.CSMFilterParams.EnableSampleRotation" value="true"/>
+   
+    <property id="PCSSParams.PSSMFilterParams.ShadowFilterSampleCount" value="32"/>
+    
+    <property id="PCSSParams.FPlusFilterParams.ShadowFilterSampleCount" value="32"/>
+  </Settings>
+
+  <!-- Save memory when thumbnail simulation is active: thumbnail rendering doesn't require shadows -->
+  <Settings path="ShadowMask.Params" tags="Presentation.MinimalMemorySettings">
+    <property id="Mainpass.Enabled" value="false" />
+    <property id="ForwardPlus.Enabled" value="false" />
+  </Settings>
+  
+  <Settings path="ShadowMask.Params" tags="Cinematic.MaximiseForwardPlusPenumbra" >
+    <property id="PCSSParams.ForwardPlusPenumbraMultiplier" value="18"/>
+  </Settings>
+  
+  <!-- Night settings -->
+  <Settings path="ShadowMask.Params" tags="-Test.DisableNightShadows AND (Config.Scarlett30Hz OR Config.NightShadows.Extreme) AND (Time.Night AND -Time.ForwardPlusForced)">
+    <!-- Intentionally introducing a frame of delay on car shadows, as it's not too noticeable so far, but allows us to gain back 0.3-0.4ms of perf -->
+    <property id="CSMFilterMode" value="PCF"/>
+    <property id="PSSMFilterMode" value="PCF"/>
+    <property id="Mainpass.AttenuationWriteEnabled" value="false"/>
+  </Settings>
+
+    <!-- Disable VRS in photomode and largeshots. -->
+  <Settings path="ShadowMask.Params" tags="Largeshot.Accumulating">
+    <property id="Mainpass.VRSParams.EnableIfPossible" value="false" />
+    <property id="ForwardPlus.VRSParams.EnableIfPossible" value="false" />
+  </Settings>
+
+  <!-- Half res shadows on Anaconda60 -->
+  <Settings path="ShadowMask.Params" tags="Config.Scarlett60Hz AND Platform.Anaconda">
+      <property id="Mainpass.VRSParams.EnableIfPossible" value="false" />
+      <property id="Mainpass.WidthDivisor" value="2"/>
+      <property id="Mainpass.HeightDivisor" value="2"/>
+  </Settings>
+
+  <!-- Reduce MinBias to an even smaller value in character customizer to minimise shadow disconnect -->
+  <Settings path="ShadowMask.Params.ForwardPlus.ForwardPlusDistanceBasedDepthBias" tags="Scenario.CharacterCustomizer">
+      <property id="MinBias" value="0.00000033" />
+  </Settings>
+
+</DatabaseFile>

@@ -1,0 +1,13 @@
+<Database>
+  <SchemaInstance Schema="RenderData_Global" Name="" />
+  <SchemaInstance Schema="RenderData_Presentation" Name="" />
+  <!-- limited version of RenderDatabase.xml with only those data files required by tools
+         note: we shouldn't use RenderDataManager with tools! the below files contain values used by both tools and the engine that 
+         were migrated from being hardcoded to being data-driven, but that introduced the new problem that if the code and data
+         aren't synchronised then deserialisation can fail. the preferred solution would be to have the tools data-drive these values
+         somewhere else, then pass them to the game via the track data (woodstock bug 1690937). this file is a stopgap solution to
+         prevent data layout changes in files not actually required by the tools from potentially causing them to crash -->
+  <File Filename="Megatexture.xml" Path="" />
+  <File Filename="Instancing.xml" Path="" />
+  <File Filename="ShaderOverrides.xml" Path="" />
+</Database>

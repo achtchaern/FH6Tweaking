@@ -1,0 +1,77 @@
+<DatabaseFile path="">
+    <Data path="ForwardPlus.Data" type="ForwardPlusData">
+        <property id="AsyncUpdateLights" value="true" />
+        <property id="MaxLights" type="uint" value="10000" />
+        <property id="MaxPresets" type="uint" value="2048" />
+        <property id="MaxAnimationPresets" type="uint" value="100" />
+        <property id="MaxAnimationUpdatesPerTask" type="uint" value="125" />
+        <property id="AttenuationProfiles">
+            <element type="vec3" value="1.0,-0.95,0.0"/>
+            <element type="vec3" value="1.0,-0.7,0.0"/>
+            <element type="vec3" value="1.0,0.0,0.3"/>
+            <element type="vec3" value="1.0,1.0,1.0"/>
+            <element type="vec3" value="1.0,3.0,3.0"/>
+            <element type="vec3" value="1.0,10.0,10.0"/>
+            <element type="vec3" value="1.0,100.0,100.0"/>
+            <element type="vec3" value="1.0,1000.0,1000.0"/>
+        </property>
+        <!--      
+           The point ambient lights use a different attenuation profile to the regular point lights to save instructions,
+           however the below values have been chosen to provide a pretty close fit to the above curves
+        -->
+        <property id="PointAmbientAttenuationProfiles">
+            <element type="float" value="-0.88"/>
+            <element type="float" value="-0.2"/>
+            <element type="float" value="2.6"/>
+            <element type="float" value="7.0"/>
+            <element type="float" value="17.0"/>
+            <element type="float" value="50.0"/>
+            <element type="float" value="700.0"/>
+            <element type="float" value="10000.0"/>
+        </property>
+    </Data>
+    <Data path="LightGlow.Params" type="LightGlowParams">
+      <property id="DisableOcclusion" type="bool" value="false"/>
+      <property id="GlobalStreakOrientation" type="StreakOrientation" value="Horizontal"/>
+      <property id="LightGlowsEnabled" type="bool" value="true"/>
+      <property id="DrawGlows" type="bool" value="true"/>
+      <property id="DrawFlares" type="bool" value="true"/>
+      <property id="DrawStreaks" type="bool" value="true"/>
+      <property id="DrawLarge" type="bool" value="true"/>
+      <property id="DrawSmall" type="bool" value="true"/>
+      <property id="EnableFog" type="bool" value="true"/>
+    </Data>
+    <Data path="LightGlow.Data" type="LightGlowData">
+      <property id="MaxGlows" type="uint" value="45000"/>
+      <property id="MaxPresets" type="uint" value="3072"/>
+      <property id="OcclusionPointCount" type="uint" value="16"/>
+      <property id="OcclusionUBias" type="float" value="0.218"/>
+      <property id="OcclusionDistantPushOut" type="float" value="0.004"/>
+      <property id="OcclusionPassColour" type="float4" value="0,1,0,1"/>
+      <property id="OcclusionFailColour" type="float4" value="1,0,0,1"/>
+      <property id="AAFastFade" type="float" value="0.8"/>
+      <property id="AAPeak" type="float" value="0.1"/>
+      <property id="OffscreenFadeStart" type="float" value="20"/>
+      <property id="OffscreenFadeEnd" type="float" value="40"/>
+      <property id="WaterReflectionGlowIntensity" type="float" value="4"/>
+      <property id="HalfResSizeThreshold" type="float" value="0.03"/>
+    </Data>
+    <Data path="StreamedLightsManager.Data" type="StreamedLightsManagerParams">
+      <property id="EdgeFadeEnabled" type="bool" value="false"/>
+      <property id="EdgeFadeStart" type="float" value="0.8"/>
+    </Data>
+    
+    <!-- Per config base settings -->
+    <Settings path="LightGlow.Data" tags="Config.LensEffects.Off OR Config.LensEffects.Low OR Config.LensEffects.Medium OR Config.LensEffects.High">
+      <property id="OcclusionDistantPushOut" value="0.001" />
+    </Settings>
+    <Settings path="LightGlow.Data" tags="Platform.Anaconda OR Platform.Lockhart OR Config.LensEffects.Ultra OR Config.LensEffects.Extreme">
+      <property id="OcclusionDistantPushOut" value="0.004" />
+    </Settings>
+    
+    <!-- Setup correct RenderModes -->
+    <Settings path="LightGlow.Data" tags="Presentation.MinimalMemorySettings">
+      <property id="MaxGlows" value="1024"/>
+      <property id="MaxPresets" value="256"/>
+    </Settings>
+</DatabaseFile>

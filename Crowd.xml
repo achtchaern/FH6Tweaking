@@ -1,0 +1,124 @@
+<DatabaseFile path="">
+    <Data path="CrowdSettings" type="CrowdSettings">
+        <property id="SplineSpeedMultiplierChangeRate" value="0.15"/>
+        <property id="ForceCameraFlashesOn" value="false"/>
+    </Data>
+
+    <Data path="CrowdImpostorSettings" type="CrowdImpostorSettings">
+        <property id="EnableImpostors" value="true"/>
+        <property id="CameraPosition" value="0.0,1.0,-8.0"/>
+        <property id="FieldOfView" value="15.0"/>
+        <property id="NearClip" value="0.2"/>
+        <property id="FarClip" value="100.0"/>
+        <property id="TargetSizeX" value="1024"/>
+        <property id="TargetSizeY" value="512"/>
+        <property id="UseMSAA" value="false"/>
+        <property id="UseTintMask" value="true"/>
+        <property id="SpriteColumns" value="32"/>
+        <property id="SpriteRows" value="8"/>
+        <property id="NumSpritesToRender" value="256"/>
+        <property id="LOD" value="4"/>
+        <property id="AsyncRender" value="true"/>
+        <property id="GroupSettings">
+            <element>
+                <property id="Name" value="Idle"/>
+                <property id="Weight" value="1.0"/>
+                <property id="ClassFilters">
+                    <property id="Priority" value="-1"/> <!-- match lower than other categories since it's the default -->
+                    <property id="Include" value=""/> <!-- default everything -->
+                    <property id="Exclude" value="_bckp_,_shopb_,_mar_,_vol_"/> 
+                    <property id="IncludeInImpostors" value="gen_st_idl_"/> <!-- only actual idles include in impostor list -->
+                    <property id="ExcludeFromImpostors" value="_pw_"/>
+                </property>
+            </element> 
+            <element>
+                <property id="Name" value="Cheer"/>
+                <property id="Weight" value="1.0"/>
+                <property id="ClassFilters">
+                    <property id="Priority" value="0"/>
+                    <property id="Include" value="race_st_"/>
+                    <property id="Exclude" value="_bckp_,_shopb_,_mar_,_vol_"/>
+                    <property id="IncludeInImpostors" value=""/>
+                    <property id="ExcludeFromImpostors" value="_pw_"/>
+                </property>
+            </element> 
+            <element>
+                <property id="Name" value="Dance"/>
+                <property id="Weight" value="1.0"/>
+                <property id="ClassFilters">
+                    <property id="Priority" value="0"/>
+                    <property id="Include" value="fest_dance_"/>
+                    <property id="Exclude" value="_bckp_,_shopb_,_mar_,_vol_"/>
+                    <property id="IncludeInImpostors" value=""/>
+                    <property id="ExcludeFromImpostors" value="_pw_"/>
+                </property>
+            </element> 
+            <element>
+                <property id="Name" value="Barrier"/>
+                <property id="Weight" value="1.0"/>
+                <property id="ClassFilters">
+                    <property id="Priority" value="1"/> <!-- match barrier higher than other categories -->
+                    <property id="Include" value="bar_"/>
+                    <property id="Exclude" value="_bckp_,_shopb_,_mar_,_vol_"/>
+                    <property id="IncludeInImpostors" value="bar_idle_,bar_cheer_fwd_"/>
+                    <property id="ExcludeFromImpostors" value="_pw_"/>
+                </property>
+            </element>
+            <element>
+                <property id="Name" value="Sitting"/>
+                <property id="Weight" value="0.5"/>
+                <property id="ClassFilters">
+                    <property id="Priority" value="0"/>
+                    <property id="Include" value="gen_sit_,gran_sit_"/>
+                    <property id="Exclude" value="gen_sit_floor_,_bckp_,_shopb_,_mar_,_vol_"/>
+                    <property id="IncludeInImpostors" value="gran_sit_"/>
+                    <property id="ExcludeFromImpostors" value="_pw_"/>
+                </property>
+            </element>
+            <element>
+                <property id="Name" value="Sitting_Floor"/>
+                <property id="Weight" value="0.5"/>
+                <property id="ClassFilters">
+                    <property id="Priority" value="0"/>
+                    <property id="Include" value="gen_sit_floor_"/>
+                    <property id="Exclude" value="_bckp_,_shopb_,_mar_,_vol_"/>
+                    <property id="IncludeInImpostors" value=""/>
+                    <property id="ExcludeFromImpostors" value="_pw_"/>
+                </property>
+            </element>
+        </property>
+    </Data>
+
+    <Settings path="CrowdImpostorSettings" tags="Platform.Lockhart">
+        <property id="TargetSizeX" value="512" />
+        <property id="TargetSizeY" value="256" />
+    </Settings>
+
+    <!-- low quality impostors: only idle supported -->
+    <Settings path="CrowdImpostorSettings" tags="Config.GeometryQuality.VeryLow OR Config.GeometryQuality.Low">
+        <property id="SpriteColumns" value="8"/>
+        <property id="SpriteRows" value="4"/>
+        <property id="NumSpritesToRender" value="32"/>
+        <property id="TargetSizeX" value="128" />
+        <property id="TargetSizeY" value="128" />
+        <property id="GroupSettings">
+            <element>
+                <property id="Name" value="Idle"/>
+                <property id="Weight" value="1.0"/>
+                <property id="ClassFilters">
+                    <property id="Priority" value="-1"/> <!-- match lower than other categories since it's the default -->
+                    <property id="Include" value=""/> <!-- default everything -->
+                    <property id="Exclude" value="_bckp_,_shopb_,_mar_,_vol_"/> 
+                    <property id="IncludeInImpostors" value="gen_st_idl_"/> <!-- only actual idles include in impostor list -->
+                    <property id="ExcludeFromImpostors" value="_pw_"/>
+                </property>
+            </element> 
+        </property>
+    </Settings>
+
+    <!-- force camera flashes on in races -->
+    <Settings path="CrowdSettings" tags="Scenario.Race">
+        <property id="ForceCameraFlashesOn" value="true"/>
+    </Settings>
+    
+</DatabaseFile>

@@ -1,0 +1,663 @@
+<DatabaseFile path="">
+    <!-- The Frame XML data base allows you to customize frame parameters, including render buffer layout, aliasing and ESRAM usage -->
+
+    <!-- Frame Description Data -->
+
+    <Data path="Frame.Descriptor" type="FrameDescriptor">
+        <!-- Global Frame Parameters -->
+        <property id="FrameFormat" value="R11G11B10F"/>
+        <property id="FrameWidth" value="1920"/>
+        <property id="FrameHeight" value="1080"/>
+        <property id="PresentInterval" value="Two"/>
+        <property id="UseThreadForSwap" value="false"/>
+        <property id="FrameWidthIncrementScale" value="0.1"/>
+        <property id="FrameHeightIncrementScale" value="0.1"/>
+        <property id="FrameWidthMinimumScale" value="0.75"/>
+        <property id="FrameHeightMinimumScale" value="0.75"/>
+        <property id="FrameLatency" value="33.333"/>
+        <property id="UseJournalBundles" value="false"/>
+
+        <!-- Dynamic resolution parameters -->
+        <property id="DynamicResolutionMode" value="None"/>
+
+        <!-- FixedCost is an estimate of the frame time with zero pixels compared to native res. It is calculated by:
+             C = Cost of scene at minimum res / Cost of scene at full res
+             P = Number of pixels at minimum res / Number of pixels at full res
+             FixedCost = C - (1 - C) / (1 - P) * P   -->
+        <property id="DRSFixedCost" value="0.63"/>
+		
+        <!-- Drop resolution if the predicted latency from GPU finished to vsync in ms is less than this threshold -->
+        <property id="DRSMarginDropRes" value="1.0"/>
+		
+        <!-- Raise resolution if the predicted frame time at the next highest res is less than this threshold in ms below a full frame -->
+        <property id="DRSMarginRaiseRes" value="0.4"/>
+		
+        <!-- Wait for at least this many ms after raising the res before raising another step higher -->
+        <property id="DRSMarginRaiseWait" value="150.0"/>
+
+        <!--New DRS settings-->
+        <property id="NewDRS_Enabled" value="false"/>
+        <property id="NewDRS_CostEstimatePerCubemapFace" value="0.4"/>
+        <property id="NewDRS_TargetFrameTimeMS" value="16.66"/>
+        <property id="NewDRS_DurationAverageWindow" value="8"/>
+        <property id="NewDRS_LatencyAverageWindow" value="1"/>
+        <property id="NewDRS_LatencyTargetMS" value="10.0"/>
+        <property id="NewDRS_LatencyAdaptionSlopeUnder" value="0.2"/>
+        <property id="NewDRS_LatencyAdaptionSlopeOver" value="0.0"/>
+        <property id="NewDRS_LatencyClampMinMS" value="-2.0"/>
+        <property id="NewDRS_LatencyClampMaxMS" value="0.0"/>
+        <property id="NewDRS_WidthStepPx" value="16"/>
+        <property id="NewDRS_HeightStepPx" value="16"/>
+        <property id="NewDRS_IncreaseThresholdMS" value="0.5"/>
+
+        <!-- Render Buffer Definitions -->
+        <property id="RenderBuffers">
+            <!-- DESCRIBE RENDER BUFFERS HERE (Enabled by default, make sure you disable it if not present in all layouts/configutations) -->
+            <!-- Default Render Buffer Description
+            <map_element><key value=""><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="FrameRelativeDivisor/> Supported values: Absolute, FrameRelativeDivisor, RenderRelativeDivisor
+                    <property id="Width" value="1"/>
+                    <property id="Height" value="1"/>
+                </property>
+                <property id="MipLevels" value="1"/>
+                <property id="SplitViewMode" value="Unique"/> Supported values: Shared, Unique
+                <property id="MultiSampling" type="RenderBufferMultiSamplingDescriptor">
+                    <property id="Inheritance" value="None"/> Supported values: None, Scenario
+                    <property id="SampleCount" value="1"/>
+                    <property id="Quality" value="0"/>
+                </property>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor">
+                    <property id="Inheritance" value="None"/> Supported values: None, Frame, SwapChain
+                    <property id="Format" value="Invalid"/>
+                </property>
+                <property id="DefaultState" value="ShaderResource"/> See ResourceState::Enum for values
+                <property id="ClearMode" value="Zero"/> Supported values: Zero, Black, White, BlackHalfAlpha
+                <property id="Alias" value=""/>
+                <property id="DynamicRangeSupport" value="All"/> Supported values: All, SDR, HDR
+                <property id="AAModeSupport" value="All" /> Supported values: All, MSAAOnly, TAAOnly
+                <property id="ScalingModeSupport" value="All" /> Supported values: All, UpscaleOnly
+                <property id="Enabled" value="true"/>
+            </value></map_element>
+            -->
+
+            <!-- WorldRenderVelocity (Mesh Motion Blur feature dependent) -->
+            <map_element><key value="WorldRenderVelocity"/><value type="RenderBufferDescriptor">
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="MultiSampling" type="RenderBufferMultiSamplingDescriptor"><property id="Inheritance" value="Scenario"/></property>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R16G16F"/></property>
+                <property id="AAModeSupport" value="TAAOnly" />
+                <property id="Tags" value="WorldRender"/>
+                <property id="Enabled" value="false"/> <!-- Removed, F++ replaces this -->
+            </value></map_element>
+            <!-- PixelDepthID -->
+            <map_element><key value="PixelDepthID"/><value type="RenderBufferDescriptor">
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="MultiSampling" type="RenderBufferMultiSamplingDescriptor"><property id="Inheritance" value="Scenario"/></property>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R16G16F"/></property>
+                <property id="Tags" value="PixelDepth"/>
+            </value></map_element>
+            <!-- WorldRender -->
+            <map_element><key value="WorldRender"/><value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Inheritance" value="Frame"/></property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="FrameRelativeDivisor"/>
+                </property>
+                <property id="Tags" value="WorldRender,EndRenderWorld"/>
+                <property id="Aliasable" value="false"/><!-- RTALIASING_TODO: assigned earlier than needed as an RT, could alias against post -->
+            </value></map_element>
+            <!-- WorldRenderTemp -->
+            <map_element><key value="WorldRenderTemp"/><value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Inheritance" value="Frame"/></property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="FrameRelativeDivisor"/>
+                </property>
+                <property id="Tags" value="WorldRender"/>
+                <property id="Aliasable" value="false"/><!-- RTALIASING_TODO: has previous colour for refraction, could have a dedicated WorldRenderPrev target for that -->
+            </value></map_element>
+            <!-- WorldDepthUAV -->
+            <map_element><key value="WorldDepthUAV"/><value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                </property>
+                <property id="BufferCount" value="2"/>  <!-- keep previous frame's results -->
+                <property id="MipLevels" value="8"/>    <!-- provide mips, so we may create/use a partial depth pyramid -->
+                <property id="Aliasable" value="false"/><!-- RTALIASING_TODO: disabled due to buffer count -->
+                <property id="Tags" value="WorldRender"/>
+            </value></map_element>
+            <!-- WorldDepthDSV -->
+            <map_element><key value="WorldDepthDSV"/><value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="D32S8"/></property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                </property>
+                <property id="Tags" value="WorldRender"/>
+                <property id="Aliasable" value="false"/><!-- disabled: used through most of the frame including post -->
+            </value></map_element>
+            <!-- WorldStencil -->
+            <map_element><key value="WorldStencil"/><value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="Integer_R8"/></property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                </property>
+                <property id="BufferCount" value="2"/> <!-- keep previous frame's results -->
+                <property id="MipLevels" value="1"/>
+                <property id="Aliasable" value="false"/><!-- RTALIASING_TODO: disabled due to buffer count -->
+                <property id="Tags" value="WorldRender"/>
+            </value></map_element>
+            <!-- WorldAlpha0 -->
+            <map_element><key value="WorldAlpha0"/><value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Inheritance" value="Frame"/></property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                </property>
+                <property id="Tags" value="Transparent,FinalCombine"/>
+            </value></map_element>
+            <!-- WorldAlpha1 -->
+            <map_element><key value="WorldAlpha1"/><value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Inheritance" value="Frame"/></property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                </property>
+                <property id="Tags" value="Transparent,FinalCombine"/>
+            </value></map_element>
+            <!-- WorldAlphaDepth -->
+            <map_element><key value="WorldAlphaDepth"/><value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="D32S8"/></property><!-- stencil here so we can re-use depth pass draw bundles for ghosts -->
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                  <property id="Mode" value="RenderRelativeDivisor"/>
+                </property>  
+                <!-- disabled: used by particles in the mirrorrenderer -->
+                <property id="Tags" value="Transparent,FinalCombine"/>
+            </value></map_element>
+            <!-- WorldAlpha0ESRAM (Console only) -->
+            <map_element><key value="WorldAlpha0ESRAM"/><value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Inheritance" value="Frame"/></property>
+                <property id="Enabled" value="false"/> <!-- Conditional buffer (Deactivated by default) -->
+            </value></map_element>
+            <!-- FinalTemp (Dedicated Final Frame Buffer feature dependent) -->
+            <map_element><key value="FinalTemp"/><value type="RenderBufferDescriptor">
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Inheritance" value="SwapChain"/></property>
+                <property id="ClearMode" value="Black"/>
+                <property id="Enabled" value="false"/> <!-- Conditional buffer (Deactivated by default) -->
+            </value></map_element>
+            <!-- FinalTempHDR (Dedicated Final Frame Buffer feature dependent, HDR Output only, Console only) -->
+            <map_element><key value="FinalTempHDR"/><value type="RenderBufferDescriptor">
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Inheritance" value="SwapChain"/></property>
+                <property id="ClearMode" value="Black"/>
+                <property id="DynamicRangeSupport" value="HDR"/>
+                <property id="Enabled" value="false"/> <!-- Conditional buffer (Deactivated by default) -->
+            </value></map_element>
+            <!-- WorldDownsample -->
+            <map_element><key value="WorldDownsample"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="FrameRelativeDivisor"/>
+                    <property id="Width" value="4"/>
+                    <property id="Height" value="4"/>
+                </property>
+                <property id="MipLevels" value="0"/>
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R11G11B10F"/></property>
+                <property id="Aliasable" value="false"/> <!-- Read from previous frame, not aliasable -->
+                <property id="Tags" value="WorldRender"/>
+            </value></map_element>
+            <!-- WorldLuminance -->
+            <map_element><key value="WorldLuminance"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="Absolute"/>
+                    <property id="Width" value="8"/>
+                    <property id="Height" value="1"/>
+                </property>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Tags" value="Post"/>
+                <property id="Aliasable" value="false"/> <!-- Read from previous frame, not aliasable -->
+            </value></map_element>
+            <!-- Exposure -->
+            <map_element><key value="Exposure"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="Absolute"/>
+                    <property id="Width" value="1"/>
+                    <property id="Height" value="1"/>
+                </property>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Tags" value="Post"/>
+                <property id="Aliasable" value="false"/>
+            </value></map_element>
+            <!-- RefractionBuffer -->
+            <map_element><key value="RefractionBuffer"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="FrameRelativeDivisor"/>
+                    <property id="Width" value="4"/>
+                    <property id="Height" value="4"/>
+                </property>
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="A16B16G16R16F"/></property>
+                <property id="Tags" value="Post"/>
+            </value></map_element>
+            <!-- RefractionBufferIntermediate -->
+            <map_element><key value="RefractionBufferIntermediate"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="FrameRelativeDivisor"/>
+                    <property id="Width" value="4"/>
+                    <property id="Height" value="4"/>
+                </property>
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="A16B16G16R16F"/></property>
+                <property id="Tags" value="Post"/>
+            </value></map_element>
+            <!-- FocalDistanceTemp -->
+            <map_element><key value="FocalDistanceTemp"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="Absolute"/>
+                    <property id="Width" value="1"/>
+                    <property id="Height" value="1"/>
+                </property>
+                <property id="SplitViewMode" value="Unique"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Tags" value="Post"/>
+            </value></map_element>
+            <!-- FocalDistance -->
+            <map_element><key value="FocalDistance"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="Absolute"/>
+                    <property id="Width" value="1"/>
+                    <property id="Height" value="1"/>
+                </property>
+                <property id="SplitViewMode" value="Unique"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Aliasable" value="false"/> <!-- Read from previous frame, not aliasable -->
+                <property id="Tags" value="Post"/>
+            </value></map_element>
+            <!-- LumTemp -->
+            <map_element><key value="LumTemp"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                    <property id="Width" value="32"/>
+                    <property id="Height" value="32"/>
+                </property>
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Tags" value="Post"/>
+            </value></map_element>
+            <!-- LumLowRes -->
+            <map_element><key value="LumLowRes"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                    <property id="Width" value="32"/>
+                    <property id="Height" value="32"/>
+                </property>
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Tags" value="Post"/>
+                <property id="Aliasable" value="false"/> <!-- Read from previous frame, not aliasable -->
+            </value></map_element>
+            <!-- LumLowResTemp1 -->
+            <map_element><key value="LumLowResTemp1"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                    <property id="Width" value="32"/>
+                    <property id="Height" value="32"/>
+                </property>
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Tags" value="Post"/>
+            </value></map_element>
+            <!-- LumLowResTemp2 -->
+            <map_element><key value="LumLowResTemp2"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                    <property id="Width" value="32"/>
+                    <property id="Height" value="32"/>
+                </property>
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Tags" value="Post"/>
+            </value></map_element>
+            <!-- NewBloom -->
+            <map_element><key value="NewBloom"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor"><property id="Width" value="2"/><property id="Height" value="2"/></property>
+                <property id="SplitViewMode" value="Shared"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R11G11B10F"/></property>
+                <!-- This target has moved inside Bloom.cpp, can be removed -->
+                <property id="Enabled" value="false"/> 
+                <property id="Tags" value="Post"/>
+            </value></map_element>
+            <!-- LightRaySilhouette -->
+            <map_element><key value="LightRaySilhouette"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                  <property id="Mode" value="RenderRelativeDivisor"/>
+                  <property id="Width" value="4"/>
+                  <property id="Height" value="4"/>
+                </property>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Tags" value="Post"/>
+            </value></map_element>
+            <!-- LightRays -->
+            <map_element><key value="LightRays"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                  <property id="Mode" value="RenderRelativeDivisor"/>
+                  <property id="Width" value="4"/>
+                  <property id="Height" value="4"/>
+                </property>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Tags" value="Post"/>
+            </value></map_element>
+            <!-- Velocity -->
+            <map_element><key value="Velocity"/><value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R16G16F"/></property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                </property>
+                <property id="Tags" value="Post"/>
+                <property id="Aliasable" value="false"/><!-- RTALIASING_TODO: can we move generation of this forward to be post only? -->
+            </value></map_element>
+            <!-- LensFlare -->
+            <map_element><key value="LensFlare"/><value type="RenderBufferDescriptor">
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="FrameRelativeDivisor"/>
+                    <property id="Width" value="2"/>
+                    <property id="Height" value="2"/>
+                </property>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R11G11B10F"/></property>
+                <property id="Tags" value="WorldRender,Post"/> <!-- RTALIASING_TODO: cleared early in frame, could be moved later -->
+            </value></map_element>
+            <!-- WorldRenderPrev (Upscale Tests feature dependent) -->
+            <map_element><key value="WorldRenderPrev"/><value type="RenderBufferDescriptor">
+                <property id="SplitViewMode" value="Unique"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Inheritance" value="Frame"/></property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                </property>
+                <property id="Enabled" value="false"/> <!-- Conditional buffer (Deactivated by default) -->
+                <property id="Aliasable" value="false"/> <!-- Read from previous frame, not aliasable -->
+            </value></map_element>
+            <!-- WorldDepthPrev (Upscale Tests feature dependent) -->
+            <map_element><key value="WorldDepthPrev"/><value type="RenderBufferDescriptor">
+                <property id="SplitViewMode" value="Unique"/>
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor"><property id="Format" value="R32F"/></property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                    <property id="Mode" value="RenderRelativeDivisor"/>
+                </property>
+                <property id="Enabled" value="false"/> <!-- Conditional buffer (Deactivated by default) -->
+                <property id="Aliasable" value="false"/> <!-- Read from previous frame, not aliasable -->
+            </value></map_element>
+            <!-- WorldDepthUpscale (Utilized for full res depth testing when upscaling) -->
+            <map_element>
+              <key value="WorldDepthUpscale"/>
+              <value type="RenderBufferDescriptor">
+                <property id="FormatDescriptor" type="RenderBufferFormatDescriptor">
+                  <property id="Format" value="D32S8"/>
+                </property>
+                <property id="Size" type="RenderBufferSizeDescriptor">
+                  <property id="Mode" value="FrameRelativeDivisor"/>
+                </property>
+                <property id="AAModeSupport" value="TAAOnly" />
+                <property id="ScalingModeSupport" value="UpscaleOnly" />
+                <property id="Aliasable" value="false"/>
+              </value>
+            </map_element>
+        </property>
+
+        <!-- Render Buffer Alias Group Definitions -->
+        <property id="RenderBufferAliasGroups">
+            <!-- ADD ALIAS GROUPS HERE -->
+            <!-- Default Render Buffer Alias Group Description
+            <map_element><key value=""/><value type="RenderBufferAliasGroup">
+                <property id="RenderBuffers">
+                    Note: array of strings, defaults to empty ...
+                    example: <element value="RenderBufferName"/>
+                </property>
+                <property id="Enabled" value="true"/>
+            </value></map_element>
+            -->
+
+            <!-- 0 - Begin Post -->
+            <map_element><key value="BeginPost"/><value type="RenderBufferAliasGroup">
+                <property id="RenderBuffers">
+                    <element value="Velocity"/>
+                    <element value="RefractionBuffer"/>
+                    <element value="RefractionBufferIntermediate"/>
+                    <element value="LightRaySilhouette"/>
+                    <element value="LightRays"/>
+                </property>
+            </value></map_element>
+            <map_element><key value="EndWorldRender"/><value type="RenderBufferAliasGroup">
+                <property id="RenderBuffers">
+                    <element value="WorldRender"/>
+                    <element value="WorldDepthDSV"/>
+                    <element value="FinalTemp"/>
+                </property>
+            </value></map_element>
+        </property>
+    </Data>
+
+    <!-- Frame Definition Settings -->
+
+    <!-- ADD RENDER BUFFER LAYOUTS HERE (Remember to disable your render buffers in the descriptor if conditional -->
+    <!-- Example Render Buffer Layout
+    <Settings path="Frame.Descriptor" tags="(Add conditions here...)">
+        <property id="RenderBuffers.NewLayoutBufferA.Enabled" value="true"/>
+        <property id="RenderBuffers.NewLayoutBufferB.Enabled" value="true"/>
+        <property id="RenderBuffers.NewLayoutBufferC.Enabled" value="true"/>
+    </Settings>
+    -->
+
+    <!-- Platform: Lockhart -->
+    <Settings path="Frame.Descriptor" tags="Config.Lockhart30Hz AND -Streaming.xCloud">
+      <property id="FrameWidth" value="2560"/>
+      <property id="FrameHeight" value="1440"/>
+      <property id="NewDRS_Enabled" value="true"/>
+      <property id="DynamicResolutionMode" value="FrameThenCubemap"/>
+      <property id="NewDRS_TargetFrameTimeMS" value="33.33"/>
+      <property id="NewDRS_LatencyTargetMS" value="20"/>
+      <property id="DRSFixedCost" value="0.64"/>
+    </Settings>
+
+    <!-- Platform: Lockhart60 -->
+    <Settings path="Frame.Descriptor" tags="Config.Lockhart60Hz">
+      <property id="FrameWidth" value="1920"/>
+      <property id="FrameHeight" value="1080"/>
+      <property id="PresentInterval" value="One"/>
+      <property id="NewDRS_Enabled" value="true"/>
+      <property id="DynamicResolutionMode" value="FrameThenCubemap"/>
+      <property id="DRSFixedCost" value="0.72"/>
+      <property id="CubemapMinFaces" value="3"/>
+      <property id="FrameLatency" value="16.666"/> <!--unused with newDRS-->
+    </Settings>
+
+    <!-- Platform: Anaconda -->
+    <Settings path="Frame.Descriptor" tags="Config.Anaconda30Hz">
+      <property id="FrameWidth" value="3840"/>
+      <property id="FrameHeight" value="2160"/>
+      <property id="DynamicResolutionMode" value="None"/>
+    </Settings>
+  
+    <!-- Platform: Anaconda60 -->
+    <Settings path="Frame.Descriptor" tags="Config.Anaconda60Hz">
+      <property id="FrameWidth" value="3840"/>
+      <property id="FrameHeight" value="2160"/>
+      <property id="PresentInterval" value="One"/>
+      <property id="NewDRS_Enabled" value="true"/>
+      <property id="DynamicResolutionMode" value="FrameThenCubemap"/>
+      <property id="DRSFixedCost" value="0.56"/>
+      <property id="FrameLatency" value="16.666"/> <!--unused with newDRS-->
+    </Settings>
+
+    <!-- Platform: Console (Scarlett) -->
+    <Settings path="Frame.Descriptor" tags="Platform.Console">
+        <!-- Platform dependent Render Buffer properties -->
+        <property id="RenderBuffers.LumTemp.Size.Mode" value="Absolute"/> 			<!-- 28 - LumTemp -->
+        <property id="RenderBuffers.LumTemp.Size.Width" value="60"/>
+        <property id="RenderBuffers.LumTemp.Size.Height" value="34"/>
+        <property id="RenderBuffers.LumLowRes.Size.Mode" value="Absolute"/> 		<!-- 29 - LumLowRes -->
+        <property id="RenderBuffers.LumLowRes.Size.Width" value="60"/>
+        <property id="RenderBuffers.LumLowRes.Size.Height" value="34"/>
+        <property id="RenderBuffers.LumLowResTemp1.Size.Mode" value="Absolute"/> 	<!-- 30 - LumLowResTemp1 -->
+        <property id="RenderBuffers.LumLowResTemp1.Size.Width" value="60"/>
+        <property id="RenderBuffers.LumLowResTemp1.Size.Height" value="34"/>
+        <property id="RenderBuffers.LumLowResTemp2.Size.Mode" value="Absolute"/> 	<!-- 31 - LumLowResTemp2 -->
+        <property id="RenderBuffers.LumLowResTemp2.Size.Width" value="60"/>
+        <property id="RenderBuffers.LumLowResTemp2.Size.Height" value="34"/>
+    </Settings>
+    
+    <!-- If in player homes and DXR is enabled, activate DRS (remove if DXR is removed from player homes (in DXR.xml) -->
+    <Settings path="Frame.Descriptor" tags="Config.Scarlett30Hz AND (Scenario.AutoVistaPhotoMode OR Scenario.PlayerHousePhotoMode OR Scenario.Homespace OR Scenario.PlayerHouse)">
+      <property id="DynamicResolutionMode" value="FrameOnly"/>
+      <property id="DRSFixedCost" value="0.71"/>
+    </Settings>
+
+    <!-- PC fixed resolution scale -->
+    <Settings path="Frame.Descriptor" tags="Config.ResolutionScaling.UltraQuality">
+        <property id="DynamicResolutionMode" value="FrameOnlyMinimumScale"/>
+        <property id="FrameWidthMinimumScale" value="0.77"/>
+        <property id="FrameHeightMinimumScale" value="0.77"/>
+    </Settings>
+    <Settings path="Frame.Descriptor" tags="Config.ResolutionScaling.Quality">
+        <property id="DynamicResolutionMode" value="FrameOnlyMinimumScale"/>
+        <property id="FrameWidthMinimumScale" value="0.67"/>
+        <property id="FrameHeightMinimumScale" value="0.67"/>
+    </Settings>
+    <Settings path="Frame.Descriptor" tags="Config.ResolutionScaling.Balanced">
+        <property id="DynamicResolutionMode" value="FrameOnlyMinimumScale"/>
+        <property id="FrameWidthMinimumScale" value="0.59"/>
+        <property id="FrameHeightMinimumScale" value="0.59"/>
+    </Settings>
+    <Settings path="Frame.Descriptor" tags="Config.ResolutionScaling.Performance">
+        <property id="DynamicResolutionMode" value="FrameOnlyMinimumScale"/>
+        <property id="FrameWidthMinimumScale" value="0.5"/>
+        <property id="FrameHeightMinimumScale" value="0.5"/>
+    </Settings>
+    
+    <!-- Feature: PC framerate settings -->
+    <Settings path="Frame.Descriptor" tags="Config.FrameRate.Framerate_4">
+        <property id="PresentInterval" value="Four"/>
+    </Settings>
+    <Settings path="Frame.Descriptor" tags="Config.FrameRate.Framerate_3">
+        <property id="PresentInterval" value="Three"/>
+    </Settings>
+    <Settings path="Frame.Descriptor" tags="Config.FrameRate.Framerate_2">
+        <property id="PresentInterval" value="Two"/>
+    </Settings>
+    <Settings path="Frame.Descriptor" tags="Config.FrameRate.Framerate_1">
+        <property id="PresentInterval" value="One"/>
+    </Settings>
+    <Settings path="Frame.Descriptor" tags="Config.FrameRate.FramerateUnlocked">
+        <property id="PresentInterval" value="Immediate"/>
+    </Settings>
+
+    <!-- Frame Config: Dedicated Final Frame Buffer -->
+    <Settings path="Frame.Descriptor" tags="Frame.Config.EnableDedicatedFinalFrameBuffer">
+        <property id="RenderBuffers.FinalTemp.Enabled" value="true" /> <!-- 20 - FinalTemp (Dedicated Final Frame Buffer feature dependent) -->
+        <property id="RenderBuffers.FinalTempHDR.Enabled" value="true" tags="Platform.Console"/> <!-- 21 - FinalTempHDR (Dedicated Final Frame Buffer feature dependent, HDR Output only, Console only) -->
+    </Settings>
+
+    <!-- Frame Config: Upsale Tests -->
+    <Settings path="Frame.Descriptor" tags="Frame.Config.EnableUpscaleTests">
+        <property id="RenderBuffers.WorldRenderPrev.Enabled" value="true"/> 	<!-- 39 - WorldRenderPrev (Upscale Tests feature dependent) -->
+        <property id="RenderBuffers.WorldDepthPrev.Enabled" value="true"/> 		<!-- 40 - WorldDepthPrev (Upscale Tests feature dependent) -->
+    </Settings>
+
+    <!-- Frame Config: Enable World Render Alpha Channel -->
+    <Settings path="Frame.Descriptor" tags="Frame.Config.EnableWorldRenderAlphaChannel">
+        <property id="FrameFormat" value="A16B16G16R16F"/>
+    </Settings>
+
+    <!-- We force DynamicResolutionMode to FrameOnly for Scarlett60Hz in the player house.
+     This is because it's the only configuration that enables cube scaling which is breaking the paused cubemap in player homes-->
+    <Settings path="Frame.Descriptor" tags="(Scenario.PlayerHouse OR Scenario.PlayerHousePhotoMode) AND Config.Scarlett60Hz">
+        <property id="DynamicResolutionMode" value="FrameOnly"/>
+    </Settings>
+   
+    <!-- Debug force to 720p -->    
+    <Settings path="Frame.Descriptor" tags="AppCmd.Force720p">
+      <property id="FrameWidth" value="1280"/>
+      <property id="FrameHeight" value="720"/>
+      <property id="DynamicResolutionMode" value="None"/>
+    </Settings>
+    
+    <!-- Debug force to 1080p -->    
+    <Settings path="Frame.Descriptor" tags="AppCmd.Force1080p">
+      <property id="FrameWidth" value="1920"/>
+      <property id="FrameHeight" value="1080"/>
+      <property id="DynamicResolutionMode" value="None"/>
+    </Settings>
+
+    <!-- Debug resolution overrides -->
+    <Settings path="Frame.Descriptor" tags="Platform.Console AND AppCmd.limitto4k">
+        <property id="FrameWidth" value="3840"/>
+        <property id="FrameHeight" value="2160"/>
+        <property id="DynamicResolutionMode" value="None"/>
+    </Settings>
+    <Settings path="Frame.Descriptor" tags="Platform.Console AND AppCmd.limitto1080">
+        <property id="FrameWidth" value="1920"/>
+        <property id="FrameHeight" value="1080"/>
+        <property id="DynamicResolutionMode" value="None"/>
+    </Settings>
+    <Settings path="Frame.Descriptor" tags="Platform.Console AND AppCmd.limitto720">
+        <property id="FrameWidth" value="1280"/>
+        <property id="FrameHeight" value="720"/>
+        <property id="DynamicResolutionMode" value="None"/>
+    </Settings>
+    
+    <Settings path="Frame.Descriptor" tags="AppCmd.Force60Hz">
+      <property id="PresentInterval" value="One"/>
+      <property id="FrameLatency" value="16.666"/>
+    </Settings>
+    <Settings path="Frame.Descriptor" tags="AppCmd.Force30Hz">
+      <property id="PresentInterval" value="Two"/>
+      <property id="FrameLatency" value="33.333"/>
+    </Settings>
+
+    <!-- Base upsample settings -->    
+    <Data path="Frame.Upsample" type="UpsampleParams">
+        <property id="UpscaleMethod" value="FidelityFXCAS"/>
+        <property id="SharpenMethod" value="FidelityFXRCAS"/>
+        <property id="FidelityFXCASOptions">
+            <property id="DebugChecker" value="false"/>
+            <property id="ImproveDiagonals" value="false"/>
+            <property id="RunSlower" value="false"/>
+            <property id="SharpenOnly" value="false"/>
+            <property id="BaseSharpness" value="0.5"/>
+            <property id="MaxSharpness" value="1.0"/>
+            <property id="UseFP16" value="false"/>
+            <property id="ApplyToLuminanceOnly" value="false"/>
+        </property>
+        <property id="FidelityFXFSROptions">
+            <property id="Sharpness" value="0.5"/>
+            <property id="UseFP16" value="false"/>
+        </property>
+    </Data>
+
+    <Settings path="Frame.Descriptor" tags="Platform.PC OR AppCmd.UseJournalBundles">
+        <property id="UseJournalBundles" value="true"/>
+    </Settings>
+
+    <!-- Base vrs settings -->    
+    <Data path="Frame.VRS" type="VRSParams">
+      <property id="Available" value="true"/>
+      <property id="EnabledInGeometryPass" value="false"/>
+      <property id="EnabledInRelightingPass" value="false"/>
+      <property id="DisableWhenDithering" value="true"/>
+      <property id="DisableWhenATCEmulating" value="true"/>
+      <property id="CoarseDisableMaskSizeFactor" value="4"/>
+      <property id="Method" value="Base"/>
+      <property id="ShadingRateTolerance" value="0.075"/>
+    </Data>
+
+    <Settings path="Frame.VRS" tags="Largeshot.Accumulating">
+        <property id="EnabledInGeometryPass" value="false"/>
+        <property id="EnabledInRelightingPass" value="false"/>
+    </Settings>
+  
+  <!-- If we're below 1440p increase res of water on lens -->
+  <Settings path="Frame.Descriptor" tags="-Frame.Resolution.AtLeastQuadHD">
+    <property id="RenderBuffers.RefractionBuffer.Size.Width" value="2"/>
+    <property id="RenderBuffers.RefractionBuffer.Size.Height" value="2"/>
+    <property id="RenderBuffers.RefractionBufferIntermediate.Size.Width" value="2"/>
+    <property id="RenderBuffers.RefractionBufferIntermediate.Size.Height" value="2"/>
+  </Settings>
+
+</DatabaseFile>

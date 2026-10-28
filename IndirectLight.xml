@@ -1,0 +1,397 @@
+<DatabaseFile path="">
+    <Data path="IndirectLightDiffuseManager.Params" type="IndirectLightDiffuseManagerParams">
+        <property id="QualitySettings" type="IndirectLightDiffuseQualitySettings">
+            <property id="SurfelRelightSettings" type="IRelighterParamsSurfelRelightSettings">
+                <!-- Default surfel relighting settings
+                <property id="RelightMode" value="CentreSample" />
+                <property id="MultisampleRadius" value="0.4" />
+                <property id="UseCustomSigma" value="false" />
+                <property id="GaussianCustomSigma" value="0.95" />
+                <property id="CSMDepthBias" value="0.0" />
+                <property id="EnableForwardLights" value="true" />
+                <property id="EnableForwardShadows" value="true" />
+                <property id="ForwardShadowQuality" value="PCF16" />
+                -->
+                <property id="CSMDepthBias" type="float" value="0.1"/>
+                <property id="EnableForwardLights" value="false" />
+            </property>
+            <property id="VolumeRelightSettings" type="IRelighterParamsVolumeRelightSettings">
+                <!-- Default volume injection settings
+                <property id="BounceSettings" type="IRelighterParamsVolumeRelightQualitySettings" />
+                <property id="SkyVisSettings" type="IRelighterParamsVolumeRelightQualitySettings" />
+                <property id="FramesPerLightUpdate" value="0" />
+                -->
+                <property id="BounceSettings" type="IRelighterParamsVolumeRelightQualitySettings">
+                    <!-- Default volume injection settings
+                    <property id="MipStrategy" value="ClampToLongestAxis" />
+                    <property id="MaxMip" value="-1" />
+                    <property id="BicubicUpsample" value="false" />
+                    <property id="FloodDownsample" value="true" />
+                    <property id="UpsampleMode" value="AlphaExpWeighted" />
+                    <property id="UpsampleAlphaWeightSkyVis" value="0.05" />
+                    <property id="UpsampleAlphaWeightBounce" value="0.05" />
+                    <property id="ReinjectInputs" value="true" />
+                    <property id="TemporallyRefine" value="false" />
+                    <property id="TemporalUpdateRate" value="0.1" />
+                    -->
+                    <property id="MaxMip" value="-1" />
+                    <property id="UpsampleWeight" value="0.05" />
+                    <property id="DownsampleMode" value="ApproximateSampling" />
+                    <property id="ReinjectInputs" value="true" />
+                    <property id="TemporallyRefine" value="false" />
+                    <property id="TemporalUpdateRate" value="0.4" />
+                </property>
+                <property id="SkyVisSettings" type="IRelighterParamsVolumeRelightQualitySettings">
+                    <property id="MaxMip" value="-1" />
+                    <property id="UpsampleWeight" value="0.05" />
+                    <property id="ReinjectInputs" value="true" />
+                </property>
+            </property>
+            <property id="ForwardPlusCullSettings" type="IRelighterParamsForwardPlusCullSettings">
+                <!-- Default forward plus cull settings
+                <property id="ClusterWidth" value="16" />
+                <property id="ClusterHeight" value="16" />
+                <property id="ClusterDepth" value="16" />
+                <property id="ClusterFar" value="20.0" />
+                <property id="MaxLightsPerCluster" value="64" />
+                <property id="MaxPointLights" value="512" />
+                <property id="MaxSpotLights" value="512" />
+                <property id="MaxSpotSimpleLights" value="256" />
+                <property id="MaxPointAmbientLights" value="256" />
+                <property id="IsIndirectLightPass" value="true" />
+                <property id="IsWorldSpacePass" value="false" />
+                <property id="IsCubemapPass" value="false" />
+                <property id="IsMirrorPass" value="false" />
+                <property id="WorldSpaceExponentialScale" value="2.0" />
+                -->
+                <property id="ClusterFar" value="250.0" />
+            </property>            
+            <property id="InfinitySettings" type="IndirectLightInfinityDiffuseSettings">
+                <!-- Default infinity GI sampling settings
+                <property id="InfinitySkyVisMaxExterior" value="0.82" />
+                <property id="InfinitySkyVisMaxInterior" value="0.10" />
+                <property id="InfinityBounceColorMaxExterior" value="0.0, 0.0, 0.0" />
+                <property id="InfinityBounceColorMaxInterior" value="0.0, 0.0, 0.0" />
+                -->
+                <property id="InfinityBounceColorMaxInterior" value="0,0,0" />
+                <property id="InfinityBounceColorMaxExterior" value="60,62,45" />
+                <property id="InfinitySkyVisMaxExterior" value="0.8" />
+                <property id="InfinitySkyVisMaxInterior" value="0.0" />
+            </property>
+            <!-- Diffuse manager quality settings (default settings)
+            <property id="SupportedSkyVisibilitySphericalQualities" value="LowRes" />
+            <property id="SupportedBounceSphericalQualities" value="LowRes" />
+            <property id="DynamicLightInjectionMode" value="None" />
+            <property id="OverrideSpotlightAngles" value="true" />   
+            <property id="RemoveImplicitSkyVisibility" value="true" />
+            <property id="AODirToOmniBlend" value="0.0" />
+            <property id="BounceScale" value="1.0" />
+            <property id="PatchSkyvisBlendValue" value="1" />
+            <property id="PatchSkyvisMarginRange" value="50" />
+            <property id="OverrideCascadeOffset" value="false" />
+            <property id="CascadeOffset" value="0.0" />
+            <property id="CascadeOffsetY" value="0.0" />
+            <property id="UpwardsPush" value="0.0" />
+            <property id="BakeAODOInfluence" value="0.0" />
+            -->
+            <property id="DynamicLightInjectionMode" value="IntoVolumes_WithCoarseCull" />
+            <property id="RemoveImplicitSkyVisibility" value="false" />
+            <property id="SupportedSkyVisibilitySphericalQualities" value="LowRes" />
+            <property id="SupportedBounceSphericalQualities" value="LowRes" />
+            <property id="SkyVisibilityTextureFormat" value="BitDepth_8" />
+            <property id="AOScale" value="1.0" />
+            <property id="BounceScale" value="1.0" />
+            <property id="EmissiveScale" value="10" />
+            <property id="UpwardsPush" value="20" />
+            <property id="CubemapNormalizationEnabled" value="true" />
+        </property>
+        <!-- Diffuse manager update settings -->
+        <property id="UpdateSettings" type="IndirectLightDiffuseUpdateSettings">
+            <!-- Diffuse manager update settings (default settings)
+            <property id="VolumeMovedUpdatePriorityWeight" value="100" />
+            <property id="VolumeBoostUpdatePriorityWeight" value="100" />
+            <property id="NewCellUpdatePriorityWeight" value="100" />
+            <property id="CellInjectUpdatePriorityWeight" value="100" />
+            <property id="NumBounceCellsToRelightPerFrame" value="1" />
+            <property id="NumVolumesToRelightPerFrame" value="1" />
+            <property id="AlternateRelightAndInjection" value="false" />
+            <property id="SplitInjectOverMultipleFrames" value="false" />
+            <property id="UseAsyncCompute" value="true" />
+            <property id="KickOffAsyncImmediately" value="true" />
+            <property id="DelayUpdate" value="true" />
+            <property id="FreezeDelay" value="0" />
+            -->
+            <property id="KickOffAsyncImmediately" value="false" />
+        </property>
+        <!-- Partition template definitions -->
+        <property id="PartitionTemplates">
+            <!-- Partition template example (and default settings) ...
+            <element type="IndirectLightDiffusePartitionTemplate">
+                - Partition template (default settings)
+                <property id="ID" value="" />
+                <property id="Type" value="Cascaded" />
+                <property id="IndependentDataTypeDefinitions" value="false" />
+                - Unit partition (default settings)
+                <property id="UnitDefinition" type="IndirectLightDiffuseUnitPartitionDefinition">
+                    <property id="ResolutionX" value="64" />
+                    <property id="ResolutionY" value="64" />
+                    <property id="ResolutionZ" value="64" />
+                    <property id="Dimensions" value="64,64,64" />
+                    <property id="SamplingMode" value="Cube" />
+                </property>
+                OR BounceUnitDefinition and SkyVisUnitDefinition if IndependentDataTypeDefinitions set to true
+                - Cascaded partition (default settings)
+                <property id="CascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="5" />
+                    <property id="BaseResolutionX" value="128" />
+                    <property id="BaseResolutionY" value="16" />
+                    <property id="BaseResolutionZ" value="128" />
+                    <property id="BaseDimensions" value="256,64,256" />
+                    <property id="PercentageStartTransition" value="0.70" />
+                    <property id="PercentageEndTransition" value="0.98" />
+                    <property id="SamplingMode" value="Cube" />
+                </property>
+                OR BounceCascadeDefinition and SkyVisCascadeDefinition if IndependentDataTypeDefinitions set to true
+                - Adaptive partition (default settings)
+                <property id="AdaptiveDefinition" type="IndirectLightDiffuseAdaptivePartitionDefinition">
+                    <property id="VoxelSize" value="1,1,1" />
+                    <property id="SamplingMode" value="Cube" />
+                </property>
+                OR BounceAdaptiveDefinition and SkyVisAdaptiveDefinition if IndependentDataTypeDefinitions set to true
+            </element>
+            -->
+            <!-- Default partition template: Exterior cascade -->
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="CascadedExterior" />
+                <property id="SharedResourceID" value="CascadedExterior"/>
+                <property id="Type" value="Cascaded" />
+                <property id="IndependentDataTypeDefinitions" value="true" />
+                <property id="BounceCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="1" />
+                    <property id="SamplingMode" value="Cube" />
+                    <property id="BaseResolutionX" value="256" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="256" />
+                    <property id="BaseDimensions" value="512,128,512" />                    
+                </property>
+                <property id="SkyVisCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="1" />
+                    <property id="SamplingMode" value="Cube" />
+                    <property id="BaseResolutionX" value="256" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="256" />
+                    <property id="BaseDimensions" value="512,128,512" />     
+                    <property id="PercentageStartTransition" value="0.75" />
+                    <property id="PercentageEndTransition" value="0.99" />                    
+                </property>
+            </element>
+            <!-- Fallback override partition template for tunnels -->
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="InteriorFallbackOverride"/>
+                <property id="SharedResourceID" value="CascadedExterior"/>
+                <property id="Type" value="FallbackOverride"/>
+            </element>
+            <!-- Partition template: Interior cascade -->
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="CascadedInterior" />
+                <property id="Type" value="Cascaded" />
+                <property id="IndependentDataTypeDefinitions" value="true" />
+                <property id="BounceCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="BaseResolutionX" value="128" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="128" />
+                    <property id="BaseDimensions" value="128,32,128" />
+                    <property id="Count" value="4" />
+                    <property id="SamplingMode" value="Cube" />
+                </property>
+                <property id="SkyVisCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="BaseResolutionX" value="128" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="128" />
+                    <property id="BaseDimensions" value="128,32,128" />
+                    <property id="Count" value="4" />
+                    <property id="SamplingMode" value="Cube" />
+                </property>
+            </element>            
+            <!-- Example partition template: High-quality interior -->
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="HighQualityInterior" />
+                <property id="Type" value="Adaptive" />
+                <property id="IndependentDataTypeDefinitions" value="true" />
+                <property id="BounceAdaptiveDefinition" type="IndirectLightDiffuseAdaptivePartitionDefinition">
+                    <property id="VoxelSize" value="1,1,1" />
+                    <property id="SamplingMode" value="Cube" />
+                </property>
+                <property id="SkyVisAdaptiveDefinition" type="IndirectLightDiffuseAdaptivePartitionDefinition">
+                    <property id="VoxelSize" value="1,1,1" />
+                    <property id="SamplingMode" value="Cube" />
+                </property>
+            </element>
+        </property>
+        <!-- General settings -->
+        <property id="IsActive" value="true" />
+    </Data>
+    
+    <Data path="IndirectLightSpecularManager.Params" type="IndirectLightSpecularManagerParams">
+        <property id="OffSpecularPower" value ="0"/>
+    </Data>    
+    
+    <Settings path="IndirectLightDiffuseManager.Params" tags="Platform.Lockhart OR Platform.PC OR Config.Scarlett60Hz" >
+        <property id="UpdateSettings.AlternateRelightAndInjection" value="true" />
+        <property id="UpdateSettings.SplitInjectOverMultipleFrames" value="true" />
+    </Settings>
+
+    <!-- Coarse culling light injection does not work on PC -->
+    <Settings path="IndirectLightDiffuseManager.Params" tags="Platform.PC" >
+        <property id="QualitySettings.DynamicLightInjectionMode" value="IntoVolumes_NoCoarseCull" />
+    </Settings>
+
+    <Settings path="IndirectLightDiffuseManager.Params" tags="Config.ShaderQuality.Low">
+        <property id="PartitionTemplates">
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="CascadedExterior" />
+                <property id="SharedResourceID" value="CascadedExterior"/>
+                <property id="Type" value="Cascaded" />
+                <property id="IndependentDataTypeDefinitions" value="true" />
+                <property id="BounceCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="1" />
+                    <property id="SamplingMode" value="Cube" />
+                    <property id="BaseResolutionX" value="64" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="64" />
+                    <property id="BaseDimensions" value="512,128,512" />                    
+                </property>
+                <property id="SkyVisCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="1" />
+                    <property id="SamplingMode" value="Cube" />
+                    <property id="BaseResolutionX" value="64" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="64" />
+                    <property id="BaseDimensions" value="512,128,512" />     
+                    <property id="PercentageStartTransition" value="0.75" />
+                    <property id="PercentageEndTransition" value="0.99" />                    
+                </property>
+            </element>
+            <!-- Fallback override partition template for tunnels -->
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="InteriorFallbackOverride"/>
+                <property id="SharedResourceID" value="CascadedExterior"/>
+                <property id="Type" value="FallbackOverride"/>
+            </element>
+        </property>
+    </Settings>      
+    
+    <Settings path="IndirectLightDiffuseManager.Params" tags="Config.Scarlett60Hz OR Config.ShaderQuality.Medium OR Config.ShaderQuality.High">
+        <property id="PartitionTemplates">
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="CascadedExterior" />
+                <property id="SharedResourceID" value="CascadedExterior"/>
+                <property id="Type" value="Cascaded" />
+                <property id="IndependentDataTypeDefinitions" value="true" />
+                <property id="BounceCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="1" />
+                    <property id="SamplingMode" value="Cube" />
+                    <property id="BaseResolutionX" value="128" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="128" />
+                    <property id="BaseDimensions" value="512,128,512" />                    
+                </property>
+                <property id="SkyVisCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="1" />
+                    <property id="SamplingMode" value="Cube" />
+                    <property id="BaseResolutionX" value="128" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="128" />
+                    <property id="BaseDimensions" value="512,128,512" />     
+                    <property id="PercentageStartTransition" value="0.75" />
+                    <property id="PercentageEndTransition" value="0.99" />                    
+                </property>
+            </element>
+            <!-- Fallback override partition template for tunnels -->
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="InteriorFallbackOverride"/>
+                <property id="SharedResourceID" value="CascadedExterior"/>
+                <property id="Type" value="FallbackOverride"/>
+            </element>
+        </property>
+    </Settings>
+
+    <Settings path="IndirectLightDiffuseManager.Params" tags="(Platform.Lockhart AND Config.Scarlett30Hz) OR Config.ShaderQuality.Ultra" >
+        <property id="PartitionTemplates">
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="CascadedExterior" />
+                <property id="SharedResourceID" value="CascadedExterior"/>
+                <property id="Type" value="Cascaded" />
+                <property id="IndependentDataTypeDefinitions" value="true" />
+                <property id="BounceCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="1" />
+                    <property id="SamplingMode" value="Cube" />
+                    <property id="BaseResolutionX" value="176" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="176" />
+                    <property id="BaseDimensions" value="512,128,512" />                    
+                </property>
+                <property id="SkyVisCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="1" />
+                    <property id="SamplingMode" value="Cube" />
+                    <property id="BaseResolutionX" value="176" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="176" />
+                    <property id="BaseDimensions" value="512,128,512" />     
+                    <property id="PercentageStartTransition" value="0.75" />
+                    <property id="PercentageEndTransition" value="0.99" />                    
+                </property>
+            </element>
+            <!-- Fallback override partition template for tunnels -->
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="InteriorFallbackOverride"/>
+                <property id="SharedResourceID" value="CascadedExterior"/>
+                <property id="Type" value="FallbackOverride"/>
+            </element>
+        </property>
+    </Settings>   
+
+    <Settings path="IndirectLightDiffuseManager.Params" tags="(Platform.Anaconda AND Config.Scarlett30Hz) OR Config.ShaderQuality.Extreme">
+        <property id="PartitionTemplates">
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="CascadedExterior" />
+                <property id="SharedResourceID" value="CascadedExterior"/>
+                <property id="Type" value="Cascaded" />
+                <property id="IndependentDataTypeDefinitions" value="true" />
+                <property id="BounceCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="1" />
+                    <property id="SamplingMode" value="Cube" />
+                    <property id="BaseResolutionX" value="256" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="256" />
+                    <property id="BaseDimensions" value="512,128,512" />                    
+                </property>
+                <property id="SkyVisCascadeDefinition" type="IndirectLightDiffuseCascadedPartitionDefinition">
+                    <property id="Count" value="1" />
+                    <property id="SamplingMode" value="Cube" />
+                    <property id="BaseResolutionX" value="256" />
+                    <property id="BaseResolutionY" value="32" />
+                    <property id="BaseResolutionZ" value="256" />
+                    <property id="BaseDimensions" value="512,128,512" />     
+                    <property id="PercentageStartTransition" value="0.75" />
+                    <property id="PercentageEndTransition" value="0.99" />                    
+                </property>
+            </element>
+            <!-- Fallback override partition template for tunnels -->
+            <element type="IndirectLightDiffusePartitionTemplate">
+                <property id="ID" value="InteriorFallbackOverride"/>
+                <property id="SharedResourceID" value="CascadedExterior"/>
+                <property id="Type" value="FallbackOverride"/>
+            </element>
+        </property>
+    </Settings>    
+
+    <Settings path="IndirectLightDiffuseManager.Params.QualitySettings" tags="Scenario.Homespace OR Scenario.AutoVistaPhotoMode OR Scenario.PlayerHouse OR Scenario.PlayerHousePhotoMode">
+        <property id="CubemapNormalizationEnabled" value="false"/>
+    </Settings>
+
+    <Settings path="IndirectLightDiffuseManager.Params" tags="Scenario.Mainstage">
+        <property id="IsActive" value="false"/>
+    </Settings>
+    
+</DatabaseFile>

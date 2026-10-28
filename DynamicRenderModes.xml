@@ -1,0 +1,118 @@
+<DynamicRenderModes>
+  <Mode name="Hidden" >
+    <Tag name="Scenario.Hidden" />
+  </Mode>
+  <Mode name="PreRace" >
+    <Tag name="Scenario.PreRace" />
+    <Tag name="Scenario.HighQualitySamplers" />
+  </Mode>
+  <Mode name="ThreeTwoOne" >
+    <Tag name="Scenario.ThreeTwoOne" />
+  </Mode>
+  <Mode name="Race" >
+    <Tag name="Scenario.Race" />
+  </Mode>
+  <Mode name="RaceReplay" >
+    <Tag name="Scenario.Race" />
+    <Tag name="Scenario.Replay" />
+  </Mode>
+  <Mode name="PostRace" >
+    <Tag name="Scenario.PostRace" />
+    <Tag name="Scenario.HighQualitySamplers" />
+  </Mode>
+  <Mode name="PhotoMode" >
+    <Tag name="Scenario.PhotoMode" />
+    <Tag name="Scenario.HighQualitySamplers" />
+  </Mode>
+  <Mode name="Homespace" >
+    <Tag name="Scenario.Homespace" />
+    <Tag name="Scenario.DisableSSR" />
+    <Tag name="Scenario.HighQualitySamplers" />
+    <Tag name="Scenario.StaticEnvironmentCube" />
+    <Tag name="Scenario.StaticCarCube" />
+    <Tag name="Scenario.PlanarReflections" />
+  </Mode>
+  <Mode name="Freeroam" >
+    <Tag name="Scenario.Freeroam" />
+  </Mode>
+  <Mode name="FreeroamReplay" >
+    <Tag name="Scenario.Replay" />
+    <Tag name="Scenario.Freeroam" />
+  </Mode>
+  <Mode name="PlayerLOD0" >
+    <Tag name="Scenario.PlayerLOD0" />
+  </Mode>
+  <Mode name="AutoVistaPhotoMode" >
+    <Tag name="Scenario.PhotoMode" />
+    <Tag name="Scenario.AutoVistaPhotoMode" />
+    <Tag name="Scenario.DisableSSR" />
+    <Tag name="Scenario.HighQualitySamplers" />
+    <Tag name="Scenario.StaticEnvironmentCube" />
+    <Tag name="Scenario.StaticCarCube" />
+    <Tag name="Scenario.PlanarReflections" />
+  </Mode>
+  <Mode name="PlayerHouse" >
+    <Tag name="Scenario.PlayerHouse" />
+    <Tag name="Scenario.HighQualitySamplers" />
+    <Tag name="Scenario.StaticEnvironmentCube" />
+    <Tag name="Scenario.PlanarReflections" />
+  </Mode>
+  <Mode name="PlayerHousePhotoMode" >
+    <Tag name="Scenario.PhotoMode" />
+    <Tag name="Scenario.PlayerHousePhotoMode" />
+    <Tag name="Scenario.HighQualitySamplers" />
+    <Tag name="Scenario.StaticEnvironmentCube" />
+    <Tag name="Scenario.PlanarReflections" />
+  </Mode>
+  <Mode name="Barnfind" >
+    <Tag name="Scenario.Barnfind" />
+    <Tag name="Scenario.StaticEnvironmentCube" />
+  </Mode>
+  <Mode name="Whitespace" >
+    <Tag name="Scenario.Whitespace" />
+    <Tag name="Scenario.DisableSSR" />
+    <Tag name="Scenario.HighQualitySamplers" />
+  </Mode>
+  <Mode name="Mainstage" >
+    <Tag name="Scenario.Mainstage" />
+    <Tag name="Scenario.HighQualitySamplers" />
+  </Mode>
+  <Mode name="HomespaceCharacterCustomizer" base="Homespace" >
+    <Tag name="Scenario.CharacterCustomizer" />
+    <Tag name="Scenario.CharacterFocused" />
+    <Tag name="Scenario.StaticEnvironmentCube" />
+    <Tag name="Scenario.StaticCarCube" />
+  </Mode>
+  <Mode name="PlayerHouseCharacterCustomizer" base="PlayerHouse" >
+    <Tag name="Scenario.PlayerHouseCharacterCustomizer" />
+    <Tag name="Scenario.CharacterCustomizer" />
+    <Tag name="Scenario.CharacterFocused" />
+    <Tag name="Scenario.StaticEnvironmentCube" />
+  </Mode>
+  <Mode name="WhitespaceMultiCar" base="Whitespace" >
+    <Tag name="Scenario.WhitespaceMultiCar" />
+  </Mode>
+  <Mode name="WhitespacePause" base="Whitespace" >
+    <Tag name="Scenario.WhitespacePause" />
+  </Mode>
+  <Mode name="WhitespaceSingleCar" base="Whitespace" >
+    <Tag name="Scenario.WhitespaceSingleCar" />
+  </Mode>
+  <Mode name="WhitespaceWheelSpin" base="Whitespace" >
+    <Tag name="Scenario.WhitespaceWheelSpin" />
+    <Tag name="Scenario.CharacterFocused" />
+  </Mode>
+  <Mode name="InWorldCarSelect" >
+    <Tag name="Scenario.InWorldCarSelect" />
+  </Mode>
+  <!-- Render Disable is used for special cases where we need to destroy shadow maps between other render mode transitions i.e. Race->Freeroam -->
+  <Mode name="RenderDisable" >
+    <Tag name="Scenario.RenderDisable" />
+    <Tag name="Scenario.DisableShadows" />
+  </Mode>
+  <Mode name="Map" >
+    <Tag name="Scenario.Map" />
+    <Tag name="Scenario.DisableSSR" />
+    <Tag name="Scenario.LockShadowCascades" />
+  </Mode>
+</DynamicRenderModes>

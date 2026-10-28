@@ -1,0 +1,8 @@
+<DatabaseFile path="">
+  <Data path="PuddleDetector.Params" type="PuddleDetectorRenderParams">
+    <property id="PuddleSlopeMultiply" value="0.55"/>
+    <property id="RainMaskInfluence" value="0.0"/>
+    <property id="RainNoiseMask" value="0.0"/>
+    <property id="Height" value="0.5"/>
+  </Data>
+</DatabaseFile>

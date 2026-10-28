@@ -1,0 +1,67 @@
+<DatabaseFile path="">
+  <!-- Instance Object Library Asset Types -->
+  <Data path="AssetTypes.Data" type="AssetTypeData">
+    <!-- 
+      Each asset type mapping consists of a key that gets hashed in the engine. 
+      These keys are case sensitive and are used by ObjectLibraries to specify what type of assets this library describes.
+    -->
+    <property id="Mappings">
+        <map_element>
+          <key id="first" value="default"/>  
+          <value id="second" type="AssetTypeInfo">
+            <property id="DisplayName" value="Default"/>
+            <property id="PresentationTimer" value="__TrackProceduralDefaultCPUGPU"/>
+          </value>
+        </map_element>
+        <map_element>
+          <key id="first" value="bushes"/>
+          <value id="second" type="AssetTypeInfo">
+            <property id="DisplayName" value="Bushes"/>
+            <property id="PresentationTimer" value="__TrackProceduralBushCPUGPU"/>
+          </value>
+        </map_element>
+        <map_element>
+          <key id="first" value="trees"/>
+          <value id="second" type="AssetTypeInfo">
+            <property id="DisplayName" value="Trees"/>
+            <property id="PresentationTimer" value="__TrackProceduralTreeCPUGPU"/>
+          </value>
+        </map_element>
+        <map_element>
+          <key id="first" value="grass"/>
+          <value id="second" type="AssetTypeInfo">
+            <property id="DisplayName" value="Grass"/>
+            <property id="PresentationTimer" value="__TrackProceduralGrassCPUGPU"/>
+          </value>
+        </map_element>
+      <map_element>
+        <key id="first" value="buildings"/>
+        <value id="second" type="AssetTypeInfo">
+          <property id="DisplayName" value="Buildings"/>
+          <property id="PresentationTimer" value="__TrackProceduralBuildingCPUGPU"/>
+        </value>
+      </map_element>
+      <map_element>
+        <key id="first" value="props"/>
+        <value id="second" type="AssetTypeInfo">
+          <property id="DisplayName" value="Props"/>
+          <property id="PresentationTimer" value="__TrackProceduralPropCPUGPU"/>
+        </value>
+      </map_element>
+      <map_element>
+        <key id="first" value="rocks"/>
+        <value id="second" type="AssetTypeInfo">
+          <property id="DisplayName" value="Rocks"/>
+          <property id="PresentationTimer" value="__TrackProceduralRockCPUGPU"/>
+        </value>
+      </map_element>
+      <map_element>
+        <key id="first" value="barriers"/>
+        <value id="second" type="AssetTypeInfo">
+          <property id="DisplayName" value="Barriers"/>
+          <property id="PresentationTimer" value="__TrackProceduralBarrierCPUGPU"/>
+        </value>
+      </map_element>
+    </property>
+  </Data>
+</DatabaseFile>  

@@ -1,0 +1,25 @@
+<DatabaseFile path="">
+    <Data path="Mirror.Params" type="MirrorParams">
+        <property id="QualitySettings" type="MirrorQualitySettings">
+            <property id="RenderLightGlows" value="true"/>
+            <property id="RenderCrowds" value="true"/>
+            <property id="SimpleForwardPlus" value="false"/>
+            <property id="LODDistanceScale" value="1"/>
+            <property id="MinLOD" value="3"/>
+        </property>
+    </Data>
+
+    <Settings path="Mirror.Params" tags="Config.MirrorQuality.VeryLow OR Config.MirrorQuality.Low">
+        <property id="QualitySettings.RenderLightGlows" value="false"/>
+        <property id="QualitySettings.RenderCrowds" value="false"/>
+        <property id="QualitySettings.SimpleForwardPlus" value="true"/>
+        <property id="QualitySettings.LODDistanceScale" value="0.5"/>
+        <property id="QualitySettings.MinLOD" value="4"/>
+    </Settings>
+    
+    <Settings path="Mirror.Params" tags="Config.MirrorQuality.Medium OR Config.MirrorQuality.High">
+        <property id="QualitySettings.RenderLightGlows" value="false"/>
+        <property id="QualitySettings.RenderCrowds" value="false"/>
+    </Settings>
+
+</DatabaseFile>

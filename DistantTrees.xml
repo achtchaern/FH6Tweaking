@@ -1,0 +1,39 @@
+<DatabaseFile path="">
+    <Data path="DistantTrees.Params" type="DistantSpriteRendererParams">
+        <property id="Enabled" value="true" />
+        <property id="Active" value="true" />
+        <property id="MinDistance" value="2500.0" />
+        <property id="MidDistance" value="8000.0" />
+        <property id="MaxDistance" value="25000.0" />
+        <property id="DensityAtMinDistance" value="1.0" />
+        <property id="DensityAtMidDistance" value="0.8" />
+        <property id="DensityAtMaxDistance" value="0.2" />
+        <property id="AlphaTestThresholdMin" value="0.2" />
+        <property id="AlphaTestThresholdMax" value="0.1" />
+        <property id="Shape" value="0" />
+        <property id="ParameterBlendTime" value="0" />
+    </Data>
+    
+    <Settings path="DistantTrees.Params" tags="Scenario.Homespace OR Scenario.AutoVistaPhotoMode OR Scenario.PlayerHouse OR Scenario.PlayerHousePhotoMode">
+        <property id="Active" value="false"/>
+    </Settings>
+
+    <Settings path="DistantTrees.Params" tags="Config.Scarlett60Hz OR Config.ShaderQuality.High">
+        <property id="MinDistance" value="1000.0" />
+        <property id="MidDistance" value="6000.0" />
+        <property id="MaxDistance" value="25000.0" />
+        <property id="DensityAtMinDistance" value="1.0" />
+        <property id="DensityAtMidDistance" value="0.25" />
+        <property id="DensityAtMaxDistance" value="0.05" />
+    </Settings>
+
+    <Settings path="DistantTrees.Params" tags="Config.ShaderQuality.Low OR Config.ShaderQuality.Medium">
+        <property id="MinDistance" value="500.0" />
+        <property id="MidDistance" value="3000.0" />
+        <property id="MaxDistance" value="3000.0" />
+        <property id="DensityAtMinDistance" value="0.5" />
+        <property id="DensityAtMidDistance" value="0.1" />
+        <property id="DensityAtMaxDistance" value="0.1" />
+    </Settings>
+
+</DatabaseFile>

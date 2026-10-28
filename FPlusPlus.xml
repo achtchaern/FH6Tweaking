@@ -1,0 +1,10 @@
+<DatabaseFile path="">
+    <Data path="FPlusPlus.Params" type="FPlusPlusParams">
+      <property id="Async" value="false"/>
+      <property id="SeperateDiffuse" value="true"/>
+      <property id="PixelClassifyInQuads" value="false"/>
+      <property id="DiffuseLightBlurMode" value="ScreenSpace"/>
+      <property id="PixelClassifySubdivideXPow2" value="4"/>
+      <property id="PixelClassifySubdivideYPow2" value="4"/>
+    </Data>
+</DatabaseFile>

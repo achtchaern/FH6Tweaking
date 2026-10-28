@@ -1,0 +1,43 @@
+<File path="">
+  <Data path="CloseContactShadows.Params" type="ContactShadowParams">
+    <property id="Enabled" value="false" />
+    <property id="ResolutionScale" value="Full" />
+    <property id="NearFarTransitionStart" value="0.45"/>
+    <property id="NearFarTransitionEnd" value="0.55"/>
+    <property id="MaxTraceDistance" type="float" value="0.02"/>
+    <property id="MaxTraceDistanceIsCameraSpace" type="bool" value="false"/>
+    <property id="BaseThickness" type="float" value="0.0"/>
+    <property id="ThicknessMultiplierNear" type="float" value="0.005"/>
+    <property id="ThicknessMultiplierFar" type="float" value="0.015"/>
+    <property id="JitterNear" type="float" value="0"/>
+    <property id="JitterFar" type="float" value="5"/>
+    <property id="JitterRayStep" type="float" value="1.5"/>
+    <property id="HitDepthBiasNear" type="float" value="0.02"/>
+    <property id="HitDepthBiasFar" type="float" value="0.024"/>
+    <property id="HitNormalBiasNear" type="float" value="0.025"/>
+    <property id="HitNormalBiasFar" type="float" value="0.04"/>
+    <property id="TraceDistanceFadeRange" type="float" value="0.1"/>
+    <property id="DepthDistanceFadeRange" type="float" value="30"/>
+    <property id="NearPlane" type="float" value="0.01"/>
+    <property id="FarPlane" type="float" value="10000"/>
+    <property id="NumSteps" type="int" value="10"/>
+    <property id="EnableNdotLKillFade" value="false"/>
+    <property id="EnableSunFade" value="false"/>
+    <property id="ErrorCutOff" value="0.99"/>
+    <property id="ErrorOffsetScale" value="3.0"/>
+    <property id="ErrorFadeRange" value="0.1"/>
+  </Data>
+
+  <!-- If we're below 1440p we can increase the quality a bit-->
+  <Settings path="CloseContactShadows.Params" tags="-Frame.Resolution.AtLeastQuadHD">
+    <property id="NumSteps" value="18" />
+  </Settings>
+
+  <!-- Enable NdotLKillFade for deferred transmissive shadows -->
+  <Settings path="CloseContactShadows.Params" tags="FPlusPlusEnabled">
+    <property id="EnableNdotLKillFade" value="true"/>
+    <property id="NdotLKillFadeStart" value="-0.05"/>
+    <property id="NdotLKillFadeEnd" value="-0.15"/>
+  </Settings>
+  
+</File>

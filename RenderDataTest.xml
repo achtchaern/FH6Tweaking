@@ -1,0 +1,46 @@
+<File path="">
+  <Data path="RenderDataTest.MyRenderer.Params" type="MyRendererParams">
+    <property id="Enabled" value="true" />
+    <property id="Mode" value="0" />
+    <property id="Intensity" value="1" />
+  </Data>
+  <Settings path="RenderDataTest.MyRenderer.Params" tags="Scenario.PhotoMode">
+    <property id="Intensity" value="0.5" />
+    <property id="Intensity" value="0.25" tags="Tests.StaticConfigTag" />
+  </Settings>  
+  <Data path="RenderDataTest.MyRenderer.Data" type="MyRendererData">
+    <property id="ModeSettings" >
+      <element>
+        <property id="Name" value="Mode1" />
+        <property id="Colour" value="1,1,1,1" />
+        <property id="Constants" >
+          <element value="11.0" />
+          <element value="12.0" />
+          <element value="13.0" />
+        </property>
+      </element>
+    </property>
+  </Data>
+  <Settings path="RenderDataTest.MyRenderer.Data" tags="Tests.StaticConfigTag" >
+    <property id="ModeSettings" >
+      <element>
+        <property id="Name" value="Mode4" />
+        <property id="Colour" value="1,1,1,1" />
+        <property id="Constants" >
+          <element value="15.0" />
+          <element value="16.0" />
+          <element value="17.0" />
+        </property>
+      </element>
+      <element>
+        <property id="Name" value="Mode5" />
+        <property id="Colour" value="0.5,0.5,0.5,1" />
+        <property id="Constants" >
+          <element value="18.0" />
+          <element value="19.0" />
+          <element value="20.0" />
+        </property>
+      </element>
+    </property>    
+  </Settings>
+</File>

@@ -1,0 +1,45 @@
+<DatabaseFile path="">
+    <!-- Hair scattering -->
+    <Data path="HairScattering.Params" type="HairScatterSettings">
+        <!-- Hair profiles -->
+        <property id="Profiles">
+            <!-- Hair profile (default settings) ...
+            <element type="HairScatterProfile">
+                <property id="Softness" value="0.91" />
+                <property id="CuticleAngle" value="0.04" />
+            </element>
+            -->
+            <!-- IMPORTANT: If you intend to change this file, you need to rebake and export the profile textures,
+            fetch them from the kit and check them into Products\Media\PreComputedTextures
+            (to avoid asserts and large stalls during boot for Xbox and broken visuals on PC) -->
+            <element type="HairScatterProfile">
+                <property id="Softness" value="0.95" />
+                <property id="CuticleAngle" value="0.04" />
+            </element>
+            <element type="HairScatterProfile">
+                <property id="Softness" value="0.5" />
+                <property id="CuticleAngle" value="0.04" />
+            </element>
+            <element type="HairScatterProfile">
+                <property id="Softness" value="0.15" />
+                <property id="CuticleAngle" value="0.04" />
+            </element>
+            <element type="HairScatterProfile">
+                <property id="Softness" value="0.95" />
+                <property id="CuticleAngle" value="0.1" />
+            </element>
+            <element type="HairScatterProfile">
+                <property id="Softness" value="0.5" />
+                <property id="CuticleAngle" value="0.1" />
+            </element>
+            <element type="HairScatterProfile">
+                <property id="Softness" value="0.15" />
+                <property id="CuticleAngle" value="0.1" />
+            </element>
+        </property>
+    </Data>
+
+    <Settings path="HairScattering.Params">
+        <property id="Enabled" value="true" tags="AppCmd.EnableHairScattering" />
+    </Settings>
+</DatabaseFile>

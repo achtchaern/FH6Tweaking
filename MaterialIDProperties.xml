@@ -1,0 +1,330 @@
+<DatabaseFile path="">
+
+<!-- Global options -->
+<Data path="MaterialIDParams" type="MaterialIDParams">
+    <property id="MaxMaterialIDCount" value="4096"/>
+    <property id="MaxMaterialDataCount" value="4096"/>
+    <property id="ObjectMappingsEnabled" value="1"/>
+    <property id="BiasOffsetEnabled" value="1"/>
+    <property id="PenumbraOffsetEnabled" value="0"/>
+
+    <property id="SSSTexturesMapping">
+        <map_element><key value="game:\media\_library\texturespg\characters\swatches\1_skinlookup_diff_428f3dc2-dc93-41e8-826c-8ce5712cd619.swatchbin" /><value value="0"/></map_element>
+        <map_element><key value="game:\media\_library\textures\test\swatches\ssscurvature_diffuseoriginal_1890fe28-401b-41d9-a189-0668ef751092.swatchbin" /><value value="1"/></map_element>
+        <map_element><key value="game:\media\_library\texturespg\characters\swatches\1_skinlookup_diffuse_grey_0a2f75c0-d97e-46a5-89e5-8a9b852dd8c0.swatchbin" /><value value="2"/></map_element>
+        <map_element><key value="game:\media\_library\texturespg\characters\swatches\1_skinlookup_diffuse_hair_fcdac77a-7476-4b4c-8ad3-10902ffeb884.swatchbin" /><value value="3"/></map_element>
+        <map_element><key value="game:\media\_library\textures\characters_opus\swatches\skincurvature2_diff_beb2d8c4-b61d-422c-84c5-a50473ef06fa.swatchbin" /><value value="4"/></map_element>
+    </property>
+
+</Data>
+
+<!-- Per-MaterialID property settings -->
+
+<!-- Default values -->
+<Data path="MaterialIDProperties" type="MaterialIDProperties">
+    <property id="ReceiveShadowMask" value="1"/>
+    <property id="MotionGroup" value="0"/>
+    <property id="UseSAOAlternateParams" value="0"/>
+    <property id="SupportsMotionVectors" value="0"/>
+    <!--<property id="ForceIdentityMotionMatrix" value="0"/>-->
+    <!--<property id="IgnoreCameraMotionMatrix" value="0"/>-->
+    <property id="ShadowReprojectionUseAlternateParams" value="0"/>
+    <property id="Dithered" value="0"/>
+    <property id="ShadowReprojectionStrength" value="1.0"/>
+    <property id="ScreenSpaceIndirectReprojectionStrength" value="0.7"/>
+    <property id="ScreenSpaceIndirectBilateralFilterNormalAware" value="0"/>
+    <property id="ScreenSpaceIndirectSelfOcclusion" value="1"/>
+    <property id="EarlyDepthNormalReconstruct" value="0"/>
+    <property id="ScreenSpaceIndirectCloseZDifferenceScale" value="0.03"/>
+    <property id="GTAOIntensity" value="1.0"/>
+    <property id="GTAODistantRadiusScale" value="0.0"/>
+    <property id="GTAODistanceScaleStart" value="0.0"/>
+    <property id="GTAODistanceScaleEnd" value="1.0"/>
+    <property id="GTAOThickness" value="1.0"/>
+    <property id="GTAOUpBlend" value="0.0"/>
+    <property id="GIAOIntensity" value="1.0"/>
+    <property id="CSMBiasOffset" value="0.0"/>
+    <property id="PSSMBiasOffset" value="0.0"/>
+    <property id="PenumbraOffset" value="0.0"/>
+    <property id="ImpostorShadowFadeRange" value="0.0"/>
+    <property id="SharpeningBoost" value="0.0"/>
+    <property id="SharpeningBoostStartDistance" value="0.0"/>
+    <property id="SharpeningBoostEndDistance" value="1.0"/>
+    <property id="ContactShadows">
+        <property id="ReceiveContactShadows" value="1"/>
+        <property id="CastContactShadows" value="1"/>
+        <property id="DisableTemporalRefinement" value="1"/>
+        <property id="ContactShadowGroup" value="0"/>
+        <property id="DepthBiasOffset" value="0"/>
+        <property id="NormalBiasOffset" value="0"/>
+        <property id="JitterScale" value="1.0"/>
+        <property id="ReceiveShadowStrength" value="1.0"/>
+        <property id="OverrideMaxTraceDistance" value="0"/>
+        <property id="MaxTraceDistance" value="0.0"/>
+        <property id="OverrideFarPlane" value="0"/>
+        <property id="FarPlane" value="30.0"/>
+        <property id="OverrideDepthDistanceFadeRange" value="0"/>
+        <property id="DepthDistanceFadeRange" value="10.0"/>
+        <property id="OverrideTraceDistanceFadeRange" value="0"/>
+        <property id="TraceDistanceFadeRange" value="0.0"/>
+        <property id="OverrideNdotLKillFade" value="0"/>
+        <property id="NdotLKillFadeStart" value="-1.0"/>
+        <property id="NdotLKillFadeEnd" value="-1.0"/>
+        <property id="CastThickness" value="0.0"/>
+        <property id="IgnoreSelfHits" value="0"/>
+    </property>
+</Data>
+
+<!-- Settings 
+     
+     Evaluated per unique DeferredID/DeferredFlags combination.
+     Settings can be inherited between IDs by applying multiple blocks with different tag conditions in order.
+     
+     Available tags:
+      - 'DeferredID.xxx' - true for this deferred ID only
+      - 'DeferredTag.xxx' - true for groups of deferred IDs tagged with this tag (specified in the deferred ID reflection)
+      - 'DeferredFlag.xxx' - true for any material ID with this deferred flag (either the reflected base flags or added for a variant property)
+      - 'Platform.xxx', 'Scenario.xxx', etc - general RenderDataManager tags
+-->
+
+
+<!-- Constants mapped to Dithered/MotionVector flags -->  
+<Settings path="MaterialIDProperties" tags="">
+    <property id="Dithered" value="1" tags="DeferredFlag.Dithered"/>
+    <property id="SupportsMotionVectors" value="1" tags="DeferredFlag.MotionVector"/>  
+</Settings>
+
+<!-- Transmissive -->
+<Settings path="MaterialIDProperties" tags="DeferredFlag.TransmissiveFixed">
+</Settings>
+              
+<!-- Terrain -->
+<Settings path="MaterialIDProperties" tags="DeferredTag.Terrain">
+    <property id="ScreenSpaceIndirectReprojectionStrength" value="0.0"/>
+    <property id="ScreenSpaceIndirectBilateralFilterNormalAware" value="1"/>
+    <property id="ScreenSpaceIndirectSelfOcclusion" value="0"/>
+    <property id="ContactShadows.IgnoreSelfHits" value="1"/>   
+    <property id="SharpeningBoost" value="1"/>
+    <property id="SharpeningBoostStartDistance" value="10"/>
+    <property id="SharpeningBoostEndDistance" value="20"/>
+</Settings>
+
+<!-- Cars -->
+<Settings path="MaterialIDProperties" tags="DeferredFlag.Car">
+    <property id="ReceiveShadowMask" value="0"/>
+    <property id="ScreenSpaceIndirectReprojectionStrength" value="0.0"/>
+    <property id="ContactShadows.ContactShadowGroup" value="1"/>
+    <property id="ContactShadows.ReceiveContactShadows" value="0"/>
+    <property id="ContactShadows.CastContactShadows" value="0"/>
+</Settings>
+
+<!-- Focus Car -->
+<Settings path="MaterialIDProperties" tags="DeferredFlag.FocusCar">
+    <property id="ReceiveShadowMask" value="1"/>
+</Settings>
+
+<!-- Mesh Particles -->     
+<Settings path="MaterialIDProperties" tags="DeferredID.MeshParticles">
+    <property id="ReceiveShadowMask" value="1"/>
+    <property id="ContactShadows.ContactShadowGroup" value="1"/>
+</Settings>
+
+<!-- Glass -->
+<Settings path="MaterialIDProperties" tags="DeferredID.Glass">
+    <property id="ContactShadows.ContactShadowGroup" value="0"/>
+    <property id="ContactShadows.ReceiveContactShadows" value="0"/>
+</Settings>
+
+<!-- Crowd -->   
+<Settings path="MaterialIDProperties" tags="DeferredTag.Crowd">
+    <property id="UseSAOAlternateParams" value="1"/>
+    <property id="ScreenSpaceIndirectReprojectionStrength" value="0.0"/>
+    <property id="ContactShadows.DisableTemporalRefinement" value="1"/>
+</Settings>
+
+<!-- Grass -->
+<Settings path="MaterialIDProperties" tags="DeferredTag.Grass">
+    <property id="ShadowReprojectionUseAlternateParams" value="1"/>
+    <property id="ShadowReprojectionStrength" value="0.7"/>
+    <property id="ScreenSpaceIndirectReprojectionStrength" value="0.7"/>
+    <property id="ContactShadows.ReceiveContactShadows" value="0"/>
+    <property id="ContactShadows.CastContactShadows" value="1"/>
+    <property id="ContactShadows.JitterScale" value="0.0"/>
+    <property id="GTAOIntensity" value="0.5"/>
+
+    <!-- Dithered -->
+    <property id="GTAOIntensity" value="0.425" tags="DeferredFlag.Dithered" />
+</Settings>
+
+<!-- Foliage -->
+<Settings path="MaterialIDProperties" tags="DeferredFlag.Foliage">
+    <property id="ScreenSpaceIndirectCloseZDifferenceScale" value="1"/>
+    
+    <property id="EarlyDepthNormalReconstruct" value="1"/>
+</Settings>
+
+<!-- Grass DS -->
+<Settings path="MaterialIDProperties" tags="DeferredTag.Grass AND DeferredFlag.FoliageDS">
+    <property id="GTAOUpBlend" value="0.5"/>
+</Settings>
+
+<!-- Grass Billboard (inherits Grass) -->
+<Settings path="MaterialIDProperties" tags="DeferredTag.Grass AND DeferredFlag.Billboard">
+    <property id="ContactShadows.CastContactShadows" value="0"/>
+    <property id="GTAOUpBlend" value="1.0"/>
+
+    <!-- 
+    Commented out Woodstock settings that weren't being applied to Forte DS grass at the time it was last tweaked, consider reinstating
+    property id="ContactShadows.ContactShadowGroup" value="2"/> 
+    <property id="GTAOIntensity" value="0.85" />
+    <property id="ContactShadows.NormalBiasOffset" value="0.175"/>
+    <property id="ContactShadows.JitterScale" value="0.0"/>
+    <property id="ContactShadows.OverrideFarPlane" value="1"/>
+    <property id="ContactShadows.FarPlane" value="20.0"/>
+    <property id="ContactShadows.OverrideDepthDistanceFadeRange" value="1"/>
+    <property id="ContactShadows.DepthDistanceFadeRange" value="17.0"/> 
+    -->
+
+    <!-- Dithered -->
+    <property id="GTAOIntensity" value="0.175" tags="DeferredFlag.Dithered" />
+</Settings>
+
+<!-- Trees -->
+<Settings path="MaterialIDProperties" tags="DeferredTag.Tree">
+    <property id="ReceiveShadowMask" value="1"/>
+    <property id="SupportsMotionVectors" value="1"/>
+    <property id="ShadowReprojectionUseAlternateParams" value="1"/>
+    <property id="ShadowReprojectionStrength" value="0.7"/>
+    <property id="ScreenSpaceIndirectReprojectionStrength" value="0.7"/>
+    <property id="EnableShadowAttenuation" value="1"/>
+    <property id="MaxShadowAttenuationRange" value="4.0"/>
+    <property id="ContactShadows.ReceiveContactShadows" value="0"/>
+    <property id="ContactShadows.CastContactShadows" value="1"/>
+    <property id="ContactShadows.NormalBiasOffset" value="0.175"/>
+    <property id="ContactShadows.JitterScale" value="0.0"/>
+    <property id="ContactShadows.OverrideNdotLKillFade" value="1"/>
+    <property id="ContactShadows.NdotLKillFadeStart" value="-0.05"/>
+    <property id="ContactShadows.NdotLKillFadeEnd" value="-0.15"/>
+
+    <!-- Tree Billboard -->
+    <property id="PenumbraOffset" value="3.0" tags="DeferredFlag.Billboard" />
+    <property id="ImpostorShadowFadeRange" value="3.0" tags="DeferredFlag.Billboard" />
+
+    <property id="GTAOViewDirectionBlend" value="0.5"/>
+    <property id="GTAOUseLinearDepthLookup" value="1"/>
+</Settings>
+        
+<!-- Bushes -->
+<Settings path="MaterialIDProperties" tags="DeferredTag.Bush">
+    <property id="ReceiveShadowMask" value="1"/>
+    <property id="SupportsMotionVectors" value="1"/>
+    <property id="ShadowReprojectionUseAlternateParams" value="1"/>
+    <property id="ShadowReprojectionStrength" value="0.7"/>
+    <property id="ScreenSpaceIndirectReprojectionStrength" value="0.7"/>
+    <property id="EnableShadowAttenuation" value="1"/>
+    <property id="MaxShadowAttenuationRange" value="1.5"/>
+    <property id="ContactShadows.ReceiveContactShadows" value="0"/>
+    <property id="ContactShadows.CastContactShadows" value="1"/>
+    <property id="ContactShadows.NormalBiasOffset" value="0.175"/>
+    <property id="ContactShadows.JitterScale" value="0.0"/>
+    <property id="ContactShadows.OverrideNdotLKillFade" value="1"/>
+    <property id="ContactShadows.NdotLKillFadeStart" value="-0.05"/>
+    <property id="ContactShadows.NdotLKillFadeEnd" value="-0.15"/>
+
+    <!-- Bush Billboard -->
+    <property id="PenumbraOffset" value="0.5" tags="DeferredFlag.Billboard" />
+    <property id="ImpostorShadowFadeRange" value="0.5" tags="DeferredFlag.Billboard" />
+</Settings>
+
+<!-- Characters -->
+<Settings path="MaterialIDProperties" tags="DeferredTag.Character">
+    <property id="UseSAOAlternateParams" value="1"/>
+    <property id="GTAOIntensity" value="0.9"/>
+    <property id="ScreenSpaceIndirectReprojectionStrength" value="0.5"/>
+    <property id="ContactShadows.DisableTemporalRefinement" value="1"/>
+    <property id="ContactShadows.DepthBiasOffset" value="0"/>
+    <property id="ContactShadows.NormalBiasOffset" value="-0.022"/>
+    <property id="ContactShadows.JitterScale" value="0"/>
+</Settings>
+
+<!-- Holland Characters -->
+<!-- Holland use Characters stencil category for these, for now base on use of character modular g-buffer layouts -->
+<!-- Removed for now, attenuation write wasn't enabled but the properties have been repurposed for SimpleCSMShadowAttenuation
+<Settings path="MaterialIDProperties" tags="DeferredFlag.ClothGBufferLayout OR DeferredFlag.SkinGBufferLayout OR DeferredFlag.HairGBufferLayout OR DeferredFlag.EyeGBufferLayout">
+    <property id="EnableShadowAttenuation" value="1"/>
+    <property id="MaxShadowAttenuationRange" value="0.5"/>
+    
+</Settings>
+-->
+
+<!-- Rainbow TerrainUnderworld -->
+<Settings path="MaterialIDProperties" tags="DeferredID.TerrainUnderworld">
+    <property id="ReceiveShadowMask" value="0"/>
+    <property id="ScreenSpaceIndirectReprojectionStrength" value="0.0"/>
+</Settings>
+
+<!-- Rainbow WaterUnderworld -->
+<Settings path="MaterialIDProperties" tags="DeferredID.WaterUnderworld">
+    <property id="ReceiveShadowMask" value="0"/>
+    <property id="ScreenSpaceIndirectReprojectionStrength" value="0.0"/>
+</Settings>
+
+<!-- Foliage CSM overrides -->
+<Settings path="MaterialIDProperties" tags="">   
+  <!-- We apply a bias of 1m to the trees to avoid self shadowing issues due to round robin. This happens a lot during high wind -->
+  <property id="CSMBiasOffset" value="1.0" tags="DeferredTag.Tree"/>
+  <!-- 0.16m to grass cards -->    
+  <property id="CSMBiasOffset" value="0.16" tags="DeferredID.GrassBillboard"/>
+</Settings>
+
+<!-- On Scarlett60Hz and non extreme PC shadow setting we apply a small shadow offset to Trees and Bushes -->
+<Settings path="MaterialIDProperties" tags="Config.Scarlett60Hz OR Config.PlayStation60Hz OR (Platform.PC AND -Config.ShadowQuality.Extreme)">    
+  <property id="CSMBiasOffset" value="1.25" tags="DeferredTag.Tree"/>
+  <property id="CSMBiasOffset" value="1.6" tags="DeferredTag.Bush"/>
+</Settings>
+
+<!-- On Scarlett30Hz and extreme PC shadow mode, we apply a shadow penumbra offset to the Tree and Grass cards -->
+<Settings path="MaterialIDParams" tags="Config.Scarlett30Hz OR Config.PlayStation30Hz OR (Platform.PC AND Config.ShadowQuality.Extreme)">
+  <property id="PenumbraOffsetEnabled" value="1"/>
+</Settings>
+
+<!-- For character focused scenarios we want to tweak the character GTAO a bit -->
+<Settings path="MaterialIDProperties" tags="DeferredTag.Character AND (Scenario.Race OR Scenario.Freeroam OR Scenario.ThreeTwoOne)">
+  <property id="GTAOIntensity" value="1.0"/>
+  <property id="ScreenSpaceIndirectReprojectionStrength" value="0.0"/>
+</Settings>
+
+<!-- Apply small bias to the AI/Traffic cars to get rid of self shadowing artefacrs due to using a lower shadow LOD compared to the MainScene -->
+<Settings path="MaterialIDProperties" tags="DeferredID.Car AND (Config.Scarlett60Hz OR Config.PlayStation60Hz OR (Platform.PC AND -Config.ShadowQuality.Extreme))">
+  <property id="PSSMBiasOffset" value="0.0075"/>
+</Settings>
+
+<!-- We don't want GTAO on the hair, as it doesn't resolve well. -->
+<Settings path="MaterialIDProperties" tags="DeferredID.CharacterHair">
+    <property id="GTAOIntensity" value="0.175"/>
+</Settings>
+
+
+<!-- Flags self-shadow in CSMs when animating -->
+<Settings path="MaterialIDProperties" tags="DeferredID.Flag">
+  <property id="CSMBiasOffset" value="0.2" />
+</Settings>
+  
+<!-- Allow cinematics to force a slightly softer shadow on character skin -->
+<Settings path="MaterialIDProperties" tags="DeferredID.CharacterSkin AND Cinematic.ForceCharacterSoftShadow">
+  <property id="PenumbraOffset" value="0.003" />
+</Settings>
+
+<!-- Distant GTAO for trees -->
+<Settings path="MaterialIDProperties" tags="DeferredID.TreeFoliage OR DeferredID.TreeFoliageDS OR DeferredID.TreeBillboard OR DeferredID.TreeImpostor">
+  <property id="GTAODistantRadiusScale" value="17.0"/>
+  <property id="GTAODistanceScaleStart" value="220.0"/>
+  <property id="GTAODistanceScaleEnd" value="340.0"/>
+</Settings>
+<Settings path="MaterialIDProperties" tags="DeferredID.TreeImpostorSnow">
+  <property id="GTAODistantRadiusScale" value="5.0"/>
+  <property id="GTAODistanceScaleStart" value="230.0"/>
+  <property id="GTAODistanceScaleEnd" value="340.0"/>
+</Settings>
+
+</DatabaseFile>

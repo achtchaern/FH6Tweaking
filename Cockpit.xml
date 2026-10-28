@@ -1,0 +1,8 @@
+<DatabaseFile path="">
+    <Data path="Cockpit.Params" type="CockpitParams">
+        <property id="QualitySettings" type="CockpitQualitySettings">
+            <property id="WindscreenRenderActive" value="true"/>
+            <property id="ForceMainSceneWindscreenReflectionLOD" value="true"/>
+        </property>
+    </Data>
+</DatabaseFile>

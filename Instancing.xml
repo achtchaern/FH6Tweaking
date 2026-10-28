@@ -1,0 +1,24 @@
+<DatabaseFile path="">
+  <!-- Note: this file is referenced by RenderDatabaseTools.xml, so any changes to xml layout should
+       be considered carefully as currently tools load directly from this folder which can contain
+       more recent data than their code revision -->
+  <Data path="Instancing.Data" type="InstancingData">
+    <property id="PaintedGrassLayerParams">
+      <property id="MaximumDrawDistanceForPass">
+        <element value="40"/><!-- Holland value="20" -->
+        <element value="105"/><!-- Holland value="60" -->
+        <element value="205"/><!-- Holland value="205" -->
+      </property>
+      <property id="ChunkSizeMultipliers">
+        <element value="1"/><!-- Holland value="0.25" -->
+        <element value="2"/><!-- Holland value="0.5" -->
+        <element value="4"/><!-- Holland value="1" -->
+      </property>
+    </property>
+  </Data>
+  
+  <Data path="InstancingVisibilityParams.Data" type="InstancingVisibilityParams">
+    <property id="MaxFractionBatchListOverhead" value="0.2" />
+    <property id="MaxShrinksPerFrame" value="5" />
+  </Data>
+</DatabaseFile>  

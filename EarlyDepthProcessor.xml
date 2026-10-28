@@ -1,0 +1,6 @@
+<File path="">
+  <Data path="EarlyDepthProcessor.Params" type="EarlyDepthProcessorParams">
+    <property id="DepthDownsampleMode" value="Near"/>
+    <property id="ConstructedNormalQuality" value="Half"/>
+  </Data>
+</File>

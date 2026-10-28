@@ -1,0 +1,59 @@
+<DatabaseFile path="">
+    <Data path="DepthOfField.Params" type="DepthOfFieldParams">
+        <property id="QualitySettings" type="DepthOfFieldQualitySettings">
+            <property id="Supported" value="true"/>
+            <property id="Enabled" value="true"/>
+            <property id="OnlyEnableIfPerceptuallyVisible" value="true"/>
+            <property id="DontFreeResources" value="false"/> 
+            <property id="GatherParams" type="DepthOfFieldGatherParameters">
+                <property id="RingCount" value="4"/>
+                <property id="RingPoints" value="4"/>
+                <property id="MaxDensityChanges" value="4"/>
+                <property id="HoleFill" value="true"/>
+                <property id="HoleFillBlendUsingForegroundResult" value="true"/>
+                <property id="EnableBlendMips" value="true"/>
+                <property id="BlendFactor" value="0.75"/>
+                <property id="EnableRadiusNoise" value="true"/>
+                <property id="DiscardOffScreenSamples" value="true"/>
+                <property id="CocBlurMode" value="GaussianLayered"/>
+                <property id="CocBlurRadius" value="5"/>
+                <property id="CocTopOperation" value="Avg"/>
+                <property id="CocMipOperation" value="Avg"/>
+            </property>
+            <property id="ScatterParams" type="DepthOfFieldScatterParameters">
+                <property id="Threshold" value="10.0"/>
+                <property id="ScatterForeground" value="true"/>
+                <property id="ScatterBackground" value="true"/>
+            </property>
+            <property id="RenderParams" type="DepthOfFieldRenderParameters">
+                <property id="MaxKernelRatio" value="0.05"/>
+                <property id="Filter" value="MedianLum"/>
+                <property id="ShowLayers" value="false"/>
+                <property id="InputMip" value="0"/> 
+            </property>
+        </property>
+    </Data>
+
+    <!-- On PC just keep hold of the textures for next time; todo : we should allow PC to free resources in the event DoF has been disabled via UserConfig -->
+    <Settings path="DepthOfField.Params" tags="Platform.PC">
+        <property id="QualitySettings.DontFreeResources" value="true"/>
+    </Settings>
+
+    <!-- Decrease blur radius for 1080p -->
+    <Settings path="DepthOfField.Params.QualitySettings" tags="-Frame.Resolution.AtLeastQuadHD">
+        <property id="GatherParams.CocBlurRadius" value="2.5"/>
+    </Settings>
+ 
+    <!-- Adjust constant preset settings-->
+    <!-- These settings should correspond with a preset in DepthOfField_Constants; make sure to update that if you change these -->
+    
+    <!-- Render Mode Settings -->
+    
+    <Settings path="DepthOfField.Params" tags="HighContrastMode.Enabled AND HighContrastMode.DisablePost" >
+        <property id="QualitySettings.Enabled" value="false"/>
+    </Settings>
+    <Settings path="DepthOfField.Params" tags="Scenario.PhotoMode OR Config.LensEffects.Low OR Config.LensEffects.Off">
+        <property id="QualitySettings.Enabled" value="false"/>
+    </Settings>
+  
+</DatabaseFile>

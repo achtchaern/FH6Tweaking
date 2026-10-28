@@ -1,0 +1,210 @@
+<DatabaseFile path="">
+  <Data path="ScreenSpaceGI.Params" type="ScreenSpaceGIParams">
+    <property id="Occlusion">
+      <property id="Base">
+        <property id="Active" value="false"/>
+        <property id="Temporal">
+          <property id="MinZDifference" value="7.5"/>
+          <property id="MaxZDifference" value="10.0"/>
+          <property id="CloseZDifferenceDistance" value="20"/>
+          <property id="FarZDifferenceDistance" value="60"/>
+          <property id="MinPixelMotion" value="0.005"/>
+          <property id="MaxPixelMotion" value="0.02"/>
+          <property id="DistanceAtMinIntensity" value="15"/>
+          <property id="DistanceAtMaxIntensity" value="5"/>
+          <property id="MinIntensity" value="1"/>
+          <property id="MaxIntensity" value="0.9"/>
+          <property id="MinStencilReprojectStrength" value="0.0"/>
+        </property>
+        <property id="BilateralFilter">
+          <property id="Radius" value="4"/>
+          <property id="NormalInfluence" value="0.5"/>
+          <property id="DistanceAtMinSharpness" value="20"/>
+          <property id="DistanceAtMaxSharpness" value="4"/>
+          <property id="MinSharpness" value="3"/>
+          <property id="MaxSharpness" value="15"/>
+          <property id="Use3DMotionVector" value="true"/>
+        </property>
+        <property id="Raycasting">
+          <property id="NumDirections" value="8"/>
+          <property id="AngularJitter" value="1"/>
+          <property id="StepJitter" value="1"/>
+          <property id="NumTemporalRotations" value="0"/>
+          <property id="NumSteps" value="4"/>
+          <property id="MaxThickness" value="1"/>
+          <property id="Radius" value="1"/>
+          <property id="DistantRadiusScale" value="21"/>
+          <property id="DistanceScaleStart" value="140"/>
+          <property id="DistanceScaleEnd" value="240"/>
+          <property id="StartFalloff" value="0"/>
+          <property id="EndFalloff" value="3"/>
+          <property id="PixelRadiusToFade" value="1.05"/>
+          <property id="SamplesExpDistribRate" value="50"/>
+          <property id="AltSamplesExpDistribRate" value="1000"/>
+          <property id="Intensity" value="1"/>
+        </property>
+        <property id="LineDoubled" value="false"/>
+        <property id="ResolutionScale" value="Half"/>
+        <property id="SelfOcclusionAware" value="false"/>
+        <property id="LookupMethod" value="Inactive"/>
+      </property>
+      <property id="DeformablePushUpFade" value="0"/>
+      <property id="DeformablePushDownFade" value="0"/>
+      <property id="DeformableNormalFade" value="0"/>
+      <property id="Min" value="0.05"/>
+      <property id="Max" value="1"/>
+      <property id="Power" value="1.5"/>
+      <property id="Multiply" value="1"/>
+      <property id="GenerateBentNormals" value="false"/>
+      <property id="UseDayNightScale" value="false"/>
+      <property id="WorldSpaceBounceInfluence" value="0"/>
+      <property id="DepthCorrectionToleranceMin" value="0"/>
+      <property id="DepthCorrectionToleranceMax" value="0"/>
+      <property id="NormalCorrectionTolerance" value="0"/>
+      <property id="DepthAwareLookupMinVerticalResolution" value="540"/>
+    </property>
+    <property id="Bounce">
+      <property id="Base">
+        <property id="Active" value="false"/>
+        <property id="Temporal">
+          <property id="MinZDifference" value="7.5"/>
+          <property id="MaxZDifference" value="10.0"/>
+          <property id="CloseZDifferenceDistance" value="20"/>
+          <property id="FarZDifferenceDistance" value="60"/>
+          <property id="MinPixelMotion" value="0.005"/>
+          <property id="MaxPixelMotion" value="0.02"/>
+          <property id="DistanceAtMinIntensity" value="15"/>
+          <property id="DistanceAtMaxIntensity" value="5"/>
+          <property id="MinIntensity" value="0.8"/>
+          <property id="MaxIntensity" value="0.8"/>
+          <property id="MinStencilReprojectStrength" value="1"/>
+        </property>
+        <property id="BilateralFilter">
+          <property id="Radius" value="32"/>
+          <property id="NormalInfluence" value="0.0"/>
+          <property id="DistanceAtMinSharpness" value="20"/>
+          <property id="DistanceAtMaxSharpness" value="4"/>
+          <property id="MinSharpness" value="3"/>
+          <property id="MaxSharpness" value="15"/>
+          <property id="Use3DMotionVector" value="true"/>
+        </property>
+        <property id="Raycasting">
+          <property id="NumDirections" value="8"/>
+          <property id="AngularJitter" value="1"/>
+          <property id="StepJitter" value="1"/>
+          <property id="NumTemporalRotations" value="0"/>
+          <property id="NumSteps" value="4"/>
+          <property id="MaxThickness" value="1"/>
+          <property id="Radius" value="2"/>
+          <property id="DistantRadiusScale" value="10"/>
+          <property id="DistanceScaleStart" value="30"/>
+          <property id="DistanceScaleEnd" value="300"/>
+          <property id="StartFalloff" value="0"/>
+          <property id="EndFalloff" value="2"/>
+          <property id="PixelRadiusToFade" value="1.05"/>
+          <property id="SamplesExpDistribRate" value="50"/>
+          <property id="AltSamplesExpDistribRate" value="1000"/>
+          <property id="Intensity" value="1"/>
+        </property>
+        <property id="LineDoubled" value="false"/>
+        <property id="ResolutionScale" value="Quarter"/>
+        <property id="SelfOcclusionAware" value="false"/>
+        <property id="LookupMethod" value="Inactive"/>
+      </property>
+      <property id="LightingWeight" value="2"/>
+      <property id="FacingWeight" value="5"/>
+      <property id="WorldBounceContributionScale" value="1"/>
+      <property id="ExportWorldBounceContribution" value="true"/>
+    </property>
+    <property id="InputColour">
+      <property id="LineDoubled" value="false"/>
+      <property id="BlurRadius" value="32"/>
+      <property id="ColourMip" value="1"/>
+      <property id="MaxLuminanceScale" value="19.999998"/>
+      <property id="FireflyReduction" value="10"/>
+      <property id="BlurSharpness" value="10"/>
+    </property>
+  </Data>
+    
+  <!-- Game area overrides -->
+  <Settings path="ScreenSpaceGI.Params" tags="(Scenario.Homespace AND -Scenario.PlayerHouse)">
+    <property id="Occlusion.Base.Raycasting.Radius" value="0.35"/>
+    <property id="Occlusion.Base.Raycasting.EndFalloff" value="1"/>
+  </Settings>
+  
+  <!-- Game area overrides -->
+  <Settings path="ScreenSpaceGI.Params" tags="(Scenario.PlayerHouse OR Scenario.PlayerHousePhotoMode)">
+    <property id="Occlusion.Base.Raycasting.Radius" value="0.16"/>
+    <property id="Occlusion.Base.Raycasting.Intensity" value="1.1"/>
+  </Settings>
+    
+  <!-- Per config base settings -->
+  <!-- This matches up to a compiled preset in IndirectLight_ScreenSpaceGT_Config.h -->
+  <Settings path="ScreenSpaceGI.Params" tags="Platform.Lockhart">
+    <property id="Occlusion.Base.BilateralFilter.MinSharpness" value="2"/>
+    <property id="Occlusion.Base.BilateralFilter.MaxSharpness" value="2.5"/>
+  </Settings>
+
+  <Settings path="ScreenSpaceGI.Params" tags="Config.Scarlett60Hz">
+    <property id="Occlusion.Base.LineDoubled" value="true" />
+  </Settings>
+  
+  <!-- Setup correct UseDayNightScale -->
+  <Settings path="ScreenSpaceGI.Params" tags="Scenario.Race AND -Config.SSGIQuality.Ultra AND -Config.Anaconda30Hz">
+    <property id="Occlusion.UseDayNightScale" value="true"/>
+  </Settings>
+  
+  <!-- Diffuse method choice -->
+  <Settings path="ScreenSpaceGI.Params" tags="Thumbnail OR Config.SSGIQuality.Off">
+    <property id="Occlusion.Base.Active" value="false" />
+  </Settings>
+  <!-- console settings -->
+  <Settings path="ScreenSpaceGI.Params" tags="Config.Scarlett30Hz OR Config.Anaconda60Hz">
+    <property id="Occlusion.Base.Active" value="true" />
+    <property id="Occlusion.Base.LookupMethod" value="PointDepthAware_BruteForce"/>
+    <property id="Occlusion.DepthCorrectionToleranceMin" value="0.01"/>
+    <property id="Occlusion.DepthCorrectionToleranceMax" value="0.1"/>
+    <property id="Occlusion.NormalCorrectionTolerance" value="0.707"/>
+  </Settings>
+    
+  <!-- general PC settings for all configs -->
+  <Settings path="ScreenSpaceGI.Params" tags="Config.SSGIQuality.Medium OR Config.SSGIQuality.High OR Config.SSGIQuality.Ultra OR Config.RTGIQuality.Low OR Config.RTGIQuality.Medium OR Config.RTGIQuality.High">
+    <property id="Occlusion.Base.Active" value="true" />
+    <property id="Occlusion.Base.LookupMethod" value="PointDepthAware_BruteForce"/>
+    <property id="Occlusion.DepthCorrectionToleranceMin" value="0.01"/>
+    <property id="Occlusion.DepthCorrectionToleranceMax" value="0.1"/>
+    <property id="Occlusion.NormalCorrectionTolerance" value="0.707"/>
+  </Settings>
+  <!-- pc medium setting -->
+  <Settings path="ScreenSpaceGI.Params" tags="Config.SSGIQuality.Medium">
+    <property id="Occlusion.Base.ResolutionScale" value="Half" />
+    <property id="Bounce.Base.ResolutionScale" value="Half"/>
+    <property id="Bounce.Base.Active" value="false" />
+  </Settings>
+  <!-- pc high setting -->
+  <Settings path="ScreenSpaceGI.Params" tags="Config.SSGIQuality.High OR Config.RTGIQuality.Low OR Config.RTGIQuality.Medium OR Config.RTGIQuality.High">
+    <!-- half res occlusion at 4k, full res if lower -->
+    <!-- in practice this will mean full res for most configs as 4K accounts for < 5% of users -->
+    <property id="Occlusion.Base.ResolutionScale" value="Half" tags="Render.Resolution.AtLeast4K" />
+    <property id="Occlusion.Base.ResolutionScale" value="Full" tags="-Render.Resolution.AtLeast4K" />
+    <property id="Bounce.Base.ResolutionScale" value="Half" />
+    <property id="Bounce.Base.Active" value="false" />
+  </Settings>
+  <!-- pc ultra setting -->
+  <Settings path="ScreenSpaceGI.Params" tags="Config.SSGIQuality.Ultra">
+    <!-- same res dependent setting as high -->
+    <property id="Occlusion.Base.ResolutionScale" value="Half" tags="Render.Resolution.AtLeast4K" />
+    <property id="Occlusion.Base.ResolutionScale" value="Full" tags="-Render.Resolution.AtLeast4K" />
+    <!-- don't think we need screen space bounce light to ever be full resolution, its too subtle -->
+    <property id="Bounce.Base.ResolutionScale" value="Half"/>
+    <property id="Bounce.Base.Active" value="true" />
+  </Settings>
+
+  <!-- Render Mode Settings -->
+  
+  <Settings path="ScreenSpaceGI.Params" tags="Largeshot.ActiveAccumulating">
+    <property id="Occlusion.Base.Temporal.MinIntensity" value="0.0"/>
+    <property id="Occlusion.Base.Temporal.MaxIntensity" value="0.0"/>
+  </Settings>
+
+</DatabaseFile>

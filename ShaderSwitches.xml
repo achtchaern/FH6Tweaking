@@ -1,0 +1,262 @@
+<DatabaseFile path="">
+  <Data path="ShaderSwitches.Data" type="ShaderSwitchData">
+    <property id="Switches">
+      <map_element><key value="SeasonSpring"/><value value="false" /></map_element>
+      <map_element><key value="SeasonSummer"/><value value="false" /></map_element>
+      <map_element><key value="SeasonAutumn"/><value value="false" /></map_element>
+      <map_element><key value="SeasonWinter"/><value value="false" /></map_element>
+      <map_element><key value="SeasonNotSpring"/><value value="true" /></map_element>
+      <map_element><key value="SeasonNotSummer"/><value value="true" /></map_element>
+      <map_element><key value="SeasonNotAutumn"/><value value="true" /></map_element>
+      <map_element><key value="SeasonNotWinter"/><value value="true" /></map_element>
+      <map_element><key value="AssetWinterBlend"/><value value="false" /></map_element>
+      <map_element><key value="SnowOnBuildings"/><value value="false" /></map_element>
+      <map_element><key value="WinterRoads"/><value value="false" /></map_element>
+      <map_element><key value="WinterDecals"/><value value="false" /></map_element>
+      <map_element><key value="TerrainWinter"/><value value="false" /></map_element>
+      <map_element><key value="NoViewDepthDither"/><value value="false" /></map_element>
+      <map_element><key value="UseDoubleSidedFoliageOnTrees"/><value value="true" /></map_element>
+      <map_element><key value="UseDoubleSidedFoliageOnBushes"/><value value="true" /></map_element>
+      <map_element><key value="UseDoubleSidedFoliageOnGrass"/><value value="true" /></map_element>
+      <map_element><key value="UseDoubleSidedFoliageOnGrass2D"/><value value="false" /></map_element>
+      <map_element><key value="TerrainNoise"/><value value="false" /></map_element>
+      <map_element><key value="TerrainParallax"/><value value="false" /></map_element>
+      <map_element><key value="RoadParallax"/><value value="false" /></map_element>
+      <map_element><key value="RoadDetail"/><value value="false" /></map_element>
+      <map_element><key value="UseRCSM"/><value value="false" /></map_element>
+      <map_element><key value="UseRCSM_Shadows"/><value value="false" /></map_element>
+      <map_element><key value="HighQualityWater"/><value value="false" /></map_element>
+      <map_element><key value="UseGroundCoverWorldTint"/><value value="true" /></map_element>
+      <map_element><key value="OptimiseTerrain"/><value value="false" /></map_element>
+      <map_element><key value="UseMegaTexturePixelDepth"/><value value="false" /></map_element>
+      <map_element><key value="RockMicro"/><value value="false" /></map_element>
+      <map_element><key value="Windows_SimpleFurniture"/><value value="false" /></map_element>
+      <map_element><key value="Windows_DisableFurniture"/><value value="false" /></map_element>
+      <map_element><key value="Windows_DisableDirectLight"/><value value="false" /></map_element>
+      <map_element><key value="HighQualityGrass"/><value value="true"/></map_element>
+      <map_element><key value="HighQualityGrass3D"/><value value="true"/></map_element>
+      <map_element><key value="HighQualityTrees"/><value value="true"/></map_element>
+      <map_element><key value="HighQualityTreeBillboards"/><value value="true"/></map_element>
+      <map_element><key value="HighQualityBushes"/><value value="true"/></map_element>
+      <map_element><key value="FlutterSwitch"/><value value="true"/></map_element>
+    </property>
+    <property id="Groups">
+      <!-- Default shader switch group -->
+      <!--
+        <element type="ShaderSwitchState">
+          <property id="Names" />                        Array of name strings
+          <property id="Enabled" value="false" />
+        </element>
+      -->
+      <!-- Shader switches for foliage -->
+      <map_element><key value="FoliageQuality"/><value>
+        <property id="Names">
+          <!-- Forte: these values are now all true by default on all platforms
+          <element value="HighQualityGrass" />
+          <element value="HighQualityGrass3D" />
+          <element value="HighQualityTrees" />
+          <element value="HighQualityTreeBillboards" />
+          <element value="HighQualityBushes" />
+          <element value="FlutterSwitch" />
+          -->
+        </property>
+      </value></map_element>
+    </property>
+  </Data>
+  <Data path="ShaderSwitches.VariantSwitchData" type="ShaderSwitchVariantData">
+    <!-- For the PSO List Generator Component's variants  -->
+    <property id="Variants">
+      <!-- terrain noise on -->
+      <!-- Variant 0: foliage off, road off, terrain optimise, water off, rcsm off -->
+      <element type="VariantSwitchMap">
+        <property id="OnSwitches">
+          <element value="OptimiseTerrain" />
+          <element value="TerrainNoise" />
+          <element value="Windows_SimpleFurniture" />
+          <element value="Windows_DisableDirectLight" />
+        </property>
+        <property id="OffSwitches">
+          <element value="FoliageQuality" />
+          <element value="TerrainParallax" />
+          <element value="RoadParallax" />
+          <element value="HighQualityWater" />
+          <element value="RoadDetail" />
+          <element value="UseRCSM_Shadows" />
+          <element value="UseMegaTexturePixelDepth" />
+          <element value="MegaTextureShadows" />
+          <element value="RockMicro" />
+        </property>
+      </element>
+      <!-- Variant 1: foliage off, road detail, terrain default, water off, rcsm off -->
+      <element type="VariantSwitchMap">
+        <property id="OnSwitches">
+          <element value="RoadDetail" />
+          <element value="TerrainNoise" />
+        </property>
+        <property id="OffSwitches">
+          <element value="FoliageQuality" />
+          <element value="TerrainParallax" />
+          <element value="RoadParallax" />
+          <element value="HighQualityWater" />
+          <element value="OptimiseTerrain" />
+          <element value="UseRCSM_Shadows" />
+          <element value="UseMegaTexturePixelDepth" />
+          <element value="MegaTextureShadows" />
+          <element value="RockMicro" />
+          <element value="Windows_SimpleFurniture" />
+          <element value="Windows_DisableDirectLight" />
+        </property>
+      </element>
+      <!-- Variant 2: foliage on, road detail + parallax, terrain parallax, water on, rcsm on -->
+      <element type="VariantSwitchMap">
+        <property id="OnSwitches">
+          <element value="FoliageQuality" />
+          <element value="TerrainParallax" />
+          <element value="RoadParallax" />
+          <element value="HighQualityWater" />
+          <element value="RoadDetail" />
+          <element value="UseRCSM_Shadows" />
+          <element value="UseMegaTexturePixelDepth" />
+          <element value="MegaTextureShadows" />
+          <element value="TerrainNoise" />
+          <element value="RockMicro" />
+        </property>
+        <property id="OffSwitches">
+          <element value="OptimiseTerrain" />
+          <element value="Windows_SimpleFurniture" />
+          <element value="Windows_DisableDirectLight" />
+        </property>
+      </element>
+      <!-- repeat, plus terrain noise off -->
+      <!-- Variant 3: foliage off, road off, terrain optimise, water off, rcsm off -->
+      <element type="VariantSwitchMap">
+        <property id="OnSwitches">
+          <element value="OptimiseTerrain" />
+        </property>
+        <property id="OffSwitches">
+          <element value="FoliageQuality" />
+          <element value="TerrainParallax" />
+          <element value="RoadParallax" />
+          <element value="HighQualityWater" />
+          <element value="RoadDetail" />
+          <element value="UseRCSM_Shadows" />
+          <element value="UseMegaTexturePixelDepth" />
+          <element value="MegaTextureShadows" />
+          <element value="TerrainNoise" />
+          <element value="RockMicro" />
+          <element value="Windows_SimpleFurniture" />
+          <element value="Windows_DisableDirectLight" />
+        </property>
+      </element>
+      <!-- Variant 4: foliage off, road detail, terrain default, water off, rcsm off -->
+      <element type="VariantSwitchMap">
+        <property id="OnSwitches">
+          <element value="RoadDetail" />
+        </property>
+        <property id="OffSwitches">
+          <element value="FoliageQuality" />
+          <element value="TerrainParallax" />
+          <element value="RoadParallax" />
+          <element value="HighQualityWater" />
+          <element value="OptimiseTerrain" />
+          <element value="UseRCSM_Shadows" />
+          <element value="UseMegaTexturePixelDepth" />
+          <element value="MegaTextureShadows" />
+          <element value="TerrainNoise" />
+          <element value="RockMicro" />
+          <element value="Windows_SimpleFurniture" />
+          <element value="Windows_DisableDirectLight" />
+        </property>
+      </element>
+      <!-- Variant 5: foliage on, road detail + parallax, terrain parallax, water on, rcsm on -->
+      <!-- this last variant should revert switches to extreme preset default before streaming in next zone -->
+      <element type="VariantSwitchMap">
+        <property id="OnSwitches">
+          <element value="FoliageQuality" />
+          <element value="TerrainParallax" />
+          <element value="RoadParallax" />
+          <element value="HighQualityWater" />
+          <element value="RoadDetail" />
+          <element value="UseRCSM_Shadows" />
+          <element value="UseMegaTexturePixelDepth" />
+          <element value="MegaTextureShadows" />
+          <element value="RockMicro" />
+        </property>
+        <property id="OffSwitches">
+          <element value="OptimiseTerrain" />
+          <element value="TerrainNoise" />
+          <element value="Windows_SimpleFurniture" />
+          <element value="Windows_DisableDirectLight" />
+        </property>
+      </element>
+    </property>
+  </Data>
+  
+  <!-- Settings for seasons -->
+  <Settings path="ShaderSwitches.Data" tags="Seasons.Spring">
+    <property id="Switches.SeasonSpring" value="true" />
+    <property id="Switches.SeasonNotSpring" value="false" />
+  </Settings>
+  <Settings path="ShaderSwitches.Data" tags="Seasons.Summer">
+    <property id="Switches.SeasonSummer" value="true" />
+    <property id="Switches.SeasonNotSummer" value="false" />
+  </Settings>
+  <Settings path="ShaderSwitches.Data" tags="Seasons.Autumn">
+    <property id="Switches.SeasonAutumn" value="true" />
+    <property id="Switches.SeasonNotAutumn" value="false" />
+  </Settings>
+  <Settings path="ShaderSwitches.Data" tags="Seasons.Winter">
+    <property id="Switches.SeasonWinter" value="true" />
+    <property id="Switches.SeasonNotWinter" value="false" />
+    <property id="Switches.AssetWinterBlend" value="true" />
+    <property id="Switches.SnowOnBuildings" value="true" />
+    <property id="Switches.WinterRoads" value="true" />
+    <property id="Switches.WinterDecals" value="true" />
+    <property id="Switches.TerrainWinter" value="true" />
+  </Settings>
+  
+  <!-- Settings for foliage -->
+  <Settings path="ShaderSwitches.Data" tags="Config.ShaderQuality.Extreme OR Config.ShaderQuality.Ultra OR Config.ShaderQuality.High OR Platform.Anaconda OR Platform.Lockhart">
+    <property id="Groups.FoliageQuality.Enabled" value="true" />
+  </Settings>
+  
+  <!-- Settings for terrain -->
+  <Settings path="ShaderSwitches.Data" tags="Scenario.PhotoMode">
+    <property id="Switches.TerrainNoise" value="true" />
+  </Settings>
+  <Settings path="ShaderSwitches.Data" tags="Scenario.PhotoMode OR (Scenario.PlayerHouse AND (Platform.Anaconda OR Platform.Lockhart OR Config.ShaderQuality.High OR Config.ShaderQuality.Ultra OR Config.ShaderQuality.Extreme))">
+    <property id="Switches.TerrainParallax" value="true" />
+    <property id="Switches.RoadParallax" value="true" />
+  </Settings>
+  <Settings path="ShaderSwitches.Data" tags="Config.ShaderQuality.High OR Config.ShaderQuality.Ultra OR Config.ShaderQuality.Extreme OR Platform.Anaconda OR Platform.Lockhart">
+    <property id="Switches.HighQualityWater" value="true" />
+  </Settings>
+  <Settings path="ShaderSwitches.Data" tags="Config.ShaderQuality.Low AND -Scenario.PhotoMode">
+    <property id="Switches.OptimiseTerrain" value="true" />
+  </Settings>
+
+  <!-- Settings for roads -->
+  <Settings path="ShaderSwitches.Data" tags="Config.ShaderQuality.Extreme OR Config.ShaderQuality.Ultra OR Config.ShaderQuality.High OR Platform.Anaconda OR Platform.Lockhart">
+    <property id="Switches.RoadDetail" value="true" />
+  </Settings>
+  
+  <!-- Settings for rocks -->
+  <Settings path="ShaderSwitches.Data" tags="Config.Scarlett30Hz OR Config.ShaderQuality.Ultra OR Config.ShaderQuality.Extreme">
+    <property id="Switches.RockMicro" value="true" />
+  </Settings>
+  
+  <!-- Settings for windows -->
+  <Settings path="ShaderSwitches.Data" tags="Config.Scarlett60Hz OR Config.ShaderQuality.Low OR Config.ShaderQuality.Medium">
+    <property id="Switches.Windows_SimpleFurniture" value="true" />
+    <property id="Switches.Windows_DisableDirectLight" value="true" />
+  </Settings>
+  
+  <!-- Platform overrides -->
+  <Settings path="ShaderSwitches.Data" tags="Config.ShaderQuality.Ultra OR Config.ShaderQuality.Extreme OR Config.Scarlett30Hz">
+    <property id="Switches.TerrainParallax" value="true" />
+    <property id="Switches.RoadParallax" value="true" />
+    <property id="Switches.UseRCSM_Shadows" value="true" />
+    <property id="Switches.UseMegaTexturePixelDepth" value="true" />
+    <property id="Switches.MegaTextureShadows" value="true" /> <!-- must match ShadowEnabled setting in MegaTexture.xml -->
+  </Settings>
+</DatabaseFile>

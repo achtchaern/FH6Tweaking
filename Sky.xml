@@ -1,0 +1,29 @@
+<DatabaseFile path="">
+  <Data path="Sky.Params" type="SkyParams">
+    <property id="StarsUseUserSize" value="false" /> 
+    <property id="ForceForwardPlusEnabled" value="false" />
+    <property id="EnvirodomePosition" type="vec3" value="0,0,0" />
+    <property id="EnvirodomeRadius" value="100" />
+    <property id="EnvirodomeOffset" value="5.9" />
+    <property id="EnvirodomeSkirt" value="2" />
+    <property id="EnvirodomeUseCarPosition" value="true" />
+  </Data>
+  
+  <Settings path="Sky.Params" tags="Platform.Anaconda OR Platform.Lockhart OR Platform.PC">
+    <property id="StarsUseUserSize" value="true"/>
+  </Settings>
+
+
+  <Settings path="Sky.Params" tags="Cinematic.ForceForwardPlusEnabled AND (Config.Anaconda30Hz OR Config.ShaderQuality.Extreme)">
+    <property id="ForceForwardPlusEnabled" value="true"/>
+  </Settings>
+  
+  <Settings path="Sky.Params" tags="Cinematic.CharacterCustomiser">
+    <property id="ForceForwardPlusEnabled" value="true"/>
+  </Settings>
+
+  <Settings path="Sky.Params" tags="Scenario.PlayerHouse OR Scenario.PlayerHousePhotoMode">
+    <property id="EnvirodomeSkirt" value="1000"/>
+  </Settings>
+
+</DatabaseFile>

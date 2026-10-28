@@ -1,0 +1,156 @@
+<DatabaseFile path="">
+    <Data path="Cubemap.Params" type="CubemapParams">
+      <property id="QualitySettings" type="CubemapObjectQualitySettings">
+        <property id="GlobalConvolvedCubeSHOrder" value="Fifth"/>
+        <property id="HighQualityInstancesEnabled" value="false"/>
+        <property id="HighQualityProceduralsEnabled" value="false"/>
+        <property id="TransparentObjectsEnabled" value="false"/>
+        <property id="LoneModelInstancesEnabled" value="false"/>
+        <property id="CarsEnabled" value="false"/>
+        <property id="CarInteriorEnabled" value="true"/>
+        <property id="AllowFaceScalingInCinematics" value="false"/>
+        <property id="UseZPrePassForProcedurals" value="true" />
+        <property id="PylonCableRenderTransparentsInOpaque" value="true" />
+        <property id="PylonCableMinimumCubemapResolution" value="512" />
+
+        <!-- Both Crowd and cloth are not fully supported so should remain false 
+             Further work is needed to fix GPU hangs caused by Cloth rendering in cube
+             Further work is needed to add CubemapLightScenario as part of crowd build pipeline-->
+        <property id="ClothEnabled" value="false"/>
+        <property id="CrowdEnabled" value="false"/>
+        <!-- Particles not fully supported, the new particle system batches draw calls in a map
+             of presentation pass to camera/frustum which would need to be extended -->
+        <property id="ParticlesEnabled" value="false"/>
+
+        <!-- LOD scales -->
+        <property id="MinimumLOD" value="0"/>
+        <property id="LODDistanceScale" value="1.0"/>
+      </property>
+      <property id="CarSettings" type="FocusCarCubemapSettings">
+        <property id="FocusCarConvolvedCubeSHOrder" value="Fifth"/>
+        <property id="FreezeDelay" value="0"/>
+        <property id="CullAllForwardPlusUpFront" value="false"/>
+        <property id="FilterSpecular" value="false" />
+        <property id="RenderInCockpit" value="true" />
+        <property id="SkipTrackRenderInCockpit" value="true" />
+        <property id="FacesToRenderInCockpitPerFrame" value="1" />
+        <property id="UseStaticCubemap" value="false" />
+        <property id="UseGlobalSpecularCubemap" value="false" />
+      </property>
+      <property id="EnvLookupSettings" type="EnvironmentCubemapLookupSettings">
+        <property id="SkewLookupYEnabled" value="false" />
+        <property id="SkewLookupYMaxScale" value="1" />
+        <property id="SkewLookupYMaxDistance" value="1" />
+      </property>
+      <property id="EnvQualitySettings" type="EnvironmentCubemapObjectQualitySettings">
+        <property id="HighQualityInstancesEnabled" value="false"/>
+        <property id="HighQualityProceduralsEnabled" value="false"/>
+        <property id="TransparentObjectsEnabled" value="false"/>
+        <property id="MinimumLOD" value="0"/>
+        <property id="LODDistanceScale" value="1.0"/>
+        <property id="UseStaticCubemap" value="false" />
+      </property>
+      <property id="RenderSettings" type="CubemapGlobalRenderSettings">
+        <property id="FocusCarEmissiveScale" value="1.0"/>
+        <property id="FocusCarNightLightScale" value="1.0"/>
+        <property id="GlobalEmissiveScale" value="0.4"/>
+        <property id="GlobalNightLightScale" value="1.0"/>
+      </property>
+    </Data>
+
+    <Data path="GlobalSpecularCubemap.Params" type="GlobalSpecularCubemapParams">
+      <property id="BlendParams" type="BlendParams">
+        <property id="MinCameraSpeed" value="0.0"/>
+        <property id="MaxCameraSpeed" value="8.0"/>
+        <property id="MinBlendSpeed" value="0.2"/>
+        <property id="MaxBlendSpeed" value="1.0"/>
+      </property>
+      <property id="RenderWithFPlus" value="true"/>
+    </Data>
+    
+  <!-- Per platform/config settings -->
+  <!-- no change for existing Sunrise platforms due to GPU cost -->
+  <Settings path="Cubemap.Params.QualitySettings" tags="Config.Scarlett60Hz" >
+    <property id="HighQualityInstancesEnabled" value="false" />
+    <property id="HighQualityProceduralsEnabled" value="false"/>
+  </Settings>
+
+  <Settings path="Cubemap.Params.QualitySettings" tags="Config.Scarlett30Hz" >
+    <property id="HighQualityInstancesEnabled" value="false" />
+    <property id="HighQualityProceduralsEnabled" value="false"/>
+    <property id="TransparentObjectsEnabled" value="false"/>
+    <property id="LoneModelInstancesEnabled" value="false"/>
+    <property id="MinimumLOD" value="0" />
+    <property id="ClothEnabled" value="true"/>
+  </Settings>
+  
+  <!-- PC config settings, note tags are constructed from config option id and quality band name -->
+  <Settings path="Cubemap.Params.QualitySettings" tags="Config.CubemapResolution.VeryLow OR Config.CubemapResolution.Low OR Config.CubemapResolution.Medium" >
+    <property id="HighQualityInstancesEnabled" value="false" />
+    <property id="HighQualityProceduralsEnabled" value="false"/>
+  </Settings>
+  
+  <Settings path="Cubemap.Params.QualitySettings" tags="Config.CubemapResolution.High" >
+    <property id="HighQualityInstancesEnabled" value="false" />
+    <property id="HighQualityProceduralsEnabled" value="false"/>
+    <!-- would probably prefer minlod of 1 here but systems need to ensure road/terrain is always available at this lod -->
+    <property id="MinimumLOD" value="0" />
+    <property id="LODDistanceScale" value="0.6"/>
+  </Settings>
+  
+  <!-- TODO: high quality cubemap options too expensive probably even for ultra/extreme -->
+  <Settings path="Cubemap.Params.QualitySettings" tags="Config.CubemapResolution.Ultra" >
+    <property id="HighQualityInstancesEnabled" value="false" />
+    <property id="HighQualityProceduralsEnabled" value="false"/>
+    <property id="TransparentObjectsEnabled" value="false"/>
+    <property id="LoneModelInstancesEnabled" value="false"/>
+    <property id="MinimumLOD" value="0" />
+  </Settings>
+  
+  <Settings path="Cubemap.Params.QualitySettings" tags="Config.CubemapResolution.Extreme" >
+    <property id="HighQualityInstancesEnabled" value="false" />
+    <property id="HighQualityProceduralsEnabled" value="false"/>
+    <property id="TransparentObjectsEnabled" value="false"/>
+    <property id="LoneModelInstancesEnabled" value="false"/>
+    <property id="MinimumLOD" value="0" />
+  </Settings>
+  
+  <Settings path="Cubemap.Params.CarSettings" tags="Cinematic.PauseCubemapUpdate" >
+    <property id="FreezeDelay" value="6"/>
+  </Settings>
+
+  <Settings path="Cubemap.Params.QualitySettings" tags="Cinematic.AllowCubemapScaling" >
+    <property id="AllowFaceScalingInCinematics" value="true"/>
+  </Settings>
+      
+  <Settings path="Cubemap.Params.QualitySettings" tags="AppCmd.BeautifulAreaSSGI" >
+    <property id="HighQualityInstancesEnabled" value="true" />
+    <property id="HighQualityProceduralsEnabled" value="true"/>
+  </Settings>
+  <Settings path="Cubemap.Params.EnvQualitySettings" tags="AppCmd.BeautifulAreaSSGI" >
+    <property id="HighQualityInstancesEnabled" value="true" />
+    <property id="HighQualityProceduralsEnabled" value="true"/>
+  </Settings>  
+
+  <Settings path="Cubemap.Params.CarSettings" tags="(Config.ReflectionQuality.VeryLow OR (Config.ReflectionQuality.Low AND Config.SteamDeck)) AND Platform.PC AND -Scenario.PlayerHouse AND -Scenario.PlayerHousePhotoMode">
+    <property id="UseGlobalSpecularCubemap" value="true"/>
+  </Settings>
+  
+  <Settings path="Cubemap.Params.CarSettings" tags="Scenario.StaticCarCube" >
+    <property id="UseStaticCubemap" value="true"/>
+  </Settings>
+  
+  <Settings path="Cubemap.Params.EnvQualitySettings" tags="Scenario.StaticEnvironmentCube" >
+    <property id="UseStaticCubemap" value="true" />
+  </Settings>  
+
+  <Settings path="Cubemap.Params.EnvLookupSettings" tags="-Scenario.StaticEnvironmentCube" >
+    <property id="SkewLookupYEnabled" value="true" />
+    <property id="SkewLookupYMaxScale" value="25.0" />
+    <property id="SkewLookupYMinDistance" value="5" />
+    <property id="SkewLookupYMaxDistance" value="250" />
+    <property id="SkewLookupYMinHeight" value="2" />
+    <property id="SkewLookupYMaxHeight" value="6" />
+  </property>
+
+</DatabaseFile>

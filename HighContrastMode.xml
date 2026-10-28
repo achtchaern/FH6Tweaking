@@ -1,0 +1,54 @@
+<DatabaseFile path="">
+    <Data path="HighContrastRenderer.Params" type="HighContrastRendererParams">
+        <property id="Enabled" value="false"/>
+        <property id="EnableSkyOverride" value="false"/>
+        <property id="SkyPresetOverride" value="Accessibility_HighContrast_01"/>
+        <property id="PreferOpenWorldRoadData" value="false"/>
+        <property id="EnableEventOnlyHighlights" value="false"/>
+        <property id="EnableImprovedNightVisibility" value="false"/>
+        <property id="MinSunIntensityLux" value="0.0"/>
+        <property id="MinSunColourComponent" value="0.0"/>
+        <property id="AllowedSkyPresetPrefixes">
+          <element type="string" value="HomeSpace_"/>
+        </property>
+      <property id="PatternTexturePaths">
+        <element type="string" value="game:\media\cars\_library\textures\geometricPatterns\swatches\circles_003_OPAC_c076b1b4-0d21-49ab-a424-2033f9479c68.swatchbin"/>
+        <element type="string" value="game:\media\cars\_library\textures\geometricPatterns\swatches\circles_020_LCAO_f9e89319-7d8c-4667-b4a5-cf6d429cb078.swatchbin"/>
+        <element type="string" value="game:\media\cars\_library\textures\geometricPatterns\swatches\ptn_squarerounded_002_opac_09938ba3-2c94-4ca7-9651-dfaec1948d66.swatchbin"/>
+        <element type="string" value="game:\media\cars\_library\textures\geometricPatterns\swatches\spring_001_opac_0e07ac4f-9908-4ee9-a545-86749c03084c.swatchbin"/>
+      </property>
+    </Data>
+
+    <Settings path="HighContrastRenderer.Params" tags="HighContrastMode.Enabled">
+        <property id="Enabled" value="true"/>
+    </Settings>
+
+  <Settings path="HighContrastRenderer.Params" tags="HighContrastMode.Enabled AND HighContrastMode.SkyPresetOverride">
+    <property id="EnableSkyOverride" value="true"/>
+  </Settings>
+  
+  <Settings path="HighContrastRenderer.Params" tags="Scenario.Freeroam">
+    <property id="PreferOpenWorldRoadData" value="true"/>
+  </Settings>
+
+  <Settings path="HighContrastRenderer.Params" tags="HighContrastMode.ImprovedNightVisibility">
+    <property id="EnableImprovedNightVisibility" value="true"/>
+    <property id="MinSunIntensityLux" value="15.0"/>
+    <property id="MinSunColourComponent" value="1.0"/>
+  </Settings>
+  
+  <Settings path="HighContrastRenderer.Params" tags="Scenario.PreRace OR Scenario.Race OR Scenario.RaceReplay OR Scenario.PostRace">
+    <property id="EnableEventOnlyHighlights" value="false"/>
+  </Settings>
+  
+  <!-- Disable in specific scenarios -->
+  <Settings path="HighContrastRenderer.Params" tags="Scenario.Homespace OR Scenario.PlayerHouse OR Scenario.Mainstage OR Scenario.CharacterFocused">
+    <property id="Enabled" value="false"/>
+  </Settings>
+  
+  <!-- Disable in photomode captures only -->
+  <Settings path="HighContrastRenderer.Params" tags="Largeshot.ActiveAccumulating">
+    <property id="Enabled" value="false"/>
+  </Settings>
+    
+</DatabaseFile>

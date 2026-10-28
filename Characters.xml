@@ -1,0 +1,87 @@
+<DatabaseFile path="">
+    <Data path="Character.Params" type="CharacterQualityParams">
+      <property id="QualitySettings">
+        <map_element>
+          <key type="CharacterModelContext" value="PlayerDriver"/>
+          <value type="PerContextCharacterQuality">
+            <property id="DefaultMipsToDrop" value="0"/>
+          </value>
+        </map_element>
+        <map_element>
+          <key type="CharacterModelContext" value="AIDriver"/>
+          <value type="PerContextCharacterQuality">
+            <property id="DefaultMipsToDrop" value="0"/>
+          </value>
+        </map_element>
+        <map_element>
+          <key type="CharacterModelContext" value="GeneralScene"/>
+          <value type="PerContextCharacterQuality">
+            <property id="DefaultMipsToDrop" value="0"/>
+          </value>
+        </map_element>
+      </property>
+    </Data>
+
+
+  <!-- Slots can be found in ModularCharacter::Manager::DataBase::m_Slots -->
+  <!--
+    "Body"
+    "Face"
+    "Hair"
+    "HairColour"
+    "Eye"
+    "UpperBodyLayer1"
+    "UpperBodyLayer2"
+    "LowerBody"
+    "Feet"
+    "Hat"
+    "LeftWrist"
+    "Hands"
+    "Nose"
+    "Outfit"
+    "Wristband"
+    "ProstheticArmLeft"
+    "ProstheticArmRight"
+    "ProstheticLegLeft"
+    "ProstheticLegRight"
+    "Socks"
+  -->
+  
+  <Settings path="Character.Params" tags="Platform.Lockhart">
+      <property id="QualitySettings">
+        <map_element>
+          <key type="CharacterModelContext" value="PlayerDriver"/>
+          <value type="PerContextCharacterQuality">
+          <property id="DefaultMipsToDrop" value="0"/>
+            <property id="SlotMipsToDrop">
+              <map_element><key value="Hair"/>                  <value value="1"/></map_element>
+              <map_element><key value="LowerBody"/>             <value value="1"/></map_element>
+              <map_element><key value="ProstheticLegLeft"/>     <value value="1"/></map_element>
+              <map_element><key value="Feet"/>                  <value value="1"/></map_element>
+              <map_element><key value="Socks"/>                 <value value="2"/></map_element>
+            </property>
+          </value>
+        </map_element>
+        <map_element>
+          <key type="CharacterModelContext" value="AIDriver"/>
+          <value type="PerContextCharacterQuality">
+            <property id="DefaultMipsToDrop" value="1"/>
+            <property id="SlotMipsToDrop">
+              <map_element><key value="LowerBody"/>             <value value="2"/></map_element>
+              <map_element><key value="ProstheticLegLeft"/>     <value value="2"/></map_element>
+              <map_element><key value="Feet"/>                  <value value="2"/></map_element>
+              <map_element><key value="Socks"/>                 <value value="3"/></map_element>
+            </property>
+          </value>
+        </map_element>
+        <map_element>
+          <key type="CharacterModelContext" value="GeneralScene"/>
+          <value type="PerContextCharacterQuality">
+            <property id="DefaultMipsToDrop" value="0"/>
+            <property id="SlotMipsToDrop" />
+          </value>
+        </map_element>
+      </property>
+  </Settings>
+
+</DatabaseFile>

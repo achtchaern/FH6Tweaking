@@ -1,0 +1,16 @@
+<DatabaseFile path="">
+    <Data path="FilmGrain.Parameters" type="FilmGrainParameters">
+        <property id="Enabled" value="false" />
+        <property id="Animated" value="true"/>
+        <property id="Strength" value="0.3"/>
+        <property id="GrainSize" value="3"/>
+        <property id="Chromatic" value="true"/>
+        <property id="ChromaticVariance" value="0.2"/>
+        <property id="LumResponse" value="0.5"/>
+        <property id="NoiseParams" type="FilmGrainNoiseParameters">
+            <property id="NoiseType" value="Voronoi"/>
+            <property id="Size" value="512"/>
+            <property id="VoronoiGrid" value="512"/>
+        </property>
+    </Data>
+</DatabaseFile>

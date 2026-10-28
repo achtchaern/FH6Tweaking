@@ -1,0 +1,100 @@
+<DatabaseFile path="">
+    <Data path="MotionBlur.Params" type="MotionBlurParams">
+        <property id="QualitySettings" type="MotionBlurQualitySettings">
+            <property id="Mode" value="Legacy" />
+            <property id="TonemapFunction" value="None" /> <!--No tonemap, No Gamma-->
+            <property id="Supported" value="true" />
+            <property id="Amount" value="1.0"/>
+            <property id="Length" value="0.3"/> <!-- Holland value 0.2 -->
+            <property id="GammaPowerDay" value="20.0"/>
+            <property id="GammaPowerNight" value="2.0"/>
+            <property id="Samples" value="5"/>
+            <property id="LegacySamples" value="5"/>
+            <property id="LegacySamples" value="5"/>
+            <property id="LegacyPrePassSamples" value="5" />
+            <property id="ThinFeatureNormalisationTerm" value="20" />
+            <!-- We round this down to multiples of 8 to fit into the group size. Should work out as 32 texels at 1080, 48 texels at 1440 and 72 at 2160-->
+            <property id="MaxBlurRadiusVerticalUV" value="0.0334" />
+            <property id="TileEdgeOffsetSlope" value="1.0"/>
+            <property id="TileJitterEnabled" value="true" />
+            <property id="SoftDepthExtent" value="0.01" />
+            <property id="TileClassificationEnabled" value="true" />
+            <property id="ClassificationSkipThreshold" value="2" />
+            <property id="ClassificationDirectionSimilarityThreshold" value="0.9" />
+            <property id="ClassificationMagnitudeSimilarityThreshold" value="0.65" />
+            <property id="IndirectDispatch" value="false" />
+            <property id="PrePassEnabled" value="false" />
+            <property id="RunDuringFinalCombine" value="true" />
+        </property>
+    </Data>
+
+    <!-- Motion Blur Platform/Config Settings -->
+
+    <Settings path="MotionBlur.Params" tags="Config.MotionBlurAmount.Off">
+        <property id="QualitySettings.Amount" value="0.0"/>
+    </Settings>
+
+    <Settings path="MotionBlur.Params" tags="Config.MotionBlurAmount.Short">
+        <property id="QualitySettings.Amount" value="0.33"/>
+    </Settings>
+    
+    <Settings path="MotionBlur.Params" tags="Config.MotionBlurAmount.Long">
+        <property id="QualitySettings.Amount" value="1.0"/>
+    </Settings>
+
+    <Settings path="MotionBlur.Params" tags="Config.MotionBlurQuality.Low">
+        <property id="QualitySettings.LegacySamples" value="2"/>
+        <property id="QualitySettings.LegacyPrePassSamples" value="0"/>
+    </Settings>
+
+    <Settings path="MotionBlur.Params" tags="Config.MotionBlurQuality.Medium">
+        <property id="QualitySettings.LegacySamples" value="5"/>
+        <property id="QualitySettings.LegacyPrePassSamples" value="0"/>
+    </Settings>
+
+    <Settings path="MotionBlur.Params" tags="Config.MotionBlurQuality.High OR Config.Scarlett60Hz">
+        <property id="QualitySettings.LegacySamples" value="9"/>
+        <property id="QualitySettings.LegacyPrePassSamples" value="0"/>
+        <property id="QualitySettings.Samples" value="7"/>
+
+    </Settings>
+
+    <Settings path="MotionBlur.Params" tags="Config.MotionBlurQuality.Ultra OR Config.MotionBlurQuality.Extreme OR Config.Scarlett30Hz">
+        <property id="QualitySettings.Mode" value="DualVelocity"/>
+        <property id="QualitySettings.PrePassEnabled" value="true"/>
+        <property id="QualitySettings.LegacySamples" value="5"/>
+        <property id="QualitySettings.LegacyPrePassSamples" value="5"/>
+    </Settings>
+
+   <!-- Motion Blur Render Mode Settings -->
+
+    <Settings path="MotionBlur.Params" tags="Scenario.InWorldCarSelect">
+        <property id="QualitySettings.GammaPowerDay" value="2.0"/>
+    </Settings>
+  
+    <Settings path="MotionBlur.Params" tags="HighContrastMode.Enabled AND HighContrastMode.DisablePost" >
+        <property id="QualitySettings.Amount" value="0.0"/>
+    </Settings>
+
+    <Settings path="MotionBlur.Params" tags="Largeshot.Accumulating">
+        <property id="QualitySettings.Mode" value="None"/>
+    </Settings>
+    
+    <Settings path="MotionBlur.Params" tags="Camera.IsInCockpit OR Camera.IsInDriverlessCockpit" >
+        <property id="QualitySettings.Mode" value="Legacy"/>
+    </Settings>
+  
+    <!-- In the character customizer GammaSq helps to reduce haloing artefacts, this only works for the Dual Velocity mode
+        so we force it on for everything except PC low. Depth dilation avoids smearing of TAA edge pixels particularly
+        noticeable when rotating the customizer -->
+    <Settings path="MotionBlur.Params" tags="Scenario.CharacterCustomizer AND -Config.MotionBlurQuality.Low" >
+        <property id="QualitySettings.TonemapFunction" value="GammaSq"/>
+        <property id="QualitySettings.Mode" value="DualVelocity"/>
+        <property id="QualitySettings.DilateCompressedDepth" value="true"/>
+    </Settings>
+
+     <!-- In the character customizer force PC low to disable motion blur as the legacy mode has artefacts-->
+    <Settings path="MotionBlur.Params" tags="Scenario.CharacterCustomizer AND Config.MotionBlurQuality.Low" >
+        <property id="QualitySettings.Mode" value="None"/>
+    </Settings>
+</DatabaseFile>

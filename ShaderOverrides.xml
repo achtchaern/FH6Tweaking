@@ -1,0 +1,64 @@
+<DatabaseFile path="">
+    
+  <Data path="ShaderOverrides.Data" type="ShaderOverridesData">
+    <property id="Overrides">
+
+      <!-- Note: Material ID decisions are based on the variant of lod 0, and cannot be overridden per lod due to the material cb being shared across all lods -->
+          
+      <map_element><key value="NoOverrides"/><value>
+        <map_element><key value="-1" /><value> <property id="Disable" value="" /> </value></map_element>
+      </value></map_element>
+      
+      <map_element><key value="TestTreeOverrides"/><value>
+        <map_element><key value="0" /><value> <property id="Disable" value="MakeOrange" /> </value></map_element>
+        <map_element><key value="1" /><value> <property id="Disable" value="" /> </value></map_element>
+        <map_element><key value="2" /><value> <property id="Disable" value="" /> </value></map_element>
+      </value></map_element>
+      
+      <map_element><key value="UBER_BUILDING"/><value>
+      <map_element><key value="0" /><value> <property id="Disable" value="" /> </value></map_element>
+      <map_element><key value="1" /><value> <property id="Disable" value="" /> </value></map_element>
+      <map_element><key value="2" /><value> <property id="Disable" value="" /> </value></map_element>
+      <map_element><key value="3" /><value> <property id="Disable" value="" /> </value></map_element>
+      </value></map_element>
+      
+      <map_element><key value="HWT"/><value>
+      <map_element><key value="0" /><value> <property id="Disable" value="" /> </value></map_element>
+      <map_element><key value="1" /><value> <property id="Disable" value="" /> </value></map_element>
+      <map_element><key value="2" /><value> <property id="Disable" value="" /> </value></map_element>
+      <map_element><key value="3" /><value> <property id="Disable" value="" /> </value></map_element>
+      <map_element><key value="4" /><value> <property id="Disable" value="" /> </value></map_element>
+      </value></map_element>
+      
+    </property>
+  </Data>
+  
+  <Settings path="ShaderOverrides.Data.Overrides" tags="Config.EnvDetail.VeryLow OR Config.EnvDetail.Low OR Config.EnvDetail.Medium" >
+    <property id="UBER_BUILDING.0.Disable" value="Blend2" />
+    <property id="UBER_BUILDING.1.Disable" value="Blend2" />
+    <property id="UBER_BUILDING.2.Disable" value="Blend2" />
+    <property id="UBER_BUILDING.3.Disable" value="Blend2" />
+  </Settings>
+  
+  <!-- Example usage
+  
+  <Data path="ShaderOverrides.Data" type="ShaderOverridesData">
+    <property id="Overrides">
+      <map_element><key value="ROCKS"/><value>
+      <map_element><key value="0" /><value> <property id="Disable" value="" /> </value></map_element>
+      <map_element><key value="1" /><value> <property id="Disable" value="Micro" /> </value></map_element>
+      <map_element><key value="2" /><value> <property id="Disable" value="Micro,UpBlend" /> </value></map_element>
+      <map_element><key value="3" /><value> <property id="Disable" value="Micro,UpBlend,Modulate" /> </value></map_element>
+      </value></map_element>
+    </property>
+  </Data>
+  
+  <Settings path="ShaderOverrides.Data.Overrides" tags="Config.Anaconda" >
+    <property id="ROCKS.0.Disable" value="" />
+    <property id="ROCKS.1.Disable" value="" />
+    <property id="ROCKS.2.Disable" value="Micro" />
+    <property id="ROCKS.3.Disable" value="Micro,UpBlend" />
+  </Settings>
+  -->
+  
+</DatabaseFile>

@@ -1,0 +1,102 @@
+<DatabaseFile path="">
+  <!-- note these params  currently only used on PC -->
+  <Data path="RenderInit.Params" type="RenderInitParameters">
+    <property id="UseD3D12Allocator" value="true" />
+    <property id="D3D12AllocatorBlockSize" value="64" />
+    <!-- exclude RT/DS textures from allocator -->
+    <!-- note this applies to default pool allocations only -->
+    <property id="D3D12AllocatorNoRenderTargets" value="true" />
+    <!-- exclude all non-custom pool allocations from allocator -->
+    <property id="D3D12AllocatorNoDefaultPool" value="true" />
+    <property id="D3D12AllocatorCustomPools">
+      <!-- property id="Name" value="..." -->
+        
+      <!-- 1 = default, 2 = upload, 3 = readback -->
+      <!-- property id="HeapType" value="1" -->
+        
+      <!-- 0 = all buffers and textures, requires D3D12_RESOURCE_HEAP_TIER_2 -->
+      <!-- 1 = buffers, 2 = textures, 3 = render targets -->
+      <!-- property id="ResourceType" value="1" -->
+        
+      <!-- preferred block size in MB, 0 uses allocator defaults -->
+      <!-- property id="BlockSize" value="0" -->
+        
+      <!-- min number of blocks to allocate, 0 means pool can be empty -->
+      <!-- property id="MinBlockCount" value="1" -->
+        
+      <element>
+        <property id="Name" value="READBACK" />
+        <property id="HeapType" value="3" />
+        <property id="ResourceType" value="1" />
+        <property id="BlockSize" value="0" />
+        <property id="MinBlockCount" value="0" />
+      </element>
+      <element>
+        <property id="Name" value="BUFFER" />
+        <property id="HeapType" value="1" />
+        <property id="ResourceType" value="1" />
+        <property id="BlockSize" value="8" />
+        <property id="MinBlockCount" value="1" />
+      </element>
+      <element>
+        <property id="Name" value="TEXTURE" />
+        <property id="HeapType" value="1" />
+        <property id="ResourceType" value="2" />
+        <property id="BlockSize" value="4" />
+        <property id="MinBlockCount" value="1" />
+      </element>
+      <element>
+	<!-- proxy lod render targets -->
+        <property id="Name" value="CARRENDERTARGET" />
+        <property id="HeapType" value="1" />
+        <property id="ResourceType" value="3" />
+        <property id="BlockSize" value="8" />
+        <property id="MinBlockCount" value="1" />
+      </element>
+      <element>
+	<!-- default block size for shadow/forward plus render targets -->
+	<!-- min block count 0 so can be unused in VeryLow -->
+        <property id="Name" value="RENDERTARGET" />
+        <property id="HeapType" value="1" />
+        <property id="ResourceType" value="3" />
+        <property id="BlockSize" value="0" />
+        <property id="MinBlockCount" value="0" />
+      </element>
+      <element>
+        <property id="Name" value="UPLOAD" />
+        <property id="HeapType" value="2" />
+        <property id="ResourceType" value="1" />
+        <property id="BlockSize" value="4" />
+        <property id="MinBlockCount" value="1" />
+      </element>
+      <element>
+        <property id="Name" value="PARTICLES_DEFAULT_BUFFER" />
+        <property id="HeapType" value="1" />
+        <property id="ResourceType" value="1" />
+        <property id="BlockSize" value="32" />
+        <property id="MinBlockCount" value="1" />
+      </element>      
+      <element>
+        <property id="Name" value="PARTICLES_UPLOAD_BUFFER" />
+        <property id="HeapType" value="2" />
+        <property id="ResourceType" value="1" />
+        <property id="BlockSize" value="16" />
+        <property id="MinBlockCount" value="1" />
+      </element>      
+      <element>
+        <property id="Name" value="PARTICLES_READBACK_BUFFER" />
+        <property id="HeapType" value="3" />
+        <property id="ResourceType" value="1" />
+        <property id="BlockSize" value="4" />
+        <property id="MinBlockCount" value="1" />
+      </element>   
+      <element>
+        <property id="Name" value="PARTICLES_DEFAULT_TEXTURE" />
+        <property id="HeapType" value="1" />
+        <property id="ResourceType" value="2" />
+        <property id="BlockSize" value="1" />
+        <property id="MinBlockCount" value="1" />
+      </element>      
+    </property>
+  </Data>
+</DatabaseFile>

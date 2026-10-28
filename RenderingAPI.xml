@@ -1,0 +1,20 @@
+<DatabaseFile path="">
+  <Data path="RenderDataModule.Config" type="RenderDataModuleConfiguration">
+    <property id="Priorities">
+        <map_element>
+            <key id="first" value="game" />
+            <value id="second" value="100.0" />
+        </map_element>
+        <map_element>
+            <key id="first" value="cinematic" />
+            <value id="second" value="1000.0" />
+        </map_element>
+
+        <!-- Test override for when developing and testing out  -->
+        <map_element>
+          <key id="first" value="rendering_test_override"/>
+          <value id="second" value="8000.0"/>
+        </map_element>
+    </property>
+  </Data>
+</DatabaseFile>

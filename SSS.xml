@@ -1,0 +1,67 @@
+<DatabaseFile path="">
+    <Data path="SSS.Params" type="SSSParams">
+        <property id="Enabled" value="false" />
+        <property id="Config" type="Config">
+            <property id="NoofSamples" value="17"/>
+        </property>
+		
+        <!-- Scale configurations that are used for specific blur width and sample counts based on model size -->
+        <property id="ScaleConfigs">
+            <element> <!-- Default -->
+                <property id="Name" value="Default" />
+                <property id="Width" value="0.02" />
+                <property id="Curvature" value="40.0" />
+            </element>
+            <element> <!-- Giant -->
+                <property id="Name" value="Giant" />
+                <property id="Width" value="0.5" />
+                <property id="Curvature" value="1.6" />
+            </element>
+        </property>
+        
+        <!-- Diffusion profiles that are used by SSS materials using the DiffusionProfileIndex output. -->
+        <property id="Profiles">
+            <element> <!-- Profile 0 -->
+                <property id="Name" value="CharacterCloth" />
+                <property id="Strength" value="1.0" />
+                <property id="Falloff" value="1,1,1" />
+            </element>
+            <element> <!-- Profile 1 -->
+                <property id="Name" value="CharacterFlesh" />
+                <property id="Strength" value="1.0" />
+                <property id="Falloff" value="1.0,0.37,0.3" />
+            </element>
+            <element> <!-- Profile 2 -->
+                <property id="Name" value="Cloth" />
+                <property id="Strength" value="1.0" />
+                <property id="Falloff" value="0.25,0.024,0.001" />
+            </element>
+            <element> <!-- Profile 3 -->
+                <property id="Name" value="Teeth" />
+                <property id="Strength" value="1.0" />
+                <property id="Falloff" value="1,1,0.22" />
+            </element>
+            <element> <!-- Profile 4 -->
+                <property id="Name" value="Eyeball" />
+                <property id="Strength" value="1" />
+                <property id="Falloff" value="1,0.35,0.2" />
+            </element>
+            <element> <!-- Profile 5 -->
+                <property id="Name" value="Foliage" />
+                <property id="Strength" value="1.0" />
+                <property id="Falloff" value="0.53,0.77,0.21" />
+            </element>
+            <element> <!-- Profile 6 -->
+                <property id="Name" value="Profile6" />
+                <property id="Strength" value="0.0" />
+                <property id="Falloff" value="0.0,0.0,0.0" />
+            </element>
+            <element> <!-- Profile 7 -->
+                <property id="Name" value="Profile7" />
+                <property id="Strength" value="0.0" />
+                <property id="Falloff" value="0.0,0.0,0.0" />
+            </element>
+        </property>
+    </Data>
+
+</DatabaseFile>

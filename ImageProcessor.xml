@@ -1,0 +1,15 @@
+<DatabaseFile path="">
+  <Data path="Luminance.Params" type="LuminanceParams">
+    <property id="CalculateLuminanceViaHistogram" value="true"/><!-- Holland value="false" -->
+    <property id="CalculateLuminanceMip" value="2"/>
+    <property id="CalculateLuminanceRange" value="4"/>
+    <property id="EnableExposureBiasCurve" value="true"/>
+    <!-- <property id="EnableLuminanceExposureBiasCurve" type="bool" value="true"/> -->
+    <!-- <property id="LuminanceExposureBiasGradient" type="float" value="0.32"/> -->
+    <!-- <property id="LuminanceExpsoureBiasZeroPoint" type="float" value="12"/> -->
+  </Data>
+  <Data path="AdaptiveExposure.Params" type="AdaptiveExposureParams">
+    <property id="HistogramLowThresholdPercent" value="50"/>
+    <property id="HistogramHighThresholdPercent" value="70"/>
+  </Data>
+</DatabaseFile>  

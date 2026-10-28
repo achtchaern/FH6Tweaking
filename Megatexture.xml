@@ -1,0 +1,115 @@
+<DatabaseFile path="">
+    <!-- Note: this file is referenced by RenderDatabaseTools.xml, so any changes to xml layout should
+         be considered carefully as currently tools load directly from this folder which can contain
+         more recent data than their code revision -->
+    <!-- Defaults -->
+    <Data path="MegaTexture.Params" type="MegaTextureParams">
+        <property id="HeightfieldBlendSharpnessPerMip">
+            <element value="240"/>
+            <element value="235"/>
+            <element value="230"/>
+            <element value="225"/>
+            <element value="220"/>
+            <element value="220"/>
+            <element value="220"/>
+        </property>
+        <property id="DirectionBias" value="0.75"/>
+        <property id="LocalDirectionBias" value="0"/>
+        <property id="MipFadeTime" value="1"/>
+        <property id="MipBlendBias" value="0.22"/>
+        <property id="LowSpeedBudget" value="25"/>
+        <property id="HighSpeedBudgetDrop" value="3"/>
+        <property id="SpeedToStartBudgetDrop" value="40"/>
+        <property id="SpeedToFinishBudgetDrop" value="80"/>
+        <property id="InterpolationLowSpeedTolerance" value="20"/>
+        <property id="InterpolationHighSpeedTolerance" value="7"/>
+        <property id="InterpolationFadeRate" value="3"/>
+        <property id="BudgetScale" value="1"/>
+        <property id="GrassBudget" value="0.5"/>
+        <property id="GrassAndStreamingBudget" value="0.75"/>
+        <property id="UseMipFading" value="false"/>
+        <property id="MinMip" value="0"/>
+        <property id="EnableProcedurals" value="true"/>
+        <property id="MegaTextureGPU">
+            <property id="SplatMapAtlasSizeX" value="1024"/>
+            <property id="SplatMapAtlasSizeY" value="256"/>
+            <property id="MaxUpdateGlobalScale" value="1.0"/>
+            <property id="MaxUpdateStreamingScale" value="0.5"/> <!-- multiplier on top of MaxUpdateGlobalScale when streaming -->
+            <property id="MaxUpdatePerMip">
+                <!-- 1.0 = up to 1 mip's worth of megatexture can be updated per frame; actual value 
+                     is weighted by which mips are actually being updated and scaled by MaxUpdateGlobalScale -->
+                <element value="1.0" />
+                <element value="1.0" />
+                <element value="1.0" />
+                <element value="1.0" />
+                <element value="1.0" />
+                <element value="1.0" />
+                <element value="1.0" />
+            </property>
+            <property id="ShadowEnabled" value="false"/>
+            <property id="MaxShadowUpdate" value="0.0"/> <!-- a value of 0 indicates use the same value as for main megatexture -->
+            <property id="ApplyModulatePerPixelLevel" value="5"/> 
+            <property id="ApplyModulateCornersPerPixelLevel" value="3"/> 
+            <property id="CheckDiffuseDiagonalsLevel" value="5"/>
+            <property id="NumParallaxMips" value="6"/> 
+            <property id="GrassColourTargetFallbackColour" value="0.35,0.36,0.15"/>
+        </property>
+    </Data>
+    
+    <!-- Season modifications -->
+    <Settings path="MegaTexture.Params.MegaTextureGPU">
+        <property id="GrassColourTargetFallbackColour" value="0.24,0.27,0.11" tags="Seasons.Spring" />
+        <property id="GrassColourTargetFallbackColour" value="0.24,0.27,0.11" tags="Seasons.Summer" />
+        <property id="GrassColourTargetFallbackColour" value="0.24,0.27,0.11" tags="Seasons.Autumn" />
+        <property id="GrassColourTargetFallbackColour" value="0.47,0.40,0.27" tags="Seasons.Winter" />
+    </Settings>
+    
+    
+    <!-- Platform modifications -->
+    <Settings path="MegaTexture.Params" tags="Config.Scarlett60Hz">
+        <property id="LowSpeedBudget" value="8.75"/>
+        <property id="HighSpeedBudgetDrop" value="1.05"/>
+    </Settings>
+    <Settings path="MegaTexture.Params">
+        <property id="InterpolationLowSpeedTolerance" value="999"/>
+    </Settings>
+    
+    <Settings path="MegaTexture.Params.MegaTextureGPU">
+        <property id="MaxUpdateGlobalScale" value="0.18" tags="Platform.Lockhart AND Config.Scarlett60Hz" />
+        <property id="MaxUpdateGlobalScale" value="0.36" tags="Platform.Lockhart AND -Config.Scarlett60Hz" />
+        <property id="MaxUpdateGlobalScale" value="0.18" tags="Platform.Anaconda AND Config.Scarlett60Hz" />
+        <property id="MaxUpdateGlobalScale" value="1.00" tags="Platform.Anaconda AND -Config.Scarlett60Hz" />
+        <property id="MaxShadowUpdate" value="0.36" tags="Platform.Anaconda AND -Config.Scarlett60Hz" /> <!-- Anaconda30 has a high main megatexture budget, but lower the shadow update to more in line with other configs -->
+        <!-- on PC these rates correspond to 30hz, they're scaled at runtime by actual framerate -->
+        <property id="MaxUpdateGlobalScale" value="0.1" tags="Platform.PC AND Config.EnvStreamingTex.Low" />
+        <property id="MaxUpdateGlobalScale" value="0.18" tags="Platform.PC AND Config.EnvStreamingTex.Medium" />
+        <property id="MaxUpdateGlobalScale" value="0.36" tags="Platform.PC AND Config.EnvStreamingTex.High" />
+        <!-- ultra and extreme both use 2x resolution textures (see Presentation.xml) -->
+        <property id="MaxUpdateGlobalScale" value="0.18" tags="Platform.PC AND Config.EnvStreamingTex.Ultra" />
+        <property id="MaxUpdateGlobalScale" value="0.36" tags="Platform.PC AND Config.EnvStreamingTex.Extreme" />
+        
+        <!-- increase scratch splatmap size on platforms that can afford it so that it doesn't bottleneck rendering -->
+        <property id="SplatMapAtlasSizeY" value="512" tags="Platform.Lockhart" />
+        <property id="SplatMapAtlasSizeY" value="1024" tags="Platform.Anaconda OR Platform.PC" />
+    </Settings>
+
+    <!-- Shadows -->
+    <!-- must match MegaTextureShadows shader switch setting in ShaderSwitches.xml -->
+    <Settings path="MegaTexture.Params.MegaTextureGPU" tags="Config.ShaderQuality.Ultra OR Config.ShaderQuality.Extreme OR Config.Scarlett30Hz"> 
+        <property id="ShadowEnabled" value="true"/> 
+    </Settings>
+    
+    <!-- Other modifications -->
+    <Settings path="MegaTexture.Params" tags="Scenario.InWorldCarSelect">
+        <property id="BudgetScale" value="1.2"/>
+    </Settings>   
+    <Settings path="MegaTexture.Params" tags="Scenario.PhotoMode OR Scenario.AutoVistaPhotoMode OR Scenario.PlayerHousePhotoMode">
+        <property id="DirectionBias" value="1"/>
+        <property id="LocalDirectionBias" value="1"/>
+    </Settings>
+
+    <Settings path="MegaTexture.Params" tags="Scenario.Homespace OR Scenario.AutoVistaPhotoMode OR Scenario.PlayerHouse OR Scenario.PlayerHousePhotoMode">
+      <property id="EnableProcedurals" value="false"/>
+    </Settings>
+
+</DatabaseFile>
