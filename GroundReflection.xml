@@ -1,13 +1,13 @@
 <DatabaseFile path="">
   <Data path="GroundReflection.Ground" type="GroundReflectionRendererParams">
     <property id="Enabled" value="false" />
-    <property id="Resolution" value="8" />
+    <property id="Resolution" value="16" />
     <property id="EnableBlur" value="true" />
     <property id="RenderSky" value="true" />
   </Data>
   <Data path="GroundReflection.Water" type="GroundReflectionRendererParams">
     <property id="Enabled" value="false" />
-    <property id="Resolution" value="4" />
+    <property id="Resolution" value="8" />
     <property id="EnableBlur" value="true" />
     <property id="RenderSky" value="true" />
   </Data>
@@ -17,7 +17,7 @@
 
   <Settings path="GroundReflection.Ground" tags="Scenario.PlanarReflections">
     <property id="Enabled" value="true"/>
-    <property id="Resolution" value="2" />
+    <property id="Resolution" value="4" />
   </Settings>
 
   <Settings path="GroundReflection.Ground" tags="Scenario.PlayerHouse OR Scenario.PlayerHousePhotoMode">

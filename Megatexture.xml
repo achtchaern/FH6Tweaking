@@ -17,7 +17,7 @@
         <property id="LocalDirectionBias" value="0"/>
         <property id="MipFadeTime" value="1"/>
         <property id="MipBlendBias" value="0.22"/>
-        <property id="LowSpeedBudget" value="25"/>
+        <property id="LowSpeedBudget" value="35"/>
         <property id="HighSpeedBudgetDrop" value="3"/>
         <property id="SpeedToStartBudgetDrop" value="40"/>
         <property id="SpeedToFinishBudgetDrop" value="80"/>
@@ -25,16 +25,16 @@
         <property id="InterpolationHighSpeedTolerance" value="7"/>
         <property id="InterpolationFadeRate" value="3"/>
         <property id="BudgetScale" value="1"/>
-        <property id="GrassBudget" value="0.5"/>
-        <property id="GrassAndStreamingBudget" value="0.75"/>
+        <property id="GrassBudget" value="10.75"/>
+        <property id="GrassAndStreamingBudget" value="3.75"/>
         <property id="UseMipFading" value="false"/>
         <property id="MinMip" value="0"/>
         <property id="EnableProcedurals" value="true"/>
         <property id="MegaTextureGPU">
-            <property id="SplatMapAtlasSizeX" value="1024"/>
-            <property id="SplatMapAtlasSizeY" value="256"/>
-            <property id="MaxUpdateGlobalScale" value="1.0"/>
-            <property id="MaxUpdateStreamingScale" value="0.5"/> <!-- multiplier on top of MaxUpdateGlobalScale when streaming -->
+            <property id="SplatMapAtlasSizeX" value="2048"/>
+            <property id="SplatMapAtlasSizeY" value="512"/>
+            <property id="MaxUpdateGlobalScale" value="4.0"/>
+            <property id="MaxUpdateStreamingScale" value="2"/> <!-- multiplier on top of MaxUpdateGlobalScale when streaming -->
             <property id="MaxUpdatePerMip">
                 <!-- 1.0 = up to 1 mip's worth of megatexture can be updated per frame; actual value 
                      is weighted by which mips are actually being updated and scaled by MaxUpdateGlobalScale -->
@@ -86,11 +86,11 @@
         <property id="MaxUpdateGlobalScale" value="0.36" tags="Platform.PC AND Config.EnvStreamingTex.High" />
         <!-- ultra and extreme both use 2x resolution textures (see Presentation.xml) -->
         <property id="MaxUpdateGlobalScale" value="0.18" tags="Platform.PC AND Config.EnvStreamingTex.Ultra" />
-        <property id="MaxUpdateGlobalScale" value="0.36" tags="Platform.PC AND Config.EnvStreamingTex.Extreme" />
+        <property id="MaxUpdateGlobalScale" value="1.00" tags="Platform.PC AND Config.EnvStreamingTex.Extreme" />
         
         <!-- increase scratch splatmap size on platforms that can afford it so that it doesn't bottleneck rendering -->
         <property id="SplatMapAtlasSizeY" value="512" tags="Platform.Lockhart" />
-        <property id="SplatMapAtlasSizeY" value="1024" tags="Platform.Anaconda OR Platform.PC" />
+        <property id="SplatMapAtlasSizeY" value="4096" tags="Platform.Anaconda OR Platform.PC" />
     </Settings>
 
     <!-- Shadows -->

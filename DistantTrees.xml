@@ -7,7 +7,7 @@
         <property id="MaxDistance" value="25000.0" />
         <property id="DensityAtMinDistance" value="1.0" />
         <property id="DensityAtMidDistance" value="0.8" />
-        <property id="DensityAtMaxDistance" value="0.2" />
+        <property id="DensityAtMaxDistance" value="0.4" />
         <property id="AlphaTestThresholdMin" value="0.2" />
         <property id="AlphaTestThresholdMax" value="0.1" />
         <property id="Shape" value="0" />

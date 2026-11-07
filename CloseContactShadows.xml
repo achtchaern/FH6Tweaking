@@ -1,6 +1,6 @@
 <File path="">
   <Data path="CloseContactShadows.Params" type="ContactShadowParams">
-    <property id="Enabled" value="false" />
+    <property id="Enabled" value="true" />
     <property id="ResolutionScale" value="Full" />
     <property id="NearFarTransitionStart" value="0.45"/>
     <property id="NearFarTransitionEnd" value="0.55"/>
@@ -17,10 +17,10 @@
     <property id="HitNormalBiasNear" type="float" value="0.025"/>
     <property id="HitNormalBiasFar" type="float" value="0.04"/>
     <property id="TraceDistanceFadeRange" type="float" value="0.1"/>
-    <property id="DepthDistanceFadeRange" type="float" value="30"/>
+    <property id="DepthDistanceFadeRange" type="float" value="120"/>
     <property id="NearPlane" type="float" value="0.01"/>
     <property id="FarPlane" type="float" value="10000"/>
-    <property id="NumSteps" type="int" value="10"/>
+    <property id="NumSteps" type="int" value="20"/>
     <property id="EnableNdotLKillFade" value="false"/>
     <property id="EnableSunFade" value="false"/>
     <property id="ErrorCutOff" value="0.99"/>
@@ -30,7 +30,7 @@
 
   <!-- If we're below 1440p we can increase the quality a bit-->
   <Settings path="CloseContactShadows.Params" tags="-Frame.Resolution.AtLeastQuadHD">
-    <property id="NumSteps" value="18" />
+    <property id="NumSteps" value="24" />
   </Settings>
 
   <!-- Enable NdotLKillFade for deferred transmissive shadows -->

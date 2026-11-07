@@ -58,7 +58,7 @@
         <property id="MinimumVirtualRadius" value="0"/>
         <property id="TerrainGrassParams">
             <property id="TerrainGrassBlendNearDistance" value="0"/>
-            <property id="TerrainGrassBlendFarDistance" value="85"/>
+            <property id="TerrainGrassBlendFarDistance" value="320"/>
             <property id="TerrainGrassBlendAmount" value="1"/>
             <property id="TerrainGrassTransmissiveMask" value="0.2"/>
             <property id="TerrainGrassTransmissiveScale" value="10"/>
@@ -76,8 +76,8 @@
             <property id="SkyScale" value="0.0"/>
             <property id="SkyFuzziness" value="0.2"/>
             <property id="SkyGIAOAmplifier" value="0.4"/>
-            <property id="TerrainNormalStartFade" value="70"/>
-            <property id="TerrainNormalEndFade" value="150"/>
+            <property id="TerrainNormalStartFade" value="150"/>
+            <property id="TerrainNormalEndFade" value="300"/>
         </property>
     </Data>
     

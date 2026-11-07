@@ -44,7 +44,7 @@
           <property id="Intensity" value="1"/>
         </property>
         <property id="LineDoubled" value="false"/>
-        <property id="ResolutionScale" value="Half"/>
+        <property id="ResolutionScale" value="Full"/>
         <property id="SelfOcclusionAware" value="false"/>
         <property id="LookupMethod" value="Inactive"/>
       </property>
@@ -196,7 +196,7 @@
     <property id="Occlusion.Base.ResolutionScale" value="Half" tags="Render.Resolution.AtLeast4K" />
     <property id="Occlusion.Base.ResolutionScale" value="Full" tags="-Render.Resolution.AtLeast4K" />
     <!-- don't think we need screen space bounce light to ever be full resolution, its too subtle -->
-    <property id="Bounce.Base.ResolutionScale" value="Half"/>
+    <property id="Bounce.Base.ResolutionScale" value="Full"/>
     <property id="Bounce.Base.Active" value="true" />
   </Settings>
 

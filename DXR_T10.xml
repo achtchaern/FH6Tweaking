@@ -28,7 +28,7 @@
       <property id="CarCullDistance" value="250"/>
       <property id="SmashableCullDistance" value="100"/>
       <property id="MaxRadiusToGenerateBLAS" value="10000"/>
-      <property id="MaxBoundingBoxLengthToGenerateBLAS" value="800"/>
+      <property id="MaxBoundingBoxLengthToGenerateBLAS" value="1200"/>
     </property>
     <!-- OpaqueOnly shared by Test, AO, GI and DDGI -->
     <property id="OpaqueOnlyScene">
@@ -67,20 +67,20 @@
       <property id="MirrorReflectionResolutionScale" value="DXR_SCALE_FULL"/>
       <property id="MirrorMaxCarRayDistance" value="10"/>
       <property id="MirrorMaxTrackRayDistance" value="100"/>
-      <property id="UsePlanarReflectionIfAvailable" value="true"/>
-      <property id="GlossyMinValue" value="0.7"/>
-      <property id="RoughReflectionsFullRange" value="false"/>
+      <property id="UsePlanarReflectionIfAvailable" value="false"/>
+      <property id="GlossyMinValue" value="0.2"/>
+      <property id="RoughReflectionsFullRange" value="true"/>
     </property>
     <property id="Shadows">
       <property id="Enabled" value="false"/>
     </property>
     <property id="AO">
-      <property id="Enabled" value="false"/>
+      <property id="Enabled" value="true"/>
       <property id="QualityLevel" value="5"/>
       <property id="TemporalGradients" value="true"/>
     </property>
     <property id="GI">
-      <property id="Enabled" value="false"/>
+      <property id="Enabled" value="true"/>
       <property id="QualityLevel" value="5"/>
       <property id="SimpleHit" value="true"/>
       <property id="FallbackMethod" value="Surfel"/>
@@ -253,19 +253,19 @@
     <property id="Shaders.CacheOnBoot" value="true"/>
     <property id="GI.Enabled" value="true" />
     <property id="GI.QualityLevel" value="5" />
-    <property id="GI.StartFade" value="100" />
-    <property id="GI.EndFade" value="200" />
+    <property id="GI.StartFade" value="600" />
+    <property id="GI.EndFade" value="800" />
     <property id="GI.TemporalReduction.SkipFoliageIfDLSSEnabled" value="true" />
     <property id="OpaqueOnlyScene.MaxNumBLASToCreateEachFrame" value="50"/>
     <property id="OpaqueOnlyScene.MaxUpdatableModelsProcessedPerFrame" value="20"/>
     <property id="OpaqueOnlyScene.MaxUpdatableModelsDistance" value="20"/>
     <property id="OpaqueOnlyScene.CarLODBias" value="2"/>
-    <property id="OpaqueOnlyScene.DefaultDrawBehaviourMaxDistance" value="500"/>
+    <property id="OpaqueOnlyScene.DefaultDrawBehaviourMaxDistance" value="1000"/>
     <property id="OpaqueOnlyScene.DefaultDrawBehaviourLODBias" value="0"/>
-    <property id="OpaqueOnlyScene.CustomDrawBehaviourMaxDistance" value="500"/>
+    <property id="OpaqueOnlyScene.CustomDrawBehaviourMaxDistance" value="1000"/>
     <property id="OpaqueOnlyScene.CustomDrawBehaviourLODBias" value="0"/>
     <property id="OpaqueOnlyScene.CarCullDistance" value="250"/>
-    <property id="OpaqueOnlyScene.SmashableCullDistance" value="250"/>
+    <property id="OpaqueOnlyScene.SmashableCullDistance" value="350"/>
   </Settings>
   
   <!-- PC RT Reflection settings -->

@@ -197,8 +197,8 @@
     <property id="Distant" type="ShadowManagerDistantParameters">
       <property id="Power" value="2.9999998"/>
       <property id="Scale" value="0.8"/>
-      <property id="StartFadeIn" value="140"/>
-      <property id="EndFadeIn" value="230"/>
+      <property id="StartFadeIn" value="280"/>
+      <property id="EndFadeIn" value="360"/>
     </property>
   </Data> 
   

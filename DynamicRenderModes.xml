@@ -11,6 +11,7 @@
   </Mode>
   <Mode name="Race" >
     <Tag name="Scenario.Race" />
+    <Tag name="Scenario.HighQualitySamplers" />
   </Mode>
   <Mode name="RaceReplay" >
     <Tag name="Scenario.Race" />
@@ -34,6 +35,7 @@
   </Mode>
   <Mode name="Freeroam" >
     <Tag name="Scenario.Freeroam" />
+    <Tag name="Scenario.HighQualitySamplers" />
   </Mode>
   <Mode name="FreeroamReplay" >
     <Tag name="Scenario.Replay" />

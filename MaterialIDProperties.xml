@@ -150,7 +150,7 @@
     <property id="ContactShadows.ReceiveContactShadows" value="0"/>
     <property id="ContactShadows.CastContactShadows" value="1"/>
     <property id="ContactShadows.JitterScale" value="0.0"/>
-    <property id="GTAOIntensity" value="0.5"/>
+    <property id="GTAOIntensity" value="0.3"/>
 
     <!-- Dithered -->
     <property id="GTAOIntensity" value="0.425" tags="DeferredFlag.Dithered" />
@@ -318,8 +318,8 @@
 <!-- Distant GTAO for trees -->
 <Settings path="MaterialIDProperties" tags="DeferredID.TreeFoliage OR DeferredID.TreeFoliageDS OR DeferredID.TreeBillboard OR DeferredID.TreeImpostor">
   <property id="GTAODistantRadiusScale" value="17.0"/>
-  <property id="GTAODistanceScaleStart" value="220.0"/>
-  <property id="GTAODistanceScaleEnd" value="340.0"/>
+  <property id="GTAODistanceScaleStart" value="340.0"/>
+  <property id="GTAODistanceScaleEnd" value="680.0"/>
 </Settings>
 <Settings path="MaterialIDProperties" tags="DeferredID.TreeImpostorSnow">
   <property id="GTAODistantRadiusScale" value="5.0"/>

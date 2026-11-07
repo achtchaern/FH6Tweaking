@@ -64,8 +64,8 @@
       <property id="SkyRenderUndergroundHorizon" value="-0.05" />
       <property id="SkyRenderUndergroundJitter" value="0.2" />
       <property id="DynamicEnvStreamingTexSettings" type="DynamicEnvStreamingTexSettings">
-        <property id="StreamingPoolSizeMB" value="1024" />
-        <property id="PVSTrackBudget" value="1024" />
+        <property id="StreamingPoolSizeMB" value="4096" />
+        <property id="PVSTrackBudget" value="4096" />
       </property>
       <property id="ForceInCockpitSettings" value="false" />
       <property id="DisableWaterOnLensEffects" value="false" />
@@ -158,13 +158,13 @@
 
     <!-- Shadow -->
     <Settings path="VisibilityCulling.Params" tags="Config.ShadowQuality.VeryLow">
-      <property id="ScreenAreaTests.Shadow" value="20" />
-    </Settings>
-    <Settings path="VisibilityCulling.Params" tags="Config.ShadowQuality.Low">
       <property id="ScreenAreaTests.Shadow" value="40" />
     </Settings>
+    <Settings path="VisibilityCulling.Params" tags="Config.ShadowQuality.Low">
+      <property id="ScreenAreaTests.Shadow" value="80" />
+    </Settings>
     <Settings path="VisibilityCulling.Params" tags="Config.ShadowQuality.Medium">
-      <property id="ScreenAreaTests.Shadow" value="60" />
+      <property id="ScreenAreaTests.Shadow" value="160" />
     </Settings>
 
     
@@ -188,9 +188,9 @@
       <property id="CubemapExtraTerrainHeight" value="0.5"/>
       <property id="DefaultDensityScale" value="1.0" />
       <property id="DefaultLODDistanceScale" value ="1.0" />
-      <property id="TreesLODDistanceScale" value ="0.0" />
-      <property id="GrassLODDistanceScale" value ="0.0" />
-      <property id="BushLODDistanceScale" value ="0.0" />
+      <property id="TreesLODDistanceScale" value ="3.0" />
+      <property id="GrassLODDistanceScale" value ="3.0" />
+      <property id="BushLODDistanceScale" value ="6.0" />
       <property id="CubeMinArea" value ="0.0" />
       <property id="ShadowMinArea" value ="0.0" />
       <property id="CrowdCull" value ="0.0" />
@@ -244,6 +244,8 @@
    <Settings path="RenderProceduralQuality.Settings" tags="Config.Anaconda30Hz OR Config.GeometryQuality.Extreme">
       <property id="DrawDistanceType" value="Extreme" />
       <property id="CubemapExtraTerrainHeight" value="0"/>
+      <property id="TreeLODReduction" value ="0" />
+      <property id="DefaultDensityScale" value="1.0" />
     </Settings>
 	
     <Settings path="RenderProceduralQuality.Settings" tags="Config.Scarlett60Hz AND Track.Name_HENDRIX">
@@ -323,8 +325,8 @@
     </Settings>
 
     <Settings path="Presentation.Params" tags="Config.EnvStreamingTex.Extreme">
-      <property id="DynamicEnvStreamingTexSettings.StreamingPoolSizeMB" value="2560" />
-      <property id="DynamicEnvStreamingTexSettings.PVSTrackBudget" value="3072" />
+      <property id="DynamicEnvStreamingTexSettings.StreamingPoolSizeMB" value="5120" />
+      <property id="DynamicEnvStreamingTexSettings.PVSTrackBudget" value="6144" />
       <property id="HighQualityTexturesAllowed" value="true"/>
       <!-- .Extreme has a higher megatexture update rate (see MegaTexture.xml) -->
       <property id="MegaTextureQualityLevel" value="1"/>

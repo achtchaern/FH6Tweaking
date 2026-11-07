@@ -8,13 +8,13 @@
         <property id="SceneType" value="Main" />
         <property id="LODData">
           <!-- LOD 0 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="40.0" /></element>
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="160.0" /></element>
           <!-- LOD 1 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="40.0" /><property id="EndDistance" value="80.0" /></element>
-          <!-- LOD 2 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="80.0" /><property id="EndDistance" value="160.0" /></element>
-          <!-- LOD 3 -->
           <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
+          <!-- LOD 2 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="320.0" /><property id="EndDistance" value="640.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="640.0" /><property id="EndDistance" value="1000.0" /></element>
         </property>
       </element>
       <element type="GeneralSceneDefaultLODList">
@@ -38,15 +38,15 @@
         <property id="SceneType" value="Main" />
         <property id="LODData">
           <!-- LOD 0 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="40.0" /></element>
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="160.0" /></element>
           <!-- LOD 1 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="40.0" /><property id="EndDistance" value="80.0" /></element>
-          <!-- LOD 2 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="80.0" /><property id="EndDistance" value="160.0" /></element>
-          <!-- LOD 3 -->
           <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
-          <!-- LOD 4 -->
+          <!-- LOD 2 -->
           <element type="GeneralSceneLODData"><property id="StartDistance" value="320.0" /><property id="EndDistance" value="640.0" /></element>
+          <!-- LOD 3 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="640.0" /><property id="EndDistance" value="800.0" /></element>
+          <!-- LOD 4 -->
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="800" /><property id="EndDistance" value="999.0" /></element>
         </property>
       </element>      
       <!-- Cube -->
@@ -55,15 +55,15 @@
         <property id="SceneType" value="Cube" />
         <property id="LODData">
           <!-- LOD 0 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="160.0" /></element>
           <!-- LOD 1 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="160.0" /><property id="EndDistance" value="320.0" /></element>
           <!-- LOD 2 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="320.0" /><property id="EndDistance" value="640.0" /></element>
           <!-- LOD 3 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="0.0" /></element>
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="640.0" /><property id="EndDistance" value="800.0" /></element>
           <!-- LOD 4 -->
-          <element type="GeneralSceneLODData"><property id="StartDistance" value="0.0" /><property id="EndDistance" value="80.0" /></element>
+          <element type="GeneralSceneLODData"><property id="StartDistance" value="800" /><property id="EndDistance" value="999.0" /></element>
         </property>
       </element>
 

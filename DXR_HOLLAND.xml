@@ -1,10 +1,10 @@
 <DatabaseFile path="">
   <Data path="DXR_HOLLAND.Params" type="DXRParams">
     <property id="Base">
-      <property id="Enabled" value="false"/>
+      <property id="Enabled" value="true"/>
       <property id="AsyncEnabled" value="true"/>
       <property id="TLASRange" value="300"/>
-      <property id="ProceduralsRange" value="100"/>
+      <property id="ProceduralsRange" value="600"/>
       <property id="BLASUnloadFrames" value="70"/>
       <property id="ProceduralsEnabled" value="true"/>
       <property id="TestPassEnabled" value="true"/>
@@ -12,7 +12,7 @@
       <property id="MaxIterations" value="64"/>
       <property id="PathTracerEnabled" value="false"/>
       <property id="CompositePathtracer" value="true"/>
-      <property id="NumPathtracerBounces" value="2"/>
+      <property id="NumPathtracerBounces" value="3"/>
     </property>
 
     <property id="RTGI">
@@ -28,13 +28,13 @@
       <property id="WorldSpaceCacheEnabled" value="true"/>
       <property id="WorldCacheVoxelSize" value="0.1"/>
       <property id="WorldCacheNormals" value="6"/>
-      <property id="RTGIRange" value="300.0"/>
-      <property id="RayLength" value="100.0"/>
+      <property id="RTGIRange" value="700.0"/>
+      <property id="RayLength" value="300.0"/>
       <property id="OcclusionDistance" value="3.0"/>
       <property id="ResampleDistance" value="2.0"/>
       <property id="ContactAODistance" value="0.1"/>
-      <property id="NumGRISSamples" value="8"/>
-      <property id="NumTemporalSamples" value="16"/>
+      <property id="NumGRISSamples" value="16"/>
+      <property id="NumTemporalSamples" value="32"/>
       <property id="TemporalMotionFactor" value="0.3"/>
       <property id="DisocclusionThreshold" value="0.1"/>
       <property id="CacheBlendFrames" value="6"/>
